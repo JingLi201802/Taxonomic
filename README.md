@@ -5,10 +5,14 @@ Table of Contents
   * [System Diagram](#system)
   * [Schedule](#schedule)
   * [Risk Management](#risk)
-  * [Team](#team)
+  * [Team Member](#team)
   * [Hyperlinks](#hyperlinks)
-
-## Team
+## Introduction
+## Client Expectation
+## System Diagram
+## Schedule
+## Risk Management
+## Team Member
 
 | Team Member            | Uni ID         | Role                            |
 | -----------------------| ---------------| --------------------------------|
