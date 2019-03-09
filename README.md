@@ -63,4 +63,3 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Hyperlinks
 #### [Google Drive](https://drive.google.com/drive/folders/1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d?usp=sharing)
-#### [Google Drive](https://drive.google.com/drive/folders/1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d?usp=sharing)
