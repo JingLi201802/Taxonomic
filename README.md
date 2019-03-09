@@ -14,6 +14,14 @@ Our project aims to automate taxonomic data capture from scientific reports, som
 The client expects us to achieve some sort of functionality in terms of analysing documents in pdf form and returning scientific names present. At this point the client's expectations are not entirely clear and we intend to work with them to develop a concrete idea of what we are supposed to achieve with our project over the course of this week.
 ## System Diagram
 ## Milestones
+- Complete description of project objectives and requirements compiled
+- Systems design finalised
+- Functional OCR implemented (PDF to text)
+- Text classification reached functional level
+- Database search through API implemented
+- Text classification works well
+- Database upload through API implemented
+- System passes testing
 ## Schedule
 1. Setup( 1 week):
 - Research some relevant biology/taxonomy information
@@ -54,4 +62,5 @@ As the project is being implemented as part of a secure system, it is important 
 | Yuan Yao               | u5945391       | Developer, Documentation        |
 
 ## Hyperlinks
+#### [Google Drive](https://drive.google.com/drive/folders/1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d?usp=sharing)
 #### [Google Drive](https://drive.google.com/drive/folders/1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d?usp=sharing)
