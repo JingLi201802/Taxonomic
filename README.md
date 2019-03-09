@@ -23,6 +23,7 @@ The client expects us to achieve some sort of functionality in terms of analysin
 - Database upload through API implemented
 - System passes testing
 ## Schedule
+# ![Schedule](Resources/Schedule1.png)
 1. Setup( 1 week):
 - Research some relevant biology/taxonomy information
 - Identify risks and risk management solutions
