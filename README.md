@@ -37,6 +37,7 @@ Table of Contents
 7. Documentation and Audit Preparation (6 weeks)
 - Finalise documentation for design, development and testing
 ## Risk Management
+As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
 ## Team Member
 
 | Team Member            | Uni ID         | Role                            |
