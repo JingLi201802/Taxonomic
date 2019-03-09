@@ -5,7 +5,7 @@ Table of Contents
   * [System Diagram](#system)
   * [Schedule](#schedule)
   * [Risk Management](#risk)
-  * [Team Member](#team)
+  * [Team Member](#team member)
   * [Hyperlinks](#hyperlinks)
 ## Introduction
 ## Client Expectation
