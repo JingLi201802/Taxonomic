@@ -1,10 +1,10 @@
 Table of Contents
 =================
   * [Introduction](#introduction)
-  * [Client Expectation](#client)
-  * [System Diagram](#system)
+  * [Client Expectation](#client-expectation)
+  * [System Diagram](#system-diagram)
   * [Schedule](#schedule)
-  * [Risk Management](#risk)
+  * [Risk Management](#risk-management)
   * [Team Member](#team-member)
   * [Hyperlinks](#hyperlinks)
 ## Introduction
