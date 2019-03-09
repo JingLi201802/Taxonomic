@@ -17,7 +17,7 @@ Table of Contents
 - Create a github project
 - Decide on preferred programming language and tools
 2. Research requirements(1 week):
-- Analysis clients’ requirements and decide on their difficulty and time requirement
+- Analyse clients’ requirements and decide on their difficulty and time requirement
 3. Software design( 2 - 3 weeks):
 - Design software structure
 - Design specific system functions
