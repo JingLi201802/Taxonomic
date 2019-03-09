@@ -43,7 +43,7 @@ As the project is being implemented as part of a secure system, it is important 
 | Team Member            | Uni ID         | Role                            |
 | -----------------------| ---------------| --------------------------------|
 | Jing Li                | u6531952       | Project Manager                 |
-| Biwei Cao              | u5926643       | Developer, Documenation (Agenda)|
+| Biwei Cao              | u5926643       | Developer, Documentation (Agenda)|
 | Jiaqi Zhang            | u6089193       | Developer                       |
 | Joshua Trevor          | u6405233       | Developer, Spokesperson         |
 | Yanlong LI             | u5890571       | Developer                       |
