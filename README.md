@@ -8,6 +8,7 @@ Table of Contents
   * [Team Member](#team-member)
   * [Hyperlinks](#hyperlinks)
 ## Introduction
+Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public
 ## Client Expectation
 ## System Diagram
 ## Schedule
