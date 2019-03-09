@@ -11,6 +11,31 @@ Table of Contents
 ## Client Expectation
 ## System Diagram
 ## Schedule
+1. Setup( 1 week):
+- Research some relevant biology/taxonomy information
+- Identify risks and risk management solutions
+- Create a github project
+- Decide on preferred programming language and tools
+2. Research requirements(1 week):
+- Analysis clients’ requirements and decide on their difficulty and time requirement
+3. Software design( 2 - 3 weeks):
+- Design software structure
+- Design specific system functions
+- Design database interactions and format
+- Perform any necessary technical research 
+4. Software development( 6 - 8 weeks):
+- Implement OCR
+- Implement text classification
+- Implement database searching
+- Implement adding to database
+- Potentially implement some form of UI
+5. Testing software(  2 weeks):
+- Create software testing plan
+- Create software testing use cases
+- Implement software testing methods
+6. System commissioning( 2 weeks):
+7. Documentation and Audit Preparation (6 weeks)
+- Finalise documentation for design, development and testing
 ## Risk Management
 ## Team Member
 
