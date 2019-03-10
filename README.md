@@ -45,10 +45,11 @@ In the next semester, we will continue the unfinished work of this semester and 
 - Implement database searching
 - Implement adding to database
 - Potentially implement some form of UI
-5. Testing software(  2 weeks):
+5. Testing software(  3 weeks):
 - Create software testing plan
 - Create software testing use cases
 - Implement software testing methods
+- User Acceptance Testing
 6. System commissioning( 2 weeks):
 7. Documentation and Audit Preparation (6 weeks)
 - Finalise documentation for design, development and testing
