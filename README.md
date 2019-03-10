@@ -64,4 +64,4 @@ As the project is being implemented as part of a secure system, it is important 
 | Yuan Yao               | u5945391       | Developer, Documentation        |
 
 ## Hyperlinks
-#### [Google Drive](https://drive.google.com/drive/folders/1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d?usp=sharing)
+#### [Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
