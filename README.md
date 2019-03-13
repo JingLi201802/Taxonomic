@@ -50,7 +50,7 @@ In the next semester, we will continue the unfinished work of this semester and 
 - Create software testing plan
   * Test for success transfer single pdf to text; 
   *	Test for success transfer multiple pdfs to texts;
-  * Test for fail to transfer other type files.
+  * Test for fail to transfer other type files;
   * Test for correctly extracting information from the one text, compared with the already manually classified publications from the clients;
   *	Test new publications.
 - Create software testing use cases
