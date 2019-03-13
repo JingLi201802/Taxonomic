@@ -61,6 +61,7 @@ In the next semester, we will continue the unfinished work of this semester and 
 - Finalise documentation for design, development and testing
 ## Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
+#### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
 ## Team Member
 
 | Team Member            | Uni ID         | Role                            |
