@@ -26,7 +26,7 @@ The client expects us to achieve some sort of functionality in terms of analysin
 ## Schedule
 At present, we can only make the plan for this semester (week 1 to week 14, week 7 and week 8 are the mid-term holidays). 
 In the next semester, we will continue the unfinished work of this semester and do testing. Whether to do the front-end part will be based on the progress of this semester and the communication with our client.
-# ![Schedule](Resources/Schedule2.png)
+# ![Schedule](Resources/Schedule3.png)
 1. Setup( 1 week):
 - Research some relevant biology/taxonomy information
 - Identify risks and risk management solutions
