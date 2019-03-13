@@ -40,13 +40,19 @@ In the next semester, we will continue the unfinished work of this semester and 
 - Design database interactions and format
 - Perform any necessary technical research 
 4. Software development( 6 - 8 weeks):
-- Implement OCR
-- Implement text classification
-- Implement database searching
-- Implement adding to database
-- Potentially implement some form of UI
+-	Implement OCR and create unit test
+-	Implement text classification and create unit test
+-	Implement database searching and create unit test
+-	Implement adding to database and create unit test
+-	Potentially implement some form of UI 
+
 5. Testing software(  3 weeks):
 - Create software testing plan
+  * Test for success transfer single pdf to text; 
+  *	Test for success transfer multiple pdfs to texts;
+  * Test for fail to transfer other type files.
+  * Test for correctly extracting information from the one text, compared with the already manually classified publications from the clients;
+  *	Test new publications.
 - Create software testing use cases
 - Implement software testing methods
 - User Acceptance Testing
