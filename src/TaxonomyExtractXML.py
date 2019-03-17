@@ -1,4 +1,5 @@
 def get_tag_dict():
+    """Reads tags_config.txt and maps each of the tags to their data category label. Returns a dictionary."""
     tag_source_file = open("../tags_config.txt", 'r')
     tag_dict = {}
     for line in tag_source_file.readlines():
