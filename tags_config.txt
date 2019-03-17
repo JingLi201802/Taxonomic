@@ -1,0 +1,7 @@
+#Lines beginning with # are ignored by the parser
+#Lines should be formatted as: tag1, tag2, tag3, tag4 -> categoryname (Spaces do not matter)
+
+#Right now this file is only an example for testing purposes
+
+species, species-name, speciesname, taxonomic-species-name -> species
+genus, genus-name, genusname, taxonomic-genus-name -> genus
