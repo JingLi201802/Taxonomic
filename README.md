@@ -75,3 +75,4 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Hyperlinks
 #### [Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
+#### [Meeting Agendas](https://drive.google.com/drive/folders/1_KeZeKK1Mx0rczbr_C6LoZK7RKhN_qU-)
