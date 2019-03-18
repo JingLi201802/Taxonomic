@@ -17,3 +17,4 @@ def get_tag_dict():
             tag_dict[tag] = category
     tag_source_file.close()
     return tag_dict
+
