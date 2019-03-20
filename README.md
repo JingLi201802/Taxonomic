@@ -6,8 +6,9 @@ Table of Contents
   * [Milestones](#milestones)
   * [Schedule](#schedule)
   * [Risk Management](#risk-management)
-  * [Team Member](#team-member)
-  * [Hyperlinks](#hyperlinks)
+  * [Team Member Roles](#team-member-roles)
+  * [Meeting Agenda](#meeting-agenda)
+  * [Resources](#resources)
 ## Introduction
 Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public. Automating this process will save our client time, effort and money which can be better spent elsewhere.
 ## Client Expectation
@@ -62,7 +63,7 @@ In the next semester, we will continue the unfinished work of this semester and 
 ## Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
 #### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
-## Team Member
+## Team Member Roles
 
 | Team Member            | Uni ID         | Role                            |
 | -----------------------| ---------------| --------------------------------|
@@ -73,6 +74,9 @@ As the project is being implemented as part of a secure system, it is important 
 | Yanlong LI             | u5890571       | Developer                       |
 | Yuan Yao               | u5945391       | Developer, Documentation        |
 
-## Hyperlinks
-#### [Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
+## Meeting Agenda
 #### [Meeting Agendas](https://drive.google.com/drive/folders/1_KeZeKK1Mx0rczbr_C6LoZK7RKhN_qU-)
+
+## Resources
+#### [Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
+
