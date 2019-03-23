@@ -76,6 +76,17 @@ As the project is being implemented as part of a secure system, it is important 
 | Yanlong LI             | u5890571       | Developer                       |
 | Yuan Yao               | u5945391       | Developer, Documentation        |
 
+
+##Communication tool
+1.Gmail
+2.Messenger
+3.Facebook
+
+## Development tool
+1. PyCharm(Python IDE)
+2. WebStorm(JavaScript)
+3. MySQL(Database)
+4. DreamWeaver(HTML, CSS, JavaScript)
 ## Meeting Agenda
 #### [Client Meeting](https://drive.google.com/drive/folders/1mm_xKNJ9t8DZAf-LZkJD0TDQlAKYAVky?usp=sharing)
 #### [Group Meeting](https://drive.google.com/drive/folders/1MDCKulVX2guaDb-cfK7kPHIie3Kgz8MA?usp=sharing)
