@@ -77,7 +77,7 @@ As the project is being implemented as part of a secure system, it is important 
 | Yuan Yao               | u5945391       | Developer, Documentation        |
 
 
-##Communication tool
+## Communication tool
 1.Gmail
 2.Messenger
 3.Facebook
