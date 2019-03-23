@@ -78,9 +78,9 @@ As the project is being implemented as part of a secure system, it is important 
 
 
 ## Communication tool
-1.Gmail
-2.Messenger
-3.Facebook
+1. Gmail
+2. Messenger
+3. Facebook
 
 ## Development tool
 1. PyCharm(Python IDE)
