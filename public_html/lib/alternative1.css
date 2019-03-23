@@ -1,0 +1,96 @@
+@charset "UTF-8";
+/* CSS Document */
+@media only screen and (max-width : 700px){
+	body{height: 100%;widows: 100%;overflow: visible;}
+	p{text-align: center;}
+	#menu{display: none;}
+	#oops{display: block; z-index: 99999; height: 100%;width: 100%}
+	.cont{display: none;}
+	#act{display: none;}
+    /*if width of window smaller than 700px than show a error message on screen to tall user the screen is too small to display
+      because under 700px width, this web could become so strange*/
+}
+@media only screen and (max-width: 1080px) and (min-width: 701px){
+    body{overflow-x:  hidden;}
+    #oops{display: none;}
+    #head{height: 120px;}
+    #head p{text-align: center;}
+    #menu{text-align: center;}
+    .cont{padding-top: 120px;}
+    :target:before {
+        content:"";
+        display: block;
+        height:120px; 
+    } 
+    /*if windows width between 701px and 1080px than change my web style to suit screen*/
+}
+@media only screen and (min-width:1081px){
+	#oops{display: none;}
+	#logo{
+	margin-left:5%;
+	margin-top:5px;
+	float: left;
+	}
+    #head{height: 80px;}
+    .cont{padding-top: 80px;}
+    #menu{text-align: right;}
+    :target:before {
+        content:"";
+        display: block;
+        height:80px; 
+    } 
+}
+
+body{
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+}
+
+li{
+	list-style: none;
+}
+/*header*/
+#head{
+	width: 100%;
+	background :#db3631;
+	position: fixed;
+	z-index: 999;
+}
+
+#head a{
+	text-decoration: none;
+	color:aliceblue;
+	margin-right: 20px;
+	font-size:20px;
+	right:10%;
+}
+
+#menu{
+	margin-top: 1%;
+}
+#menu li{
+	display: inline;
+}
+/*header*/
+/*footer*/
+#end{
+	width: 100%;
+	height: 90px;
+	margin-top: -3px;
+	background :#db3631;
+	text-align: center;
+	color: aliceblue;
+	font-family: "Myriad Pro Ultralight";
+}
+
+#end a{
+	font-size: 15px;
+	color:aliceblue;
+	text-decoration: none;
+}
+
+#end li{
+	display: inline;
+	margin-left: 20px;
+}
+
+.share{background: #db3631;}
