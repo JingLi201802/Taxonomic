@@ -67,14 +67,14 @@ As the project is being implemented as part of a secure system, it is important 
 #### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
 ## Team Member Roles
 
-| Team Member            | Uni ID         | Role                            |
-| -----------------------| ---------------| --------------------------------|
-| Jing Li                | u6531952       | Project Manager                 |
-| Biwei Cao              | u5926643       | Developer, Documentation (Agenda)|
-| Jiaqi Zhang            | u6089193       | Developer                       |
-| Joshua Trevor          | u6405233       | Developer, Spokesperson         |
-| Yanlong LI             | u5890571       | Developer                       |
-| Yuan Yao               | u5945391       | Developer, Documentation        |
+| Team Member            | Uni ID         | Role                                                                    |
+| -----------------------| ---------------| ------------------------------------------------------------------------|
+| Jing Li                | u6531952       | Project Manager, Developer(PDF type convert & Database)                 |
+| Biwei Cao              | u5926643       | Developer(data taxonomy & Database), Documentation (Agenda)             |
+| Jiaqi Zhang            | u6089193       | Developer(OCR & Testing)                                                |
+| Joshua Trevor          | u6405233       | Developer(data taxonomy), Spokesperson                                  |
+| Yanlong LI             | u5890571       | Developer(OCR & full steak web)                                         |
+| Yuan Yao               | u5945391       | Developer, Documentation                                                |
 
 
 ## Communication tool
