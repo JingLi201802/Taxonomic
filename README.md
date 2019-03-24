@@ -82,11 +82,24 @@ As the project is being implemented as part of a secure system, it is important 
 2. Messenger
 3. Facebook
 
+## Development environment
+-  Language: 
+   -  Python2 & Python3
+-  Data into database 
+   -  Python to SQL
+-  Database interface: 
+   -  SQL & NoSQL
+-  Testing: 
+   -  Unit test during development by black/white box
+   -  A/B test for the final stage 
+
 ## Development tool
 1. PyCharm(Python IDE)
 2. WebStorm(JavaScript)
 3. MySQL(Database)
 4. DreamWeaver(HTML, CSS, JavaScript)
+5. Tesseract(OCR)
+6. Imagemagic(PDF to image)
 
 ## Decision make procedures
 # ![Diagram](Resources/decision.jpg)
