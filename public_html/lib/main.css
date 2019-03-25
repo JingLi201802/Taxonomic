@@ -25,11 +25,16 @@
     height: 30px;
     width: 200px;
     margin-bottom: 10px;
+
+}
+ input:required:invalid{
+    border-radius: 3px;
 }
 
 
 #mainForm button{
     margin-top: 15px;
+    margin-bottom: 100px;
     border-style: none;
     border-radius: 3px;
     background: #db3631;
