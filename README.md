@@ -40,9 +40,9 @@ In the next semester, we will continue the unfinished work of this semester and 
 - Design specific system functions
 - Perform any necessary technical research 
 4. Software development( 8 - 10 weeks):
--	Implement text classification and create unit test
-  * Identify new species name;
-  * Find information related to this new species;
+- Implement text classification and create unit test
+  * Identify new species name; 
+  *	Find information related to this new species;
   * Format the extracted data in the same structure with client’s database.
 -	Implement adding to database and create unit test
 -	Design and develop UI and creat unit test
