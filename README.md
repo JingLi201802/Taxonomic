@@ -27,7 +27,7 @@ The client expects us to achieve some sort of functionality in terms of analysin
 ## Schedule
 At present, we can only make the plan for this semester (week 1 to week 14, week 7 and week 8 are the mid-term holidays). 
 In the next semester, we will continue the unfinished work of this semester and do testing. Whether to do the front-end part will be based on the progress of this semester and the communication with our client.
-# ![Schedule](Resources/Schedule3.png)
+# ![Schedule](Resources/Schedule4.png)
 1. Setup( 1 week):
 - Research some relevant biology/taxonomy information
 - Identify risks and risk management solutions
@@ -38,16 +38,17 @@ In the next semester, we will continue the unfinished work of this semester and 
 3. Software design( 2 - 3 weeks):
 - Design software structure
 - Design specific system functions
-- Design database interactions and format
 - Perform any necessary technical research 
-4. Software development( 6 - 8 weeks):
--	Implement OCR and create unit test
+4. Software development( 8 - 10 weeks):
 -	Implement text classification and create unit test
--	Implement database searching and create unit test
+  * Identify new species name
+  * Find information related to this new species
+  * Format the extracted data in the same structure with client’s database
 -	Implement adding to database and create unit test
--	Potentially implement some form of UI 
-
-5. Testing software(  3 weeks):
+-	Design and develop UI and creat unit test
+- Implement host server and creat unit test
+-	Implement OCR and create unit test
+5. Testing software( 3 - 4 weeks):
 - Create software testing plan
   * Test for success transfer single pdf to text; 
   *	Test for success transfer multiple pdfs to texts;
