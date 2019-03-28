@@ -24,20 +24,29 @@ def get_tag_dict():
 
 
 
-
 allinfoList=list()
 tempGenSpe=dict()  # {'genus':genus_name,''species':species_name}
 tempGenSpe['genus']=''
 tempGenSpe['species']=''
-
 df_nonEmpty=pd.DataFrame(columns=['genus','species'])
+spStructure='front/article-meta/abstract/p/italic/{http://www.plazi.org/taxpub}taxon-name/{http://www.plazi.org/taxpub}taxon-name-part'
+articleName='../26newSpecies.xml'
+
+# def nextToSpn():
+#     snpOutLoc='front/article-meta/abstract/p/'
+#     global articleName
+#     root=ET.parse(articleName)
+#     for item in root.iterfind(snpOutLoc):
+#         if item.attrib
 
 
-def get_species_related():
+def get_abstract_info():
+    """read the xml's abstract, extract new genus and species, store in a pandas structure"""
     global df_nonEmpty
-    spStructure='front/article-meta/abstract/p/italic/{http://www.plazi.org/taxpub}taxon-name/{http://www.plazi.org/taxpub}taxon-name-part'
+    global spStructure
+    global articleName
 
-    root=ET.parse('../26newSpecies.xml')
+    root=ET.parse(articleName)
 
 
     for item in root.iterfind(spStructure):
@@ -51,12 +60,52 @@ def get_species_related():
             df_nonEmpty=df_nonEmpty.append(insertRow,ignore_index=True)
             tempGenSpe['genus']=''
             tempGenSpe['species']=''
-    print(df_nonEmpty)
-
-
-get_species_related()
 
 
 
+get_abstract_info()
+print(df_nonEmpty)
+
+
+# def learnXml():
+#     import xml.etree.ElementTree as parse
+#
+#     root = parse.parse('../xmlExample.xml')    # Parse XML file
+#     doc = root.getroot()
+#
+#     """
+#     print(doc.tag)
+#     print(doc.attrib)
+#     """
+#     """
+#     rootT = root.find('channel/title')
+#     rootL = root.find('channel/link')
+#     rootD = root.find('channel/description')
+#     print(rootT.tag, rootT.attrib)
+#     print(rootL.tag, rootL.attrib)
+#     print(rootD.tag, rootD.attrib)
+#     print(rootT.text)
+#     print(rootL.text)
+#     print(rootD.text)
+#     """
+#
+#     """
+#     for c in root.iterfind('channel'):
+#         print(c.findtext('title'))
+#         print(c.findtext('link'))
+#         print(c.findtext('description'))
+#     """
+
+#     for item in root.iterfind('channel/item/values'):
+#         print(item.findtext('title'))
+#         print(item.findtext('link'))
+#         print(item.findtext('description'))
+#
+#
+#
+    # for it in root.iterfind('channel/item'):
+    #     print(it.tag, it.attrib)
+
+# learnXml()
 
 
