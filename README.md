@@ -11,6 +11,8 @@ Table of Contents
   * [Resources](#resources)
 ## Introduction
 Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public. Automating this process will save our client time, effort and money which can be better spent elsewhere.
+## Product Value
+Our project has high academic and economic value. The project will help our clients improve their data collection efficiency, which can save a lot of time for them. Also, the project output software is working on automatic data collection. Therefore, they can reduce labor consumption and save a lot of money. In addition, this project is working for an open source academic website, the success of our project will help many people improve their data searching speed on this web site.
 ## Client Expectation
 The client expects us to achieve some sort of functionality in terms of analysing documents in pdf form and returning scientific names present. At this point the client's expectations are not entirely clear and we intend to work with them to develop a concrete idea of what we are supposed to achieve with our project over the course of this week.
 ## System Diagram
@@ -66,14 +68,42 @@ As the project is being implemented as part of a secure system, it is important 
 #### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
 ## Team Member Roles
 
-| Team Member            | Uni ID         | Role                            |
-| -----------------------| ---------------| --------------------------------|
-| Jing Li                | u6531952       | Project Manager                 |
-| Biwei Cao              | u5926643       | Developer, Documentation (Agenda)|
-| Jiaqi Zhang            | u6089193       | Developer                       |
-| Joshua Trevor          | u6405233       | Developer, Spokesperson         |
-| Yanlong LI             | u5890571       | Developer                       |
-| Yuan Yao               | u5945391       | Developer, Documentation        |
+| Team Member            | Uni ID         | Role                                                                    |
+| -----------------------| ---------------| ------------------------------------------------------------------------|
+| Jing Li                | u6531952       | Project Manager, Developer(PDF type convert & Database)                 |
+| Biwei Cao              | u5926643       | Developer(data taxonomy & Database), Documentation (Agenda)             |
+| Jiaqi Zhang            | u6089193       | Developer(OCR & Testing)                                                |
+| Joshua Trevor          | u6405233       | Developer(data taxonomy), Spokesperson                                  |
+| Yanlong LI             | u5890571       | Developer(OCR & full steak web)                                         |
+| Yuan Yao               | u5945391       | Developer, Documentation                                                |
+
+
+## Communication tool
+1. Gmail
+2. Messenger
+3. Facebook
+
+## Development environment
+-  Language: 
+   -  Python2 & Python3
+-  Data into database 
+   -  Python to SQL
+-  Database interface: 
+   -  SQL & NoSQL
+-  Testing: 
+   -  Unit test during development by black/white box
+   -  A/B test for the final stage 
+
+## Development tool
+1. PyCharm(Python IDE)
+2. WebStorm(JavaScript)
+3. MySQL(Database)
+4. DreamWeaver(HTML, CSS, JavaScript)
+5. Tesseract(OCR)
+6. Imagemagic(PDF to image)
+
+## Decision make procedures
+# ![Diagram](Resources/decision.jpg)
 
 ## Meeting Agenda
 #### [Client Meeting](https://drive.google.com/drive/folders/1mm_xKNJ9t8DZAf-LZkJD0TDQlAKYAVky?usp=sharing)
