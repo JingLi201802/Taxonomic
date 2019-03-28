@@ -8,10 +8,10 @@ Table of Contents
   * [Schedule](#schedule)
   * [Risk Management](#risk-management)
   * [Team Member Roles](#team-member-roles)
-  * [Communiaction tools](#communication-tools)
-  * [Development environment](#development-environment)
-  * [Development tools](#development-tools)
-  * [Decision make procedures](#decision-make-procedures)
+  * [Communiaction Tools](#communication-tools)
+  * [Development Environment](#development-environment)
+  * [Development Tools](#development-tools)
+  * [Decision Make Procedures](#decision-make-procedures)
   * [Meeting Agenda](#meeting-agenda)
   * [Resources](#resources)
 ## Introduction
@@ -83,12 +83,12 @@ As the project is being implemented as part of a secure system, it is important 
 | Yuan Yao               | u5945391       | Developer, Documentation                                                |
 
 
-## Communication tools
+## Communication Tools
 1. Gmail
 2. Messenger
 3. Facebook
 
-## Development environment
+## Development Environment
 -  Language: 
    -  Python2 & Python3
 -  Data into database 
@@ -99,7 +99,7 @@ As the project is being implemented as part of a secure system, it is important 
    -  Unit test during development by black/white box
    -  A/B test for the final stage 
 
-## Development tools
+## Development Tools
 1. PyCharm(Python IDE)
 2. WebStorm(JavaScript)
 3. MySQL(Database)
@@ -107,7 +107,7 @@ As the project is being implemented as part of a secure system, it is important 
 5. Tesseract(OCR)
 6. Imagemagic(PDF to image)
 
-## Decision make procedures
+## Decision Make Procedures
 # ![Diagram](Resources/decision.jpg)
 
 ## Meeting Agenda
