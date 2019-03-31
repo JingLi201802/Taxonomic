@@ -4,6 +4,7 @@ Table of Contents
   * [Project Value](#project-value)
   * [Client Expectation](#client-expectation)
   * [Road Map and System Diagram](#road-map-and-system-diagram)
+  * [User Interface Prototype](#user-interface-prototype)
   * [Milestones](#milestones)
   * [Schedule](#schedule)
   * [Risk Management](#risk-management)
@@ -24,6 +25,8 @@ The client expects us to achieve some sort of functionality in terms of analysin
 ## Road Map and System Diagram
 # ![Diagram](Resources/roadmap.jpg)
 # ![Diagram](Resources/BackEndFlow.png)
+## User Interface Prototype
+# ![Diagram](Resources/UIPrototype.png)
 ## Milestones
 - Functional webclient interface
 - Enable uploading pdfs and viewing them as plain text in sub-window
