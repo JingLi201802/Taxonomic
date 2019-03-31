@@ -26,7 +26,7 @@ The client expects us to achieve some sort of functionality in terms of analysin
 # ![Diagram](Resources/roadmap.jpg)
 # ![Diagram](Resources/BackEndFlow.png)
 ## User Interface Prototype
-# ![Diagram](Resources/UIPrototype.png)
+# ![Diagram](Resources/UIPrototype.jpg)
 ## Milestones
 - Functional webclient interface
 - Enable uploading pdfs and viewing them as plain text in sub-window
