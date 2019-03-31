@@ -3,7 +3,7 @@ Table of Contents
   * [Introduction](#introduction)
   * [Project Value](#project-value)
   * [Client Expectation](#client-expectation)
-  * [System Diagram](#system-diagram)
+  * [Road Map & System Diagram](#road-map-&-system-diagram)
   * [Milestones](#milestones)
   * [Schedule](#schedule)
   * [Risk Management](#risk-management)
@@ -21,7 +21,8 @@ Our project aims to automate taxonomic data capture from scientific reports, som
 Our project has high academic and economic value. The project will help our clients improve their data collection efficiency, which can save a lot of time for them. Also, the project output software is working on automatic data collection. Therefore, they can reduce labor consumption and save a lot of money. In addition, this project is working for an open source academic website, the success of our project will help many people improve their data searching speed on this web site.
 ## Client Expectation
 The client expects us to achieve some sort of functionality in terms of analysing documents in pdf form and returning scientific names present. At this point the client's expectations are not entirely clear and we intend to work with them to develop a concrete idea of what we are supposed to achieve with our project over the course of this week.
-## System Diagram
+## Road Map & System Diagram
+# ![Diagram](Resources/roadmap.jpg)
 # ![Diagram](Resources/diagram.png)
 ## Milestones
 - Functional webclient interface
