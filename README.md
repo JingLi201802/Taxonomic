@@ -33,41 +33,41 @@ The client expects us to achieve some sort of functionality in terms of analysin
 - Propose XML schema which will allow trivial data extraction
 
 ## Schedule
-# ![Schedule](Resources/Schedule4.png)
-1. Setup( 1 week):
-- Research some relevant biology/taxonomy information
-- Identify risks and risk management solutions
-- Create a github project
-- Decide on preferred programming language and tools
-2. Research requirements(1 week):
-- Analyse clients’ requirements and decide on their difficulty and time requirement
-3. Software design( 2 - 3 weeks):
-- Design software structure
-- Design specific system functions
-- Perform any necessary technical research 
-4. Software development( 8 - 10 weeks):
-- Implement text classification and create unit test
-  * Identify new species name; 
-  *	Find information related to this new species;
-  * Format the extracted data in the same structure with client’s database.
--	Implement adding to database and create unit test
--	Design and develop UI and creat unit test
-- Implement host server and creat unit test
--	Implement OCR and create unit test
-5. Testing software( 3 - 4 weeks):
-- Create software testing plan
-  * Test for success transfer single pdf to text; 
-  *	Test for success transfer multiple pdfs to texts;
-  * Test for fail to transfer other type files;
-  * Test for correctly extracting information from the one text, compared with the already manually classified publications from the clients;
-  *	Test new publications.
-- Create software testing use cases
-- Implement software testing methods
-- User Acceptance Testing
-6. System commissioning( 2 weeks):
-7. Documentation and Audit Preparation (6 weeks)
-- Finalise documentation for design, development and testing
-## Risk Management
+Week 6:
+- Finalise higher level documentation (schedule, roles, milestones, audit ppt)
+- Prepare for audit
+
+Teaching break week 1:
+- Thoroughly investigate GoldenGate
+- Inquire about getting a web server set up with the ANU
+- Create lower level documentation, ie. pseudocode, overall program structure, algorithms and testing plan
+- Begin to design UI.
+
+Teaching break week 2: 
+- Complete development on basic interface, xml tag extraction and IBRA classification
+- Complete basic UI
+- Begin working on integrating GoldenGate with the server
+- Prepare for audit
+
+Week 7-8:
+- Continue Work on implementing GoldenGate interpreting of PDF files server-side (backend)
+- Create tools which allow the user to test the validity of output and fix it if necessary (frontend)
+- Try to implement audit feedback
+
+Week 9:
+- Create project poster
+- Meet with client and get feedback regarding program interface
+- Work to improve efficiency and accuracy of data classification and extraction
+
+Week 10:
+- Overall system testing
+- Finalise documentation
+- Prepare for audit
+
+Week 11:
+- Implement audit feedback
+- Prepare handover resources
+# Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
 #### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
 ## Team Member Roles
