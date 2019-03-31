@@ -23,7 +23,7 @@ Our project has high academic and economic value. The project will help our clie
 The client expects us to achieve some sort of functionality in terms of analysing documents in pdf form and returning scientific names present. At this point the client's expectations are not entirely clear and we intend to work with them to develop a concrete idea of what we are supposed to achieve with our project over the course of this week.
 ## Road Map and System Diagram
 # ![Diagram](Resources/roadmap.jpg)
-# ![Diagram](Resources/diagram.png)
+# ![Diagram](Resources/BackEndFlow.png)
 ## Milestones
 - Functional webclient interface
 - Enable uploading pdfs and viewing them as plain text in sub-window
