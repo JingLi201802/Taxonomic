@@ -8,7 +8,7 @@ body{
 .content{
     font-family:"Myriad Pro Ultralight";
     padding-bottom: 150px;
-    text-align: center;
+
 }
 
 .content div{
@@ -20,11 +20,31 @@ body{
     margin-top: 5%;
     height: 65%;
     width: 100%;
+    text-align: center;
+}
+
+#convert{
+    margin: 10px 25px -10px 80%;
+    border-radius: 5px;
+    border-style: none;
+    height: 25px;
+    width: 75px;
+    background: #0171C4;
+    color: #FFFFFF;
+    padding-left: 12px;
+}
+
+#convert:active{
+
 }
 
 #ui p{
     text-align: left;
     font-size: 20px;
+}
+
+#ui button{
+    text-align: left;
 }
 
 #upload {
