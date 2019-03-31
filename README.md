@@ -23,17 +23,16 @@ The client expects us to achieve some sort of functionality in terms of analysin
 ## System Diagram
 # ![Diagram](Resources/diagram.png)
 ## Milestones
-- Complete description of project objectives and requirements compiled
-- Systems design finalised
-- Functional OCR implemented (PDF to text)
-- Text classification reached functional level
-- Database search through API implemented
-- Text classification works well
-- Database upload through API implemented
-- System passes testing
+- Functional webclient interface
+- Enable uploading pdfs and viewing them as plain text in sub-window
+- Enable customising extractable tags
+- Implement automated IBRA7 region calculation
+- Successfully use GoldenGate to tag pdfs
+- Analyse and maximise the success rate of GoldenGate’s tagging
+- Analyse and maximise the success rate of tag extraction
+- Propose XML schema which will allow trivial data extraction
+
 ## Schedule
-At present, we can only make the plan for this semester (week 1 to week 14, week 7 and week 8 are the mid-term holidays). 
-In the next semester, we will continue the unfinished work of this semester and do testing. Whether to do the front-end part will be based on the progress of this semester and the communication with our client.
 # ![Schedule](Resources/Schedule4.png)
 1. Setup( 1 week):
 - Research some relevant biology/taxonomy information
@@ -84,17 +83,14 @@ As the project is being implemented as part of a secure system, it is important 
 
 
 ## Communication Tools
-1. Gmail
-2. Messenger
-3. Facebook
+1. Email
+2. Facebook Messenger
+3. Slack
 
 ## Development Environment
 -  Language: 
-   -  Python2 & Python3
--  Data into database 
-   -  Python to SQL
--  Database interface: 
-   -  SQL & NoSQL
+   - Java installation is necessary for GoldenGate
+   - Other languages not determined yet, most likely a combination of python, javascript and php will be used
 -  Testing: 
    -  Unit test during development by black/white box
    -  A/B test for the final stage 
@@ -102,7 +98,6 @@ As the project is being implemented as part of a secure system, it is important 
 ## Development Tools
 1. PyCharm(Python IDE)
 2. WebStorm(JavaScript)
-3. MySQL(Database)
 4. DreamWeaver(HTML, CSS, JavaScript)
 5. Tesseract(OCR)
 6. Imagemagic(PDF to image)
