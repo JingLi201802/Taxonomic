@@ -5,8 +5,10 @@ Table of Contents
   * [Client Expectation](#client-expectation)
   * [Road Map and System Diagram](#road-map-and-system-diagram)
   * [User Interface Prototype](#user-interface-prototype)
+  * [User Story Map](#user-story-map)
   * [Milestones](#milestones)
   * [Schedule](#schedule)
+  * [Progress](#progress)
   * [Risk Management](#risk-management)
   * [Team Member Roles](#team-member-roles)
   * [Communiaction Tools](#communication-tools)
@@ -27,6 +29,8 @@ The client expects us to achieve some sort of functionality in terms of analysin
 # ![Diagram](Resources/BackEndFlow.png)
 ## User Interface Prototype
 # ![Diagram](Resources/UIPrototype.jpg)
+## User Story Map
+# ![Diagram](Resources/usm.png)
 ## Milestones
 - Functional webclient interface
 - Enable uploading pdfs and viewing them as plain text in sub-window
@@ -72,6 +76,8 @@ Week 10:
 Week 11:
 - Implement audit feedback
 - Prepare handover resources
+## Progress
+# ![Diagram](Resources/Schedule6.png)
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
 #### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
