@@ -13,7 +13,7 @@ Table of Contents
   * [Development Tools](#development-tools)
   * [Decision Make Procedures](#decision-make-procedures)
   * [Meeting Agenda](#meeting-agenda)
-  * [Resources](#resources)
+  * [Other Resources](#other-resources)
 ## Introduction
 Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public. Automating this process will save our client time, effort and money which can be better spent elsewhere.
 # ![Diagram](Resources/concept_diagram.jpg)
@@ -112,6 +112,6 @@ As the project is being implemented as part of a secure system, it is important 
 #### [Client Meeting](https://drive.google.com/drive/folders/1mm_xKNJ9t8DZAf-LZkJD0TDQlAKYAVky?usp=sharing)
 #### [Group Meeting](https://drive.google.com/drive/folders/1MDCKulVX2guaDb-cfK7kPHIie3Kgz8MA?usp=sharing)
 
-## Resources
+## Other Resources
 #### [Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
 
