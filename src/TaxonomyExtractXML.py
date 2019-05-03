@@ -157,16 +157,16 @@ def snp_single_info(item2):
                                             break
 
     if (genus!='' and species!=''):
-        print('1: '+genus,species)
-        if holotype_and_loc!=None:
-            print('2:' +holotype_and_loc)
-        else:
-            print("")
-        if(coordinate!=None):
-            print("3:" +coordinate)
-        else:
-            print("")
-        print("-------------------------------------")
+        # print('1: '+genus,species)
+        # if holotype_and_loc!=None:
+        #     print('2:' +holotype_and_loc)
+        # else:
+        #     print("")
+        # if(coordinate!=None):
+        #     print("3:" +coordinate)
+        # else:
+        #     print("")
+        # print("-------------------------------------")
         return [genus,species,holotype_and_loc,coordinate]
     else:
 
@@ -229,7 +229,7 @@ def get_info_from_body():
     return df
 
 
-print(get_info_from_body())
+
 
 
 
