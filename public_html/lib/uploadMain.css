@@ -1,5 +1,7 @@
 @charset "UTF-8";
-/* CSS Document */
+/* CSS Document
+   the main style sheet for the upload page
+   */
 body{
     width: 100%;
     height: 100%;
@@ -35,6 +37,7 @@ body{
 }
 
 #convert:active{
+    background: #0165C0;
 
 }
 
@@ -54,14 +57,6 @@ body{
     margin-right: 5px;
 }
 
-#review{
-    /*position: absolute;*/
-    display: inline-block;
-    text-align: left;
-    font-size: 15px;
-    margin-left: 5px;
-}
-
 #upd {
     display: inline-block;
     text-align: right;
@@ -76,12 +71,25 @@ body{
     font-size: 15px;
     margin-left: 10px;
 }
+
+#review{
+    /*position: absolute;*/
+    display: inline-block;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 5px;
+    width: 500px;
+    height: 450px;
+    margin-right: 25px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
 form{
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 25%;
     padding: 7px;
-
 }
 
 textarea {

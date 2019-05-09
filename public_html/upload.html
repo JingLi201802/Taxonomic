@@ -41,29 +41,63 @@
 <!--Page body start here-->
     <div class="content">
         <div id="ui">
-            <button id="convert">PDF/XML</button>
-            <div id="upd">
+            <button id="convert" onclick="">PDF/XML</button>
+            <!--Add the script in onclick-->
+            <!--<div id="upd">-->
+                <!--<p>File upload</p>-->
+                <!--<textarea  name="mockupd" wrap="soft" maxlength="1024"></textarea>-->
+                <!--<br/>-->
+                <!--<button id="ana">Analysis</button>-->
+            <!--</div>-->
+
+            <div id="upload">
                 <p>File upload</p>
-                <textarea  name="mockupd" wrap="soft" maxlength="1024"></textarea>
-                <br/>
-                <button id="ana">Analysis</button>
+                <form id="updForm" method="post"  enctype="multipart/form-data">
+                    <!--{% csrf_token %}-->
+                    <!--Make sure add above line on the Django server.-->
+                    <input accept="application/pdf" name="upload_FILE" multiple=true name="updfiles" type="file">
+                    <!--Use the name to get files-->
+                    <button id="Submit" onclick="">Analysis</button>
+                    <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
+                </form>
             </div>
             <div id="rev">
                 <p>Data review</p>
-                <textarea  name="reviewRaw" wrap="soft" maxlength="1024"></textarea>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Sch0</td>
+                            <td>Sch1</td>
+                            <td>Sch2</td>
+                            <td>Sch3</td>
+                            <td>Sch4</td>
+                            <td>Sch5</td>
+                            <td>Sch6</td>
+                            <td>Sch7</td>
+                            <td>Sch8</td>
+                            <td>Sch9</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in data %}<!--modify the var inside on server-->
+                        <tr>
+                            <td>{{ result.Sch0}}</td>
+                            <td>{{ result.Sch1}}</td>
+                            <td>{{ result.Sch2}}</td>
+                            <td>{{ result.Sch3}}</td>
+                            <td>{{ result.Sch4}}</td>
+                            <td>{{ result.Sch5}}</td>
+                            <td>{{ result.Sch6}}</td>
+                            <td>{{ result.Sch7}}</td>
+                            <td>{{ result.Sch8}}</td>
+                            <td>{{ result.Sch9}}</td>
+                        </tr>
+                    {% end for %}
+                    </tbody>
+                </table>
                 <br/>
-                <button id="sub">Submit</button>
-            </div>
-            <div id="upload">
-<!--                <form id="updForm" method="post">-->
-<!--                    <input type="file" accept="application/pdf" name="updfiles" multiple=true>-->
-<!--                    <button id="Submit" onclick="">Submit</button>-->
-<!--                </form>-->
-            </div>
-            <div id="review">
-                <!--            <form id="review" method="post">-->
-                <!--                <input type="text" name="reviewRaw">-->
-                <!--            </form>-->
+                <button id="sub" onclick="">Submit</button>
+                <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->
             </div>
         </div>
     </div>
