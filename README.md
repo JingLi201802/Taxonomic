@@ -89,7 +89,7 @@ As the project is being implemented as part of a secure system, it is important 
 | Biwei Cao              | u5926643       | Developer(data taxonomy & Database), Documentation (Agenda)             |
 | Jiaqi Zhang            | u6089193       | Developer(OCR & Testing)                                                |
 | Joshua Trevor          | u6405233       | Developer(data taxonomy), Spokesperson                                  |
-| Yanlong LI             | u5890571       | Developer(OCR & full steak web)                                         |
+| Yanlong LI             | u5890571       | Developer(OCR & front end web)                                          |
 | Yuan Yao               | u5945391       | Developer, Documentation                                                |
 
 
