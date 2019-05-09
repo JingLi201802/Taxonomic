@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//TaxonX//DTD Taxonomic Treatment Publishing DTD v0 20100105//EN" "../../nlm/tax-treatment-NS0.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tp="http://www.plazi.org/taxpub" article-type="review-article" dtd-version="3.0" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">2</journal-id>
+      <journal-id journal-id-type="index">urn:lsid:arphahub.com:pub:45048d35-bb1d-5ce8-9668-537e44bd4c7e</journal-id>
+      <journal-id journal-id-type="aggregator">urn:lsid:zoobank.org:pub:91BD42D4-90F1-4B45-9350-EEF175B1727A</journal-id>
+      <journal-title-group>
+        <journal-title xml:lang="en">ZooKeys</journal-title>
+        <abbrev-journal-title xml:lang="en">ZK</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1313-2989</issn>
+      <issn pub-type="epub">1313-2970</issn>
+      <publisher>
+        <publisher-name>Pensoft Publishers</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3897/zookeys.840.31602</article-id>
+      <article-id pub-id-type="publisher-id">31602</article-id>
+      <article-id pub-id-type="other">urn:lsid:arphahub.com:pub:3649cd12-c745-5188-8e0b-c091df805ae5</article-id>
+      <article-id pub-id-type="other">urn:lsid:zoobank.org:pub:256DCD22-DA92-4AAA-B0CF-6129E0CFA15F</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Review Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="biological_taxon">
+          <subject>Diptera</subject>
+          <subject>Dolichopodidae</subject>
+        </subj-group>
+        <subj-group subj-group-type="scientific_subject">
+          <subject>Biodiversity &amp;amp; Conservation</subject>
+        </subj-group>
+        <subj-group subj-group-type="geological_era">
+          <subject>Precambrian</subject>
+        </subj-group>
+        <subj-group subj-group-type="geographical_area">
+          <subject>Asia</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Three new species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> from China, with an updated key to Chinese <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="subfamily">Rhaphiinae</tp:taxon-name-part></tp:taxon-name>)</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" xlink:type="simple" corresp="no">
+          <name name-style="western">
+            <surname>Qilemoge</surname>
+            <given-names/>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple" corresp="no">
+          <name name-style="western">
+            <surname>Wang</surname>
+            <given-names>Mengqing</given-names>
+          </name>
+          <xref ref-type="aff" rid="A2">2</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple" corresp="yes">
+          <name name-style="western">
+            <surname>Yang</surname>
+            <given-names>Ding</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+          <email xlink:type="simple">dyangacu@126.com</email>
+        </contrib>
+      </contrib-group>
+      <aff id="A1">
+        <label>1</label>
+        <addr-line content-type="verbatim">Department of Entomology, College of Plant Protection, China Agricultural University, Beijing 100193, China</addr-line>
+        <institution>China Agricultural University</institution>
+        <addr-line content-type="city">Beijing</addr-line>
+        <country>China</country>
+      </aff>
+      <aff id="A2">
+        <label>2</label>
+        <addr-line content-type="verbatim">Institute of Plant Protection, Chinese Academy of Agricultural Sciences, Beijing 100193, China</addr-line>
+        <institution>Institute of Plant Protection, Chinese Academy of Agricultural Sciences</institution>
+        <addr-line content-type="city">Beijing</addr-line>
+        <country>China</country>
+      </aff>
+      <author-notes>
+        <fn fn-type="corresp">
+          <p>Corresponding author: Ding Yang (<email xlink:type="simple">dyangcau@126.com</email>;<email xlink:type="simple">yangding@cau.edu.cn</email>)</p>
+        </fn>
+        <fn fn-type="edited-by">
+          <p>Academic editor: M. Ivković</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <year>2019</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>17</day>
+        <month>04</month>
+        <year>2019</year>
+      </pub-date>
+      <volume>840</volume>
+      <fpage>87</fpage>
+      <lpage>99</lpage>
+      <history>
+        <date date-type="received">
+          <day>13</day>
+          <month>11</month>
+          <year>2018</year>
+        </date>
+        <date date-type="accepted">
+          <day>06</day>
+          <month>03</month>
+          <year>2019</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Qilemoge, Mengqing Wang, Ding Yang</copyright-statement>
+        <license license-type="creative-commons-attribution" xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">
+          <license-p>This is an open access article distributed under the terms of the Creative Commons Attribution License (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="zoobank" xlink:type="simple">http://zoobank.org/256DCD22-DA92-4AAA-B0CF-6129E0CFA15F</self-uri>
+      <abstract>
+        <label>Abstract</label>
+        <p>At present, there are 26 species in the genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> Meigen known from China. In this paper, three species from China are described as new to science: <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part></tp:taxon-name></italic><bold>sp. n.</bold>, <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic><bold>sp. n.</bold>, and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part></tp:taxon-name></italic><bold>sp. n.</bold> A key to the Chinese species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> is provided.</p>
+      </abstract>
+      <kwd-group>
+        <label>Keywords</label>
+        <kwd>China</kwd>
+        <kwd>new species</kwd>
+        <kwd>
+          <italic>
+            <tp:taxon-name>
+              <tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part>
+            </tp:taxon-name>
+          </italic>
+        </kwd>
+      </kwd-group>
+    </article-meta>
+    <notes>
+      <sec sec-type="Citation" id="SECID0E3G">
+        <title>Citation</title>
+        <p>Qilemoge, Wang M, Yang D (2019) Three new species of <italic>Rhaphium</italic> from China, with an updated key to Chinese <italic>Rhaphium</italic> (Diptera, Dolichopodidae, Rhaphiinae). ZooKeys 840: 87–99. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.3897/zookeys.840.31602">https://doi.org/10.3897/zookeys.840.31602</ext-link></p>
+      </sec>
+    </notes>
+  </front>
+  <body>
+    <sec sec-type="Introduction" id="SECID0EFAAC">
+      <title>Introduction</title>
+      <p>The genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> Meigen belongs to the subfamily <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="subfamily">Rhaphiinae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>) with 199 known species worldwide (<xref ref-type="bibr" rid="B21">Yang et al. 2006</xref>, <xref ref-type="bibr" rid="B20">2011</xref>; <xref ref-type="bibr" rid="B4">Grichanov 2017</xref>). Twenty-six species have been recorded from China, with nine species only from Oriental China, 14 species only from Palaearctic China, two species from Oriental and Palaearctic China, and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="dilatatum">dilatatum</tp:taxon-name-part></tp:taxon-name></italic> Wiedemann, 1830 with an unclear Chinese distribution.</p>
+      <p>The specimens upon which this study is based were collected in Beijing as well as the Hebei, Qinghai, and Gansu regions of China. Gansu and Qinghai Provinces are located in northwestern China. Gansu Province has a temperate monsoon climate and lies between the Tibetan Plateau and the Loess Plateau. Qinghai Province has a plateau continental climate and is located in the northeastern part of the Tibetan Plateau. Beijing, the capital of China, is located in the north of the country and has a subtemperate climate. Hebei Province is also in the north, and its the climate is similar to that of Beijing. In the present paper, we describe three new species of the fauna of China and provide a key to all species of Chinese <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic>, except for <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="dilatatum">dilatatum</tp:taxon-name-part></tp:taxon-name></italic> Wiedemann, 1830 and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="relates">relates</tp:taxon-name-part></tp:taxon-name></italic> (Becker, 1922) because they are poorly described and the whereabouts of the holotypes are unknown.</p>
+    </sec>
+    <sec sec-type="materials|methods" id="SECID0ESCAC">
+      <title>Material and methods</title>
+      <p>The specimens in this study were collected by sweep nets and subsequently stored into 95% ethanol. All specimens are deposited in the Entomological Museum of China Agricultural University (CAU), Beijing. Morphological terminology for adult structures mainly follows <xref ref-type="bibr" rid="B2">Cumming and Wood (2009)</xref>. The following abbreviations are used: <bold><abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0E4CAC">acr</abbrev></bold> = acrostichal bristle(s), <bold><abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0ECDAC">ad</abbrev></bold> = anterodorsal bristle(s), <bold><abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EHDAC">av</abbrev></bold> = anteroventral bristle(s), <bold><abbrev xlink:title="cercus" id="ABBRID0EMDAC">cer</abbrev></bold> = cercus, <bold><abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0ERDAC">CuAx ratio</abbrev></bold> = length of m-cu / length of distal portion of CuA, <bold><abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EWDAC">dc</abbrev></bold> = dorsocentral bristle(s), <bold><abbrev xlink:title="notopleural bristle(s)" id="ABBRID0E2DAC">npl</abbrev></bold> = notopleural bristle(s), <bold><abbrev xlink:title="ocellar bristle(s)" id="ABBRID0EAEAC">oc</abbrev></bold> = ocellar bristle(s), <bold><abbrev xlink:title="postalar bristle(s)" id="ABBRID0EFEAC">pa</abbrev></bold> = postalar bristle(s), <bold><abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0EKEAC">pd</abbrev></bold> = posterodorsal bristle(s), <bold><abbrev xlink:title="postvertical bristle(s)" id="ABBRID0EPEAC">pvt</abbrev></bold> = postvertical bristle(s), <bold><abbrev xlink:title="supraalar bristle(s)" id="ABBRID0EUEAC">sa</abbrev></bold> = supraalar bristle(s), <bold><abbrev xlink:title="scutellar bristle(s)" id="ABBRID0EZEAC">sc</abbrev></bold> = scutellar bristle(s), <bold><abbrev xlink:title="surstylus" id="ABBRID0E5EAC">sur</abbrev></bold> = surstylus, <bold><abbrev xlink:title="vertical bristle(s)" id="ABBRID0EDFAC">vt</abbrev></bold> = vertical bristle(s).</p>
+    </sec>
+    <sec sec-type="Taxonomy" id="SECID0EHFAC">
+      <title>Taxonomy</title>
+      <tp:taxon-treatment>
+        <tp:treatment-meta>
+          <kwd-group>
+            <label>Taxon classification</label>
+            <kwd>
+              <named-content content-type="kingdom" xlink:type="simple">Animalia</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="order" xlink:type="simple">Diptera</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="family" xlink:type="simple">Dolichopodidae</named-content>
+            </kwd>
+          </kwd-group>
+        </tp:treatment-meta>
+        <tp:nomenclature>
+          <tp:taxon-name>
+            <tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part>
+          </tp:taxon-name>
+          <tp:taxon-authority>Meigen, 1803</tp:taxon-authority>
+          <tp:nomenclature-citation-list>
+            <tp:nomenclature-citation>
+              <tp:taxon-name>
+                <tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part>
+              </tp:taxon-name>
+              <comment>Meigen 1803: 272. Type species: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="macrocerum">macrocerum</tp:taxon-name-part></tp:taxon-name> Meigen, 1824.</comment>
+            </tp:nomenclature-citation>
+          </tp:nomenclature-citation-list>
+        </tp:nomenclature>
+        <tp:treatment-sec sec-type="diagnosis" id="SECID0E6GAC">
+          <title>Diagnosis.</title>
+          <p>Body small to large (1.5–5.7 mm); vertex flat; <abbrev xlink:title="ocellar bristle(s)" id="ABBRID0EFHAC">oc</abbrev> nearly as long as <abbrev xlink:title="vertical bristle(s)" id="ABBRID0EJHAC">vt</abbrev>; face obviously narrower than frons; clypeus not obviously separate from face; antenna black, first flagellomere mostly prolonged, 2–10 times longer than wide, arista apical; propleuron with dense pale white hairs, without distinct bristle; hind coxa with or without 1 outer bristle at middle; vein M straight and not bifurcated, R<sub>4+5</sub> parallel or slightly convergent with M in wing apex, <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0EPHAC">CuAx ratio</abbrev> less than 1; abdominal segments 1–3 usually with long pale hairs, abdominal segment 6 visible and pubescent; male genitalia connected tightly with pregenital segment, cap-like, cercus varied, often long and narrowed towards tip, sometimes bifurcate, with hairs and bristles at middle (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>).</p>
+        </tp:treatment-sec>
+      </tp:taxon-treatment>
+      <sec sec-type="Key to species (males) of Rhaphium from China" id="SECID0EXHAC">
+        <title>Key to species (males) of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> from China</title>
+        <table-wrap content-type="key" position="anchor" orientation="portrait">
+          <table id="TID0EPEAC" rules="all">
+            <tbody>
+              <tr>
+                <td rowspan="1" colspan="1">1</td>
+                <td rowspan="1" colspan="1">First flagellomere at least 4.0 times longer than wide (Fig. <xref ref-type="fig" rid="F2">6</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>2</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">First flagellomere at most 2.5 times longer than wide (Fig. <xref ref-type="fig" rid="F2">4</xref></td>
+                <td rowspan="1" colspan="1">
+                  <bold>13</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">2</td>
+                <td rowspan="1" colspan="1">Four <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EWJAC">dc</abbrev></td>
+                <td rowspan="1" colspan="1">
+                  <bold>3</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Five to six <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EHKAC">dc</abbrev></td>
+                <td rowspan="1" colspan="1">
+                  <bold>4</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">3</td>
+                <td rowspan="1" colspan="1">First flagellomere about 4.3 times longer than wide (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 799); 2 or 3 pairs of <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0E3KAC">acr</abbrev>; hairs and bristles on coxae black</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="apicinigrum">apicinigrum</tp:taxon-name-part></tp:taxon-name></italic> Yang &amp; Saigusa, 1999</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">First flagellomere about 8.2 times longer than wide; <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0E1LAC">acr</abbrev> absent (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 812); hairs and bristles on coxae pale yellow</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="sichuanense">sichuanense</tp:taxon-name-part></tp:taxon-name></italic> Yang &amp; Saigusa, 1999</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">4</td>
+                <td rowspan="1" colspan="1">Arista inflated apically (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 809)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="parentianum">parentianum</tp:taxon-name-part></tp:taxon-name></italic> Negrobov, 1979</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Arista simple, not inflated apically</td>
+                <td rowspan="1" colspan="1">
+                  <bold>5</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">5</td>
+                <td rowspan="1" colspan="1">Cercus bifoliate (Fig. <xref ref-type="fig" rid="F2">7</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>6</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Cercus not bifoliate</td>
+                <td rowspan="1" colspan="1">
+                  <bold>8</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">6</td>
+                <td rowspan="1" colspan="1">First flagellomere at most 7.0 times longer than wide (Fig. <xref ref-type="fig" rid="F2">6</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>7</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">First flagellomere at least 9.0 times longer than wide</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="bilobum">bilobum</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">7</td>
+                <td rowspan="1" colspan="1">All coxae black (Fig. <xref ref-type="fig" rid="F1">3</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic> sp. n.</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">All coxae yellow</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="daqinggouense">daqinggouense</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">8</td>
+                <td rowspan="1" colspan="1">First flagellomere at least 8.0 times longer than wide</td>
+                <td rowspan="1" colspan="1">
+                  <bold>9</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">First flagellomere at most 6.0 times longer than wide</td>
+                <td rowspan="1" colspan="1">
+                  <bold>10</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">9</td>
+                <td rowspan="1" colspan="1">Eight uniseriate <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EDDAE">acr</abbrev>; cercus nearly triangular, short, not bifurcated</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="neimengense">neimengense</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Five to eight irregularly paired <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EBEAE">acr</abbrev>; cercus deeply bifurcated into 2 long lobes (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 816)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="zhongdianum">zhongdianum</tp:taxon-name-part></tp:taxon-name></italic> Yang et Saigusa, 2001a</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">10</td>
+                <td rowspan="1" colspan="1">Palpus yellow; <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EDFAE">acr</abbrev> absent; surstylus bifurcated apically (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 802)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="furcatum">furcatum</tp:taxon-name-part></tp:taxon-name></italic> Yang &amp; Saigusa, 2000</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Palpus dark; <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EFGAE">acr</abbrev> present; surstylus not bifurcated apically</td>
+                <td rowspan="1" colspan="1">
+                  <bold>11</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">11</td>
+                <td rowspan="1" colspan="1">Five <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EXGAE">dc</abbrev>; surstylus long and thin, without apical incision</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="palliaristatum">palliaristatum</tp:taxon-name-part></tp:taxon-name></italic> Yang &amp; Saigusa, 2001b</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Six <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EVHAE">dc</abbrev>; surstylus short and wide, with apical incision</td>
+                <td rowspan="1" colspan="1">
+                  <bold>12</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">12</td>
+                <td rowspan="1" colspan="1">All coxae yellow; hind tibia yellow; surstylus with long thick hairs apically; cercus long band-like (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 815)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="xinjiangense">xinjiangense</tp:taxon-name-part></tp:taxon-name></italic> Yang, 1998a</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Only fore coxa yellow, mid and hind coxae black; hind tibia black; surstylus only with sparse short hairs; cercus long triangular (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 810)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="qinghaiense">qinghaiense</tp:taxon-name-part></tp:taxon-name></italic> Yang, 1998b</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">13</td>
+                <td rowspan="1" colspan="1">Fore tarsus modified</td>
+                <td rowspan="1" colspan="1">
+                  <bold>16</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore tarsus simple</td>
+                <td rowspan="1" colspan="1">
+                  <bold>19</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">14</td>
+                <td rowspan="1" colspan="1">Fore tarsomere 1 simple, fore tarsomere 5 with 2 Y-shaped apical bristles and 2 long strong bristles</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="dorsiseta">dorsiseta</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore tarsomere 1 modified, other various</td>
+                <td rowspan="1" colspan="1">
+                  <bold>15</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">15</td>
+                <td rowspan="1" colspan="1">Fore tarsomere 1 depressed dorsally but strongly raised ventrally</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="lumbricus">lumbricus</tp:taxon-name-part></tp:taxon-name></italic> Wei, 2006</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore tarsomere 1 inflated apically</td>
+                <td rowspan="1" colspan="1">
+                  <bold>16</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">16</td>
+                <td rowspan="1" colspan="1">Arista at least 1.4 as long as first flagellomere</td>
+                <td rowspan="1" colspan="1">
+                  <bold>17</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Arista at most 0.8 as long as first flagellomere (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 813)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="sinense">sinense</tp:taxon-name-part></tp:taxon-name></italic> Negrobov, 1979</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">17</td>
+                <td rowspan="1" colspan="1">Fore tarsomere 2 inflated, mid tarsomeres 4 and 5 inflated (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 800)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="baihuashanum">baihuashanum</tp:taxon-name-part></tp:taxon-name></italic> Yang, 1998a</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore and mid tarsi simple, not inflated</td>
+                <td rowspan="1" colspan="1">
+                  <bold>18</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">18</td>
+                <td rowspan="1" colspan="1">Middle and lower postocular bristles yellow; 8 <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0E6PAE">dc</abbrev>; mid femur yellow; cercus not bifoliate</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="heilongjiangense">heilongjiangense</tp:taxon-name-part></tp:taxon-name></italic> Wang, Yang &amp; Masunaga, 2005</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">All postocular bristles black; 5 <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0E4QAE">dc</abbrev>; mid femur black; cercus bifoliate</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part></tp:taxon-name></italic> sp.n.</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">19</td>
+                <td rowspan="1" colspan="1">Fore femur with row of strong ventral bristles or long ventral hairs</td>
+                <td rowspan="1" colspan="1">
+                  <bold>20</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore femur without distinct ventral bristle or hairs</td>
+                <td rowspan="1" colspan="1">
+                  <bold>21</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">20</td>
+                <td rowspan="1" colspan="1">First flagellomere about 2.1 times longer than wide; arista about 1.9 times longer than first flagellomere; fore femur with row of long pale yellow ventral bristles as long as width of fore femur; cercus wide but narrow at base and widened onwards, with distinct marginal denticles (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 811)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="riparium">riparium</tp:taxon-name-part></tp:taxon-name></italic> (Meigen, 1824)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">First flagellomere about 1.5 times longer than wide; arista about 2.8 times longer than first flagellomere; fore femur with 2 rows of long pale yellow bristles longer than width of fore femur; cercus very long, wide at basal half</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="apophysatum">apophysatum</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">21</td>
+                <td rowspan="1" colspan="1">Fore tarsus modified, tarsomere 1 with row of strong ventral bristles on basal half, tarsomere 2 inflated apically (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: fig. 807c)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>22</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore tarsus simple, tarsomere 1 without distinct ventral bristles, tarsomere 2 simple</td>
+                <td rowspan="1" colspan="1">
+                  <bold>23</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">22</td>
+                <td rowspan="1" colspan="1">Fore and mid femora yellow apically, fore and mid tibia yellow; fore coxa with black bristles and hairs</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="micans">micans</tp:taxon-name-part></tp:taxon-name></italic> (Meigen, 1824)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Fore femur, mid and hind tarsi dark; fore coxa with light yellow bristles and hairs</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="dispar">dispar</tp:taxon-name-part></tp:taxon-name></italic> Coquillett, 1898</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">23</td>
+                <td rowspan="1" colspan="1">All coxae dark, fore and mid femora yellow apically</td>
+                <td rowspan="1" colspan="1">
+                  <bold>24</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Basal half of fore coxa and apical 1/3 of hind femur dark</td>
+                <td rowspan="1" colspan="1">
+                  <bold>25</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">24</td>
+                <td rowspan="1" colspan="1">Hind tibia with 3 ventral bristles; mid tarsomere 1 1.1 times as long as hind tarsomere 1</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="wuduanum">wuduanum</tp:taxon-name-part></tp:taxon-name></italic> Wang, Yang &amp; Masunaga, 2005</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Hind tibia without distinct ventral bristles; mid tarsomere 1 1.4 times as long as hind tarsomere 1</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gansuanum">gansuanum</tp:taxon-name-part></tp:taxon-name></italic> Yang, 1998a</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">25</td>
+                <td rowspan="1" colspan="1">Mid coxa with 1 strong outer bristle, and bunch of ventral bristles; mid tibia with 1 <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EJZAE">av</abbrev></td>
+                <td rowspan="1" colspan="1">
+                  <bold>26</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Mid coxa only with only 1 strong outer bristle at middle, without bunch of ventral bristles; mid tibia without ventral bristles</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="bisectum">bisectum</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">26</td>
+                <td rowspan="1" colspan="1">Squama with yellow hairs; cercus not bifoliate; surstylus short and thick</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="mediocre">mediocre</tp:taxon-name-part></tp:taxon-name></italic> (Becker, 1922)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Squama with black hairs; cercus bifoliate; surstylus basally thick, apically sharp, with one protuberance (Fig. <xref ref-type="fig" rid="F3">9</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part></tp:taxon-name></italic> sp.n.</bold>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </table-wrap>
+      </sec>
+      <tp:taxon-treatment>
+        <tp:treatment-meta>
+          <kwd-group>
+            <label>Taxon classification</label>
+            <kwd>
+              <named-content content-type="kingdom" xlink:type="simple">Animalia</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="order" xlink:type="simple">Diptera</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="family" xlink:type="simple">Dolichopodidae</named-content>
+            </kwd>
+          </kwd-group>
+        </tp:treatment-meta>
+        <tp:nomenclature>
+          <tp:taxon-name>
+            <tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part>
+            <tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part>
+            <object-id content-type="zoobank" xlink:type="simple">http://zoobank.org/F056D53D-892F-4AC0-BB88-EE81DA991605</object-id>
+          </tp:taxon-name>
+          <tp:taxon-status>sp. n.</tp:taxon-status>
+          <xref ref-type="fig" rid="F1">Figures 1</xref>
+          <xref ref-type="fig" rid="F2">, 4</xref>
+          <xref ref-type="fig" rid="F2">, 5</xref>
+        </tp:nomenclature>
+        <tp:treatment-sec sec-type="diagnosis" id="SECID0EW4AE">
+          <title>Diagnosis.</title>
+          <p>First flagellomere about 2.2 times longer than wide; arista with basal segment 0.1 times as long as apical segment. All postocular bristles black. All coxae and femora black; fore tibia mainly yellow, black dorsally, mid tibia yellow, hind tibia mainly black, yellow at middle dorsally; fore tarsomere 1 inflated apically. Fore and mid coxae with black bristles, mid coxa apically with a bunch of black bristles, hind coxa with one black outer bristle. <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0E34AE">CuAx ratio</abbrev> 0.5. Surstylus short and thick, nearly square, with one apical protuberance. Cercus bifoliate, outer lobe and inner lobe strip-like, inner lobe 1/4 as long as outer lobe, apically with strong bristles.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="description" id="SECID0EA5AE">
+          <title>Description.</title>
+          <p>Male (Fig. <xref ref-type="fig" rid="F1">1</xref>). Body length 4.8 mm. Wing length 4.2 mm.</p>
+          <p>Head metallic green with pale gray pruinescence. Frons with white pruinescence. Face black with pale pruinescence, not as wide as first flagellomere (length). All postocular bristles black. Two <abbrev xlink:title="ocellar bristle(s)" id="ABBRID0EM5AE">oc</abbrev>, two <abbrev xlink:title="vertical bristle(s)" id="ABBRID0EQ5AE">vt</abbrev>, two <abbrev xlink:title="postvertical bristle(s)" id="ABBRID0EU5AE">pvt</abbrev>. Antenna (Fig. <xref ref-type="fig" rid="F2">4</xref>) black; first flagellomere elongated, about 2.2 times longer than wide, apically sharp; arista black, apical position, basal segment 0.1 times as long as apical segment. Proboscis black with black hairs, palpus black with black apical bristle and hairs.</p>
+          <p>Thorax metallic green with pale gray pruinescence. Mesonotum without dark spot. Hairs and bristles on thorax black. Five strong <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0E55AE">dc</abbrev>, four irregular pairs of <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EC6AE">acr</abbrev>, two strong <abbrev xlink:title="notopleural bristle(s)" id="ABBRID0EG6AE">npl</abbrev>, one strong <abbrev xlink:title="supraalar bristle(s)" id="ABBRID0EK6AE">sa</abbrev>, two strong <abbrev xlink:title="postalar bristle(s)" id="ABBRID0EO6AE">pa</abbrev>; scutellum with two pairs of <abbrev xlink:title="scutellar bristle(s)" id="ABBRID0ES6AE">sc</abbrev>, medial pair pubescent, lateral pair strong.</p>
+          <p>Legs black, all coxae and femora black; fore tibia mainly yellow, black dorsally, mid tibia yellow, hind tibia mainly black,yellow dorsally at middle; fore tarsomere 1 inflated apically, fore and mid tarsi black from tip of tarsomere 2 onwards, hind tarsus entirely black. Hairs and bristles on legs black. Fore and mid coxae with bristles, mid coxa apically with a bunch of bristles, hind coxa with one outer bristle. All femora with ventral bristles, mid and hind femora each with one preapical bristle. Fore tibia with five <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0EY6AE">ad</abbrev>, six <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0E36AE">pd</abbrev>, and four apical bristles, <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EBAAG">av</abbrev> absent,; mid tibia with two <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0EFAAG">ad</abbrev>, five <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0EJAAG">pd</abbrev>, three <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0ENAAG">av</abbrev>, and four apical bristles; hind tibia with three <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0ERAAG">ad</abbrev>, five <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0EVAAG">pd</abbrev>, three <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EZAAG">av</abbrev>, and three apical bristles. Relative lengths of tibia and 5 tarsomeres of fore leg 2.5 : 1.2 : 0.7 : 0.4 : 0.3 : 0.4; mid leg 3.2 : 1.7 : 0.8 : 0.6 : 0.5 : 0.4; hind leg 4.3 : 1.3 : 1.2 : 0.8 : 0.5 : 0.4. Wing hyaline, veins black; M bent medially, M and R<sub>4+5</sub> parallel apically; <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0E6AAG">CuAx ratio</abbrev> 0.5. Squama yellow with yellow hairs. Halter yellow.</p>
+          <p>Abdomen entirely metallic green with pale gray pruinescence. Hairs and bristles on abdomen black. Male genitalia (Fig. <xref ref-type="fig" rid="F2">5</xref>): epandrium black, nearly as long as wide. Surstylus black, short and thick, nearly square, with one apical protuberance. Cercus yellow, bifoliate, outer lobe and inner lobe strip-like, inner lobe 1/4 as long as outer lobe, both lobes with short bristles.</p>
+          <p>Female. Unknown.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="Types" id="SECID0EKBAG">
+          <title>Types.</title>
+          <p>Holotype male, CHINA, Qinghai, Gangchaxian, Shaliuhe, 3,200 m; collected by sweep net in grassland, 2015.VIII.06, leg. Liang Wang. Paratypes: one male, same data as holotype.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="distribution" id="SECID0EPBAG">
+          <title>Distribution.</title>
+          <p>Palaearctic: China (Qinghai).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="remarks" id="SECID0EUBAG">
+          <title>Remarks.</title>
+          <p>The new species is somewhat similar to <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="heilongjiangense">heilongjiangense</tp:taxon-name-part></tp:taxon-name></italic> Wang, Yang &amp; Masunaga, 2005, but the two species can be separated by several features. In <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part></tp:taxon-name></italic>, all postocular bristles are black, the thorax has five <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EQCAG">dc</abbrev>, and the mid femur is black (Fig. <xref ref-type="fig" rid="F1">1</xref>), the cercus is bifoliate (Fig. <xref ref-type="fig" rid="F2">5</xref>). In <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="heilongjiangense">heilongjiangense</tp:taxon-name-part></tp:taxon-name></italic>, the middle and lower postocular bristles are yellow, the thorax has eight <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EHDAG">dc</abbrev>, the mid femur is yellow, the cercus is not bifoliate (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: 1255, fig. 804).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="etymology" id="SECID0EPDAG">
+          <title>Etymology.</title>
+          <p>The specific name refers to the type locality, Gangcha.</p>
+        </tp:treatment-sec>
+      </tp:taxon-treatment>
+      <tp:taxon-treatment>
+        <tp:treatment-meta>
+          <kwd-group>
+            <label>Taxon classification</label>
+            <kwd>
+              <named-content content-type="kingdom" xlink:type="simple">Animalia</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="order" xlink:type="simple">Diptera</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="family" xlink:type="simple">Dolichopodidae</named-content>
+            </kwd>
+          </kwd-group>
+        </tp:treatment-meta>
+        <tp:nomenclature>
+          <tp:taxon-name>
+            <tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part>
+            <tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part>
+            <object-id content-type="zoobank" xlink:type="simple">http://zoobank.org/623CD00A-D4C1-44E2-9C60-A21AF345A650</object-id>
+          </tp:taxon-name>
+          <tp:taxon-status>sp. n.</tp:taxon-status>
+          <xref ref-type="fig" rid="F1">Figures 3</xref>
+          <xref ref-type="fig" rid="F2">, 6</xref>
+          <xref ref-type="fig" rid="F2">, 7</xref>
+        </tp:nomenclature>
+        <tp:treatment-sec sec-type="diagnosis" id="SECID0EIFAG">
+          <title>Diagnosis.</title>
+          <p>First flagellomere much elongated, about 7.0 times longer than wide; arista basal segment 0.5 times as long as apical segment. All coxae black, all femora mainly black except hind femur yellow ventrally at base. Fore and mid coxae with yellow bristles, mid coxa apically with a bunch of yellow bristles, hind coxa with one yellow outer bristle. <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0EOFAG">CuAx ratio</abbrev> 0.4. Surstylus finger-like, curved apically and rounded, without distinct bristle. Cercus bifoliate, outer lobe strip-like; inner lobe thick, strip-like, apically with three long and strong bristles.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="description" id="SECID0ESFAG">
+          <title>Description.</title>
+          <p>Male (Fig. <xref ref-type="fig" rid="F1">3</xref>). Body length 2.5 mm. Wing length 2.7 mm.</p>
+          <p>Head metallic green with pale gray pruinescence. Frons with white pruinescence. Face black with pale pruinescence, not as wide as first flagellomere (length). Upper postocular bristles black, middle and lower postocular bristles yellow. Two <abbrev xlink:title="ocellar bristle(s)" id="ABBRID0E5FAG">oc</abbrev>, two <abbrev xlink:title="vertical bristle(s)" id="ABBRID0ECGAG">vt</abbrev>, two <abbrev xlink:title="postvertical bristle(s)" id="ABBRID0EGGAG">pvt</abbrev>. Antenna (Fig. <xref ref-type="fig" rid="F2">6</xref>) black; first flagellomere elongated, about 7.0 times longer than wide, apically sharp; arista black, apical position, basal segment 0.5 times as long as apical segment. Proboscis brown with yellow hairs. Palpus brown with black apical bristle and hairs.</p>
+          <p>Thorax metallic green with pale gray pruinescence. Mesonotum without dark spot. Hairs and bristles on thorax black. Five strong <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EQGAG">dc</abbrev>, four irregular pairs of <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EUGAG">acr</abbrev>, two strong <abbrev xlink:title="notopleural bristle(s)" id="ABBRID0EYGAG">npl</abbrev>, one strong <abbrev xlink:title="supraalar bristle(s)" id="ABBRID0E3GAG">sa</abbrev>, two strong <abbrev xlink:title="postalar bristle(s)" id="ABBRID0EAHAG">pa</abbrev>; scutellum with two pairs of <abbrev xlink:title="scutellar bristle(s)" id="ABBRID0EEHAG">sc</abbrev>, medial pair pubescent, lateral pair strong.</p>
+          <p>Legs black; all coxae black, all femora mainly black except hind femur yellow ventrally at base. Hairs and bristles on legs black. Fore and mid coxa with yellow bristles, mid coxa apically with a bunch of yellow bristles, hind coxa with one yellow outer bristle. Mid and hind femora each with one preapical bristle. Fore tibia with one <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0EKHAG">ad</abbrev>, one <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0EOHAG">pd</abbrev>, one <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0ESHAG">av</abbrev>, and two apical bristles; mid tibia with two <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0EWHAG">ad</abbrev>, two <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0E1HAG">pd</abbrev>, one <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0E5HAG">av</abbrev>, and three apical bristles; hind tibia with three <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0ECIAG">ad</abbrev>, four <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0EGIAG">pd</abbrev>, two <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EKIAG">av</abbrev>, and four apical bristles. Relative lengths of tibia and 5 tarsomeres of fore leg 2.7 : 1.4 : 0.6 : 0.5 : 0.3 : 0.4; mid leg 4.0 : 2.1 : 1.0 : 0.5 : 0.4 : 0.5; hind leg 5.0 : 1.5 : 1.3 : 1.0 : 0.6 : 0.5. Wing hyaline, veins black; M bent medially, M and R<sub>4+5</sub> parallel apically; <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0EQIAG">CuAx ratio</abbrev> 0.4. Squama yellow with yellow hairs. Halter yellow.</p>
+          <p>Abdomen entirely metallic green with pale gray pruinescence. Hairs and bristles on abdomen black. Male genitalia (Fig. <xref ref-type="fig" rid="F2">7</xref>): epandrium black, nearly as long as wide. Surstylus finger-like, curved apically and rounded, without distinct bristle. Cercus bifoliate, outer lobe strip-like, apically with long strong bristles; inner lobe thick, strip-like, apically with three long strong bristles.</p>
+          <p>Female. Unknown.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="Types" id="SECID0E2IAG">
+          <title>Types.</title>
+          <p>Holotype male, CHINA, Qinghai, Gangchaxian, Shaliuhe, 3,200 m, collected by sweep net in grassland, 2015.VIII.06, leg. Liang Wang.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="distribution" id="SECID0EAJAG">
+          <title>Distribution.</title>
+          <p>Palaearctic: China (Qinghai).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="remarks" id="SECID0EFJAG">
+          <title>Remarks.</title>
+          <p>The new species is somewhat similar to <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="daqinggouense">daqinggouense</tp:taxon-name-part></tp:taxon-name></italic> Tang, Wang &amp; Yang, 2016, but the two species can be separated by several features. In <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic>, there are four pairs of <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EBKAG">acr</abbrev>, all coxae are black, and the surstylus is finger-like, curved apically (Fig. <xref ref-type="fig" rid="F2">7</xref>). In <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="daqinggouense">daqinggouense</tp:taxon-name-part></tp:taxon-name></italic>, there are eight pairs of <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EUKAG">acr</abbrev>, the all coxae are yellow, except mid coxa is black at basal half, the surstylus is oblanceolate, not curved apically (<xref ref-type="bibr" rid="B11">Tang et al. 2016</xref>: 587, fig. 14).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="etymology" id="SECID0E3KAG">
+          <title>Etymology.</title>
+          <p>The specific name refers to the type locality, Shaliuhe.</p>
+          <fig id="F1" position="float" orientation="portrait">
+            <label>Figures 1–3.</label>
+            <caption>
+              <p>Habitus, lateral view. <bold>1</bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part></tp:taxon-name></italic> sp. n. male <bold>2</bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part></tp:taxon-name></italic> sp. n., male <bold>3</bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic> sp. n., male. Scale bars: 1 mm.</p>
+            </caption>
+            <graphic xlink:href="zookeys-840-087-g001.jpg" position="float" orientation="portrait" xlink:type="simple" id="oo_294740.jpg"/>
+          </fig>
+          <fig id="F2" position="float" orientation="portrait">
+            <label>Figures 4–7.</label>
+            <caption>
+              <p><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part></tp:taxon-name></italic> sp. n., male <bold>4</bold> antenna, lateral view <bold>5</bold> genitalia, lateral view. <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic> sp. n., male <bold>6</bold> antenna, lateral view <bold>7</bold> genitalia, lateral view. Abbreviations: <abbrev xlink:title="surstylus" id="ABBRID0E2NAG">sur</abbrev> = surstylus, <abbrev xlink:title="cercus" id="ABBRID0E6NAG">cer</abbrev> (o) = outer lobe of cercus, <abbrev xlink:title="cercus" id="ABBRID0EDOAG">cer</abbrev> (i) = inner lobe of cercus. Scale bars: 0.2 mm.</p>
+            </caption>
+            <graphic xlink:href="zookeys-840-087-g002.jpg" position="float" orientation="portrait" xlink:type="simple" id="oo_294741.jpg"/>
+          </fig>
+        </tp:treatment-sec>
+      </tp:taxon-treatment>
+      <tp:taxon-treatment>
+        <tp:treatment-meta>
+          <kwd-group>
+            <label>Taxon classification</label>
+            <kwd>
+              <named-content content-type="kingdom" xlink:type="simple">Animalia</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="order" xlink:type="simple">Diptera</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="family" xlink:type="simple">Dolichopodidae</named-content>
+            </kwd>
+          </kwd-group>
+        </tp:treatment-meta>
+        <tp:nomenclature>
+          <tp:taxon-name>
+            <tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part>
+            <tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part>
+            <object-id content-type="zoobank" xlink:type="simple">http://zoobank.org/3F1A436B-AF12-49BA-A19A-7F1A163E7584</object-id>
+          </tp:taxon-name>
+          <tp:taxon-status>sp. n.</tp:taxon-status>
+          <xref ref-type="fig" rid="F1">Figures 2</xref>
+          <xref ref-type="fig" rid="F3">, 8</xref>
+          <xref ref-type="fig" rid="F3">, 9</xref>
+        </tp:nomenclature>
+        <tp:treatment-sec sec-type="diagnosis" id="SECID0EAQAG">
+          <title>Diagnosis.</title>
+          <p>First flagellomere about 1.8 times longer than wide; arista with basal segment 0.1 times as long as apical segment. Legs mainly yellow; fore coxa mainly yellow, black basally, mid and hind coxae mainly black, yellow apically; fore femur black dorsally, hind femur black apically; hind tarsus entirely black. Fore coxa with two black bristles, mid coxa with one black bristle at apical half, apically with a bunch of black bristles, hind coxa with one black outer bristle. <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0EGQAG">CuAx ratio</abbrev> 0.52. Surstylus basally thick, apically sharp, with one protuberance. Cercus bifoliate, outer lobe long strip-like, apical curlily with one long strong bristle; inner lobe short, 1/4 as long as outer lobe.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="description" id="SECID0EKQAG">
+          <title>Description.</title>
+          <p>Male (Fig. <xref ref-type="fig" rid="F1">2</xref>). Body length 3.8–4.0 mm. Wing length 3.1–3.3 mm.</p>
+          <p>Head metallic green with pale gray pruinescence. Frons with white pruinescence. Face dark metallic green with silvery white pruinescence, not as wide as first flagellomere (length). Upper postocular bristles black, middle and lower postocular bristles yellow. Two <abbrev xlink:title="ocellar bristle(s)" id="ABBRID0EWQAG">oc</abbrev>, two <abbrev xlink:title="vertical bristle(s)" id="ABBRID0E1QAG">vt</abbrev>, two <abbrev xlink:title="postvertical bristle(s)" id="ABBRID0E5QAG">pvt</abbrev>. Antenna (Fig. <xref ref-type="fig" rid="F3">8</xref>) black; first flagellomere elongated, about 1.8 times longer than wide, apically sharp; arista black, apical position, basal segment 0.1 times as long as apical segment. Proboscis black with black hairs, palpus black with black apical bristle and hairs.</p>
+          <p>Thorax metallic green with pale gray pruinescence. Mesonotum without dark spot. Hairs and bristles on thorax black. Five strong <abbrev xlink:title="dorsocentral bristle(s)" id="ABBRID0EIRAG">dc</abbrev>, four irregular pairs of <abbrev xlink:title="acrostichal bristle(s)" id="ABBRID0EMRAG">acr</abbrev>, two strong <abbrev xlink:title="notopleural bristle(s)" id="ABBRID0EQRAG">npl</abbrev>, one strong <abbrev xlink:title="supraalar bristle(s)" id="ABBRID0EURAG">sa</abbrev>, two strong <abbrev xlink:title="postalar bristle(s)" id="ABBRID0EYRAG">pa</abbrev>; scutellum with two pairs of <abbrev xlink:title="scutellar bristle(s)" id="ABBRID0E3RAG">sc</abbrev>, medial pair pubescent, lateral pair strong.</p>
+          <p>Legs mainly yellow; fore coxa mainly yellow, black basally, mid and hind coxae mainly black, yellow apically; fore femur black dorsally, hind femur black apically; fore tarsus black from tip of tarsomere 2 onwards, mid tarsus from tip of tarsomere 3 onward black, hind tarsus entirely black. Hairs and bristles on legs black. Fore coxa with two bristles, mid coxa with one black bristle at apical half, apically with a bunch of black bristles, hind coxa with one black outer bristle. Mid and hind femora each with one black preapical bristle. Fore tibia with two <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0ECSAG">ad</abbrev>, three <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0EGSAG">pd</abbrev>, and two apical bristles, <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EKSAG">av</abbrev> absent,; mid tibia with three <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0EOSAG">ad</abbrev>, four <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0ESSAG">pd</abbrev>, one <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0EWSAG">av</abbrev>, and three apical bristles; hind tibia with two <abbrev xlink:title="anterodorsal bristle(s)" id="ABBRID0E1SAG">ad</abbrev>, three <abbrev xlink:title="posterodorsal bristle(s)" id="ABBRID0E5SAG">pd</abbrev>, and three apical bristles, <abbrev xlink:title="anteroventral bristle(s)" id="ABBRID0ECTAG">av</abbrev> absent. Relative lengths of tibia and 5 tarsomeres of fore leg 2.2 : 1.3 : 1.2 : 0.5 : 0.5 : 0.3; mid leg 3.2 : 1.7 : 1.0 : 0.7 : 0.5 : 0.3; hind leg 4.2 : 1.2 : 1.3 : 1.0 : 0.7 : 0.4. Wing hyaline, veins black; M bent medially, M and R<sub>4+5</sub> parallel apically; <abbrev xlink:title="length of m-cu / length of distal portion of CuA" id="ABBRID0EITAG">CuAx ratio</abbrev> 0.52. Squama yellow with black hairs. Halter yellow.</p>
+          <p>Abdomen entirely metallic green with pale gray pruinescence. Hairs and bristles on abdomen black. Male genitalia (Fig. <xref ref-type="fig" rid="F3">9</xref>): epandrium black, nearly as long as wide. Surstylus yellow, basally thick, apically sharp, with one protuberance, without distinct bristles. Cercus bifoliate, outer lobe long strip-like, curled apically with one long strong bristle; inner lobe short, 1/4 as long as outer lobe, apically sharp with strong bristles.</p>
+          <p>Female. Unknown.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="Types" id="SECID0ETTAG">
+          <title>Types.</title>
+          <p>Holotype male, CHINA, Gansu, Tianshui, Maiji Mountain, 1,396 m, collected by sweep net in grassland, 2012.VII.16, leg. Zehui Kang. Paratypes: two males, same data as holotype; four males, Beijing, Miyunxian, Caojialucun, 561 m, collected by sweep net in grassland, 2013.V.23, leg. Xunkun Li.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="distribution" id="SECID0EYTAG">
+          <title>Distribution.</title>
+          <p>Palaearctic: China (Gansu, Beijing).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="remarks" id="SECID0E4TAG">
+          <title>Remarks.</title>
+          <p>The new species is similar to <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="mediocre">mediocre</tp:taxon-name-part></tp:taxon-name></italic> (Becker, 1922), but the two species can be separated by several features. In <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part></tp:taxon-name></italic>, the squama with black hairs, the surstylus is basally thick, apically sharp, has one protuberance and the cercus is bifoliate (Fig. <xref ref-type="fig" rid="F3">9</xref>). In <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="mediocre">mediocre</tp:taxon-name-part></tp:taxon-name></italic>, the squama with yellow hairs, the surstylus is short and thick, the cercus is not bifoliate (<xref ref-type="bibr" rid="B20">Yang et al. 2011</xref>: 1258, fig. 806).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="etymology" id="SECID0EMVAG">
+          <title>Etymology.</title>
+          <p>The specific name refers to the type locality, Tianshui.</p>
+          <fig id="F3" position="float" orientation="portrait">
+            <label>Figures 8, 9.</label>
+            <caption>
+              <p><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part></tp:taxon-name></italic> sp. n., male <bold>8</bold> antenna, lateral view <bold>9</bold> Genitalia, lateral view. Abbreviations: <abbrev xlink:title="surstylus" id="ABBRID0EIWAG">sur</abbrev> = surstylus, <abbrev xlink:title="cercus" id="ABBRID0EMWAG">cer</abbrev> (o) = outer lobe of cercus, <abbrev xlink:title="cercus" id="ABBRID0EQWAG">cer</abbrev> (i) = inner lobe of cercus. Scale bars: 0.2 mm.</p>
+            </caption>
+            <graphic xlink:href="zookeys-840-087-g003.jpg" position="float" orientation="portrait" xlink:type="simple" id="oo_294742.jpg"/>
+          </fig>
+        </tp:treatment-sec>
+      </tp:taxon-treatment>
+    </sec>
+    <sec sec-type="Discussion" id="SECID0EZWAG">
+      <title>Discussion</title>
+      <p><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> is quite a large genus in <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>. <xref ref-type="bibr" rid="B8">Negrobov (1986)</xref> proposed a key to Palaearctic and Nearctic species of the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="nasutum">nasutum</tp:taxon-name-part></tp:taxon-name></italic> group. <xref ref-type="bibr" rid="B3">Grichanov (2004)</xref> and <xref ref-type="bibr" rid="B5">Naglis (2009)</xref> mentioned the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="albifrons">albifrons</tp:taxon-name-part></tp:taxon-name></italic> group. Negrobov and Grichanov (2010) published on the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="crassipes">crassipes</tp:taxon-name-part></tp:taxon-name></italic> group. <xref ref-type="bibr" rid="B6">Naglis and Grootaert (2011)</xref> published the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="srilankensis">srilankensis</tp:taxon-name-part></tp:taxon-name></italic> group. <xref ref-type="bibr" rid="B9">Negrobov et al. (2011)</xref> proposed the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tridactylum">tridactylum</tp:taxon-name-part></tp:taxon-name></italic> group. <xref ref-type="bibr" rid="B10">Negrobov et al. (2013)</xref> described the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="ensicorne">ensicorne</tp:taxon-name-part></tp:taxon-name></italic> group. <xref ref-type="bibr" rid="B11">Tang et al. (2016)</xref> mentioned the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="bilobum">bilobum</tp:taxon-name-part></tp:taxon-name></italic> group and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="flavilabre">flavilabre</tp:taxon-name-part></tp:taxon-name></italic> group. In having the frons usually with white grey pruinosity, the hind coxa with a strong yellow outer bristle, the fore coxa without a comb of strong bristles, and the cercus usually bifoliated, <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic> sp. n. is included the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="albifrons">albifrons</tp:taxon-name-part></tp:taxon-name></italic> group. The other two new species described in this paper do not match the diagnosis of any known group.</p>
+      <p>As mentioned, there are 16 species previously recorded from Palaearctic China, and the three new species are all distributed in Palaearctic China. <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="gangchanum">gangchanum</tp:taxon-name-part></tp:taxon-name></italic> sp. n. and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="shaliuhense">shaliuhense</tp:taxon-name-part></tp:taxon-name></italic> sp. n. are collected from Qinghai province, and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="tianshuiense">tianshuiense</tp:taxon-name-part></tp:taxon-name></italic> sp. n. is recorded from Gansu Province and Beijing City. <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> can be considered a widespread genus in China (Fig. <xref ref-type="fig" rid="F4">10</xref>). However, Xinjiang, Xizang, and Inner Mongolia have few species, which might be because of the relatively dry climates of these three provinces. Inadequate collection might be another reason.</p>
+      <fig id="F4" position="float" orientation="portrait">
+        <label>Figure 10.</label>
+        <caption>
+          <p>Distribution map with records of all <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> species of China (except <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Rhaphium">R.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="dilatatum">dilatatum</tp:taxon-name-part></tp:taxon-name></italic> Wiedemann, 1830 because its distribution is uncertain).</p>
+        </caption>
+        <graphic xlink:href="zookeys-840-087-g004.jpg" position="float" orientation="portrait" xlink:type="simple" id="oo_294743.jpg"/>
+      </fig>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>Acknowledgments</title>
+      <p>We are very grateful to Dr Xuankun Li, Mr. Liang Wang, Dr Zehui Kang, and Ms Jinying Yang for collecting the specimens. We thank Dr Jon Gelhaus for helping us check our English and for giving us valuable advice. This project was supported by National Natural Science Foundation of China (31672326), the Project of International Cooperation of Ministry of Agricultural, China (2016–X48), and the key project of Science-technology basic condition platform from the Ministry of Science and Technology of China (No.2005DKA21402).</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Becker</surname><given-names>T</given-names></name></person-group> (<year>1922</year>) <article-title>Dipterologische Studien, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> der indo-australischen Region.</article-title><source>Capita Zoologica</source><volume>1</volume>(<issue>4</issue>): <fpage>1</fpage>–<lpage>247</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.5962/bhl.title.132893">https://doi.org/10.5962/bhl.title.132893</ext-link></mixed-citation>
+      </ref>
+      <ref id="B2">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Cumming</surname><given-names>JM</given-names></name><name name-style="western"><surname>Wood</surname><given-names>DM</given-names></name></person-group> (<year>2009</year>) <article-title>Adult morphology and terminology.</article-title> In: <person-group><name name-style="western"><surname>Brown</surname><given-names>BV</given-names></name><name name-style="western"><surname>Borkent</surname><given-names>A</given-names></name><name name-style="western"><surname>Cumming</surname><given-names>JM</given-names></name><name name-style="western"><surname>Wood</surname><given-names>DM</given-names></name><name name-style="western"><surname>Woodley</surname><given-names>NE</given-names></name><name name-style="western"><surname>Zumbado</surname><given-names>MA</given-names></name></person-group> (<role>Eds</role>) <issue-title>Manual of Central American Diptera, Vol.</issue-title><source>1. NRC Research Press, Ottawa</source>, <fpage>9</fpage>–<lpage>50</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B3">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Grichanov</surname><given-names>IY</given-names></name></person-group> (<year>2004</year>) <article-title>A list of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> from the Tyresta National Park, Sweden, with description of a new species of the genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> Meigen (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Zoosystematica Rossica</source><volume>12</volume>(<issue>2</issue>): <fpage>267</fpage>–<lpage>269</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B4">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Grichanov</surname><given-names>IY</given-names></name></person-group> (<year>2017</year>) <article-title>Alphabetic list of generic and specific names of predatory flies of the epifamily <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>), 2<sup>nd</sup> edn.</article-title><source>Plant Protection News Supplements</source><volume>23</volume>: <fpage>442</fpage>–<lpage>455</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B5">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Naglis</surname><given-names>S</given-names></name></person-group> (<year>2009</year>) <article-title>Some taxonomical changes in the genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>), with a key to the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species">albifrons</tp:taxon-name-part></tp:taxon-name></italic> species group.</article-title><source>Mitteilungen der Schweizerischen Entomologischen Gesellschaft</source><volume>82</volume>: <fpage>201</fpage>–<lpage>203</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B6">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Naglis</surname><given-names>S</given-names></name><name name-style="western"><surname>Grootaert</surname><given-names>P</given-names></name></person-group> (<year>2011</year>) <article-title>A remarkable new species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> Meigen (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>) from Sri Lanka.</article-title><source>Zootaxa</source><volume>2991</volume>: <fpage>44</fpage>–<lpage>48</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.11646/zootaxa.2991.1.6">https://doi.org/10.11646/zootaxa.2991.1.6</ext-link></mixed-citation>
+      </ref>
+      <ref id="B7">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Negrobov</surname><given-names>OP</given-names></name></person-group> (<year>1979</year>) <article-title><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>.</article-title> In: <person-group><name name-style="western"><surname>Lindner</surname><given-names>E</given-names></name></person-group> (<role>Ed.</role>) <issue-title>Die Fliegen der Palaearktischen Region 4 (5), Lieferung 322.</issue-title><source>E. Schweizerbart’sche Verlagsbuchhandlung, Stuttgart</source>, <fpage>475</fpage>–<lpage>530</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B8">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Negrobov</surname><given-names>OP</given-names></name></person-group> (<year>1986</year>) <article-title>Holarctic links in family <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>.</article-title><source>Biogeografiya Beringiiskogo sektora Subarktiki: Materialy Vsesoyuz, Simpoz, Magadan,</source><volume>1983</volume>: <fpage>161</fpage>–<lpage>168</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B9">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Negrobov</surname><given-names>OP</given-names></name><name name-style="western"><surname>Barkalov</surname><given-names>AV</given-names></name><name name-style="western"><surname>Selivanova</surname><given-names>OB</given-names></name></person-group> (<year>2011</year>) <article-title>New dolichopodid species of the genera <italic>Dolichopus Latreille</italic>, 1797 and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part></tp:taxon-name> Meigen</italic>, 1803 (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>) from Siberia.</article-title><source>Euroasian Entomological Journal</source><volume>10</volume>(<issue>2</issue>): <fpage>203</fpage>–<lpage>206</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B10">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Negrobov</surname><given-names>OP</given-names></name><name name-style="western"><surname>Grichanov</surname><given-names>IY</given-names></name><name name-style="western"><surname>Selivanova</surname><given-names>OV</given-names></name></person-group> (<year>2013</year>) <article-title>Palearctic species of the <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species">albifrons</tp:taxon-name-part></tp:taxon-name></italic> group (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Euroasian Entomological Journal</source><volume>12</volume>(<issue>6</issue>): <fpage>601</fpage>–<lpage>606</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B11">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Tang</surname><given-names>CF</given-names></name><name name-style="western"><surname>Wang</surname><given-names>N</given-names></name><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name></person-group> (<year>2016</year>) <article-title><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="subfamily">Rhaphiinae</tp:taxon-name-part></tp:taxon-name>) from China with six new species.</article-title><source>Zootaxa</source><volume>4162</volume>(<issue>3</issue>): <fpage>581</fpage>–<lpage>593</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.11646/zootaxa.4162.3.11">https://doi.org/10.11646/zootaxa.4162.3.11</ext-link></mixed-citation>
+      </ref>
+      <ref id="B12">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Wang</surname><given-names>MQ</given-names></name><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Masunaga</surname><given-names>K</given-names></name></person-group> (<year>2005</year>) <article-title>Notes on <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Rhaphium</tp:taxon-name-part></tp:taxon-name></italic> Meigen from the Chinese mainland (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Transactions of the American Entomological Society</source><volume>131</volume>: <fpage>403</fpage>–<lpage>409</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B13">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Wei</surname><given-names>L</given-names></name></person-group> (<year>2006</year>) <article-title><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>.</article-title> In: <person-group><name name-style="western"><surname>Li</surname><given-names>Z</given-names></name><name name-style="western"><surname>Jin</surname><given-names>D</given-names></name></person-group> (<role>Eds</role>) <issue-title>Insects from Fanjingshan Landscape.</issue-title><source>Guizhou Science and Technology Publishing House, Guiyang</source>, <fpage>468</fpage>–<lpage>502</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B14">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name></person-group> (<year>1998a</year>) <article-title>New and little known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> from China (I).</article-title><source>Bulletin de l’Institute Royal des Sciences Naturelles de Belgique, Entomologie</source><volume>68</volume>: <fpage>151</fpage>–<lpage>164</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B15">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name></person-group> (<year>1998b</year>) <article-title>New and little known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> from China (III).</article-title><source>Bulletin de l’Institute Royal des Sciences Naturelles de Belgique, Entomologie</source><volume>68</volume>: <fpage>177</fpage>–<lpage>183</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B16">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Saigusa</surname><given-names>T</given-names></name></person-group> (<year>1999</year>) <article-title>New and little known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> from China (VI).</article-title><source>Bulletin de l’Institute Royal des Sciences Naturelles de Belgique, Entomologie</source><volume>69</volume>: <fpage>233</fpage>–<lpage>250</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B17">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Saigusa</surname><given-names>T</given-names></name></person-group> (<year>2000</year>) <article-title>New and little known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> from China (VII): <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name> from Emei Mountain (2).</article-title><source>Bulletin de l’Institute Royal des Sciences Naturelles de Belgique, Entomologie</source><volume>70</volume>: <fpage>219</fpage>–<lpage>242</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B18">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Saigusa</surname><given-names>T</given-names></name></person-group> (<year>2001a</year>) <article-title>New and little known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>) from China (IX).</article-title><source>Bulletin de l’Institute Royal des Sciences Naturelles de Belgique, Entomologie</source><volume>71</volume>: <fpage>165</fpage>–<lpage>188</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B19">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Saigusa</surname><given-names>T</given-names></name></person-group> (<year>2001b</year>) <article-title>New and little known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>) from China (XI).</article-title><source>Bulletin de l’Institute Royal des Sciences Naturelles de Belgique, Entomologie</source><volume>71</volume>: <fpage>237</fpage>–<lpage>256</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B20">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Zhang</surname><given-names>LL</given-names></name><name name-style="western"><surname>Wang</surname><given-names>MQ</given-names></name><name name-style="western"><surname>Zhu</surname><given-names>YJ</given-names></name></person-group> (<year>2011</year>) Fauna Sinica <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="class">Insecta</tp:taxon-name-part></tp:taxon-name> Vol. 53. <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name>. Science Press, Beijing, 1241–1273.</mixed-citation>
+      </ref>
+      <ref id="B21">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>D</given-names></name><name name-style="western"><surname>Zhu</surname><given-names>YJ</given-names></name><name name-style="western"><surname>Wang</surname><given-names>MQ</given-names></name><name name-style="western"><surname>Zhang</surname><given-names>LL</given-names></name></person-group> (<year>2006</year>) World catalog of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dolichopodidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="class">Insecta</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Diptera</tp:taxon-name-part></tp:taxon-name>). China Agricultural University Press, Beijing, 340–357.</mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>

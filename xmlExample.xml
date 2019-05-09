@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">      #doc.tag doc.attrib
+	<channel>
+		<title name="rootTitle">ROOT channel title</title> #title is tag; name:rootTitle is attrib;ROOT channel titleis text
+		<link name="rootLink">http://www.root-channel-link.com</link>
+		<description name="rootDesc">ROOT channel desc</description>
+		<item name="Item1 name">
+			<values count="3">
+				<title itemTitle="tit1">SUB channel title-1</title>
+				<link itemLink="lnk1">http://www.sub-channel-link-1.com</link>
+				<description itemDesc="desc1">SUB channel desc-1</description>
+			</values>
+		</item>
+		<item name="Item2 name">
+			<values count="3000">
+				<title itemTitle="tit2">SUB channel title-2</title>
+				<link itemLink="lnk2">http://www.sub-channel-link-2</link>
+				<description itemDesc="desc2">SUB channel desc-2</description>
+			</values>
+		</item>
+	</channel>
+</rss>
