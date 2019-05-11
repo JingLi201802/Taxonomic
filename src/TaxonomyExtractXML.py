@@ -255,6 +255,8 @@ def output_info():
 
 
 get_doi()
+data = get_info_from_body()
+data.to_excel("taxonomy.xls", index=False)
 print('doi is: '+doi)
 print('ZooBank number is: \n'+zooBankNumber)
 
