@@ -135,7 +135,7 @@ def write_excel(a_list,r_list):
             if col in ref_list[num].keys():
                 value = ref_list[num][col]
                 row.write(index, value)
-    book.save("test.xls")
+    book.save("taxonomy.xls")
 
 
 
@@ -195,7 +195,10 @@ def get_reference_information():
                 for t2 in t1:
                     print(t2.text)
 """
+
+
 lists,ref_list = get_contri_info()
 
-
-write_excel(lists,ref_list)
+def write_reference_to_excel():
+    write_excel(lists,ref_list)
+write_reference_to_excel()

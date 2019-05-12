@@ -1,8 +1,10 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
+from xlrd import open_workbook
+from xlutils.copy import copy
 import xlwt
-import xlsxwriter
-# from xml_reader import reference_info_extraction
+
+from xml_reader import reference_info_extraction
 
 
 
@@ -235,8 +237,11 @@ def write_species_to_excel():
     zoobank_data='ZooBank number is: \n'+zooBankNumber
     articledata=[doi_data,zoobank_data]
     body_data = get_info_from_body()
-    workbook=xlsxwriter.Workbook('taxonomy.xls')
-    worksheet=workbook.add_worksheet('taxonomic_name')
+
+    rb=open_workbook('taxonomy.xls')
+    workbook=copy(rb)
+
+    worksheet=workbook.add_sheet('taxonomic_name')
     worksheet.write(0,0,doi_data)
     worksheet.write(1,0,zoobank_data)
     column_name=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status']
@@ -250,13 +255,11 @@ def write_species_to_excel():
             worksheet.write(i+pre_row_number,j,body_data.iloc[i,j])
 
 
-    workbook.close()
+    workbook.save('taxonomy.xls')
 
-# reference_info_extraction.write_excel()
+
+reference_info_extraction.write_reference_to_excel()
 write_species_to_excel()
-
-
-
 
 
 
