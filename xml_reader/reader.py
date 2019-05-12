@@ -171,6 +171,7 @@ def snp_single_info(item2):
         #     print('5:'+taxon_status)
         #
         # print("-------------------------------------")
+
         return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
     else:
 
