@@ -43,17 +43,11 @@
         <div id="ui">
             <button id="convert" onclick="">PDF/XML</button>
             <!--Add the script in onclick-->
-            <!--<div id="upd">-->
-                <!--<p>File upload</p>-->
-                <!--<textarea  name="mockupd" wrap="soft" maxlength="1024"></textarea>-->
-                <!--<br/>-->
-                <!--<button id="ana">Analysis</button>-->
-            <!--</div>-->
 
             <div id="upload">
                 <p>File upload</p>
                 <form id="updForm" method="post"  enctype="multipart/form-data">
-                    <!--{% csrf_token %}-->
+                    {% csrf_token %}
                     <!--Make sure add above line on the Django server.-->
                     <input accept="application/pdf" name="upload_FILE" multiple=true name="updfiles" type="file">
                     <!--Use the name to get files-->
