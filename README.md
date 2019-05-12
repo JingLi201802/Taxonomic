@@ -20,8 +20,8 @@ Table of Contents
 ## Introduction
 Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public. Automating this process will save our client time, effort and money which can be better spent elsewhere.
 # ![Diagram](Resources/concept_diagram.jpg)
-## Product Value
-Our project has high academic and economic value. The project will help our clients improve their data collection efficiency, which can save a lot of time for them. Also, the project output software is working on automatic data collection. Therefore, they can reduce labor consumption and save a lot of money. In addition, this project is working for an open source academic website, the success of our project will help many people improve their data searching speed on this web site.
+## Project Value
+Documenting fundamental taxonomic information could increase knowledge of Australia’s biodiversity, underpins knowledge and decision-making across government, science and industry. It will support the biological and ecological research, sustainable management of biodiversity, conservation protection, biosecurity and the management of invasive species; and understanding the impacts of environmental change on biodiversity. Our project will  build an web-based automatic data collection application. Therefore, it can improve the data collection efficiency for ABRS, optimise extraction accuracy, reduce their labor consumption and save a lot of money.  
 ## Client Expectation
 The client expects us to achieve some sort of functionality in terms of analysing documents in pdf form and returning scientific names present. At this point the client's expectations are not entirely clear and we intend to work with them to develop a concrete idea of what we are supposed to achieve with our project over the course of this week.
 ## Road Map and System Diagram
