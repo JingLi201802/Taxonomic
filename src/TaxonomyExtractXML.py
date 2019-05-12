@@ -31,12 +31,12 @@ def get_tag_dict():
 
 
 
-#articleName='../aTerrestrialFrog.xml'
-articleName='../26newSpecies.xml'
-#articleName='../NewGeneraOfAustralianStilettoFlies.xml'
-#articleName='../aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
-#articleName='../ThreeNewSpeciesOfRhaphiumfromChina.xml'
-#articleName='../AnewNigerianHunterSnailSpecies.xml'
+#articleName='aTerrestrialFrog.xml'
+articleName='26newSpecies.xml'
+#articleName='NewGeneraOfAustralianStilettoFlies.xml'
+#articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
+#articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
+#articleName='AnewNigerianHunterSnailSpecies.xml'
 
 tree=ET.parse(articleName)
 root=tree.getroot()
@@ -96,18 +96,35 @@ def get_coordinates(itemP):
                         return it1.text
 
 
+def get_family(it):
+    family=''
+    for it1 in it:
+        for it2 in it1:
+            for it3 in it2:
+                if ('content-type' in it3.attrib) and it3.attrib['content-type']=='family':
+
+                    family=it3.text
+                    return family
+
+
+    return family
+
 
 def snp_single_info(item2):
+    family=''
     genus=''
+    subgenus=''
     species=''
     holotype_and_loc=''
     coordinate=''
+    taxon_authority=''
+    taxon_status=''
 
 
     if item2.tag=='{http://www.plazi.org/taxpub}taxon-treatment':
-
         for item3 in item2:
-
+            if item3.tag=='{http://www.plazi.org/taxpub}treatment-meta':
+                family=get_family(item3)
             if item3.tag=='{http://www.plazi.org/taxpub}nomenclature':
 
                 if item3.findall('{http://www.plazi.org/taxpub}taxon-name') and \
@@ -122,10 +139,15 @@ def snp_single_info(item2):
 
                                         genus=item5.text
                                         #print(genus)
-
+                                    if item5.attrib['taxon-name-part-type']=='subgenus':
+                                        subgenus=item5.text
                                     if item5.attrib['taxon-name-part-type']=='species':
                                         species=item5.text
                                         #print(species)
+                        if item4.tag=='{http://www.plazi.org/taxpub}taxon-authority':
+                            taxon_authority=item4.text
+                        if item4.tag=='{http://www.plazi.org/taxpub}taxon-status':
+                            taxon_status=item4.text
 
             if item3.tag=='{http://www.plazi.org/taxpub}treatment-sec':
                 if 'holotype' in item3.attrib['sec-type'].lower() or 'material' in item3.attrib['sec-type'].lower()\
@@ -135,8 +157,8 @@ def snp_single_info(item2):
                         if item41.tag=='p' and holotype_and_loc=='':
 
                             if item41.text!=None:
-                                if (('male' in item41.text.lower()) or ('female' in item41.text.lower())) \
-                                        and  ('holotype' in item41.text.lower()):
+                                if ((('male' in item41.text.lower()) or ('female' in item41.text.lower())) \
+                                        and  ('holotype' in item41.text.lower()))or ('holotype' in item41.text.lower()):
                                     holotype_and_loc=item41.text
                                     coordinate=get_coordinates(item41)
 
@@ -156,18 +178,23 @@ def snp_single_info(item2):
                                             coordinate=get_coordinates(item41)
                                             break
 
-    if (genus!='' and species!=''):
-        # print('1: '+genus,species)
-        # if holotype_and_loc!=None:
-        #     print('2:' +holotype_and_loc)
-        # else:
-        #     print("")
-        # if(coordinate!=None):
-        #     print("3:" +coordinate)
-        # else:
-        #     print("")
-        # print("-------------------------------------")
-        return [genus,species,holotype_and_loc,coordinate]
+    if (genus!='' or species!=''):
+        print('1: ')
+        print(family)
+        print(genus)
+        print(subgenus)
+        print(species)
+        if taxon_authority!=None:
+            print('2:'+taxon_authority)
+        if holotype_and_loc!=None:
+            print('3:' +holotype_and_loc)
+        if(coordinate!=None):
+            print("4:" +coordinate)
+        if taxon_status!=None:
+            print('5:'+taxon_status)
+
+        print("-------------------------------------")
+        return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
     else:
 
         return ([])
@@ -180,7 +207,7 @@ def get_info_recursive(item):
     for ite1 in item:
         if ('sec-type' in ite1.attrib):
 
-            if ('Systematic' or 'systematic' or 'Taxonomy' or 'taxonomy' ) in ite1.attrib['sec-type']:
+            if ( 'systematic' or 'taxonomy' ) in ite1.attrib['sec-type'].lower():
 
                 for ite2 in ite1:
 
@@ -191,7 +218,6 @@ def get_info_recursive(item):
 
                         return row
             else:
-
                 get_info_recursive(ite1)
 
 
@@ -201,13 +227,12 @@ def get_info_recursive(item):
 def get_info_from_body():
 
     global root
-    df=pd.DataFrame(columns=['genus','species','holotype','coordinates'])
+    df=pd.DataFrame(columns=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
 
     for item in root.iterfind('./body/sec'):
         if(item.tag=='sec'):
 
-            if ('Systematic' in item.attrib['sec-type']) or ('systematic' in item.attrib['sec-type']) or \
-                    ('Taxonomy' in item.attrib['sec-type'])or ('taxonomy' in item.attrib['sec-type']):
+            if ('systematic' in item.attrib['sec-type'].lower()) or ('taxonomy' in item.attrib['sec-type'].lower()):
 
                 for i1 in item:
 
@@ -216,7 +241,7 @@ def get_info_from_body():
                     if(row!=None and row!=[]):
 
 
-                        dfseries=pd.Series(row,index=['genus','species','holotype','coordinates'])
+                        dfseries=pd.Series(row,index=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
                         df=df.append(dfseries,ignore_index=True)
 
             else:
@@ -224,7 +249,7 @@ def get_info_from_body():
                 if(row2!=[]) and row2!=None:
 
 
-                    dfseries=pd.Series(row2,index=['genus','species','holotype','coordinates'])
+                    dfseries=pd.Series(row2,index=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
                     df=df.append(dfseries,ignore_index=True)
     return df
 
@@ -240,25 +265,26 @@ def get_info_from_body():
 #     df_nonEmpty=pd.merge(names_in_abstract,names_in_body,on=['genus','species'],how='outer')
 #     return df_nonEmpty
 
-def output_info():
-    get_doi()
-    df=get_info_from_body()
-    with open("taxonomy","w") as csvfile:
-        writer=csv.writer(csvfile)
-        writer.writerow("DOI is: ")
-        writer.writerow(doi)
-        writer.writerow("ZooBank number is: ")
-        writer.writerow(zooBankNumber)
-
-    df.to_csv("taxonomy",index_label="index label",mode='a')
+# def output_info():
+#     get_doi()
+#     df=get_info_from_body()
+#     with open("taxonomy","w") as csvfile:
+#         writer=csv.writer(csvfile)
+#         writer.writerow("DOI is: ")
+#         writer.writerow(doi)
+#         writer.writerow("ZooBank number is: ")
+#         writer.writerow(zooBankNumber)
+#
+#     df.to_csv("taxonomy",index_label="index label",mode='a')
 
 
 
 get_doi()
 data = get_info_from_body()
+
 data.to_excel("taxonomy.xls", index=False)
-print('doi is: '+doi)
-print('ZooBank number is: \n'+zooBankNumber)
+# print('doi is: '+doi)
+# print('ZooBank number is: \n'+zooBankNumber)
 
 print(get_info_from_body())
 
@@ -268,53 +294,3 @@ print(get_info_from_body())
 
 
 
-
-
-
-
-
-
-# import xml.etree.ElementTree as parse
-# root = parse.parse('../xmlExample.xml')    # Parse XML file
-# doc = root.getroot()
-
-
-
-
-# print(doc.tag)
-# print(doc.attrib)
-
-# rootT = root.find('channel/title')
-# rootL = root.find('channel/link')
-# rootD = root.find('channel/description')
-# print(rootT.tag, rootT.attrib)
-# print(rootL.tag, rootL.attrib)
-# print(rootD.tag, rootD.attrib)
-# print(rootT.text)
-# print(rootL.text)
-# print(rootD.text)
-
-
-
-# for c in root.iterfind('channel'):
-#     # print(c.findtext('title'))
-#     # print(c.findtext('link'))
-#     # print(c.findtext('description'))
-#     for c1 in c:
-#         print (c1.tag)
-
-
-#
-# for item in root.iterfind('channel/item/values'):
-#     print(item.findtext('title'))
-#     print(item.findtext('link'))
-#     print(item.findtext('description'))
-#
-#
-# for it in root.iterfind('channel/item'):
-#     print(it.tag, it.attrib)
-#
-#
-# root2 = doc.find('channel/title')
-# print(root2.tag)
-# print(root2.attrib)

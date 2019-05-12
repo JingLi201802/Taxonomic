@@ -160,20 +160,17 @@ def get_reference_information():
     reference_dict["publisher"] = journal_title[0]
     title = tree.xpath("//article-meta//article-title//text()")
     publish = tree.xpath("//journal-meta//text()")
-
     print(publish)
     print("here")
     # print('\n'.join(title))
     separator = ""
     # print(separator.join(title))  # article-title under article-meta
     reference_dict["article_title"] = separator.join(title)
-
     contribution = tree.xpath("//article-meta//contrib-group//name//text()")
     contribution = separator.join(contribution)  # contribution name
     contribution_list = contribution.split()
     # print(contribution_list)
     new_name_list = []
-
     for i in range(0, int(len(contribution_list) / 2)):
         # print(i)
         new_name_list.append(contribution_list[2 * i] + " " + contribution_list[2 * i + 1])
@@ -185,7 +182,6 @@ def get_reference_information():
     reference_dict["publish_year"] = date
     # print(date)
     print(reference_dict)
-
 """
 
 """   
