@@ -156,21 +156,21 @@ def snp_single_info(item2):
                                             break
 
     if (genus!='' or species!=''):
-        print('1: ')
-        print(family)
-        print(genus)
-        print(subgenus)
-        print(species)
-        if taxon_authority!=None:
-            print('2:'+taxon_authority)
-        if holotype_and_loc!=None:
-            print('3:' +holotype_and_loc)
-        if(coordinate!=None):
-            print("4:" +coordinate)
-        if taxon_status!=None:
-            print('5:'+taxon_status)
-
-        print("-------------------------------------")
+        # print('1: ')
+        # print(family)
+        # print(genus)
+        # print(subgenus)
+        # print(species)
+        # if taxon_authority!=None:
+        #     print('2:'+taxon_authority)
+        # if holotype_and_loc!=None:
+        #     print('3:' +holotype_and_loc)
+        # if(coordinate!=None):
+        #     print("4:" +coordinate)
+        # if taxon_status!=None:
+        #     print('5:'+taxon_status)
+        #
+        # print("-------------------------------------")
         return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
     else:
 
