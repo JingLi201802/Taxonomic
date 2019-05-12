@@ -4,8 +4,8 @@ import requests
 from nltk.corpus import words
 
 
-common_ending_words = ["in", "sp."]
-common_preceding_words = ["as", "australia"]
+common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
+common_preceding_words = ["as", "australia", "holo", "iso", "perth", "canb", "species", "and"]
 pre_buffer = 15
 post_buffer = 15
 
@@ -38,22 +38,45 @@ def normalise_spacing(page):
     return page
 
 
-def process_string(doc_string):
-    working_index = 0
+def remove_punctuation(str):
+    result_str = str.replace(",", "")
+    result_str = result_str.replace(".", "")
+    result_str = result_str.replace(" ", "")
+    result_str = result_str.replace("&", "")
+    result_str = result_str.replace(":", "")
+    result_str = result_str.replace("(", "")
+    result_str = result_str.replace(")", "")
+    return result_str
 
-    for word in doc_string.split(" "):
+
+def process_string(doc_string):
+    find_new_names(doc_string)
+    reference_index = find_references(doc_string)
+    find_document_data(doc_string, reference_index)
+
+
+#currently does not return anything, just prints out relevant information #
+# If a document mentions a name with sp. n. twice first is usually in abstract while second is description
+def find_new_names(doc_string):
+    working_index = 0
+    word_list = doc_string.split(" ")
+    for word in word_list:
         if word == "sp.":
-            name = doc_string.split(" ")[working_index-pre_buffer: working_index+post_buffer]
+            name = word_list[working_index-pre_buffer: working_index+post_buffer]
             print(name)
             request_str = ""
             index = 0
             for name_component in name:
-                if name_component.lower() in common_ending_words and index > pre_buffer+1:
+                if index > pre_buffer and remove_punctuation(name_component.lower()) in common_ending_words:
                     break
-                elif index < pre_buffer and name_component.lower() in common_preceding_words:
+
+                elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words:
                     request_str = ""
+                    index += 1
                     continue
-                request_str = request_str + ("+" + name_component)
+
+                if len(remove_punctuation(name_component)) > 0:
+                    request_str = request_str + ("+" + name_component)
                 index += 1
 
             print(request_str[1:])
@@ -69,12 +92,38 @@ def get_example_path(pdf_name):
     return result.replace("\\", "/")
 
 
-process_string(read_all_pages(create_pdf_reader(get_example_path("853.pdf"))))
+#currently uses naiive approach of finding the last usage of the word references, should work 99% of the time but can still be improved
+def find_references(doc_string):
+    references = ""
+    word_list = doc_string.split(" ")
+    index = 0
+    reference_index = 0
+    for word in word_list:
+        if word.lower() == "references":
+            references = word_list[index:]
+            reference_index = index
+        index += 1
+    print("References begin at word number " + str(reference_index))
+    return reference_index
 
 
-def remove_punctuation(str):
-    result_str = str.replace(",", "")
-    result_str = result_str.replace(".", "")
-    result_str = result_str.replace(" ", "")
-    result_str = result_str.replace("&", "")
-    return result_str
+
+#Finds high level information about the pdf like author, data published, zoobank id etc.
+#Todo: fix issue where two words on different lines are merged during conversion
+def find_document_data(doc_string, reference_index):
+    word_list = doc_string.split(" ")
+    url_list = []
+    for word in word_list[:reference_index]:
+        if word.__contains__("http"):
+            word = word[word.index("http"):]
+            url_list.append(word)
+
+    for url in url_list:
+        if url.__contains__("zootaxa") or url.__contains__("zoobank.org"):
+            print ("Self referencing information: " + url)
+
+    #print(doc_string)
+
+
+
+process_string(read_all_pages(create_pdf_reader(get_example_path("kurina_2019_zootaxa4555_3 Diptera Mycetophilidae manota new sp (1).pdf"))))
