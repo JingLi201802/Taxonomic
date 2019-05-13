@@ -92,7 +92,39 @@ def get_example_path(pdf_name):
     return result.replace("\\", "/")
 
 
-#currently uses naiive approach of finding the last usage of the word references, should work 99% of the time but can still be improved
+def get_config_path():
+    abs_file_path = os.path.abspath(__file__)
+    parent_dir = os.path.dirname(abs_file_path)
+    parent_dir = os.path.dirname(parent_dir)
+    return os.path.join(parent_dir, "Configuration")
+
+
+def get_configurations():
+    get_key_words(get_config_path())
+
+
+def get_key_words(config_path):
+    index = 0
+    key_word_files = ["CommonPrecedingWords.txt", "CommonEndingWords.txt"]
+    common_ending_words.clear()
+    common_preceding_words.clear()
+    while index < 2:
+        file = open(os.path.join(config_path, key_word_files[index]))
+        lines = file.read().split("\n")
+        for line in lines:
+            if line.startswith("#"):
+                continue
+
+            if key_word_files[index].__contains__("Preceding"):
+                common_preceding_words.append(line)
+
+            else:
+                common_ending_words.append(line)
+            index +=1
+
+
+
+#currently uses naiive approach: finding the last usage of the word references, should work 99% of the time but can still be improved
 def find_references(doc_string):
     references = ""
     word_list = doc_string.split(" ")
@@ -107,8 +139,7 @@ def find_references(doc_string):
     return reference_index
 
 
-
-#Finds high level information about the pdf like author, data published, zoobank id etc.
+#Finds high level information about the pdf like author, data published, zoobank id etc. Does not look in the references section.
 #Todo: fix issue where two words on different lines are merged during conversion
 def find_document_data(doc_string, reference_index):
     word_list = doc_string.split(" ")
@@ -119,11 +150,9 @@ def find_document_data(doc_string, reference_index):
             url_list.append(word)
 
     for url in url_list:
-        if url.__contains__("zootaxa") or url.__contains__("zoobank.org"):
-            print ("Self referencing information: " + url)
-
-    #print(doc_string)
+        if url.__contains__("zootaxa") or url.__contains__("zoobank"):
+            print("Self referencing information: " + url)
 
 
-
+get_configurations()
 process_string(read_all_pages(create_pdf_reader(get_example_path("kurina_2019_zootaxa4555_3 Diptera Mycetophilidae manota new sp (1).pdf"))))
