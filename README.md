@@ -148,7 +148,7 @@ As the project is being implemented as part of a secure system, it is important 
 1. #### [Testing Design](https://docs.google.com/document/d/1Ds8spftVot8HpBYaTwZCm5_Jucjr2VzA0EnykC7GGcU/edit)
 2. #### [Testing Plan](https://docs.google.com/document/d/1BsLx-H9nUd1ptGQ386oEkVbimc8xFrDpF3hfXgGit60/edit)
 3. #### [Testing Methods](https://docs.google.com/document/d/1QbspjZKj_AQi0iJRnJDsckxD-U5ubWqwHPQPurHizXM/edit)
-4. #### [Testing Process]
+4. Testing Process
 # ![Diagram](Resources/Testing_process(draft).png)
 5. #### [Testing Results](https://docs.google.com/document/d/1p2bCQ_or1BENsoTOsLfLFjsNcGDdl9NSF6bJGyYsgVE/edit)
 
