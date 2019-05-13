@@ -57,14 +57,16 @@ def process_string(doc_string):
 
 #currently does not return anything, just prints out relevant information #
 # If a document mentions a name with sp. n. twice first is usually in abstract while second is description
+#Later be amended to return the location of the string within the document.
 def find_new_names(doc_string):
     working_index = 0
     word_list = doc_string.split(" ")
     for word in word_list:
         if word == "sp.":
             name = word_list[working_index-pre_buffer: working_index+post_buffer]
-            print(name)
+            #print(name)
             request_str = ""
+            debugstr=""
             index = 0
             for name_component in name:
                 if index > pre_buffer and remove_punctuation(name_component.lower()) in common_ending_words:
@@ -72,14 +74,16 @@ def find_new_names(doc_string):
 
                 elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words:
                     request_str = ""
+                    debugstr = ""
                     index += 1
                     continue
 
                 if len(remove_punctuation(name_component)) > 0:
                     request_str = request_str + ("+" + name_component)
+                    debugstr += (name_component + " ")
                 index += 1
-
-            print(request_str[1:])
+            print(debugstr)
+            #print(request_str[1:])
             #r = requests.get('http://parser.globalnames.org/api?q=' + (request_str[1:])) #print(r.json())
         working_index = working_index + 1
 
@@ -153,6 +157,14 @@ def find_document_data(doc_string, reference_index):
         if url.__contains__("zootaxa") or url.__contains__("zoobank"):
             print("Self referencing information: " + url)
 
+
+#Todo: extract coordinate information
+def find_coordinates():
+    return None
+
+#Todo: Given a string index, find the nearby name which that information is most likely to belong to.
+def associate_info_with_name():
+    return None
 
 get_configurations()
 process_string(read_all_pages(create_pdf_reader(get_example_path("kurina_2019_zootaxa4555_3 Diptera Mycetophilidae manota new sp (1).pdf"))))

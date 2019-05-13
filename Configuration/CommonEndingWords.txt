@@ -1,10 +1,20 @@
 #This file contains words which commonly follow directly after a scientific name, or at least are rarely part of a scientific name
 #These are used to predict the exact point a scientific name ends
 #Words should be in lower case, with a new line for each word and no trailing spaces.
+#Generic words:
 in
-sp
-type
 and
 are
-figs
+runs
 resembles
+figs
+fig
+figure
+
+#"Taxonomy words"
+sp
+type
+paratype
+holotype
+para
+holo
