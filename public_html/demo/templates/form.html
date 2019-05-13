@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -33,34 +33,33 @@
 
     <!---->
     <title>Australian Faunal Directory</title>
-    <link href="lib/header.css" rel="stylesheet" type="text/css">
-    <!--    <link href="lib/animation.css" rel="stylesheet" type="text/css">-->
-    <link href="lib/font.css" rel="stylesheet" type="text/css">
-    <link href="lib/uploadMain.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/uploadMain.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/header.css') }}">
 </head>
 <body>
 <div id="head" >
-    <p><a href="index.html"><img id="logo" src="resource/logo-environment.gif" width="365" height="63" alt="Logo"></a></p>
+    <p><a href="index.html"><img id="logo" src="{{ url_for('static', filename='res/logo.gif') }}" width="365" height="63" alt="Logo"></a></p>
     <div id="page_title">
         <p id="ABRS">Australian Biological Resources Study</p>
         <p id="AFD">Australian Faunal Directory Update System</p>
     </div>
 </div>
-<img id="oops" src="resource/oops.png" alt="oops">
+<img id="oops" src="{{ url_for('static', filename='res/oops.png') }}" alt="oops">
 <!--Page body start here-->
 <div class="content">
     <div id="ui">
-        <button id="convert" onclick="">PDF/XML</button>
+        <!-- <button id="convert" onclick="">PDF/XML</button> -->
         <!--Add the script in onclick-->
 
         <div id="upload">
             <p>File upload</p>
-            <form id="updForm" method="post"  enctype="multipart/form-data">
-                {% csrf_token %}
+            <form action="/" id="updForm" method="post"  enctype="multipart/form-data">
                 <!--Make sure add above line on the Django server.-->
-                <input accept="application/pdf" name="upload_FILE" multiple=true name="updfiles" type="file">
+                <input type="file" class="custom-file-input" name="xml" id="xml">
                 <!--Use the name to get files-->
-                <button id="Submit" onclick="">Analysis</button>
+                <button type="submit" id="Submit">Analysis</button>
+                <!-- class="btn btn-primary" -->
                 <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
             </form>
         </div>
@@ -73,29 +72,12 @@
                     <td>Sch1</td>
                     <td>Sch2</td>
                     <td>Sch3</td>
-                    <td>Sch4</td>
-                    <td>Sch5</td>
-                    <td>Sch6</td>
-                    <td>Sch7</td>
-                    <td>Sch8</td>
-                    <td>Sch9</td>
                 </tr>
                 </thead>
                 <tbody>
-                {% for result in data %}<!--modify the var inside on server-->
-                <tr>
-                    <td>{{ result.Sch0}}</td>
-                    <td>{{ result.Sch1}}</td>
-                    <td>{{ result.Sch2}}</td>
-                    <td>{{ result.Sch3}}</td>
-                    <td>{{ result.Sch4}}</td>
-                    <td>{{ result.Sch5}}</td>
-                    <td>{{ result.Sch6}}</td>
-                    <td>{{ result.Sch7}}</td>
-                    <td>{{ result.Sch8}}</td>
-                    <td>{{ result.Sch9}}</td>
-                </tr>
-                {% end for %}
+                    {% for agent in agents %}
+                    <td>{{ agent }}</td>
+                    {% endfor %}
                 </tbody>
             </table>
             <br/>

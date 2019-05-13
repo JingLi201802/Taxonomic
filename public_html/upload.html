@@ -47,7 +47,6 @@
             <div id="upload">
                 <p>File upload</p>
                 <form id="updForm" method="post"  enctype="multipart/form-data">
-                    {% csrf_token %}
                     <!--Make sure add above line on the Django server.-->
                     <input accept="application/xml" multiple=true name="xml" id='xml' type="file">
                     <!--Use the name to get files-->
@@ -82,7 +81,7 @@
                             <td>{{ result.Coordinates }}</td>
                             <td>{{ result.Taxon_status }}</td>
                         </tr>
-                    {% end for %}
+                    {% endfor %}
                     </tbody>
                 </table>
                 <br/>
