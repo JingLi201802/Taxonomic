@@ -15,6 +15,7 @@ Table of Contents
   * [Development Environment](#development-environment)
   * [Development Tools](#development-tools)
   * [Decision Make Procedures](#decision-make-procedures)
+  * [Testing](#testing)
   * [Meeting Agenda](#meeting-agenda)
   * [Audit Presentation](#audit-presentation)
   * [Other Resources](#other-resources)
@@ -142,6 +143,13 @@ As the project is being implemented as part of a secure system, it is important 
 ## Decision Make Procedures
 # ![Diagram](Resources/decision.jpg)
 #### [Decision Making Log](https://drive.google.com/open?id=19k1Fsmo4KuVd94mFDShupvla8UwJ114F)
+
+## Testing
+1. Testing Design
+2. Testing Plan
+3. Testing Methods
+4. Testing Process
+5. Testing Results
 
 ## Meeting Agenda
 #### [Client Meeting](https://drive.google.com/drive/folders/1mm_xKNJ9t8DZAf-LZkJD0TDQlAKYAVky?usp=sharing)
