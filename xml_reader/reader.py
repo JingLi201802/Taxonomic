@@ -1,9 +1,9 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
 from xlrd import open_workbook
+import xlrd
 from xlutils.copy import copy
-import xlwt
-
+from xlutils.margins import number_of_good_rows as number_of_row
 from xml_reader import reference_info_extraction
 
 
@@ -245,12 +245,27 @@ def write_species_to_excel():
     worksheet=workbook.add_sheet('taxonomic_name')
     worksheet.write(0,0,doi_data)
     worksheet.write(1,0,zoobank_data)
+    column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
+                            'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
+                            'named-content','tp:taxon-status']
+    for j in range(len(column_name_in_article)):
+        worksheet.write(2,j,column_name_in_article[j])
+    tnu_name=['scientificName','scienfiticNameAuthorship','taxonRank']
+    worksheet.write_merge(3,3,1,3,tnu_name[0])
+    worksheet.write(3,4,tnu_name[1])
+    worksheet.write(3,7,tnu_name[2])
+
+
     column_name=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status']
     for i in range(len(column_name)):
-        worksheet.write(2,i,column_name[i])
-    pre_row_number=len(articledata)+1
+        worksheet.write(4,i,column_name[i])
+
+
+    pre_row_number=5
+    print(pre_row_number)
     pdrow=body_data.shape[0]
     pdcoloum=body_data.shape[1]
+
     for i in range(pdrow):
         for j in range(pdcoloum):
             worksheet.write(i+pre_row_number,j,body_data.iloc[i,j])
@@ -258,9 +273,9 @@ def write_species_to_excel():
 
     workbook.save('taxonomy.xls')
 
+def write_excel():
+    reference_info_extraction.write_reference_to_excel()
+    write_species_to_excel()
 
-reference_info_extraction.write_reference_to_excel()
-write_species_to_excel()
 
-
-
+write_excel()
