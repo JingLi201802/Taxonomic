@@ -49,7 +49,7 @@
                 <form id="updForm" method="post"  enctype="multipart/form-data">
                     {% csrf_token %}
                     <!--Make sure add above line on the Django server.-->
-                    <input accept="application/pdf" name="upload_FILE" multiple=true name="updfiles" type="file">
+                    <input accept="application/xml" multiple=true name="xml" id='xml' type="file">
                     <!--Use the name to get files-->
                     <button id="Submit" onclick="">Analysis</button>
                     <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
@@ -60,31 +60,27 @@
                 <table>
                     <thead>
                         <tr>
-                            <td>Sch0</td>
-                            <td>Sch1</td>
-                            <td>Sch2</td>
-                            <td>Sch3</td>
-                            <td>Sch4</td>
-                            <td>Sch5</td>
-                            <td>Sch6</td>
-                            <td>Sch7</td>
-                            <td>Sch8</td>
-                            <td>Sch9</td>
+                            <td>Family</td>
+                            <td>Genus</td>
+                            <td>Subgenus</td>
+                            <td>Species</td>
+                            <td>Taxon_authority</td>
+                            <td>Holotype</td>
+                            <td>Coordinates</td>
+                            <td>Taxon_status</td>
                         </tr>
                     </thead>
                     <tbody>
                         {% for result in data %}<!--modify the var inside on server-->
                         <tr>
-                            <td>{{ result.Sch0}}</td>
-                            <td>{{ result.Sch1}}</td>
-                            <td>{{ result.Sch2}}</td>
-                            <td>{{ result.Sch3}}</td>
-                            <td>{{ result.Sch4}}</td>
-                            <td>{{ result.Sch5}}</td>
-                            <td>{{ result.Sch6}}</td>
-                            <td>{{ result.Sch7}}</td>
-                            <td>{{ result.Sch8}}</td>
-                            <td>{{ result.Sch9}}</td>
+                            <td>{{ result.Family }}</td>
+                            <td>{{ result.Genus }}</td>
+                            <td>{{ result.Subgenus }}</td>
+                            <td>{{ result.Species }}</td>
+                            <td>{{ result.Taxon_authority }}</td>
+                            <td>{{ result.Holotype }}</td>
+                            <td>{{ result.Coordinates }}</td>
+                            <td>{{ result.Taxon_status }}</td>
                         </tr>
                     {% end for %}
                     </tbody>
