@@ -12,3 +12,5 @@ Server should get the information from front page by using name attribute in tag
 
 
 For the button tags, the onclick attribute is empty, that should be linked to script in the further when the script is done by server part. 
+
+### To run demo, downlaod the demo folder individually, and run the script. 
