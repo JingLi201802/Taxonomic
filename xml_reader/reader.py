@@ -1,15 +1,22 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
 from xlrd import open_workbook
-import xlrd
+import os
 from xlutils.copy import copy
-from xlutils.margins import number_of_good_rows as number_of_row
 from xml_reader import reference_info_extraction
 
-
-
+src_path = os.path.dirname(os.path.realpath(__file__))
+# print(src_path)
+# find all the xml files
+path_dir = os.listdir(src_path)
+# print(path_dir)
+xml_file = []
+for i in path_dir:
+    if ".xml" in i:
+        xml_file.append(i)
+articleName=xml_file[0]
 #articleName='aTerrestrialFrog.xml'
-articleName='26newSpecies.xml'
+#articleName='26newSpecies.xml'
 #articleName='NewGeneraOfAustralianStilettoFlies.xml'
 #articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
 #articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
