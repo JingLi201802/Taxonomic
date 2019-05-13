@@ -120,7 +120,7 @@ def get_key_words(config_path):
 
             else:
                 common_ending_words.append(line)
-            index +=1
+        index +=1
 
 
 

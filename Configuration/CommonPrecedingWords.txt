@@ -1,2 +1,12 @@
-#test
+#This file contains words which commonly come before a scientific name, or at least are rarely part of a scientific name
+#These are used to predict the exact point a scientific begins ends
+#Words should be in lower case, with a new line for each word and no trailing spaces.
+as
+australia
+holo
+iso
+perth
+canb
 species
+and
+resembles
