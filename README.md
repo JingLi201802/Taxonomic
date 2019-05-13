@@ -79,6 +79,31 @@ Week 11:
 - Prepare handover resources
 ## Progress
 # ![Diagram](Resources/Schedule6.png)
+
+Audit 1:
+- Researched relevant biology/taxonomy information
+- Indentified risks.
+- Created a github project.
+- Communicated with clients, find the problem, underlying needs.
+
+Audit 2:
+- Created the general structure of the project and the structure of each part (frontend, backend, UI, testing).
+- Made statement of work (SOW).
+- Allocated tasks and roles according to the SOW.
+- Created UI prototype.
+- Started research GoldenGate.
+- Implemented basic functions to identify new species name and genus name in the abstract of XML formatted article.
+
+Audit3:
+- Communicated with clients about the output schema, updating clients’ needs.
+-	Designed poster.
+-	Finished the research about GoldenGate, started using NLP to process PDF articles.
+-	Found other taxonomic information related with new species/genus, agents and reference in XML articles, matching. 
+-	Formatted the extracted the extracted data as clients’ needs.
+-	Used flask (a micro web framework written in Python) to connect with backend.
+-	Wrote unit test.
+
+
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
 #### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
@@ -97,7 +122,7 @@ As the project is being implemented as part of a secure system, it is important 
 ## Communication Tools
 1. Email
 2. Facebook Messenger
-3. Slack
+
 
 ## Development Environment
 -  Language: 
@@ -109,7 +134,7 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Development Tools
 1. PyCharm(Python IDE)
-2. WebStorm(JavaScript)
+2. Flask(A micro web framework)
 4. DreamWeaver(HTML, CSS, JavaScript)
 5. Tesseract(OCR)
 6. Imagemagic(PDF to image)
