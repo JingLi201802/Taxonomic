@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c82ef3d-5cee-4a33-9f60-78e1f59ee20c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public_html/demo/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/demo/templates/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public_html/demo/static/lib/uploadMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/demo/static/lib/uploadMain.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public_html/lib/uploadMain.css" beforeDir="false" afterPath="$PROJECT_DIR$/public_html/lib/uploadMain.css" afterDir="false" />
     </list>
@@ -21,26 +21,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public_html/upload.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/demo/templates/form.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="102" selection-start-line="102" selection-end-line="104" selection-end-column="1" />
+            <state relative-caret-position="1125">
+              <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -48,8 +30,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public_html/lib/uploadMain.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="102" column="9" lean-forward="true" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+            <state relative-caret-position="651">
+              <caret line="106" selection-start-line="106" selection-end-line="109" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -107,14 +98,14 @@
         <option value="$PROJECT_DIR$/public_html/form.html" />
         <option value="$PROJECT_DIR$/public_html/upload.html" />
         <option value="$PROJECT_DIR$/public_html/demo/templates/form.html" />
-        <option value="$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css" />
         <option value="$PROJECT_DIR$/public_html/lib/uploadMain.css" />
+        <option value="$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="274" />
-    <option name="y" value="164" />
+    <option name="x" value="267" />
+    <option name="y" value="65" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -153,6 +144,14 @@
               <item name="pHtml" type="b2602c69:ProjectViewProjectNode" />
               <item name="pHtml" type="462c0819:PsiDirectoryNode" />
               <item name="public_html" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pHtml" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pHtml" type="462c0819:PsiDirectoryNode" />
+              <item name="public_html" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -166,19 +165,20 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public_html/demo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public_html/demo/templates/lib" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public_html/demo" />
-      <recent name="$PROJECT_DIR$/public_html" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public_html/" />
+      <recent name="$PROJECT_DIR$/public_html" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public_html/demo/templates/lib" />
+      <recent name="$PROJECT_DIR$/public_html/demo" />
       <recent name="$PROJECT_DIR$/public_html" />
     </key>
   </component>
@@ -209,7 +209,9 @@
       <workItem from="1553419147893" duration="5995000" />
       <workItem from="1553494720511" duration="3076000" />
       <workItem from="1557752600464" duration="1695000" />
-      <workItem from="1557842683147" duration="1800000" />
+      <workItem from="1557842683147" duration="2270000" />
+      <workItem from="1557845212617" duration="827000" />
+      <workItem from="1557846193792" duration="309000" />
     </task>
     <task id="LOCAL-00001" summary="Add the adaptor for Django server backend">
       <created>1557401023444</created>
@@ -225,14 +227,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557756728437</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Make a demo script, Style changed">
+      <created>1557844765817</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557844765817</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40535000" />
+    <option name="totallyTimeSpent" value="42141000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="274" y="164" width="1400" height="1000" extended-state="0" />
+    <frame x="267" y="65" width="1400" height="1000" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
@@ -246,15 +255,15 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49926686" visible="true" weight="0.27753305" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49926686" weight="0.27753305" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50073314" side_tool="true" weight="0.32947975" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32929516" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22576362" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24945612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -265,9 +274,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49926686" visible="true" weight="0.27804878" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49926686" weight="0.27753305" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50073314" side_tool="true" weight="0.32947975" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32929516" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -279,7 +288,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add the adaptor for Django server backend" />
     <MESSAGE value="Make a demo script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make a demo script" />
+    <MESSAGE value="Make a demo script, Style changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make a demo script, Style changed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public_html/lib/CPU.css" />
@@ -336,6 +346,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/form2.html" />
     <entry file="file://$PROJECT_DIR$/public_html/form.html" />
+    <entry file="file://$PROJECT_DIR$/public_html/demo/process.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="55" selection-start-line="75" selection-start-column="55" selection-end-line="75" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public_html/demo/templates/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -353,38 +384,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/demo/process.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/upload.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="56" column="26" lean-forward="true" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/demo/templates/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/demo/templates/lib/uploadMain.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="102" selection-start-line="102" selection-end-line="104" selection-end-column="1" />
+        <state relative-caret-position="246">
+          <caret line="80" column="17" lean-forward="true" selection-start-line="80" selection-start-column="17" selection-end-line="80" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public_html/lib/uploadMain.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="102" column="9" lean-forward="true" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+        <state relative-caret-position="651">
+          <caret line="106" selection-start-line="106" selection-end-line="109" selection-end-column="1" />
         </state>
       </provider>
     </entry>

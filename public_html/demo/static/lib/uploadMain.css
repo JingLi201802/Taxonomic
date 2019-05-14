@@ -100,6 +100,14 @@ textarea {
     border-color: gray;
 }
 
+table{
+    border-collapse:separate;
+    border-spacing:0px 10px;
+}
+
+table td{
+    padding-right: 10px;
+}
 
 .error {
     color: #FF0000

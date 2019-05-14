@@ -100,8 +100,13 @@ textarea {
     border-color: gray;
 }
 
+table{
+    border-collapse:separate;
+    border-spacing:0px 10px;
+}
+
 table td{
-    border-right: 5px;
+    padding-right: 10px;
 }
 
 .error {
