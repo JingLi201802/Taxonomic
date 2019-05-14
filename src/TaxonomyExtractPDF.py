@@ -7,7 +7,7 @@ from nltk.corpus import words
 common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
 common_preceding_words = ["as", "australia", "holo", "iso", "perth", "canb", "species", "and"]
 pre_buffer = 15
-post_buffer = 15
+post_buffer = 20
 
 
 def create_pdf_reader(path):
@@ -63,18 +63,21 @@ def find_new_names(doc_string):
     word_list = doc_string.split(" ")
     for word in word_list:
         if word == "sp.":
+            confidence = 0
             name = word_list[working_index-pre_buffer: working_index+post_buffer]
             #print(name)
             request_str = ""
             debugstr=""
             index = 0
             for name_component in name:
-                if index > pre_buffer and remove_punctuation(name_component.lower()) in common_ending_words:
+                if index > pre_buffer and remove_punctuation(name_component.lower()) in common_ending_words and not remove_punctuation(name_component.lower()) == "":
+                    confidence += 1
                     break
 
-                elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words:
+                elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words and not remove_punctuation(name_component.lower()) == "":
                     request_str = ""
                     debugstr = ""
+                    confidence = 1
                     index += 1
                     continue
 
@@ -82,8 +85,9 @@ def find_new_names(doc_string):
                     request_str = request_str + ("+" + name_component)
                     debugstr += (name_component + " ")
                 index += 1
-            print(debugstr)
+            print("Confidence: {} for name: {}".format(confidence, debugstr))
             #print(request_str[1:])
+            #Todo: Edit the request code to send multiple requests at once so the server isn't overloaded.
             #r = requests.get('http://parser.globalnames.org/api?q=' + (request_str[1:])) #print(r.json())
         working_index = working_index + 1
 
@@ -162,9 +166,16 @@ def find_document_data(doc_string, reference_index):
 def find_coordinates():
     return None
 
+
 #Todo: Given a string index, find the nearby name which that information is most likely to belong to.
 def associate_info_with_name():
     return None
 
+#Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
+def get_xml_output():
+    return None
+
 get_configurations()
-process_string(read_all_pages(create_pdf_reader(get_example_path("kurina_2019_zootaxa4555_3 Diptera Mycetophilidae manota new sp (1).pdf"))))
+#process_string(read_all_pages(create_pdf_reader(get_example_path("JABG31P037_Lang.pdf"))))
+process_string(read_all_pages(create_pdf_reader(get_example_path("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf"))))
+
