@@ -79,7 +79,7 @@ Week 11:
 - Implement audit feedback
 - Prepare handover resources
 ## Progress
-# ![Diagram](Resources/Schedule6.png)
+# ![Diagram](Resources/Schedule7.png)
 
 Audit 1:
 - Researched relevant biology/taxonomy information
