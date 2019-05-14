@@ -68,15 +68,18 @@
             <table>
                 <thead>
                 <tr>
-                    <td>Sch0</td>
-                    <td>Sch1</td>
-                    <td>Sch2</td>
-                    <td>Sch3</td>
+                    <td>Agent id</td>
+                    <td>Agent Type</td>
+                    <td>Agent Nmae</td>
                 </tr>
                 </thead>
                 <tbody>
                     {% for agent in agents %}
-                    <td>{{ agent }}</td>
+                    <tr>
+                        <td>{{ agent.id }}</td>
+                        <td>{{ agent.type }}</td>
+                        <td>{{ agent.name }}</td>
+                    </tr>
                     {% endfor %}
                 </tbody>
             </table>
