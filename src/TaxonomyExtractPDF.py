@@ -71,7 +71,7 @@ def find_new_names(doc_string):
             # Abstract this to include variations of sp. nov. later and ensure they are close together as well
             if name.__contains__("sp.") and name.__contains__("nov."):
                 name = name[:pre_buffer]
-                print(name)
+                confidence += 1
 
             request_str = ""
             debugstr=""
@@ -155,6 +155,10 @@ def find_references(doc_string):
             references = word_list[index:]
             reference_index = index
         index += 1
+
+    if(reference_index == 0):
+        print("No reference section was detected")
+        return reference_index
     print("References begin at word number " + str(reference_index))
     return reference_index
 
