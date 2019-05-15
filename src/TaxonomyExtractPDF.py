@@ -1,6 +1,7 @@
 import PyPDF2
 import os
 import requests
+import pandas as pd
 from nltk.corpus import words
 
 
@@ -61,11 +62,17 @@ def process_string(doc_string):
 def find_new_names(doc_string):
     working_index = 0
     word_list = doc_string.split(" ")
+    combined_request_str = ""
+    post_buffer = 20
     for word in word_list:
         if word == "sp.":
             confidence = 0
             name = word_list[working_index-pre_buffer: working_index+post_buffer]
-            #print(name)
+            # Abstract this to include variations of sp. nov. later and ensure they are close together as well
+            if name.__contains__("sp.") and name.__contains__("nov."):
+                name = name[:pre_buffer]
+                print(name)
+
             request_str = ""
             debugstr=""
             index = 0
@@ -81,15 +88,20 @@ def find_new_names(doc_string):
                     index += 1
                     continue
 
+                name_component = name_component.replace("&", "%26")
                 if len(remove_punctuation(name_component)) > 0:
                     request_str = request_str + ("+" + name_component)
                     debugstr += (name_component + " ")
                 index += 1
             print("Confidence: {} for name: {}".format(confidence, debugstr))
-            #print(request_str[1:])
-            #Todo: Edit the request code to send multiple requests at once so the server isn't overloaded.
-            #r = requests.get('http://parser.globalnames.org/api?q=' + (request_str[1:])) #print(r.json())
+
+            combined_request_str = combined_request_str + request_str + "|"
         working_index = working_index + 1
+
+    print(combined_request_str)
+    r = requests.get('http://parser.globalnames.org/api?q=' + (combined_request_str[1:-1]))
+    print(r.json())
+    return r.json()
 
 
 def get_example_path(pdf_name):
@@ -171,11 +183,39 @@ def find_coordinates():
 def associate_info_with_name():
     return None
 
-#Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
-def get_xml_output():
+
+#Later replace try and except statements with a method which dynamically works out which tags exist in the json
+#check to use later: if any(tag['key'] == 'ecs_scaling' for tag in data['Tags']):
+#(https://stackoverflow.com/questions/45964144/pythonic-way-to-determine-if-json-object-contains-a-certain-value)
+def parse_json_list(json_string):
+    df = pd.DataFrame(columns=['Verbatim', 'Genus', 'Species', 'Authorship'])
+    for item in json_string:
+        print(item)
+        try:
+            if item['parsed'] == True:
+                df.loc[0] = [item['verbatim'], item['details'][0]['genus']['value'], item['details'][0]['specificEpithet']['value'],
+                           item['details'][0]['specificEpithet']['authorship']['value']]
+        except:
+            print("The parser was given a name which did not contain a genus/species/author. Currently the program only deals with names containing these components")
+    return df
+
+
+
+#Todo: Attempt to fix situations where spaces/tabs/newlines are not registered by PyPDF which often interferes with parsing.
+def correct_unintentional_joining():
     return None
 
+
+#Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
+def get_excel_output():
+    df = parse_json_list(find_new_names(read_all_pages(
+        create_pdf_reader(get_example_path("JABG31P037_Lang.pdf")))))
+    df.to_excel("taxonomyPDF.xlsx")
+
+
 get_configurations()
-#process_string(read_all_pages(create_pdf_reader(get_example_path("JABG31P037_Lang.pdf"))))
-process_string(read_all_pages(create_pdf_reader(get_example_path("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf"))))
+(process_string(read_all_pages(
+    create_pdf_reader(get_example_path("853.pdf")))))
+
+#get_excel_output()
 
