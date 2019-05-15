@@ -25,7 +25,8 @@ Our project aims to automate taxonomic data capture from scientific reports, som
 ## Project Value
 Documenting fundamental taxonomic information could increase knowledge of Australia’s biodiversity, underpins knowledge and decision-making across government, science and industry. It will support the biological and ecological research, sustainable management of biodiversity, conservation protection, biosecurity and the management of invasive species; and understanding the impacts of environmental change on biodiversity. Our project will  build an web-based automatic data collection application. Therefore, it can improve the data collection efficiency for ABRS, optimise extraction accuracy, reduce their labor consumption and save a lot of money.  
 ## Client Expectation
-The client expects us to achieve some sort of functionality in terms of analysing documents in pdf form and returning scientific names present. At this point the client's expectations are not entirely clear and we intend to work with them to develop a concrete idea of what we are supposed to achieve with our project over the course of this week.
+The client expects us to achieve functionality in terms of analysing documents in pdf or xml form and returning taxonomic information in a straightforward format, which the client is then able to check, edit. The program should be intuitive, accurate and time-saving.
+
 ## Road Map and System Diagram
 # ![Diagram](Resources/roadmap.jpg)
 # ![Diagram](Resources/BackEndFlow.png)
@@ -112,12 +113,12 @@ As the project is being implemented as part of a secure system, it is important 
 
 | Team Member            | Uni ID         | Role                                                                    |
 | -----------------------| ---------------| ------------------------------------------------------------------------|
-| Jing Li                | u6531952       | Project Manager, Developer(PDF type convert & Database)                 |
-| Biwei Cao              | u5926643       | Developer(data taxonomy & Database), Documentation (Agenda)             |
-| Jiaqi Zhang            | u6089193       | Developer(OCR & Testing)                                                |
-| Joshua Trevor          | u6405233       | Developer(data taxonomy), Spokesperson                                  |
-| Yanlong LI             | u5890571       | Developer(OCR & front end web)                                          |
-| Yuan Yao               | u5945391       | Developer, Documentation                                                |
+| Jing Li                | u6531952       | Project Manager, Developer(XML extraction)                              |
+| Biwei Cao              | u5926643       | Developer(XML extraction), Documentation                                |
+| Jiaqi Zhang            | u6089193       | Developer(Testing)                                                      |
+| Joshua Trevor          | u6405233       | Developer(PDF extraction), Spokesperson                                 |
+| Yanlong LI             | u5890571       | Developer(front end)                                                    |
+| Yuan Yao               | u5945391       | Developer(data interaction), Documentation                              |
 
 
 ## Communication Tools
@@ -136,9 +137,7 @@ As the project is being implemented as part of a secure system, it is important 
 ## Development Tools
 1. PyCharm(Python IDE)
 2. Flask(A micro web framework)
-4. DreamWeaver(HTML, CSS, JavaScript)
-5. Tesseract(OCR)
-6. Imagemagic(PDF to image)
+3. DreamWeaver(HTML, CSS, JavaScript)
 
 ## Decision Make Procedures
 # ![Diagram](Resources/decision.jpg)
