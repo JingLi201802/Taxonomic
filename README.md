@@ -23,7 +23,8 @@ Table of Contents
 Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public. Automating this process will save our client time, effort and money which can be better spent elsewhere.
 # ![Diagram](Resources/concept_diagram.jpg)
 ## Project Value
-Having a comprehensive database of taxa data is useful to those studying biology as they can easily search the database to find relevant materials describing the taxa they are studying. These biological studies can help with sustainable management of biodiversity, conservation/protection of species, biosecurity, management of invasive species and much more.
+Having a comprehensive database of taxa data is useful to those studying biology as they can easily search the database to find relevant materials describing the taxa they are studying. These biological studies can help with sustainable management of biodiversity, conservation/protection of species, biosecurity, management of invasive species and much more. Our project will build an web-based automatic data collection application. Therefore, it can improve the data collection efficiency for Australian Biological Resources Study(ABRS), optimise extraction accuracy, reduce their labor consumption and save a lot of money.  
+
 
 ## Client Expectation
 The client expects us to achieve functionality in terms of analysing documents in pdf or xml form and returning taxonomic information in a straightforward format, which the client is then able to check, edit. The program should be intuitive, accurate and time-saving.
