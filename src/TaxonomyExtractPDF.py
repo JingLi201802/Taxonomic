@@ -104,11 +104,19 @@ def find_new_names(doc_string):
     return r.json()
 
 
+#Abstract out the identical part of these two functions soonTM
 def get_example_path(pdf_name):
     abs_file_path = os.path.abspath(__file__)
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
     result = os.path.join(parent_dir, "Examples/PDFs/{}".format(pdf_name))
+    return result.replace("\\", "/")
+
+def get_output_path(name):
+    abs_file_path = os.path.abspath(__file__)
+    parent_dir = os.path.dirname(abs_file_path)
+    parent_dir = os.path.dirname(parent_dir)
+    result = os.path.join(parent_dir, "Output/{}_OUTPUT.xlsx".format(name))
     return result.replace("\\", "/")
 
 
@@ -211,15 +219,15 @@ def correct_unintentional_joining():
 
 
 #Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
-def get_excel_output():
+def get_excel_output(path):
     df = parse_json_list(find_new_names(read_all_pages(
-        create_pdf_reader(get_example_path("JABG31P037_Lang.pdf")))))
-    df.to_excel("taxonomyPDF.xlsx")
+        create_pdf_reader(get_example_path(path)))))
+    df.to_excel(get_output_path(path[:-4]))
 
 
 get_configurations()
 (process_string(read_all_pages(
     create_pdf_reader(get_example_path("853.pdf")))))
 
-#get_excel_output()
+get_excel_output("JABG31P037_Lang.pdf")
 
