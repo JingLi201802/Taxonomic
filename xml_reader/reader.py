@@ -30,8 +30,6 @@ from xml_reader import reference_info_extraction
 
 
 def get_doi(root):
-
-
     doi = ''
     zooBankNumber = ''
 
