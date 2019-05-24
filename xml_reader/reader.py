@@ -34,6 +34,7 @@ def get_doi(root):
     zooBankNumber = ''
 
     doiloc='./front/article-meta/article-id'
+
     for item in root.iterfind(doiloc):
         if item.attrib['pub-id-type']=='doi':
             doi=item.text
@@ -278,17 +279,20 @@ def write_species_to_excel(root):
     workbook.save('taxonomy.xls')
 
 def write_excel():
-    src_path = os.path.dirname(os.path.realpath(__file__))
-
-    path_dir = os.listdir(src_path)
+    # src_path = os.path.dirname(os.path.realpath(__file__))
+    #
+    # path_dir = os.listdir(src_path)
     # print(path_dir)
-    xml_file = []
-    for i in path_dir:
-        if ".xml" in i:
-            xml_file.append(i)
-    articleName = xml_file[0]
+    # xml_file = []
+    # for i in path_dir:
+    #     if ".xml" in i:
+    #         xml_file.append(i)
+    # articleName = xml_file[0]
+    articleName = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
+    # print(articleName)
     tree = ET.parse(articleName)
     root = tree.getroot()
+
 
     reference_info_extraction.write_reference_to_excel()
     write_species_to_excel(root)
