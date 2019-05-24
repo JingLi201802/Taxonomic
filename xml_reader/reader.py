@@ -278,7 +278,7 @@ def write_species_to_excel(root):
 
     workbook.save('taxonomy.xls')
 
-def write_excel():
+def write_excel(articleName):
     # src_path = os.path.dirname(os.path.realpath(__file__))
     #
     # path_dir = os.listdir(src_path)
@@ -288,15 +288,14 @@ def write_excel():
     #     if ".xml" in i:
     #         xml_file.append(i)
     # articleName = xml_file[0]
-    articleName = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
+    # articleName = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
     # print(articleName)
     tree = ET.parse(articleName)
     root = tree.getroot()
 
 
     reference_info_extraction.write_reference_to_excel(reference_info_extraction.lists, reference_info_extraction.ref_list)
-
     write_species_to_excel(root)
 
 
-write_excel()
+write_excel("E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml")
