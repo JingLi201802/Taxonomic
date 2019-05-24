@@ -294,7 +294,8 @@ def write_excel():
     root = tree.getroot()
 
 
-    reference_info_extraction.write_reference_to_excel()
+    reference_info_extraction.write_reference_to_excel(reference_info_extraction.lists, reference_info_extraction.ref_list)
+
     write_species_to_excel(root)
 
 
