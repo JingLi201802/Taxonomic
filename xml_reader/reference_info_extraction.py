@@ -7,12 +7,12 @@ import xlwt
 
 
 
-def get_contri_info():
+def get_contri_info(target):
     agents_list = []
     reference_list = []
     agents_id = 0
     reference_id = 0
-    target = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
+
     # src_path = os.path.dirname(os.path.realpath(__file__))
     # print(src_path)
     # find all the xml files
@@ -146,7 +146,7 @@ def write_excel(a_list, r_list):
     book.save("taxonomy.xls")
 
 
-lists, ref_list = get_contri_info()
+lists, ref_list = get_contri_info("E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml")
 
 
 def write_reference_to_excel(a_list, r_list):
