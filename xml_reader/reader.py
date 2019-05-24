@@ -5,48 +5,48 @@ import os
 from xlutils.copy import copy
 from xml_reader import reference_info_extraction
 
-src_path = os.path.dirname(os.path.realpath(__file__))
-# print(src_path)
-# find all the xml files
-path_dir = os.listdir(src_path)
-# print(path_dir)
-xml_file = []
-for i in path_dir:
-    if ".xml" in i:
-        xml_file.append(i)
-articleName=xml_file[0]
-#articleName='aTerrestrialFrog.xml'
-#articleName='26newSpecies.xml'
-#articleName='NewGeneraOfAustralianStilettoFlies.xml'
-#articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
-#articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
-#articleName='AnewNigerianHunterSnailSpecies.xml'
-
-tree=ET.parse(articleName)
-root=tree.getroot()
-
-doi=''
-zooBankNumber=''
-
+# src_path = os.path.dirname(os.path.realpath(__file__))
+#
+# path_dir = os.listdir(src_path)
+# # print(path_dir)
+# xml_file = []
+# for i in path_dir:
+#     if ".xml" in i:
+#         xml_file.append(i)
+# articleName=xml_file[0]
+# #articleName='aTerrestrialFrog.xml'
+# #articleName='26newSpecies.xml'
+# #articleName='NewGeneraOfAustralianStilettoFlies.xml'
+# #articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
+# #articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
+# #articleName='AnewNigerianHunterSnailSpecies.xml'
+#
+# tree=ET.parse(articleName)
+# root=tree.getroot()
+#
+# doi=''
+# zooBankNumber=''
 
 
-def get_doi():
-    global doi
-    global root
-    global zooBankNumber
+
+def get_doi(root):
+
+
+    doi = ''
+    zooBankNumber = ''
+
     doiloc='./front/article-meta/article-id'
     for item in root.iterfind(doiloc):
         if item.attrib['pub-id-type']=='doi':
             doi=item.text
         if item.attrib['pub-id-type']=='other' and ('zoobank' in item.text):
             zooBankNumber=item.text
+    return [doi,zooBankNumber]
 
 
-def get_abstract_info():
+def get_abstract_info(root):
 
     """read the xml's abstract, extract new genus and species, store in a pandas structure"""
-    global root
-
     tempGenSpe=dict()  # {'genus':genus_name,''species':species_name}
     tempGenSpe['genus']=''
     tempGenSpe['species']=''
@@ -209,9 +209,8 @@ def get_info_recursive(item):
 
 
 
-def get_info_from_body():
+def get_info_from_body(root):
 
-    global root
     df=pd.DataFrame(columns=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
 
     for item in root.iterfind('./body/sec'):
@@ -238,20 +237,20 @@ def get_info_from_body():
                     df=df.append(dfseries,ignore_index=True)
     return df
 
-def write_species_to_excel():
-    get_doi()
+def write_species_to_excel(root):
+    doi_zoobankn=get_doi(root)
 
-    doi_data='DOI is: '+doi
-    zoobank_data='ZooBank number is: \n'+zooBankNumber
+    doi_data='DOI is: '+doi_zoobankn[0]
+    zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
     articledata=[doi_data,zoobank_data]
-    body_data = get_info_from_body()
+    body_data = get_info_from_body(root)
 
     rb=open_workbook('taxonomy.xls')
     workbook=copy(rb)
 
     worksheet=workbook.add_sheet('taxonomic_name')
-    worksheet.write(0,0,doi_data)
-    worksheet.write(1,0,zoobank_data)
+    worksheet.write_merge(0,0,0,6,doi_data)
+    worksheet.write_merge(1,1,0,6,zoobank_data)
     column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
                             'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
                             'named-content','tp:taxon-status']
@@ -281,8 +280,20 @@ def write_species_to_excel():
     workbook.save('taxonomy.xls')
 
 def write_excel():
+    src_path = os.path.dirname(os.path.realpath(__file__))
+
+    path_dir = os.listdir(src_path)
+    # print(path_dir)
+    xml_file = []
+    for i in path_dir:
+        if ".xml" in i:
+            xml_file.append(i)
+    articleName = xml_file[0]
+    tree = ET.parse(articleName)
+    root = tree.getroot()
+
     reference_info_extraction.write_reference_to_excel()
-    write_species_to_excel()
+    write_species_to_excel(root)
 
 
 write_excel()

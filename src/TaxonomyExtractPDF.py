@@ -11,6 +11,7 @@ pre_buffer = 15
 post_buffer = 20
 
 
+
 def create_pdf_reader(path):
     pdf_file_obj = open(path, 'rb')
     return PyPDF2.PdfFileReader(pdf_file_obj)
