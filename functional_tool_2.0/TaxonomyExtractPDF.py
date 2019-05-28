@@ -110,7 +110,7 @@ def get_example_path(pdf_name):
     # abs_file_path = os.path.abspath(__file__)
     # parent_dir = os.path.dirname(abs_file_path)
     # parent_dir = os.path.dirname(parent_dir)
-    # result = os.path.join(parent_dir, "test/Examples/PDFs/{}".format(pdf_name))
+    # result = os.path.join(parent_dir, "functional_tool_2.0/Examples/PDFs/{}".format(pdf_name))
     # # result = os.path.join(parent_dir, "{}".format(pdf_name))
     # print(result.replace("\\", "/"))
     # print(os.path.exists('uploaded_folder/853.pdf'))
@@ -122,7 +122,7 @@ def get_output_path(name):
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
     name = name.split('/')[-1]
-    result = os.path.join(parent_dir, "test/xls_folder/{}.xls".format(name))
+    result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
     return result.replace("\\", "/")
 
 
@@ -130,7 +130,7 @@ def get_config_path():
     abs_file_path = os.path.abspath(__file__)
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
-    return os.path.join(parent_dir, "test/Configuration")
+    return os.path.join(parent_dir, "functional_tool_2.0/Configuration")
 
 
 def get_configurations():
