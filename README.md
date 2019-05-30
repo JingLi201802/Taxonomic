@@ -119,7 +119,7 @@ As the project is being implemented as part of a secure system, it is important 
 | Biwei Cao              | u5926643       | Developer(XML extraction), Documentation                                |
 | Jiaqi Zhang            | u6089193       | Developer(Testing)                                                      |
 | Joshua Trevor          | u6405233       | Developer(PDF extraction), Spokesperson                                 |
-| Yanlong LI             | u5890571       | Developer(front end)                                                    |
+| Yanlong LI             | u5890571       | Developer(full stack)                                                   |
 | Yuan Yao               | u5945391       | Developer(data interaction), Documentation                              |
 
 
