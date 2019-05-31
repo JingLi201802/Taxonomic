@@ -239,9 +239,9 @@ def get_info_from_body(root):
 def write_species_to_excel(root):
     doi_zoobankn=get_doi(root)
 
-    doi_data='DOI is: '+doi_zoobankn[0]
-    zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
-    articledata=[doi_data,zoobank_data]
+    #doi_data='DOI is: '+doi_zoobankn[0]
+    #zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
+    #articledata=[doi_data,zoobank_data]
     body_data = get_info_from_body(root)
 
     rb=open_workbook('taxonomy.xls')

@@ -30,6 +30,7 @@ import reference_info_extraction
 
 
 def get_doi(root):
+    """get doi and zooBank number of the article"""
     doi = ''
     zooBankNumber = ''
 
@@ -71,6 +72,10 @@ def get_abstract_info(root):
 
 
 def get_coordinates(itemP):
+    """read the article body and get the coordinates: latitude and longitude of the corresponding species.
+    according to the article sturcture, the coordinates are usually under the attribute: Systematic account/Systematic/
+     Taxonomy -> tp:taxon-treatment -> tp:treatment-sec sec-type='material'... and its tag in xml is usually
+      named-content, the attributes: content-type="dwc:institutional_code"""
     for it in itemP:
         if it.tag=="named-content":
             if ("content-type" in it.attrib) and it.attrib['content-type']=="dwc:verbatimCoordinates":
@@ -94,6 +99,8 @@ def get_family(it):
 
 
 def snp_single_info(item2):
+    """get biological information of family, genus, subgenus, species, holotype and location, coordinate,
+    authority and taxon status under the tag of tp:taxon-treatment """
     family=''
     genus=''
     subgenus=''
@@ -162,6 +169,7 @@ def snp_single_info(item2):
                                             break
 
     if (genus!='' or species!=''):
+        # the following is for debugging.
         # print('1: ')
         # print(family)
         # print(genus)
@@ -187,6 +195,8 @@ def snp_single_info(item2):
 
 
 def get_info_recursive(item):
+    """recursive find all attributes 'sec-type' in different structure layer of the article, and then use the
+    function snp_single_info(item2) to find taxonomic information"""
 
     for ite1 in item:
         if ('sec-type' in ite1.attrib):
@@ -209,6 +219,7 @@ def get_info_recursive(item):
 
 
 def get_info_from_body(root):
+    """find all taxonomic information, match differenc taxonomy correctly and insert into a pandas framework"""
 
     df=pd.DataFrame(columns=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
 
@@ -237,19 +248,20 @@ def get_info_from_body(root):
     return df
 
 def write_species_to_excel(root):
-    doi_zoobankn=get_doi(root)
+    """write the taxonomic information into an excel"""
+    #doi_zoobankn=get_doi(root)
 
-    doi_data='DOI is: '+doi_zoobankn[0]
-    zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
-    articledata=[doi_data,zoobank_data]
+    #doi_data='DOI is: '+doi_zoobankn[0]
+    #zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
+    #articledata=[doi_data,zoobank_data]
     body_data = get_info_from_body(root)
 
     rb=open_workbook('taxonomy.xls')
     workbook=copy(rb)
 
     worksheet=workbook.add_sheet('taxonomic_name')
-    worksheet.write_merge(0,0,0,6,doi_data)
-    worksheet.write_merge(1,1,0,6,zoobank_data)
+    #worksheet.write_merge(0,0,0,6,doi_data)
+    #worksheet.write_merge(1,1,0,6,zoobank_data)
     column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
                             'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
                             'named-content','tp:taxon-status']
@@ -279,6 +291,7 @@ def write_species_to_excel(root):
     workbook.save('taxonomy.xls')
 
 def write_excel(articleName):
+    """combine taxonomic information and reference, agents information into a same Excel table,separate sheets"""
     # src_path = os.path.dirname(os.path.realpath(__file__))
     #
     # path_dir = os.listdir(src_path)
