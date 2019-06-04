@@ -9,7 +9,7 @@ common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
 common_preceding_words = ["as", "australia", "holo", "iso", "perth", "canb", "species", "and"]
 pre_buffer = 15
 post_buffer = 20
-
+df = pd.DataFrame(['Verbatim', 'Genus', 'Species', 'Authorship'])
 
 
 def create_pdf_reader(path):
@@ -82,7 +82,7 @@ def find_new_names(doc_string):
                     confidence += 1
                     break
 
-                elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words and not remove_punctuation(name_component.lower()) == "":
+                elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words and not remove_punctuation(name_component) == "":
                     request_str = ""
                     debugstr = ""
                     confidence = 1
@@ -99,9 +99,7 @@ def find_new_names(doc_string):
             combined_request_str = combined_request_str + request_str + "|"
         working_index = working_index + 1
 
-    print(combined_request_str)
     r = requests.get('http://parser.globalnames.org/api?q=' + (combined_request_str[1:-1]))
-    print(r.json())
     return r.json()
 
 
@@ -200,18 +198,47 @@ def associate_info_with_name():
 #Later replace try and except statements with a method which dynamically works out which tags exist in the json
 #check to use later: if any(tag['key'] == 'ecs_scaling' for tag in data['Tags']):
 #(https://stackoverflow.com/questions/45964144/pythonic-way-to-determine-if-json-object-contains-a-certain-value)
-def parse_json_list(json_string):
-    df = pd.DataFrame(columns=['Verbatim', 'Genus', 'Species', 'Authorship'])
-    for item in json_string:
-        print(item)
-        try:
-            if item['parsed'] == True:
-                df.loc[0] = [item['verbatim'], item['details'][0]['genus']['value'], item['details'][0]['specificEpithet']['value'],
-                           item['details'][0]['specificEpithet']['authorship']['value']]
-        except:
-            print("The parser was given a name which did not contain a genus/species/author. Currently the program only deals with names containing these components")
+
+
+def parse_json_list(json):
+    name_results = []
+    json_targets = ['verbatim', 'details/genus/value', 'details/specificEpithet/value', 'details/specificEpithet/value']
+
+    for item in json:
+        name_results = get_json_fields(item, json_targets)
+
     return df
 
+
+def get_json_fields(json, targets):
+    if not json['parsed']:
+        print("This name was not able to be parsed")
+        return
+
+    output_dict = dict()
+
+    for target in targets:
+        index = 0
+        target_path = target.split("/")
+        pointer = json
+
+        for node in target_path:
+            if index == 0 and len(target_path) > 1:
+                if node in pointer:
+                    pointer = pointer[node][0]
+
+                else:
+                    break
+
+            else:
+                if node in pointer:
+                    pointer = pointer[node]
+                    if node == target_path[-1]:
+                        output_dict[target] = pointer
+
+            index += 1
+    print(output_dict)
+    return output_dict
 
 
 #Todo: Attempt to fix situations where spaces/tabs/newlines are not registered by PyPDF which often interferes with parsing.
@@ -227,8 +254,8 @@ def get_excel_output(path):
 
 
 get_configurations()
-(process_string(read_all_pages(
-    create_pdf_reader(get_example_path("853.pdf")))))
+#(process_string(read_all_pages(
+#    create_pdf_reader(get_example_path("853.pdf")))))
 
 get_excel_output("JABG31P037_Lang.pdf")
 
