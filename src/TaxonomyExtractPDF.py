@@ -2,14 +2,12 @@ import PyPDF2
 import os
 import requests
 import pandas as pd
-from nltk.corpus import words
 
 
 common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
 common_preceding_words = ["as", "australia", "holo", "iso", "perth", "canb", "species", "and"]
 pre_buffer = 15
 post_buffer = 20
-df = pd.DataFrame(['Verbatim', 'Genus', 'Species', 'Authorship'])
 
 # -----------------------------------------------Converting PDF to String----------------------------------------------
 
@@ -67,18 +65,18 @@ def find_new_names(doc_string):
     working_index = 0
     word_list = doc_string.split(" ")
     combined_request_str = ""
+    debugstr=""
     post_buffer = 20
     for word in word_list:
-        if word == "sp.":
+        if word == "nov." or word == "sp.":
             confidence = 0
             name = word_list[working_index-pre_buffer: working_index+post_buffer]
             # Abstract this to include variations of sp. nov. later and ensure they are close together as well
-            if name.__contains__("sp.") and name.__contains__("nov."):
+            if name.__contains__("nov.") or name.__contains__("Nov."):
                 name = name[:pre_buffer]
                 confidence += 1
 
             request_str = ""
-            debugstr=""
             index = 0
             for name_component in name:
                 if index > pre_buffer and remove_punctuation(name_component.lower()) in common_ending_words and not remove_punctuation(name_component.lower()) == "":
@@ -147,7 +145,12 @@ def find_coordinates():
     return None
 
 
-# -----------------------------------------------Reading config files--------------------------------------------------
+# Todo: Given a string index, find the nearby name which that information is most likely to belong to.
+def associate_info_with_name():
+    return None
+
+# -----------------------------------------------File operations--------------------------------------------------
+
 
 def get_root_dir():
     abs_file_path = os.path.abspath(__file__)
@@ -197,25 +200,19 @@ def get_key_words(config_path):
                 common_ending_words.append(line)
         index +=1
 
-
-#Todo: Given a string index, find the nearby name which that information is most likely to belong to.
-def associate_info_with_name():
-    return None
-
-
-#Later replace try and except statements with a method which dynamically works out which tags exist in the json
-#check to use later: if any(tag['key'] == 'ecs_scaling' for tag in data['Tags']):
-#(https://stackoverflow.com/questions/45964144/pythonic-way-to-determine-if-json-object-contains-a-certain-value)
+# ------------------------------------ Handling JSON from GNParser ----------------------------------------------------
 
 
 def parse_json_list(json):
     name_results = []
-    json_targets = ['verbatim', 'details/genus/value', 'details/specificEpithet/value', 'details/specificEpithet/authorship/value']
+
+    # Change this definition to be dependent on the dictionary mapping below so we don't need to change both each time
+    json_targets = direct_mappings.keys()
 
     for item in json:
-        name_results = get_json_fields(item, json_targets)
+        name_results.append(get_json_fields(item, json_targets))
 
-    return df
+    return name_results
 
 
 def get_json_fields(json, targets):
@@ -224,14 +221,13 @@ def get_json_fields(json, targets):
         return
 
     output_dict = dict()
-
     for target in targets:
         index = 0
         target_path = target.split("/")
         pointer = json
 
         for node in target_path:
-            if index == 0 and len(target_path) > 1:
+            if index == 0 and len(target_path) > 1 and target_path.__contains__("details"):
                 if node in pointer:
                     pointer = pointer[node][0]
 
@@ -245,25 +241,100 @@ def get_json_fields(json, targets):
                         output_dict[target] = pointer
 
             index += 1
-    print(output_dict)
     return output_dict
 
 
-#Todo: Attempt to fix situations where spaces/tabs/newlines are not registered by PyPDF which often interferes with parsing.
+# Todo: Attempt to fix situations where tabs/newlines are not registered by PyPDF which often interferes with parsing.
 def correct_unintentional_joining():
     return None
 
+# ------------------------------------------ Create final output layer -------------------------------------------------
 
-#Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
+
+direct_mappings = {
+    "verbatim": "verbatim",
+    "details/genus/value": "genus",
+    "details/specificEpithet/value": "specificEpithet",
+    "details/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "canonicalName/value": "scientificName", # The API and web version give different names for this field
+    "canonicalName/simple": "scientificName",
+    "details/infraspecificEpithet/value": "infraspecificEpithet",
+    "details/infragenericEpithet/value": "infragenericEpithet",
+    "details/specificEpithet/combinationAuthorship": "combinationAuthorship",
+    "details/specificEpithet/basionymAuthorship": "basionymAuthorship",
+    "normalized": "taxonomicName",   # ask about this one
+}
+
+
+def deduce_tnu_values(df):
+    index = 1
+
+    while index < df.size and not isinstance(df.at[index, 'scientificName'], float):
+
+        if len(df.at[index, 'scientificName'].split(" ")) == 1:
+            df.set_value(index=index, col="uninomial", value=True) # replace with df.at blah blah = blah blah
+
+        # Later need to add support for discovering new families and also tidy up and abstract
+        if not isinstance(df.at[index, 'infraspecificEpithet'], float):
+            df.at[index, "taxonRank"] = 'infraspecificEpithet'
+
+        elif not isinstance(df.at[index, 'specificEpithet'], float):
+            df.at[index, "taxonRank"] = 'specificEpithet'
+
+        elif not isinstance(df.at[index, 'infragenericEpithet'], float):
+            df.at[index, "taxonRank"] = 'infragenericEpithet'
+
+        elif not isinstance(df.at[index, 'genus'], float):
+            df.at[index, "taxonRank"] = 'genus'
+
+        # Temporary liberty before I clarify this point
+        df.at[index, "verbatimTaxonRank"] = df.at[index, "taxonRank"]
+
+        index += 1
+
+    return df
+
+
+# Takes a list of GNParser results (a list of dictionaries) and deduces possible TNU fields for output
+def add_dict_data_to_df(name_results):
+    index = 1
+    #Change this definition later to take columns from direct mappings + some others
+    #Change the index definition to be dynamic
+    df = pd.DataFrame(index=range(1, 10), columns=
+     ["kindOfName", "scientificName", "taxonomicNameStringWithAuthor", "cultivarNameGroup",
+      'verbatim', "uninomial", 'genus', "combinationAuthorship", "basionymAuthorship", "namePublishedInYear",
+      "combinationExAuthorship", "taxonRank", "verbatimTaxonRank", "nomenclaturalCode",
+      "taxonomicName", "protonym", "accordingTo", "basionym", "nameAccordingTo",
+      'infragenericEpithet', 'specificEpithet', "infraspecificEpithet", 'scientificNameAuthorship'])
+
+
+    for result in name_results:
+        print(result)
+        for key in result:
+            if key in direct_mappings:
+                df.set_value(index=index, col=direct_mappings.get(key), value=result.get(key))
+
+        index += 1
+
+    df = deduce_tnu_values(df)
+    print(df)
+
+    return df
+
+
 def get_excel_output(path):
-    df = parse_json_list(find_new_names(read_all_pages(
-        create_pdf_reader(get_example_path(path)))))
+    reader = create_pdf_reader(get_example_path(path))
+    json = parse_json_list(find_new_names(read_all_pages(reader)))
+    df = add_dict_data_to_df(json)
     df.to_excel(get_output_path(path[:-4]))
 
 
+# --------------------------------------------- Testing Code -----------------------------------------------------------
+
 get_configurations()
-#(process_string(read_all_pages(
+# (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
 
-get_excel_output("JABG31P037_Lang.pdf")
+#get_excel_output("JABG31P037_Lang.pdf")
+get_excel_output("TestNames.pdf")
 
