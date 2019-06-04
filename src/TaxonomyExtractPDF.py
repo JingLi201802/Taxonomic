@@ -11,6 +11,8 @@ pre_buffer = 15
 post_buffer = 20
 df = pd.DataFrame(['Verbatim', 'Genus', 'Species', 'Authorship'])
 
+# -----------------------------------------------Converting PDF to String----------------------------------------------
+
 
 def create_pdf_reader(path):
     pdf_file_obj = open(path, 'rb')
@@ -50,6 +52,7 @@ def remove_punctuation(str):
     result_str = result_str.replace(")", "")
     return result_str
 
+# ---------------------------------- Extracting Information from Natural Language ----------------------------------
 
 def process_string(doc_string):
     find_new_names(doc_string)
@@ -103,19 +106,64 @@ def find_new_names(doc_string):
     return r.json()
 
 
-#Abstract out the identical part of these two functions soonTM
-def get_example_path(pdf_name):
+# Finds high level information about the pdf like author
+# data published, zoobank id etc. Does not look in the references section.
+# Todo: fix issue where two words on different lines are merged during conversion
+def find_document_data(doc_string, reference_index):
+    word_list = doc_string.split(" ")
+    url_list = []
+    for word in word_list[:reference_index]:
+        if word.__contains__("http"):
+            word = word[word.index("http"):]
+            url_list.append(word)
+
+    for url in url_list:
+        if url.__contains__("zootaxa") or url.__contains__("zoobank"):
+            print("Self referencing information: " + url)
+
+
+# currently uses naiive approach: finding the last usage of the word references,
+# should work 99% of the time but can still be improved
+def find_references(doc_string):
+    references = ""
+    word_list = doc_string.split(" ")
+    index = 0
+    reference_index = 0
+    for word in word_list:
+        if word.lower() == "references":
+            references = word_list[index:]
+            reference_index = index
+        index += 1
+
+    if reference_index == 0:
+        print("No reference section was detected")
+        return reference_index
+    print("References begin at word number " + str(reference_index))
+    return reference_index
+
+
+# Todo: extract coordinate information
+def find_coordinates():
+    return None
+
+
+# -----------------------------------------------Reading config files--------------------------------------------------
+
+def get_root_dir():
     abs_file_path = os.path.abspath(__file__)
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
-    result = os.path.join(parent_dir, "Examples/PDFs/{}".format(pdf_name))
+    return parent_dir
+
+
+# Abstract out the identical part of these two functions soonTM
+def get_example_path(pdf_name):
+    result = os.path.join(get_root_dir(), "Examples/PDFs/{}".format(pdf_name))
     return result.replace("\\", "/")
 
+
 def get_output_path(name):
-    abs_file_path = os.path.abspath(__file__)
-    parent_dir = os.path.dirname(abs_file_path)
-    parent_dir = os.path.dirname(parent_dir)
-    result = os.path.join(parent_dir, "Output/{}_OUTPUT.xlsx".format(name))
+    result = os.path.join(get_root_dir(), "Output/{}_OUTPUT.xlsx".format(name))
     return result.replace("\\", "/")
 
 
@@ -150,46 +198,6 @@ def get_key_words(config_path):
         index +=1
 
 
-
-#currently uses naiive approach: finding the last usage of the word references, should work 99% of the time but can still be improved
-def find_references(doc_string):
-    references = ""
-    word_list = doc_string.split(" ")
-    index = 0
-    reference_index = 0
-    for word in word_list:
-        if word.lower() == "references":
-            references = word_list[index:]
-            reference_index = index
-        index += 1
-
-    if(reference_index == 0):
-        print("No reference section was detected")
-        return reference_index
-    print("References begin at word number " + str(reference_index))
-    return reference_index
-
-
-#Finds high level information about the pdf like author, data published, zoobank id etc. Does not look in the references section.
-#Todo: fix issue where two words on different lines are merged during conversion
-def find_document_data(doc_string, reference_index):
-    word_list = doc_string.split(" ")
-    url_list = []
-    for word in word_list[:reference_index]:
-        if word.__contains__("http"):
-            word = word[word.index("http"):]
-            url_list.append(word)
-
-    for url in url_list:
-        if url.__contains__("zootaxa") or url.__contains__("zoobank"):
-            print("Self referencing information: " + url)
-
-
-#Todo: extract coordinate information
-def find_coordinates():
-    return None
-
-
 #Todo: Given a string index, find the nearby name which that information is most likely to belong to.
 def associate_info_with_name():
     return None
@@ -202,7 +210,7 @@ def associate_info_with_name():
 
 def parse_json_list(json):
     name_results = []
-    json_targets = ['verbatim', 'details/genus/value', 'details/specificEpithet/value', 'details/specificEpithet/value']
+    json_targets = ['verbatim', 'details/genus/value', 'details/specificEpithet/value', 'details/specificEpithet/authorship/value']
 
     for item in json:
         name_results = get_json_fields(item, json_targets)
