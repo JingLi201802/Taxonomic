@@ -198,7 +198,7 @@ def get_key_words(config_path):
 
             else:
                 common_ending_words.append(line)
-        index +=1
+        index += 1
 
 # ------------------------------------ Handling JSON from GNParser ----------------------------------------------------
 
@@ -214,7 +214,7 @@ def parse_json_list(json):
 
     return name_results
 
-
+# Add support for lists
 def get_json_fields(json, targets):
     if not json['parsed']:
         print("This name was not able to be parsed")
@@ -227,10 +227,11 @@ def get_json_fields(json, targets):
         pointer = json
 
         for node in target_path:
-            if index == 0 and len(target_path) > 1 and target_path.__contains__("details"):
-                if node in pointer:
-                    pointer = pointer[node][0]
-
+            if node.__contains__("[]"):
+                if node.replace("[]", "") in pointer:
+                    pointer = pointer[node.replace("[]", "")][0]
+                    if node == target_path[-1]:
+                        output_dict[target] = pointer
                 else:
                     break
 
@@ -240,6 +241,9 @@ def get_json_fields(json, targets):
                     if node == target_path[-1]:
                         output_dict[target] = pointer
 
+                else:
+                    break
+
             index += 1
     return output_dict
 
@@ -248,32 +252,46 @@ def get_json_fields(json, targets):
 def correct_unintentional_joining():
     return None
 
-# ------------------------------------------ Create final output layer -------------------------------------------------
 
-
+# / means go one level deeper in JSON, [] means that the value should be treated as a list
 direct_mappings = {
     "verbatim": "verbatim",
-    "details/genus/value": "genus",
-    "details/specificEpithet/value": "specificEpithet",
-    "details/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "details[]/genus/value": "genus",
+    "details[]/specificEpithet/value": "specificEpithet",
+    "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
     "canonicalName/value": "scientificName", # The API and web version give different names for this field
-    "canonicalName/simple": "scientificName",
-    "details/infraspecificEpithet/value": "infraspecificEpithet",
-    "details/infragenericEpithet/value": "infragenericEpithet",
-    "details/specificEpithet/combinationAuthorship": "combinationAuthorship",
-    "details/specificEpithet/basionymAuthorship": "basionymAuthorship",
+    "canonicalName/simple": "scientificName", # Check if it's okay that canonical omits subgenus for subspecies
+    "details[]/infraspecificEpithets[]/value": "infraspecificEpithet",
+    "details[]/infragenericEpithet/value": "infragenericEpithet",
     "normalized": "taxonomicName",   # ask about this one
+    "details[]/specificEpithet/combinationAuthorship/years[]": "namePublishedInYear",
+
+
+    # Some of these duplciates may not be necessary
+    "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "details[]/specificEpithet/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
+    "details[]/specificEpithet/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
+    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
+    "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
+    "details[]/infraspecificEpithets[]/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
+
+    # Choose the year from the most relevant author I assume, these entries overwrite previous so order is important
+    "details[]/specificEpithet/authorship/basionymAuthorship/year/value": "namePublishedInYear",
+    "details[]/specificEpithet/authorship/combinationAuthorship/year/value": "namePublishedInYear",
+    "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/year/value": "namePublishedInYear",
+    "details[]/infraspecificEpithets[]/authorship/basionymAuthorship/year/value": "namePublishedInYear",
 }
 
 
-def deduce_tnu_values(df):
+def deduce_tnu_values(df, name_results):
     index = 1
 
     while index < df.size and not isinstance(df.at[index, 'scientificName'], float):
 
-        if len(df.at[index, 'scientificName'].split(" ")) == 1:
-            df.set_value(index=index, col="uninomial", value=True) # replace with df.at blah blah = blah blah
+        # Uninomial -----------
+        df.at[index, "uninomial"] = (df.at[index, 'scientificName'].split(" ")) == 1
 
+        # TaxonRank ----------
         # Later need to add support for discovering new families and also tidy up and abstract
         if not isinstance(df.at[index, 'infraspecificEpithet'], float):
             df.at[index, "taxonRank"] = 'infraspecificEpithet'
@@ -287,26 +305,28 @@ def deduce_tnu_values(df):
         elif not isinstance(df.at[index, 'genus'], float):
             df.at[index, "taxonRank"] = 'genus'
 
+        # VerbatimTaxonRank -----------
         # Temporary liberty before I clarify this point
         df.at[index, "verbatimTaxonRank"] = df.at[index, "taxonRank"]
 
+        # TaxonomicNameStringWithAuthor ----------
+        df.at[index, "taxonomicNameStringWithAuthor"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
         index += 1
 
     return df
 
+# ------------------------------------------ Create final output layer -------------------------------------------------
 
 # Takes a list of GNParser results (a list of dictionaries) and deduces possible TNU fields for output
 def add_dict_data_to_df(name_results):
     index = 1
-    #Change this definition later to take columns from direct mappings + some others
-    #Change the index definition to be dynamic
+    # Change this definition later to take columns from direct mappings + some others
+    # Change the index definition to be dynamic
     df = pd.DataFrame(index=range(1, 10), columns=
      ["kindOfName", "scientificName", "taxonomicNameStringWithAuthor", "cultivarNameGroup",
       'verbatim', "uninomial", 'genus', "combinationAuthorship", "basionymAuthorship", "namePublishedInYear",
-      "combinationExAuthorship", "taxonRank", "verbatimTaxonRank", "nomenclaturalCode",
-      "taxonomicName", "protonym", "accordingTo", "basionym", "nameAccordingTo",
+      "taxonRank", "verbatimTaxonRank", "taxonomicName", "protonym", "accordingTo", "nameAccordingTo",
       'infragenericEpithet', 'specificEpithet', "infraspecificEpithet", 'scientificNameAuthorship'])
-
 
     for result in name_results:
         print(result)
@@ -316,7 +336,7 @@ def add_dict_data_to_df(name_results):
 
         index += 1
 
-    df = deduce_tnu_values(df)
+    df = deduce_tnu_values(df, name_results)
     print(df)
 
     return df
@@ -326,7 +346,7 @@ def get_excel_output(path):
     reader = create_pdf_reader(get_example_path(path))
     json = parse_json_list(find_new_names(read_all_pages(reader)))
     df = add_dict_data_to_df(json)
-    df.to_excel(get_output_path(path[:-4]))
+    df.fillna(0.0).to_excel(get_output_path(path[:-4]))
 
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
