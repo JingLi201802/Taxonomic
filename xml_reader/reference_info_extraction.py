@@ -155,7 +155,7 @@ def write_excel(a_list, r_list):
     book.save("taxonomy.xls")
 
 
-lists, ref_list = get_contri_info("E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml")
+lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
 
 
 def write_reference_to_excel(a_list, r_list):

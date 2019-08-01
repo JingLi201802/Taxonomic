@@ -248,8 +248,8 @@ def write_species_to_excel(root):
     workbook=copy(rb)
 
     worksheet=workbook.add_sheet('taxonomic_name')
-    worksheet.write_merge(0,0,0,6,doi_data)
-    worksheet.write_merge(1,1,0,6,zoobank_data)
+    #worksheet.write_merge(0,0,0,6,doi_data)
+    #worksheet.write_merge(1,1,0,6,zoobank_data)
     column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
                             'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
                             'named-content','tp:taxon-status']
@@ -298,4 +298,4 @@ def write_excel(articleName):
     write_species_to_excel(root)
 
 
-write_excel("E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml")
+write_excel("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
