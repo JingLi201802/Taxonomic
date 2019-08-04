@@ -16,7 +16,7 @@ Table of Contents
   * [Development Tools](#development-tools)
   * [Decision Make Procedures](#decision-make-procedures)
   * [Testing](#testing)
-  * [Meeting Agenda](#meeting-agenda)
+  * [Meeting Agendas](#meeting-agendas)
   * [Audit Presentation](#audit-presentation)
   * [Other Resources](#other-resources)
 ## Introduction
@@ -37,52 +37,74 @@ The client expects us to achieve functionality in terms of analysing documents i
 ## User Story Map
 # ![Diagram](Resources/usm.png)
 ## Milestones
-- Functional webclient interface
-- Enable uploading pdfs and viewing them as plain text in sub-window
-- Enable customising extractable tags
-- Implement automated IBRA7 region calculation
-- Successfully use GoldenGate to tag pdfs
-- Analyse and maximise the success rate of GoldenGate’s tagging
-- Analyse and maximise the success rate of tag extraction
-- Propose XML schema which will allow trivial data extraction
+General:
+- CSV output
+- Passed user acceptance testing
+
+UI:
+- Highlighting input
+- Well formatted output
+- Editable output
+
+PDF:
+- Acceptable level of name border recognition
+- Reference parsing
+- Field association (connecting relevant information)
+- Independent (no reliance on webservices)
+
+XML:
+- Changing output format to csv.
+- Adding and changing output fields according to clients’ requirement.
+- Testing more cases from Zookey, and other publishers’ articles who also use TaxPub xml structure. Make improvements on the  extraction accuracy.
+- Analysing and report on the failure situation.
+
+Server:
+- Getting contact with ANU to know if we could establish a server in ANU.
+- Studying informations about other platforms where we could implement server, such as Herok.
+- Learning server knowledges and give a break-down plan of implementation.
+
+Testing:
+- Main function testing
+- Client acceptance testing
+- User's manual
+
+
 
 ## Schedule
-Week 6:
-- Finalise higher level documentation (schedule, roles, milestones, audit ppt)
+Weeks 2-3:
+- Re-establish communication with client
+- Create plan for the semester
+- Update necessary documentation
 - Prepare for audit
 
-Teaching break week 1:
-- Thoroughly investigate GoldenGate
-- Inquire about getting a web server set up with the ANU
-- Create lower level documentation, ie. pseudocode, overall program structure, algorithms and testing plan
-- Begin to design UI.
+Weeks 4-5:
+- Improve UI (output display)
+- Change output format to csv
+- Work on parsing bibliography references
+- Try to reduce reliance on webservers
 
-Teaching break week 2: 
-- Complete development on basic interface, xml tag extraction and IBRA classification
-- Complete basic UI
-- Begin working on integrating GoldenGate with the server
+Weeks 5-6:
+- Improve UI (editable output)
+- Attempt to increase "border word" list / Integrate other name detection (PDF)
+- Add some holotype/coordinate detection (PDF)
 - Prepare for audit
 
 Week 7-8:
-- Continue Work on implementing GoldenGate interpreting of PDF files server-side (backend)
-- Create tools which allow the user to test the validity of output and fix it if necessary (frontend)
-- Try to implement audit feedback
+- Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
+- Improve UI (Highlighting relevant input text)
 
-Week 9:
-- Create project poster
-- Meet with client and get feedback regarding program interface
-- Work to improve efficiency and accuracy of data classification and extraction
-
-Week 10:
-- Overall system testing
-- Finalise documentation
+Week 9-10:
+- Testing with client
+- Acting on client feedback
 - Prepare for audit
 
-Week 11:
-- Implement audit feedback
-- Prepare handover resources
+Week 11-12:
+- Finalising project
+- User acceptance testing
+
 ## Progress
-# ![Diagram](Resources/Schedule7.png)
+
+Semester 1
 
 Audit 1:
 - Researched relevant biology/taxonomy information
@@ -98,7 +120,7 @@ Audit 2:
 - Started research GoldenGate.
 - Implemented basic functions to identify new species name and genus name in the abstract of XML formatted article.
 
-Audit3:
+Audit 3:
 - Communicated with clients about the output schema, updating clients’ needs.
 -	Designed poster.
 -	Finished the research about GoldenGate, started using NLP to process PDF articles.
@@ -107,10 +129,13 @@ Audit3:
 -	Used flask (a micro web framework written in Python) to connect with backend.
 -	Wrote unit test.
 
+Semester 2
+
+Audit 1:
 
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
-#### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
+#### [Risk Register](https://drive.google.com/open?id=1G4hapzQhnL0GRmlryVrjvmWTVhTzQFFp)
 ## Team Member Roles
 
 | Team Member            | Uni ID         | Role                                                                    |
@@ -130,8 +155,8 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Development Environment
 -  Language: 
-   - Java installation is necessary for GoldenGate
-   - Other languages not determined yet, most likely a combination of python, javascript and php will be used
+  - Backend is written in python
+  - Frontend uses HTML, CSS and JavaScript
 -  Testing: 
    -  Unit test during development by black/white box
    -  A/B test for the final stage 
@@ -143,7 +168,7 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Decision Make Procedures
 # ![Diagram](Resources/decision.jpg)
-#### [Decision Making Log](https://drive.google.com/open?id=19k1Fsmo4KuVd94mFDShupvla8UwJ114F)
+#### [Decision Making Log](https://drive.google.com/drive/folders/1b3dv2sz7afSjeyFnS2Lp_9u7vdMrBOAC?usp=sharing)
 
 ## Testing
 1. #### [Testing Design](https://docs.google.com/document/d/1Ds8spftVot8HpBYaTwZCm5_Jucjr2VzA0EnykC7GGcU/edit)
@@ -153,16 +178,13 @@ As the project is being implemented as part of a secure system, it is important 
 # ![Diagram](Resources/Testing_process(draft).png)
 5. #### [Testing Results](https://docs.google.com/document/d/1p2bCQ_or1BENsoTOsLfLFjsNcGDdl9NSF6bJGyYsgVE/edit)
 
-## Meeting Agenda
-#### [Client Meeting](https://drive.google.com/drive/folders/1mm_xKNJ9t8DZAf-LZkJD0TDQlAKYAVky?usp=sharing)
-#### [Group Meeting](https://drive.google.com/drive/folders/1MDCKulVX2guaDb-cfK7kPHIie3Kgz8MA?usp=sharing)
+## Meeting Agendas
+#### [Client Meeting](https://drive.google.com/drive/folders/15L1_3DY4wlhsUmIWcp4z-ChY9mvAJCHK?usp=sharing)
+#### [Group Meeting](https://drive.google.com/drive/folders/1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG?usp=sharing)
 
 ## Audit Presentation
-#### [Audit1](https://docs.google.com/presentation/d/14QLdtRtMSZWAxxeWRe2eTX6NPbj8KzNHTZFg8nyr5oM/edit#slide=id.p1)
-#### [Audit2](https://docs.google.com/presentation/d/1vWNcryChR0Rqus4ZB2tTV4MMgNu2CFb_9zi9Tp27Gk0/edit#slide=id.p1)
-#### [Audit3](https://docs.google.com/presentation/d/1rjIJdBJ7W8cQjsVCMR1VXCtwMlKP513hyzwnLf7jMa8/edit#slide=id.p1)
-
+#### [Audit1 (Semester2)](https://docs.google.com/presentation/d/1KFPRAI61264166AXwdHr-oGo2_7Cn2nEl4v1HEd7xIs/edit#slide=id.p)
 
 ## Other Resources
-#### [Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
-
+#### [Google Drive S2](https://drive.google.com/drive/folders/1z85XNqG6v9YqrcAm98RzeaTmDYXoyPEj)
+#### [Old Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
