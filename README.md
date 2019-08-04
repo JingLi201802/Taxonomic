@@ -89,7 +89,8 @@ Week 11-12:
 ## Progress
 # ![Diagram](Resources/Schedule7.png)
 
-# Semester 1
+Semester 1
+
 Audit 1:
 - Researched relevant biology/taxonomy information
 - Indentified risks.
@@ -113,7 +114,7 @@ Audit 3:
 -	Used flask (a micro web framework written in Python) to connect with backend.
 -	Wrote unit test.
 
-# Semester 2
+Semester 2
 
 Audit 1:
 
