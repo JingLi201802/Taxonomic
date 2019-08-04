@@ -84,7 +84,7 @@ Weeks 4-5:
 - Try to reduce reliance on webservers
 
 Weeks 5-6:
-- Improve UI (editable input)
+- Improve UI (editable output)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
 - Prepare for audit
@@ -103,7 +103,6 @@ Week 11-12:
 - User acceptance testing
 
 ## Progress
-# ![Diagram](Resources/Schedule7.png)
 
 Semester 1
 
