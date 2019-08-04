@@ -30,7 +30,6 @@ Having a comprehensive database of taxa data is useful to those studying biology
 The client expects us to achieve functionality in terms of analysing documents in pdf or xml form and returning taxonomic information in a straightforward format, which the client is then able to check, edit. The program should be intuitive, accurate and time-saving.
 
 ## System Diagram
-# ![Diagram](Resources/roadmap.jpg)
 # ![Diagram](Resources/BackEndFlow.png)
 ## User Interface Prototype
 # ![Diagram](Resources/UIPrototype.jpg)
