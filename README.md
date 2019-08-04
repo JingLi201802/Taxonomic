@@ -138,6 +138,7 @@ Audit 3:
 -	Wrote unit test.
 
 Semester 2
+
 In this semester, we make a schedule for the whole semester in week2. Each week, in the group meeting, each member will put forward their own tasks according to the schedule. And report how they did according to their tasks of last week, especially analyse the reasons for the delay parts and raise new solutions. We use "issues" on github to document everyone's achievements and reflections.
 
 Audit 1:
