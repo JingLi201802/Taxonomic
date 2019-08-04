@@ -63,6 +63,11 @@ Server:
 - Studying informations about other platforms where we could implement server, such as Herok.
 - Learning server knowledges and give a break-down plan of implementation.
 
+Testing:
+- Main function testing
+- Client acceptance testing
+- User's manual
+
 
 
 ## Schedule
