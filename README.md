@@ -42,9 +42,9 @@ General:
 - Passed user acceptance testing
 
 UI:
-- Editable input
 - Highlighting input
 - Well formatted output
+- Editable output
 
 PDF:
 - Acceptable level of name border recognition
