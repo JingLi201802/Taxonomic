@@ -180,7 +180,7 @@ As the project is being implemented as part of a secure system, it is important 
 5. #### [Testing Results](https://docs.google.com/document/d/1p2bCQ_or1BENsoTOsLfLFjsNcGDdl9NSF6bJGyYsgVE/edit)
 
 ## Meeting Agendas
-#### [Client Meeting](https://drive.google.com/open?id=1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG)
+#### [Client Meeting](https://drive.google.com/drive/folders/15L1_3DY4wlhsUmIWcp4z-ChY9mvAJCHK?usp=sharing)
 #### [Group Meeting](https://drive.google.com/drive/folders/1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG?usp=sharing)
 
 ## Audit Presentation
