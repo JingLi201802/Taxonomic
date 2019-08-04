@@ -16,7 +16,7 @@ Table of Contents
   * [Development Tools](#development-tools)
   * [Decision Make Procedures](#decision-make-procedures)
   * [Testing](#testing)
-  * [Meeting Agenda](#meeting-agenda)
+  * [Meeting Agendas](#meeting-agendas)
   * [Audit Presentation](#audit-presentation)
   * [Other Resources](#other-resources)
 ## Introduction
@@ -180,8 +180,8 @@ As the project is being implemented as part of a secure system, it is important 
 5. #### [Testing Results](https://docs.google.com/document/d/1p2bCQ_or1BENsoTOsLfLFjsNcGDdl9NSF6bJGyYsgVE/edit)
 
 ## Meeting Agendas
-#### [Client Meeting](https://drive.google.com/drive/folders/1mm_xKNJ9t8DZAf-LZkJD0TDQlAKYAVky?usp=sharing)
-#### [Group Meeting](https://drive.google.com/drive/folders/1MDCKulVX2guaDb-cfK7kPHIie3Kgz8MA?usp=sharing)
+#### [Client Meeting](https://drive.google.com/open?id=15L1_3DY4wlhsUmIWcp4z-ChY9mvAJCHK)
+#### [Group Meeting](https://drive.google.com/open?id=1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG)
 
 ## Audit Presentation
 #### [Audit1 (Semaster2)](https://docs.google.com/presentation/d/1KFPRAI61264166AXwdHr-oGo2_7Cn2nEl4v1HEd7xIs/edit#slide=id.p)
