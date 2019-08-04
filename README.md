@@ -37,14 +37,22 @@ The client expects us to achieve functionality in terms of analysing documents i
 ## User Story Map
 # ![Diagram](Resources/usm.png)
 ## Milestones
-- Functional webclient interface
-- Enable uploading pdfs and viewing them as plain text in sub-window
-- Enable customising extractable tags
-- Implement automated IBRA7 region calculation
-- Successfully use GoldenGate to tag pdfs
-- Analyse and maximise the success rate of GoldenGate’s tagging
-- Analyse and maximise the success rate of tag extraction
-- Propose XML schema which will allow trivial data extraction
+General:
+- CSV output
+- Passed user acceptance testing
+
+UI:
+- Editable input
+- Highlighting input
+- Well formatted output
+
+PDF:
+- Acceptable level of name border recognition
+- Reference parsing
+- Field association (connecting relevant information)
+- Independent (no reliance on webservices)
+
+XML:
 
 ## Schedule
 Weeks 2-3:
@@ -61,7 +69,7 @@ Weeks 4-5:
 
 Weeks 5-6:
 - Improve UI (editable input)
-- Attempt to increase "border word" list (PDF)
+- Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
 - Prepare for audit
 
