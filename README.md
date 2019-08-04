@@ -74,24 +74,33 @@ Testing:
 Weeks 2-3:
 - Re-establish communication with client
 - Create plan for the semester
-- Update necessary documentation
-- Prepare for audit
+- Update necessary documentation (updating landing page, set new google files, risk register, milestones, schedules. )
+- Prepare for audit (ppt)
+- Getting contact with ANU to know if we could establish a server in ANU. If not applicable, research other server platform (Herok)
+- Studying on the knowledge of server deployment.
+- Specify UI input and output preview display.
+- Change output format to csv
 
 Weeks 4-5:
 - Improve UI (output display)
-- Change output format to csv
-- Work on parsing bibliography references
+- Work on parsing bibliography references (PDF)
+- Adding and changing output fields according to clients’ requirement and feedback. Working on different cases of ZooKeys (XML)
 - Try to reduce reliance on webservers
+- Studying on the knowledge of server deployment. Making a breakdown plan of server deployment. Kick-off.
 
 Weeks 5-6:
 - Improve UI (editable output)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
+- Working on different publishers' cases of TaxPub. Making imporvements on accuracy (XML)
+- Continue deploying server, link UI with server.
 - Prepare for audit
 
 Week 7-8:
-- Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
 - Improve UI (Highlighting relevant input text)
+- Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
+- Working on the cases of species combination, or changing species' category (XML)
+- Continue deploying server, link backend with server.
 
 Week 9-10:
 - Testing with client
