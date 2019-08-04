@@ -3,7 +3,7 @@ Table of Contents
   * [Introduction](#introduction)
   * [Project Value](#project-value)
   * [Client Expectation](#client-expectation)
-  * [Road Map and System Diagram](#road-map-and-system-diagram)
+  * [System Diagram](#system-diagram)
   * [User Interface Prototype](#user-interface-prototype)
   * [User Story Map](#user-story-map)
   * [Milestones](#milestones)
@@ -29,7 +29,7 @@ Having a comprehensive database of taxa data is useful to those studying biology
 ## Client Expectation
 The client expects us to achieve functionality in terms of analysing documents in pdf or xml form and returning taxonomic information in a straightforward format, which the client is then able to check, edit. The program should be intuitive, accurate and time-saving.
 
-## Road Map and System Diagram
+## System Diagram
 # ![Diagram](Resources/roadmap.jpg)
 # ![Diagram](Resources/BackEndFlow.png)
 ## User Interface Prototype
@@ -139,8 +139,13 @@ Audit 3:
 -	Wrote unit test.
 
 Semester 2
+In this semester, we make a schedule for the whole semester in week2. Each week, in the group meeting, each member will put forward their own tasks according to the schedule. And report how they did according to their tasks of last week, especially analyse the reasons for the delay parts and raise new solutions. We use "issues" on github to document everyone's achievements and reflections.
 
 Audit 1:
+- Create plan for the semester
+- Update necessary documentation eg.SOW, risk register, github.
+
+
 
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
