@@ -136,7 +136,7 @@ Audit 1:
 
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
-#### [Risk Register](https://drive.google.com/drive/folders/1VyUxQys5N7-MRKLpOc4DQ5fEEyYf8H6q?usp=sharing)
+#### [Risk Register](https://drive.google.com/open?id=1G4hapzQhnL0GRmlryVrjvmWTVhTzQFFp)
 ## Team Member Roles
 
 | Team Member            | Uni ID         | Role                                                                    |
@@ -169,7 +169,7 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Decision Make Procedures
 # ![Diagram](Resources/decision.jpg)
-#### [Decision Making Log](https://drive.google.com/open?id=19k1Fsmo4KuVd94mFDShupvla8UwJ114F)
+#### [Decision Making Log](https://drive.google.com/drive/folders/1b3dv2sz7afSjeyFnS2Lp_9u7vdMrBOAC?usp=sharing)
 
 ## Testing
 1. #### [Testing Design](https://docs.google.com/document/d/1Ds8spftVot8HpBYaTwZCm5_Jucjr2VzA0EnykC7GGcU/edit)
@@ -180,11 +180,11 @@ As the project is being implemented as part of a secure system, it is important 
 5. #### [Testing Results](https://docs.google.com/document/d/1p2bCQ_or1BENsoTOsLfLFjsNcGDdl9NSF6bJGyYsgVE/edit)
 
 ## Meeting Agendas
-#### [Client Meeting](https://drive.google.com/open?id=15L1_3DY4wlhsUmIWcp4z-ChY9mvAJCHK)
-#### [Group Meeting](https://drive.google.com/open?id=1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG)
+#### [Client Meeting](https://drive.google.com/open?id=1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG)
+#### [Group Meeting](https://drive.google.com/drive/folders/1vdle7ZXXMmjaULrHACn98w_xWHsLXNkG?usp=sharing)
 
 ## Audit Presentation
-#### [Audit1 (Semaster2)](https://docs.google.com/presentation/d/1KFPRAI61264166AXwdHr-oGo2_7Cn2nEl4v1HEd7xIs/edit#slide=id.p)
+#### [Audit1 (Semester2)](https://docs.google.com/presentation/d/1KFPRAI61264166AXwdHr-oGo2_7Cn2nEl4v1HEd7xIs/edit#slide=id.p)
 
 ## Other Resources
 #### [Google Drive S2](https://drive.google.com/drive/folders/1z85XNqG6v9YqrcAm98RzeaTmDYXoyPEj)
