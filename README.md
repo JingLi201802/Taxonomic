@@ -53,6 +53,17 @@ PDF:
 - Independent (no reliance on webservices)
 
 XML:
+- Changing output format to csv.
+- Adding and changing output fields according to clients’ requirement.
+- Testing more cases from Zookey, and other publishers’ articles who also use TaxPub xml structure. Make improvements on the  extraction accuracy.
+- Analysing and report on the failure situation.
+
+Server:
+- Getting contact with ANU to know if we could establish a server in ANU.
+- Studying informations about other platforms where we could implement server, such as Herok.
+- Learning server knowledges and give a break-down plan of implementation.
+
+
 
 ## Schedule
 Weeks 2-3:
