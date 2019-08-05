@@ -39,17 +39,18 @@ The client expects us to achieve functionality in terms of analysing documents i
 General:
 - CSV output
 - Passed user acceptance testing
+- Well formatted output
 
 UI:
-- Highlighting input
-- Well formatted output
 - Editable output
+- The GUI is only render the interface to user, GUI well NOT make any logical process.
 
 PDF:
 - Acceptable level of name border recognition
 - Reference parsing
 - Field association (connecting relevant information)
 - Independent (no reliance on webservices)
+- Highlighting input
 
 XML:
 - Changing output format to csv.
@@ -158,7 +159,7 @@ As the project is being implemented as part of a secure system, it is important 
 | Biwei Cao              | u5926643       | Developer(XML extraction), Documentation                                |
 | Jiaqi Zhang            | u6089193       | Developer(Testing)                                                      |
 | Joshua Trevor          | u6405233       | Developer(PDF extraction), Spokesperson                                 |
-| Yanlong LI             | u5890571       | Developer(full stack)                                                   |
+| Yanlong LI             | u5890571       | Developer(front end)                                                    |
 | Yuan Yao               | u5945391       | Developer(data interaction), Documentation                              |
 
 
