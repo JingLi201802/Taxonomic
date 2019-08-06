@@ -1,0 +1,128 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="DC.Title" lang="en" content="Australian Faunal Directory" xml:lang="en" />
+    <meta name="DC.Description" lang="en" content="Australian Faunal Directory" xml:lang="en" />
+    <meta name="Description" content="Australian Faunal Directory" />
+    <meta name="DC.Identifier" scheme="ISBN" content="" />
+    <meta name="DC.Identifier" scheme="ISSN" content="" />
+    <meta name="DC.Format" scheme="IMT" content="text/html" />
+    <meta name="DC.Type.documentType" scheme="environment-document" content="Web Page" />
+    <meta name="DC.Type.aggregationLevel" content="" />
+    <meta name="DC.Type.documentType" scheme="environment-collection" content="" />
+    <meta name="DC.Type.category" content="" />
+    <meta name="DC.Type.serviceType" scheme="agls-service" content="" />
+    <meta name="DC.Subject" scheme="Department of the Environment, Water, Heritage and the Arts Thesaurus http://www.environment.gov.au/about/publications/thesaurus.html" content="" />
+    <meta name="DC.Subject" scheme="Keywords" content="taxonomy; fauna; Australian Faunal Directory; species" />
+    <meta name="Keywords" content="taxonomy, fauna, Australian Faunal Directory, species, $taxon.nameWithoutAuthor" />
+    <meta name="AGLS.Function" scheme="AGIFT" content="" />
+    <meta name="AGLS.Mandate.act" content="" />
+    <meta name="AGLS.Audience" scheme="AGLS" content="" />
+    <meta name="AGLS.Availability" scheme="AglsAvail" content="" />
+    <META NAME="ROBOTS" CONTENT="ALL">
+
+	<title>AJAX Example</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!---->
+    <title>Australian Faunal Directory</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/font.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/uploadMain.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/header.css') }}">
+</head>
+<body>
+<div id="head" >
+    <p><a href="index.html"><img id="logo" src="{{ url_for('static', filename='res/logo.gif') }}" width="365" height="63" alt="Logo"></a></p>
+    <div id="page_title">
+        <p id="ABRS">Australian Biological Resources Study</p>
+        <p id="AFD">Australian Faunal Directory Update System</p>
+    </div>
+</div>
+<img id="oops" src="{{ url_for('static', filename='res/oops.png') }}" alt="oops">
+<!--Page body start here-->
+<div class="content">
+    <div id="ui">
+        <!-- <button id="convert" onclick="">PDF/XML</button> -->
+        <!--Add the script in onclick-->
+
+        <div id="upload">
+            <p>File upload</p>
+            <form action="/" id="updForm" method="post"  enctype="multipart/form-data">
+                <!--Make sure add above line on the Django server.-->
+                <input type="file" class="custom-file-input" name="xml" id="xml">
+                <!--Use the name to get files-->
+                <button type="submit" id="Submit">Analysis</button>
+                <!-- class="btn btn-primary" -->
+                <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
+            </form>
+        </div>
+        <div id="rev">
+            <p>Data review</p>
+            <table>
+                <thead>
+                <tr>
+                    <td>Agent id</td>
+                    <td>Agent Type</td>
+                    <td>Agent Nmae</td>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for agent in agents %}
+                    <tr>
+                        <td>{{ agent.id }}</td>
+                        <td>{{ agent.type }}</td>
+                        <td>{{ agent.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <br/>
+            <button id="sub" onclick="">Submit</button>
+            <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->
+        </div>
+    </div>
+</div>
+
+<div id="end">
+    <div id="links">
+        <ul>
+            <li><a href="https://www.environment.gov.au/about-us/accessibility">Accessibility</a></li>
+            <li><a href="https://www.environment.gov.au/about-us/disclaimer">Disclaimer</a></li>
+            <li><a href="https://www.environment.gov.au/privacy-policy">Privacy</a></li>
+            <li><a href="https://www.environment.gov.au/about-us/freedom-information">Freedom of information</a></li>
+            <li><a href="https://www.environment.gov.au/copyright-statement">&#169; Commonwealth of Australia</a></li>
+        </ul>
+    </div>
+    <div id="others">
+        <div id="address">
+            <a href="http://www.environment.gov.au/">Department of the Environment and Energy</a>
+            <p>GPO Box 787</p>
+            <p>Canberra ACT 2601 Australia</p>
+            <p>+61 (0)2 6274 1111
+                <a href="http://www.environment.gov.au/business/gst.html#abn">
+                    <acronym title="Australian Business Number" xml:lang="en" lang="en">ABN</acronym>
+                </a>
+            </p>
+        </div>
+        <div id="gov">
+            <p>Our land. Our plan. Our future</p>
+            <a href="http://www.australia.gov.au/">Australian Government</a>
+            <br/><br/><br/>
+        </div>
+    </div>
+</div>
+
+<script>
+	 var xml_name = JSON.stringify('{{ xml_name|safe}}').substring(1,JSON.stringify('{{ xml_name|safe}}').length-1)  
+	 console.log(xml_name)
+	 document.getElementById('download').href = 'get/'+xml_name.split('.').slice(0, -1).join('.')+'.xls'
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+/* CSS Document */
+@keyframes fade-in {  
+    0% {opacity: 0;} 
+    40% {opacity: 0;}  
+    100% {opacity: 1;} 
+}  
+@-webkit-keyframes fade-in {
+    0% {opacity: 0;}  
+    40% {opacity: 0;}  
+    100% {opacity: 1;}  
+}   
+@keyframes move-in {
+	0% {opacity: 0;right: -50px;}
+	50% {opacity: 0;right: -25px;}
+	100% {opacity: 1;right: 0px;}
+}
+@-webkit-keyframes move-in {
+	0% {opacity: 0;right: -50px;}
+	50% {opacity: 0;right: -25px;}
+	100% {opacity: 1;right: 0px;}
+}
+
+@media only screen and (max-width:700px){
+	#logo{
+		animation: fade-in;
+		animation-duration: 1s;
+	}
+}
+
+@media only screen and (min-width:701px){
+	#logo{
+		animation: fade-in;
+		animation-duration: 1s; /*animation duration time*/
+	}
+}
+#menu{
+	animation: fade-in;  
+    animation-duration: 5s;
+    -webkit-animation:fade-in 5s; 
+}
+#ui{
+	animation: fade-in;  
+    animation-duration: 5s;
+    -webkit-animation:fade-in 3s; 
+}
+
+#heads ul{
+	animation: move-in;
+	animation-duration: 5s;
+	position: relative;
+	-webkit-animation: move-in 3s;
+}
+
+#fb a{
+	animation: move-in;
+	animation-duration: 5s;
+	position: relative;
+	-webkit-animation: move-in 3s;
+}
