@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+#end{
+    /*locate footer at the end*/
+    bottom: 0px;
+    position: fixed;
+}
+
+.content{
+    /*text-align: center;*/
+}
+
+.login{
+    margin: 150px 30% 100px 45%;
+}
+.login p{
+    text-align: left;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#mainForm input{
+    border-width: 1px;
+    border-radius: 3px;
+    height: 30px;
+    width: 200px;
+    margin-bottom: 10px;
+
+}
+ input:required:invalid{
+    border-radius: 3px;
+}
+
+
+#mainForm button{
+    margin-top: 15px;
+    margin-bottom: 100px;
+    border-style: none;
+    border-radius: 3px;
+    background: #db3631;
+    width: 200px;
+    height: 20px;
+    color: #FFFFFF;
+}

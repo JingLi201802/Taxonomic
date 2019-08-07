@@ -3,7 +3,7 @@ Table of Contents
   * [Introduction](#introduction)
   * [Project Value](#project-value)
   * [Client Expectation](#client-expectation)
-  * [Road Map and System Diagram](#road-map-and-system-diagram)
+  * [System Diagram](#system-diagram)
   * [User Interface Prototype](#user-interface-prototype)
   * [User Story Map](#user-story-map)
   * [Milestones](#milestones)
@@ -29,8 +29,7 @@ Having a comprehensive database of taxa data is useful to those studying biology
 ## Client Expectation
 The client expects us to achieve functionality in terms of analysing documents in pdf or xml form and returning taxonomic information in a straightforward format, which the client is then able to check, edit. The program should be intuitive, accurate and time-saving.
 
-## Road Map and System Diagram
-# ![Diagram](Resources/roadmap.jpg)
+## System Diagram
 # ![Diagram](Resources/BackEndFlow.png)
 ## User Interface Prototype
 # ![Diagram](Resources/UIPrototype.jpg)
@@ -40,17 +39,18 @@ The client expects us to achieve functionality in terms of analysing documents i
 General:
 - CSV output
 - Passed user acceptance testing
+- Well formatted output
 
 UI:
-- Highlighting input
-- Well formatted output
 - Editable output
+- The GUI is only render the interface to user, GUI well NOT make any logical process.
 
 PDF:
 - Acceptable level of name border recognition
 - Reference parsing
 - Field association (connecting relevant information)
 - Independent (no reliance on webservices)
+- Highlighting input
 
 XML:
 - Changing output format to csv.
@@ -74,24 +74,33 @@ Testing:
 Weeks 2-3:
 - Re-establish communication with client
 - Create plan for the semester
-- Update necessary documentation
-- Prepare for audit
+- Update necessary documentation (updating landing page, set new google files, risk register, milestones, schedules. )
+- Prepare for audit (ppt)
+- Getting contact with ANU to know if we could establish a server in ANU. If not applicable, research other server platform (Herok)
+- Studying on the knowledge of server deployment.
+- Specify UI input and output preview display.
+- Change output format to csv
 
 Weeks 4-5:
 - Improve UI (output display)
-- Change output format to csv
-- Work on parsing bibliography references
+- Work on parsing bibliography references (PDF)
+- Adding and changing output fields according to clients’ requirement and feedback. Working on different cases of ZooKeys (XML)
 - Try to reduce reliance on webservers
+- Studying on the knowledge of server deployment. Making a breakdown plan of server deployment. Kick-off.
 
 Weeks 5-6:
 - Improve UI (editable output)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
+- Working on different publishers' cases of TaxPub. Making imporvements on accuracy (XML)
+- Continue deploying server, link UI with server.
 - Prepare for audit
 
 Week 7-8:
-- Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
 - Improve UI (Highlighting relevant input text)
+- Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
+- Working on the cases of species combination, or changing species' category (XML)
+- Continue deploying server, link backend with server.
 
 Week 9-10:
 - Testing with client
@@ -131,7 +140,13 @@ Audit 3:
 
 Semester 2
 
+In this semester, we make a schedule for the whole semester in week2. Each week, in the group meeting, each member will put forward their own tasks according to the schedule. And report how they did according to their tasks of last week, especially analyse the reasons for the delay parts and raise new solutions. We use "issues" on github to document everyone's achievements and reflections.
+
 Audit 1:
+- Create plan for the semester
+- Update necessary documentation eg.SOW, risk register, github.
+
+
 
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
@@ -144,7 +159,7 @@ As the project is being implemented as part of a secure system, it is important 
 | Biwei Cao              | u5926643       | Developer(XML extraction), Documentation                                |
 | Jiaqi Zhang            | u6089193       | Developer(Testing)                                                      |
 | Joshua Trevor          | u6405233       | Developer(PDF extraction), Spokesperson                                 |
-| Yanlong LI             | u5890571       | Developer(full stack)                                                   |
+| Yanlong LI             | u5890571       | Developer(front end)                                                    |
 | Yuan Yao               | u5945391       | Developer(data interaction), Documentation                              |
 
 

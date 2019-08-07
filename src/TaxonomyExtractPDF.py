@@ -166,7 +166,7 @@ def get_example_path(pdf_name):
 
 
 def get_output_path(name):
-    result = os.path.join(get_root_dir(), "Output/{}_OUTPUT.xlsx".format(name))
+    result = os.path.join(get_root_dir(), "Output/{}_OUTPUT.csv".format(name))
     return result.replace("\\", "/")
 
 
@@ -342,11 +342,11 @@ def add_dict_data_to_df(name_results):
     return df
 
 
-def get_excel_output(path):
+def get_csv_output(path):
     reader = create_pdf_reader(get_example_path(path))
     json = parse_json_list(find_new_names(read_all_pages(reader)))
     df = add_dict_data_to_df(json)
-    df.fillna(0.0).to_excel(get_output_path(path[:-4]))
+    df.fillna(0.0).to_csv(get_output_path(path[:-4]))
 
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
@@ -355,6 +355,6 @@ get_configurations()
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
 
-#get_excel_output("JABG31P037_Lang.pdf")
-get_excel_output("TestNames.pdf")
+#get_csv_output("JABG31P037_Lang.pdf")
+get_csv_output("TestNames.pdf")
 
