@@ -86,6 +86,7 @@
             <br/>
             <button id="sub" onclick="">Submit</button>
             <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->
+            <a id="download"}>Download</a>
         </div>
     </div>
 </div>
@@ -120,9 +121,13 @@
 </div>
 
 <script>
-	 var xml_name = JSON.stringify('{{ xml_name|safe}}').substring(1,JSON.stringify('{{ xml_name|safe}}').length-1)  
+	 var xml_name = JSON.stringify('{{ xml_name|safe}}').substring(1,JSON.stringify('{{ xml_name|safe}}').length-1)
 	 console.log(xml_name)
 	 document.getElementById('download').href = 'get/'+xml_name.split('.').slice(0, -1).join('.')+'.xls'
 </script>
 </body>
 </html>
+
+
+<!--TODO: Embed PDF review-->
+<!--TODO: Editable review???-->

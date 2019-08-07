@@ -60,7 +60,7 @@ XML:
 
 Server:
 - Getting contact with ANU to know if we could establish a server in ANU.
-- Studying informations about other platforms where we could implement server, such as Herok.
+- Studying informations about other platforms where we could implement server, such as Heroku.
 - Learning server knowledges and give a break-down plan of implementation.
 
 Testing:
@@ -76,7 +76,7 @@ Weeks 2-3:
 - Create plan for the semester
 - Update necessary documentation (updating landing page, set new google files, risk register, milestones, schedules. )
 - Prepare for audit (ppt)
-- Getting contact with ANU to know if we could establish a server in ANU. If not applicable, research other server platform (Herok)
+- Getting contact with ANU to know if we could establish a server in ANU. If not applicable, research other server platform (Heroku)
 - Studying on the knowledge of server deployment.
 - Specify UI input and output preview display.
 - Change output format to csv
