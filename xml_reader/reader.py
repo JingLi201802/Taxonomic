@@ -1,9 +1,6 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
-from xlrd import open_workbook
-import os
-from xlutils.copy import copy
-from xml_reader import reference_info_extraction
+
 
 # src_path = os.path.dirname(os.path.realpath(__file__))
 #
@@ -161,27 +158,29 @@ def snp_single_info(item2):
                                             coordinate=get_coordinates(item41)
                                             break
 
-    if (genus!='' or species!=''):
-        # print('1: ')
-        # print(family)
-        # print(genus)
-        # print(subgenus)
-        # print(species)
-        # if taxon_authority!=None:
-        #     print('2:'+taxon_authority)
-        # if holotype_and_loc!=None:
-        #     print('3:' +holotype_and_loc)
-        # if(coordinate!=None):
-        #     print("4:" +coordinate)
-        # if taxon_status!=None:
-        #     print('5:'+taxon_status)
-        #
-        # print("-------------------------------------")
-
-        return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
-    else:
-
-        return ([])
+    # if (genus!='' or species!=''):
+    #     # print('1: ')
+    #     # print(family)
+    #     # print(genus)
+    #     # print(subgenus)
+    #     # print(species)
+    #     # if taxon_authority!=None:
+    #     #     print('2:'+taxon_authority)
+    #     # if holotype_and_loc!=None:
+    #     #     print('3:' +holotype_and_loc)
+    #     # if(coordinate!=None):
+    #     #     print("4:" +coordinate)
+    #     # if taxon_status!=None:
+    #     #     print('5:'+taxon_status)
+    #     #
+    #     # print("-------------------------------------")
+    #
+    #     return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
+    # else:
+    #
+    #     return ([])
+    if (family+genus+subgenus+species)!="" and (taxon_status!=""):
+        return [family, genus, subgenus, species, genus+" "+species,taxon_authority, holotype_and_loc, coordinate, taxon_status]
 
 
 
@@ -210,7 +209,7 @@ def get_info_recursive(item):
 
 def get_info_from_body(root):
 
-    df=pd.DataFrame(columns=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
+    df=pd.DataFrame(columns=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
 
     for item in root.iterfind('./body/sec'):
         if(item.tag=='sec'):
@@ -224,7 +223,7 @@ def get_info_from_body(root):
                     if(row!=None and row!=[]):
 
 
-                        dfseries=pd.Series(row,index=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
+                        dfseries=pd.Series(row,index=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
                         df=df.append(dfseries,ignore_index=True)
 
             else:
@@ -232,70 +231,77 @@ def get_info_from_body(root):
                 if(row2!=[]) and row2!=None:
 
 
-                    dfseries=pd.Series(row2,index=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
+                    dfseries=pd.Series(row2,index=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
                     df=df.append(dfseries,ignore_index=True)
+    print(df)
     return df
 
-def write_species_to_excel(root):
-    doi_zoobankn=get_doi(root)
+# def write_species_to_excel(root):
+#
+#     body_data = get_info_from_body(root)
+#
+#     rb=open_workbook('taxonomy.xls')
+#     workbook=copy(rb)
+#
+#     worksheet=workbook.add_sheet('taxonomic_name')
+#     #worksheet.write_merge(0,0,0,6,doi_data)
+#     #worksheet.write_merge(1,1,0,6,zoobank_data)
+#     column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
+#                             'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
+#                             'named-content','tp:taxon-status']
+#     for j in range(len(column_name_in_article)):
+#         worksheet.write(2,j,column_name_in_article[j])
+#     tnu_name=['scientificName','scienfiticNameAuthorship','taxonRank']
+#     worksheet.write_merge(3,3,1,3,tnu_name[0])
+#     worksheet.write(3,4,tnu_name[1])
+#     worksheet.write(3,7,tnu_name[2])
+#
+#
+#     column_name=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status']
+#     for i in range(len(column_name)):
+#         worksheet.write(4,i,column_name[i])
+#
+#
+#     pre_row_number=5
+#     print(pre_row_number)
+#     pdrow=body_data.shape[0]
+#     pdcoloum=body_data.shape[1]
+#
+#     for i in range(pdrow):
+#         for j in range(pdcoloum):
+#             worksheet.write(i+pre_row_number,j,body_data.iloc[i,j])
+#
+#
+#     workbook.save('taxonomy.xls')
 
-    #doi_data='DOI is: '+doi_zoobankn[0]
-    #zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
-    #articledata=[doi_data,zoobank_data]
-    body_data = get_info_from_body(root)
+# def write_excel(articleName):
+#     # src_path = os.path.dirname(os.path.realpath(__file__))
+#     #
+#     # path_dir = os.listdir(src_path)
+#     # print(path_dir)
+#     # xml_file = []
+#     # for i in path_dir:
+#     #     if ".xml" in i:
+#     #         xml_file.append(i)
+#     # articleName = xml_file[0]
+#     # articleName = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
+#     # print(articleName)
+#     tree = ET.parse(articleName)
+#     root = tree.getroot()
+#
+#
+#     reference_info_extraction.write_reference_to_excel(reference_info_extraction.lists, reference_info_extraction.ref_list)
+#     write_species_to_excel(root)
+#
+#
+# write_excel("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
 
-    rb=open_workbook('taxonomy.xls')
-    workbook=copy(rb)
-
-    worksheet=workbook.add_sheet('taxonomic_name')
-    #worksheet.write_merge(0,0,0,6,doi_data)
-    #worksheet.write_merge(1,1,0,6,zoobank_data)
-    column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
-                            'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
-                            'named-content','tp:taxon-status']
-    for j in range(len(column_name_in_article)):
-        worksheet.write(2,j,column_name_in_article[j])
-    tnu_name=['scientificName','scienfiticNameAuthorship','taxonRank']
-    worksheet.write_merge(3,3,1,3,tnu_name[0])
-    worksheet.write(3,4,tnu_name[1])
-    worksheet.write(3,7,tnu_name[2])
-
-
-    column_name=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status']
-    for i in range(len(column_name)):
-        worksheet.write(4,i,column_name[i])
-
-
-    pre_row_number=5
-    print(pre_row_number)
-    pdrow=body_data.shape[0]
-    pdcoloum=body_data.shape[1]
-
-    for i in range(pdrow):
-        for j in range(pdcoloum):
-            worksheet.write(i+pre_row_number,j,body_data.iloc[i,j])
-
-
-    workbook.save('taxonomy.xls')
-
-def write_excel(articleName):
-    # src_path = os.path.dirname(os.path.realpath(__file__))
-    #
-    # path_dir = os.listdir(src_path)
-    # print(path_dir)
-    # xml_file = []
-    # for i in path_dir:
-    #     if ".xml" in i:
-    #         xml_file.append(i)
-    # articleName = xml_file[0]
-    # articleName = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
-    # print(articleName)
+def write_csv(articleName):
     tree = ET.parse(articleName)
     root = tree.getroot()
+    df=get_info_from_body(root)
+    df.to_csv("Taxonomic/xml_reader/taxonomic_info.csv")
 
 
-    reference_info_extraction.write_reference_to_excel(reference_info_extraction.lists, reference_info_extraction.ref_list)
-    write_species_to_excel(root)
 
-
-write_excel("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
+write_csv("Taxonomic/Examples/xmls/A new genus and two_new_species_of_miniature_clingfishes.xml")
