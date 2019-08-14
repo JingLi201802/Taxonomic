@@ -40,6 +40,7 @@ General:
 - CSV output
 - Passed user acceptance testing
 - Well formatted output
+- Generate a report for lessons learnt and issues in the process of extracting data.
 
 UI:
 - Editable output
@@ -106,6 +107,7 @@ Week 9-10:
 - Testing with client
 - Acting on client feedback
 - Prepare for audit
+- Generate a report for lessons learnt and issues in the process of extracting data.
 
 Week 11-12:
 - Finalising project
