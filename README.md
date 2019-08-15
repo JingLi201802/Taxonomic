@@ -91,6 +91,7 @@ Weeks 4-5:
 
 Weeks 5-6:
 - Improve UI (editable output)
+- Improve UI (output display)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
 - Working on different publishers' cases of TaxPub. Making imporvements on accuracy (XML)
@@ -98,12 +99,14 @@ Weeks 5-6:
 - Prepare for audit
 
 Week 7-8:
-- Improve UI (Highlighting relevant input text)
+- Improve UI (editable output)
+- Improve UI (output display)
 - Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
 - Working on the cases of species combination, or changing species' category (XML)
 - Continue deploying server, link backend with server.
 
 Week 9-10:
+- Improve UI (output display)
 - Testing with client
 - Acting on client feedback
 - Prepare for audit
