@@ -1,9 +1,10 @@
 import xml.etree.ElementTree as ET
 import os
 from lxml import etree
-# import pandas as pd
+import pandas as pd
 import collections
 import xlwt
+import xlrd
 
 
 
@@ -150,6 +151,13 @@ def write_excel(a_list, r_list):
 
 def write_reference_to_excel(a_list, r_list):
     write_excel(a_list, r_list)
+    df = pd.read_excel('taxonomy.xls', sheet_name=None)
+    df['agents'].to_csv('agents.csv')
+    df['references'].to_csv('references.csv')
 
-#
-#write_reference_to_excel(lists, ref_list)
+
+
+
+lists, ref_list = get_contri_info("E:/last/TL/Taxonomic-master/Taxonomic-master/Examples/xmls/a.xml")
+write_reference_to_excel(lists, ref_list)
+
