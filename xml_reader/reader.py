@@ -1,7 +1,10 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
+import os
 
-
+"""This is used to extract taxonomic information from xml file. The information include species, genuse,
+sub genus, scientific name, gender, location...But not include article reference information, such as 
+agency."""
 # src_path = os.path.dirname(os.path.realpath(__file__))
 #
 # path_dir = os.listdir(src_path)
@@ -24,7 +27,28 @@ import pandas as pd
 # doi=''
 # zooBankNumber=''
 
+def get_root_dir():
+    abs_file_path = os.path.abspath(__file__)
+    #print(abs_file_path)
+    parent_dir = os.path.dirname(abs_file_path)
+    #print(parent_dir)
+    parent_dir = os.path.dirname(parent_dir)
+    #print(parent_dir)
+    return parent_dir
 
+
+
+def get_example_path(xml_name):
+    """The xml example is in Examples/xmls/ , get this path"""
+
+    result = os.path.join(get_root_dir(), "Examples/xmls/{}".format(xml_name))
+    return result.replace("\\", "/")
+
+
+def get_output_path(name):
+    """Output is stored in Output/xmlOutput/"""
+    result = os.path.join(get_root_dir(), "Output/xmlOutput/{}_XmlOutput.csv".format(name))
+    return result.replace("\\", "/")
 
 def get_doi(root):
     doi = ''
@@ -91,6 +115,7 @@ def get_family(it):
 
 
 def snp_single_info(item2):
+    """Read from the the tag {http://www.plazi.org/taxpub}taxon-treatment and below"""
     family=''
     genus=''
     subgenus=''
@@ -186,6 +211,8 @@ def snp_single_info(item2):
 
 
 def get_info_recursive(item):
+    """In the systematic' or 'taxonomy section of the article, use np_single_info() to recursive get
+    taxonomic information"""
 
     for ite1 in item:
         if ('sec-type' in ite1.attrib):
@@ -208,7 +235,8 @@ def get_info_recursive(item):
 
 
 def get_info_from_body(root):
-
+    """read the article, use np_single_info() to recursive get
+        taxonomic information"""
     df=pd.DataFrame(columns=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
 
     for item in root.iterfind('./body/sec'):
@@ -236,72 +264,15 @@ def get_info_from_body(root):
     print(df)
     return df
 
-# def write_species_to_excel(root):
-#
-#     body_data = get_info_from_body(root)
-#
-#     rb=open_workbook('taxonomy.xls')
-#     workbook=copy(rb)
-#
-#     worksheet=workbook.add_sheet('taxonomic_name')
-#     #worksheet.write_merge(0,0,0,6,doi_data)
-#     #worksheet.write_merge(1,1,0,6,zoobank_data)
-#     column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
-#                             'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
-#                             'named-content','tp:taxon-status']
-#     for j in range(len(column_name_in_article)):
-#         worksheet.write(2,j,column_name_in_article[j])
-#     tnu_name=['scientificName','scienfiticNameAuthorship','taxonRank']
-#     worksheet.write_merge(3,3,1,3,tnu_name[0])
-#     worksheet.write(3,4,tnu_name[1])
-#     worksheet.write(3,7,tnu_name[2])
-#
-#
-#     column_name=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status']
-#     for i in range(len(column_name)):
-#         worksheet.write(4,i,column_name[i])
-#
-#
-#     pre_row_number=5
-#     print(pre_row_number)
-#     pdrow=body_data.shape[0]
-#     pdcoloum=body_data.shape[1]
-#
-#     for i in range(pdrow):
-#         for j in range(pdcoloum):
-#             worksheet.write(i+pre_row_number,j,body_data.iloc[i,j])
-#
-#
-#     workbook.save('taxonomy.xls')
 
-# def write_excel(articleName):
-#     # src_path = os.path.dirname(os.path.realpath(__file__))
-#     #
-#     # path_dir = os.listdir(src_path)
-#     # print(path_dir)
-#     # xml_file = []
-#     # for i in path_dir:
-#     #     if ".xml" in i:
-#     #         xml_file.append(i)
-#     # articleName = xml_file[0]
-#     # articleName = "E:/uni y4s1/comp4500/Taxonomic-master/Taxonomic-master/xml_reader/26newSpecies.xml"
-#     # print(articleName)
-#     tree = ET.parse(articleName)
-#     root = tree.getroot()
-#
-#
-#     reference_info_extraction.write_reference_to_excel(reference_info_extraction.lists, reference_info_extraction.ref_list)
-#     write_species_to_excel(root)
-#
-#
-# write_excel("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
 
 def write_csv(articleName):
-    tree = ET.parse(articleName)
+    path=get_example_path(articleName)
+    tree = ET.parse(path)
     root = tree.getroot()
     df=get_info_from_body(root)
-    df.to_csv("Taxonomic/xml_reader/taxonomic_info.csv")
+    df.to_csv(get_output_path(articleName))
 
 
 
-write_csv("Taxonomic/Examples/xmls/A new genus and two_new_species_of_miniature_clingfishes.xml")
+write_csv("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml_XmlOutput.csv")

@@ -4,10 +4,12 @@ from lxml import etree
 import pandas as pd
 import collections
 import xlwt
+import xlrd
 
 """get the infomation about contribution
    @param target: absolute url for the input file
 """
+
 
 def get_contri_info(target):
     # initialize
@@ -29,9 +31,9 @@ def get_contri_info(target):
     # xml_file_no = len(xml_file)
 
     # for file_name in xml_file:
-    
+
     """for single input"""
-    
+
     reference_list_item = {}
     agents = {}
     reference_id += 1
@@ -121,10 +123,13 @@ def get_contri_info(target):
 
     return agents_list, reference_list
 
+
 """write the captured data into excel
    @param a_list : agent infomation list
    @param r_list : reference information list
 """
+
+
 def write_excel(a_list, r_list):
     book = xlwt.Workbook()
     sheet = book.add_sheet("agents", cell_overwrite_ok=True)
@@ -160,12 +165,13 @@ lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxon
 
 def write_reference_to_excel(a_list, r_list):
     write_excel(a_list, r_list)
-      
-        """excel to csv """
-    agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
-    agents.to_csv('agents.csv', encoding='utf-8')
-    references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
-    references.to_csv('references.csv', encoding='utf-8')
 
+    """excel to csv """
+
+
+agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
+agents.to_csv('agents.csv', encoding='utf-8')
+references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
+references.to_csv('references.csv', encoding='utf-8')
 
 write_reference_to_excel(lists, ref_list)
