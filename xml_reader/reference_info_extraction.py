@@ -160,18 +160,18 @@ def write_excel(a_list, r_list):
     book.save("taxonomy.xls")
 
 
-lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
+##lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
 
 
 def write_reference_to_excel(a_list, r_list):
     write_excel(a_list, r_list)
 
     """excel to csv """
+    agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
+    agents.to_csv('agents.csv', encoding='utf-8')
+    references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
+    references.to_csv('references.csv', encoding='utf-8')
 
 
-agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
-agents.to_csv('agents.csv', encoding='utf-8')
-references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
-references.to_csv('references.csv', encoding='utf-8')
 
-write_reference_to_excel(lists, ref_list)
+##write_reference_to_excel(lists, ref_list)
