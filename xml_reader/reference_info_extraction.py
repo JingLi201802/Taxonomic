@@ -154,8 +154,8 @@ def write_excel(a_list, r_list):
     for num in range(len(r_list)):
         row = reference_sheet.row(num + 1)
         for index, col in enumerate(cols_ref):
-            if col in ref_list[num].keys():
-                value = ref_list[num][col]
+            if col in r_list[num].keys():
+                value = r_list[num][col]
                 row.write(index, value)
     book.save("taxonomy.xls")
 
