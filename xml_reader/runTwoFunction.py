@@ -16,7 +16,7 @@ if __name__ == '__main__':
     """ call RIE module"""
     lists, ref_list = reference_info_extraction.get_contri_info(xml_path)
     reference_info_extraction.write_reference_to_excel(lists, ref_list)
-
+    """ call reader module"""
     reader.write_csv("26newSpecies.xml")
 
 
