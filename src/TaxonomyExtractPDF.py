@@ -2,6 +2,7 @@ import PyPDF2
 import os
 import requests
 import pandas as pd
+import re
 
 
 common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
@@ -22,7 +23,6 @@ def read_all_pages(pdf_reader):
     result = ""
     while page_index < pdf_reader.getNumPages():
         page = (pdf_reader.getPage(page_index).extractText())
-        page = normalise_spacing(page)
         result = result + page
         page_index = page_index + 1
     return result
@@ -63,7 +63,7 @@ def process_string(doc_string):
 #Later be amended to return the location of the string within the document.
 def find_new_names(doc_string):
     working_index = 0
-    word_list = doc_string.split(" ")
+    word_list = normalise_spacing(doc_string).split(" ")
     combined_request_str = ""
     debugstr=""
     post_buffer = 20
@@ -123,21 +123,17 @@ def find_document_data(doc_string, reference_index):
 # currently uses naiive approach: finding the last usage of the word references,
 # should work 99% of the time but can still be improved
 def find_references(doc_string):
-    references = ""
-    word_list = doc_string.split(" ")
-    index = 0
-    reference_index = 0
-    for word in word_list:
-        if word.lower() == "references":
-            references = word_list[index:]
-            reference_index = index
-        index += 1
+    iter = re.finditer("References", doc_string)
+    item = None
+    for item in iter:
+        pass
 
-    if reference_index == 0:
+    if not (iter == None):
+        print("References begin at index {}".format(item.end()))
+        return item.end()
+    else:
         print("No reference section was detected")
-        return reference_index
-    print("References begin at word number " + str(reference_index))
-    return reference_index
+        return 0
 
 
 # Todo: extract coordinate information
@@ -355,6 +351,9 @@ get_configurations()
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
 
-#get_csv_output("JABG31P037_Lang.pdf")
-get_csv_output("TestNames.pdf")
+get_csv_output("JABG31P037_Lang.pdf")
+#get_csv_output("TestNames.pdf")
+#print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
+
+
 
