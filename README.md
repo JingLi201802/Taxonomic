@@ -43,8 +43,8 @@ General:
 - Generate a report for lessons learnt and issues in the process of extracting data.
 
 UI:
-- Editable output
-- The GUI is only render the interface to user, GUI well NOT make any logical process.
+- Specify UI input and output preview display
+- Design all the windows needed. Editable output
 
 PDF:
 - Acceptable level of name border recognition
