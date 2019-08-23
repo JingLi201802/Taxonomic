@@ -15,7 +15,7 @@ agency."""
 #         xml_file.append(i)
 # articleName=xml_file[0]
 # #articleName='aTerrestrialFrog.xml'
-# #articleName='26newSpecies.xml'
+# #articleName='example.xml'
 # #articleName='NewGeneraOfAustralianStilettoFlies.xml'
 # #articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
 # #articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
@@ -274,5 +274,5 @@ def write_csv(articleName):
     df.to_csv(get_output_path(articleName))
 
 
-
-write_csv("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
+if __name__ == '__main__':
+    write_csv("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")

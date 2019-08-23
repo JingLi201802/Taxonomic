@@ -15,7 +15,7 @@ import reference_info_extraction
 #         xml_file.append(i)
 # articleName=xml_file[0]
 # #articleName='aTerrestrialFrog.xml'
-# #articleName='26newSpecies.xml'
+# #articleName='example.xml'
 # #articleName='NewGeneraOfAustralianStilettoFlies.xml'
 # #articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
 # #articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
@@ -301,7 +301,7 @@ def write_excel(articleName):
     #     if ".xml" in i:
     #         xml_file.append(i)
     # articleName = xml_file[0]
-    # articleName = "26newSpecies.xml"
+    # articleName = "example.xml"
     # print(articleName)
     tree = ET.parse(articleName)
     root = tree.getroot()
