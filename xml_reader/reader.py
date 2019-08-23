@@ -271,7 +271,7 @@ def write_csv(articleName):
     tree = ET.parse(path)
     root = tree.getroot()
     df=get_info_from_body(root)
-    df.to_csv(get_output_path(articleName))
+    df.to_csv(get_output_path(articleName.split(".")[0]))
 
 
 if __name__ == '__main__':

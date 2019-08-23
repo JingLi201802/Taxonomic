@@ -26,7 +26,7 @@ if __name__ == '__main__':
         # Add multiple files to the zip
         zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/agents.csv_XmlOutput.csv', "agents.csv")
         zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/references.csv_XmlOutput.csv', "reference.csv")
-        zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/example.xml_XmlOutput.csv', "readerOutput.csv")
+        zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/example_XmlOutput.csv', "readerOutput.csv")
 
 
 
