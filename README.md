@@ -43,8 +43,8 @@ General:
 - Generate a report for lessons learnt and issues in the process of extracting data.
 
 UI:
-- Editable output
-- The GUI is only render the interface to user, GUI well NOT make any logical process.
+- Specify UI input and output preview display
+- Design all the windows needed. Editable output
 
 PDF:
 - Acceptable level of name border recognition
@@ -94,7 +94,7 @@ Weeks 5-6:
 - Improve UI (output display)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
-- Working on different publishers' cases of TaxPub. Making imporvements on accuracy (XML)
+- Working on different publishers' cases of TaxPub. Making imporvements on accuracy. Make the output in the standard schema (XML)
 - Continue deploying server, link UI with server.
 - Prepare for audit
 
@@ -102,6 +102,7 @@ Week 7-8:
 - Improve UI (editable output)
 - Improve UI (output display)
 - Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
+- Try to highlighting the extracted information in the original pdf (PDF)
 - Working on the cases of species combination, or changing species' category (XML)
 - Continue deploying server, link backend with server.
 
