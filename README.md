@@ -189,7 +189,7 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Decision Make Procedures
 # ![Diagram](Resources/decision.jpg)
-#### [Decision Making Log](https://drive.google.com/drive/folders/1b3dv2sz7afSjeyFnS2Lp_9u7vdMrBOAC?usp=sharing)
+#### [Decision Making Log](https://drive.google.com/open?id=12Nd3MGef2hHxz5cSDUhAn0VC442yAlTaBsPWg8uuM68)
 
 ## Testing
 1. #### [Testing Design](https://docs.google.com/document/d/1Ds8spftVot8HpBYaTwZCm5_Jucjr2VzA0EnykC7GGcU/edit)
