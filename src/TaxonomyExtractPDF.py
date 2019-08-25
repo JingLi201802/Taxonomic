@@ -354,6 +354,3 @@ get_configurations()
 get_csv_output("JABG31P037_Lang.pdf")
 #get_csv_output("TestNames.pdf")
 #print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
-
-
-
