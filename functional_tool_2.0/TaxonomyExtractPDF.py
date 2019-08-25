@@ -122,7 +122,7 @@ def get_output_path(name):
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
     name = name.split('/')[-1]
-    result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
+    result = os.path.join(parent_dir, "functional_tool_2.0/csv_folder/{}.xls".format(name))
     return result.replace("\\", "/")
 
 
