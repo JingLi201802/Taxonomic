@@ -158,6 +158,6 @@ def write_reference_to_excel(a_list, r_list):
 
 
 
-lists, ref_list = get_contri_info("E:/last/TL/Taxonomic-master/Taxonomic-master/Examples/xmls/a.xml")
+lists, ref_list = get_contri_info("Examples/xmls/example.xml")
 write_reference_to_excel(lists, ref_list)
 

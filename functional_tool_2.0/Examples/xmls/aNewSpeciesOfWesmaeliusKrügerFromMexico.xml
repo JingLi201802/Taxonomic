@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//TaxonX//DTD Taxonomic Treatment Publishing DTD v0 20100105//EN" "../../nlm/tax-treatment-NS0.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tp="http://www.plazi.org/taxpub" article-type="research-article" dtd-version="3.0" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">2</journal-id>
+      <journal-id journal-id-type="index">urn:lsid:arphahub.com:pub:45048d35-bb1d-5ce8-9668-537e44bd4c7e</journal-id>
+      <journal-id journal-id-type="aggregator">urn:lsid:zoobank.org:pub:91BD42D4-90F1-4B45-9350-EEF175B1727A</journal-id>
+      <journal-title-group>
+        <journal-title xml:lang="en">ZooKeys</journal-title>
+        <abbrev-journal-title xml:lang="en">ZK</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">1313-2989</issn>
+      <issn pub-type="epub">1313-2970</issn>
+      <publisher>
+        <publisher-name>Pensoft Publishers</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3897/zookeys.841.29570</article-id>
+      <article-id pub-id-type="publisher-id">29570</article-id>
+      <article-id pub-id-type="other">urn:lsid:arphahub.com:pub:0f8c1f96-2706-5f6a-a327-e077c6be1b1c</article-id>
+      <article-id pub-id-type="other">urn:lsid:zoobank.org:pub:9808ADF9-07A1-44ED-A398-C2310619B4F5</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Research Article</subject>
+        </subj-group>
+        <subj-group subj-group-type="biological_taxon">
+          <subject>Hemerobiidae</subject>
+          <subject>Insecta</subject>
+          <subject>Neuroptera</subject>
+        </subj-group>
+        <subj-group subj-group-type="scientific_subject">
+          <subject>Agriculture and Forestry</subject>
+          <subject>Conservation Biology</subject>
+          <subject>Faunistics &amp;amp; Distribution</subject>
+          <subject>Species Inventories</subject>
+          <subject>Taxonomy</subject>
+        </subj-group>
+        <subj-group subj-group-type="geological_era">
+          <subject>Neogene</subject>
+        </subj-group>
+        <subj-group subj-group-type="geographical_area">
+          <subject>Central America and the Caribbean</subject>
+          <subject>Mexico</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>A new species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger from Mexico, with a key to the New World species of the subgenus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="subgenus" reg="Wesmaelius"/><tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part></tp:taxon-name></italic> Killington (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>)</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author" xlink:type="simple" corresp="no">
+          <name name-style="western">
+            <surname>Marquez-López</surname>
+            <given-names>Yesenia</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+        </contrib>
+        <contrib contrib-type="author" xlink:type="simple" corresp="yes">
+          <name name-style="western">
+            <surname>Contreras-Ramos</surname>
+            <given-names>Atilano</given-names>
+          </name>
+          <xref ref-type="aff" rid="A2">2</xref>
+          <email xlink:type="simple">acontreras@ib.unam.mx</email>
+          <uri content-type="orcid">https://orcid.org/0000-0001-8044-1348</uri>
+        </contrib>
+      </contrib-group>
+      <aff id="A1">
+        <label>1</label>
+        <addr-line content-type="verbatim">Maestría en Biología, Universidad Autónoma Metropolitana-Iztapalapa, Departamento de Biología, 09340 Ciudad de México, Mexico</addr-line>
+        <institution>Universidad Autónoma Metropolitana-Iztapalapa</institution>
+        <addr-line content-type="city">Ciudad de México</addr-line>
+        <country>Mexico</country>
+      </aff>
+      <aff id="A2">
+        <label>2</label>
+        <addr-line content-type="verbatim">Instituto de Biología-UNAM, Departamento de Zoología, Ciudad Universitaria, 04510 Ciudad de México, Mexico</addr-line>
+        <institution>Ciudad Universitaria</institution>
+        <addr-line content-type="city">Ciudad de México</addr-line>
+        <country>Mexico</country>
+      </aff>
+      <author-notes>
+        <fn fn-type="corresp">
+          <p>Corresponding author: Atilano Contreras-Ramos (<email xlink:type="simple">acontreras@ib.unam.mx</email>)</p>
+        </fn>
+        <fn fn-type="edited-by">
+          <p>Academic editor: S. Winterton</p>
+        </fn>
+      </author-notes>
+      <pub-date pub-type="collection">
+        <year>2019</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>23</day>
+        <month>04</month>
+        <year>2019</year>
+      </pub-date>
+      <volume>841</volume>
+      <fpage>61</fpage>
+      <lpage>70</lpage>
+      <history>
+        <date date-type="received">
+          <day>06</day>
+          <month>09</month>
+          <year>2018</year>
+        </date>
+        <date date-type="accepted">
+          <day>28</day>
+          <month>02</month>
+          <year>2019</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>Yesenia Marquez-López, Atilano Contreras-Ramos</copyright-statement>
+        <license license-type="creative-commons-attribution" xlink:href="http://creativecommons.org/licenses/by/4.0/" xlink:type="simple">
+          <license-p>This is an open access article distributed under the terms of the Creative Commons Attribution License (CC BY 4.0), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.</license-p>
+        </license>
+      </permissions>
+      <self-uri content-type="zoobank" xlink:type="simple">http://zoobank.org/9808ADF9-07A1-44ED-A398-C2310619B4F5</self-uri>
+      <abstract>
+        <label>Abstract</label>
+        <p><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="nanacamilpa">nanacamilpa</tp:taxon-name-part></tp:taxon-name> Marquez &amp; Contreras, <bold>sp. n.</bold>, a brown lacewing from Tlaxcala state, Mexico is described and illustrated. This is the second recorded species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> from Mexico, and the third from Middle America. Males of the new species may be identified by parameres separate apically, styliform sclerites directed basally, as well as a rounded gonarcus with a short entoprocessus. Females may be distinguished from closely related species by a subgenital plate with the central plate broadly incised basally. There are now 16 species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> known from the New World.</p>
+      </abstract>
+      <kwd-group>
+        <label>Keywords</label>
+        <kwd>Brown lacewings</kwd>
+        <kwd>taxonomy</kwd>
+        <kwd>Tlaxcala</kwd>
+        <kwd>Transmexican Volcanic Belt</kwd>
+      </kwd-group>
+      <funding-group>
+        <funding-statement>PAPIIT-UNAM, CONACYT Mexico.</funding-statement>
+      </funding-group>
+    </article-meta>
+    <notes>
+      <sec sec-type="Citation" id="SECID0EKF">
+        <title>Citation</title>
+        <p>Marquez-López Y, Contreras-Ramos A (2019) A new species of <italic>Wesmaelius</italic> Krüger from Mexico, with a key to the New World species of the subgenus <italic>Kimminsia</italic> Killington (Neuroptera, Hemerobiidae). ZooKeys 841: 61–70. https://doi.org/10.3897/zookeys.841.29570</p>
+      </sec>
+    </notes>
+  </front>
+  <body>
+    <sec sec-type="Introduction" id="SECID0ELG">
+      <title>Introduction</title>
+      <p><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger is a mostly Holarctic brown lacewing genus, with highest diversity in temperate regions of Eurasia and North America (<xref ref-type="bibr" rid="B16">Yang 1980</xref>, <xref ref-type="bibr" rid="B13">Oswald 1993</xref>). It includes 65 valid species worldwide (<xref ref-type="bibr" rid="B17">Zhao et al. 2017</xref>, <xref ref-type="bibr" rid="B14">Oswald 2018</xref>). Thirteen species are known from the United States and Canada, with one more from the south-western <!--PageBreak -->United States and Mexico and one from Guatemala, the latter with the southernmost distribution for the genus in the New World (<xref ref-type="bibr" rid="B9">Makarkin 1996</xref>, <xref ref-type="bibr" rid="B10">Monserrat 1998</xref>, <xref ref-type="bibr" rid="B14">Oswald 2018</xref>). <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="longipennis">longipennis</tp:taxon-name-part></tp:taxon-name> (Banks) is known from western (California) and south-western (Texas) United States (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>, <xref ref-type="bibr" rid="B14">Oswald 2018</xref>), as well as from the Mexican states of Chihuahua, Durango, and Morelos (<xref ref-type="bibr" rid="B15">Oswald et al. 2002</xref>), and is the only previously known species in Mexico. The New World species were treated more recently by <xref ref-type="bibr" rid="B6">Klimaszewski and Kevan (1987a</xref>, <xref ref-type="bibr" rid="B7">b</xref>), who revised the species from Alaska and Canada, and diagnosed the two subgenera proposed by <xref ref-type="bibr" rid="B1">Aspöck et al. (1980)</xref>, <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Kimminsia">Kimminsia</tp:taxon-name-part></tp:taxon-name></italic> Killington and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger. This subdivision was questioned by <xref ref-type="bibr" rid="B13">Oswald (1993)</xref>, on the grounds that <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Kimminsia">Kimminsia</tp:taxon-name-part></tp:taxon-name></italic> may be paraphyletic, a position followed by <xref ref-type="bibr" rid="B17">Zhao et al. (2017)</xref>, however there is no conclusive evidence yet to settle the validity of the subgenera. In this work, we describe a new species of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> from Tlaxcala state, central Mexico, which belongs to the Transmexican Volcanic Belt biogeographic province (<xref ref-type="bibr" rid="B12">Morrone 2014</xref>). Following the classification scheme with subgenera (<xref ref-type="bibr" rid="B1">Aspöck et al. 1980</xref>; <xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>; <xref ref-type="bibr" rid="B8">Makarkin 1995</xref>, <xref ref-type="bibr" rid="B9">1996</xref>), the new species agrees well with the subgenus <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="subgenus" reg="Wesmaelius"/><tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part></tp:taxon-name>, particularly because the elongate, narrowly rectangular male ectoproct, and the short female gonapophyses laterales. A key for the identification of the 15 currently known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>)</tp:taxon-name> from the New World is included; the only currently known species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Wesmaelius">W.</tp:taxon-name-part>)</tp:taxon-name> from the New World, the Nearctic <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Wesmaelius">W.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="longifrons">longifrons</tp:taxon-name-part></tp:taxon-name> (Walker), may be identified with <xref ref-type="bibr" rid="B7">Klimaszewski and Kevan (1987b)</xref>.</p>
+    </sec>
+    <sec sec-type="materials|methods" id="SECID0EGEAC">
+      <title>Material and methods</title>
+      <p>The last four abdominal segments of both sexes were separated from the thorax and cleared in 10% potassium hydroxide (KOH) for 10 minutes at 60 °C. Structures were rinsed in distilled water with the aid of a 1 ml insulin syringe, placed in a glass microvial with glycerine, and then included with the specimen within a larger vial containing 96% ethanol. The terminology for wing and genitalia morphology follows <xref ref-type="bibr" rid="B6">Klimaszewski and Kevan (1987a)</xref>. Observations were made under a Carl Zeiss Discovery V8 stereomicroscope and photographs were taken under a Carl Zeiss AxioZoom V16 stereomicroscope and a Leica Z16APO-A stereomicroscope with a camera Leica DFC490, both with automontage system. The collecting site, Municipality of Nanacamilpa, Tlaxcala State, has a temperate mesic climate with summer rains, with a mean annual temperature of 14.8 °C, and mean annual precipitation of 1729 mm (<xref ref-type="bibr" rid="B4">INEGI 2014</xref>). The holotype and one female paratype, both dissected, are deposited at the Colección Nacional de Insectos (<abbrev xlink:title="Colección Nacional de Insectos" id="ABBRID0EUEAC">CNIN</abbrev>) of the Instituto de Biología, UNAM, Mexico City; one male (undissected) and one female (dissected) paratype will be deposited at the <named-content xlink:type="simple" content-type="institution" xlink:href="http://grbio.org/institution/smithsonian-institution-national-museum-natural-history">National Museum of Natural History, Smithsonian Institution</named-content> (<named-content content-type="dwc:institutional_code">NMNH</named-content>), Washington, D.C. The <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="superorder">Neuropterida</tp:taxon-name-part></tp:taxon-name> species of the World platform (<xref ref-type="bibr" rid="B14">Oswald 2018</xref>) was helpful to track down all known <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> species, whose descriptions were compared in order to rule <!--PageBreak -->out synonymy. The key was constructed based on <xref ref-type="bibr" rid="B6">Klimaszewski and Kevan (1987a)</xref> and descriptions of other <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>)</tp:taxon-name> species in the New World: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="longipennis">longipennis</tp:taxon-name-part></tp:taxon-name> (Banks) from Mexico (<xref ref-type="bibr" rid="B2">Banks 1920</xref>, <xref ref-type="bibr" rid="B3">Carpenter 1940</xref>), and <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> (Kimmins) from Guatemala (<xref ref-type="bibr" rid="B5">Kimmins 1928</xref>, <xref ref-type="bibr" rid="B10">Monserrat 1998</xref>). In the key, “fig.” refers to figures from literature, while “Fig.” refers to original figures.</p>
+    </sec>
+    <sec sec-type="Taxonomy" id="SECID0EKHAC">
+      <title>Taxonomy</title>
+      <tp:taxon-treatment>
+        <tp:treatment-meta>
+          <kwd-group>
+            <label>Taxon classification</label>
+            <kwd>
+              <named-content content-type="kingdom" xlink:type="simple">Animalia</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="order" xlink:type="simple">Neuroptera</named-content>
+            </kwd>
+            <kwd>
+              <named-content content-type="family" xlink:type="simple">Hemerobiidae</named-content>
+            </kwd>
+          </kwd-group>
+        </tp:treatment-meta>
+        <tp:nomenclature>
+          <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="nanacamilpa">nanacamilpa</tp:taxon-name-part><object-id content-type="zoobank" xlink:type="simple">http://zoobank.org/A877B409-F953-42B2-8BCE-901FB464FB84</object-id></tp:taxon-name>
+          <tp:taxon-authority>Marquez &amp; Contreras</tp:taxon-authority>
+          <tp:taxon-status>sp. n.</tp:taxon-status>
+          <xref ref-type="fig" rid="F1">Figs 1</xref>
+          <xref ref-type="fig" rid="F2">, 2</xref>
+        </tp:nomenclature>
+        <tp:treatment-sec sec-type="material" id="SECID0EBJAC">
+          <title>Material examined.</title>
+          <p>Holotype: Male; MEXICO: Tlaxcala, Nanacamilpa de Mariano Arista, Comunidad San Felipe Hidalgo, Bosque Mágico de Piedra Canteada, Santuario de la Luciérnaga, <named-content content-type="dwc:verbatimCoordinates"><named-content content-type="geo-json" specific-use="{&quot;type&quot;:&quot;Point&quot;,&quot;coordinates&quot;:[-98.600556,19.456194]}" id="NCID0EKJAC">19°27'22.3"N, 98°36'02.0"W</named-content></named-content>, 2839 m, 03.vi.2016, Marquez, Contreras, Ramírez, Mayorga, Luna, luz blanca, bosque de <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Abies">Abies</tp:taxon-name-part></tp:taxon-name></italic> [alcohol, genitalia dissected] (<abbrev xlink:title="Colección Nacional de Insectos" id="ABBRID0EWJAC">CNIN</abbrev>). Paratypes: same data as holotype, 1 female [alcohol, genitalia dissected] (<abbrev xlink:title="Colección Nacional de Insectos" id="ABBRID0E1JAC">CNIN</abbrev>), 1 female [alcohol, dissected] (<named-content content-type="dwc:institutional_code">NMNH</named-content>); same data as holotype but 2855 m, 02.vi.2017, Marquez, Contreras, Ramírez, Luna, mercury vapor light, 1 male [alcohol, undissected] (<named-content content-type="dwc:institutional_code">NMNH</named-content>).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="diagnosis" id="SECID0EIKAC">
+          <title>Diagnosis.</title>
+          <p>Head mostly dark brown (Fig. <xref ref-type="fig" rid="F1">1A</xref>), vertex yellowish with small brown spots (Fig. <xref ref-type="fig" rid="F1">1B</xref>); outer side of scape brown (Fig. <xref ref-type="fig" rid="F1">1A</xref>); colour pattern of pronotum a mid-longitudinal discontinuous line with adjacent small irregular spots (Fig. <xref ref-type="fig" rid="F1">1B</xref>); dark brown band running laterally along pronotum, mesothorax and extending towards the basal third of forewing (Fig. <xref ref-type="fig" rid="F1">1A, C</xref>). Male ectoproct with pecten strongly sclerotized (Fig. <xref ref-type="fig" rid="F2">2A, B</xref>); parameres diverging, distally with a narrow V-shape, styliform sclerites directed basally (Fig. <xref ref-type="fig" rid="F2">2E</xref>); gonarcus with short entoprocessus (Fig. <xref ref-type="fig" rid="F2">2C, D</xref>), lateral lobe broad (Fig. <xref ref-type="fig" rid="F2">2D</xref>); female lateral gonapophyses separate from ectoproct and ovoid (Fig. <xref ref-type="fig" rid="F2">2G</xref>), subgenital plate with large lateral lobe and central plate with broad basal incision (Fig. <xref ref-type="fig" rid="F2">2H</xref>), spermathecal duct moderately coiled (Fig. <xref ref-type="fig" rid="F2">2G</xref>).</p>
+          <fig id="F1" position="float" orientation="portrait">
+            <label>Figure 1.</label>
+            <caption>
+              <p><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="nanacamilpa">nanacamilpa</tp:taxon-name-part></tp:taxon-name>, sp. n., habitus and wings: <bold>A</bold> Head and thorax, lateral <bold>B</bold> Head and thorax, dorsal <bold>C</bold> Forewing <bold>D</bold> Hind wing. Scale bars: 1 mm (<bold>A, B</bold>), 2 mm (<bold>C, D</bold>).</p>
+            </caption>
+            <graphic xlink:href="zookeys-841-061-g001.jpg" position="float" orientation="portrait" xlink:type="simple" id="oo_296311.jpg"/>
+          </fig>
+          <fig id="F2" position="float" orientation="portrait">
+            <label>Figure 2.</label>
+            <caption>
+              <p><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="nanacamilpa">nanacamilpa</tp:taxon-name-part></tp:taxon-name>, sp. n., genitalia: <bold>A, B</bold> Male genitalia, lateral <bold>C</bold> Male gonarcus, dorsal <bold>D</bold> Male gonarcus, lateral <bold>E</bold> Male parameres, dorsal <bold>F</bold> Male parameres, lateral <bold>G</bold> Female genitalia, lateral <bold>H</bold> Female genitalia, ventral. <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> (Kimmins): <bold>I</bold> Male ectoproct, lateral <bold>J</bold> male gonarcus, lateral <bold>K</bold> Male parameres, dorsal <bold>L</bold> Male parameres, lateral <bold>M</bold> Female subgenital plate, ventral. Abbreviations: cp, central plate; e, ectoproct; etp, entoprocessus; gl, gonapophyses laterales; ll, lateral lobe; ss, styliform sclerites; vl, ventral lobe. Scale bars: 0.5 mm (<bold>A, B, G, H</bold>), 0.25 mm (<bold>C–F</bold>), 0.5 mm (<bold>I–M</bold>); <bold>I–M</bold> redrawn from <xref ref-type="bibr" rid="B10">Monserrat (1998)</xref>.</p>
+            </caption>
+            <graphic xlink:href="zookeys-841-061-g002.jpg" position="float" orientation="portrait" xlink:type="simple" id="oo_296312.jpg"/>
+          </fig>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="description" id="SECID0ESPAC">
+          <title>Description.</title>
+          <p><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Dimensions">Dimensions</tp:taxon-name-part></tp:taxon-name></italic>. Forewing length 9.2–9.5 mm, width 3.5–3.6 mm male (n = 2), length 9.6 mm, width 4.0 mm female (n = 2). <italic>Body colour pattern</italic>. Yellowish brown, with portions of head and thorax dark brown; wings patterned; abdomen yellowish, dark brown beyond fourth segment.</p>
+          <p><italic>Head</italic>. Mostly dark brown. Vertex pale yellow with dark brown spots, two pale brown lines between antennae and two pale brown lines behind eyes (Fig. <xref ref-type="fig" rid="F1">1B</xref>); frons dark brow nearly black, clypeus reddish brown with transverse row of conspicuous setae on posterior margin (Fig. <xref ref-type="fig" rid="F1">1A</xref>); labrum reddish brown, gena and postorbital region dark brown, nearly black; male antennae 73–75-segmented (n = 2), female 73-segmented (n =1), scape yellowish, laterally brown, pedicel yellowish, flagellomeres yellowish with narrow brown ring at base (Fig. <xref ref-type="fig" rid="F1">1A</xref>); eyes black with metallic luster (Fig. <xref ref-type="fig" rid="F1">1A</xref>).</p>
+          <!--PageBreak -->
+          <p><italic>Thorax</italic>. Contrasting yellowish brown with dark brown. Pronotum yellowish with two discontinuous mid-longitudinal lines with adjacent small irregular spots (Fig. <xref ref-type="fig" rid="F1">1B</xref>); dark brown band running along pronotum, mesothorax and extending towards the basal third of forewing (Fig. <xref ref-type="fig" rid="F1">1A, C</xref>); mesonotum yellowish, small dark brown spots forming a pattern (Fig. <xref ref-type="fig" rid="F1">1B</xref>); frontal side of mesothorax blackish brown (Fig. <xref ref-type="fig" rid="F1">1A</xref>). Legs mostly yellowish brown, anterior side of forefemur and midcoxa brown, hind legs mostly yellowish.</p>
+          <!--PageBreak -->
+          <!--PageBreak -->
+          <p><italic>Wings</italic>. Forewing narrowly oval; patterned with pale brown maculation; pterostigma pinkish, undefined; costal area narrow, wider at basal third; gradate series equally distanced; dark brown, nearly black irregular band along anal and cubital proximal third of wing; irregular elongate maculation at medial-cubital area in middle of wing (Fig. <xref ref-type="fig" rid="F1">1C</xref>). Hind wing broadly oval, mostly hyaline, without maculation except portions of costal and anal areas; patch of setae at base, before costal vein (Fig. <xref ref-type="fig" rid="F1">1D</xref>).</p>
+          <p><italic>Abdomen</italic>. Mostly pale brown, dark brown beyond fourth segment, particularly dorsally.</p>
+          <p><italic>Male genitalia</italic>. Ninth tergum narrow dorsally, broad basally, concave at upper posterior margin in lateral view (Fig. <xref ref-type="fig" rid="F2">2A, B</xref>); ectoproct subrectangular, with a prominent posterodorsal lobe, ventral lobe short with sclerotized teeth, 12 or 13 trichobothria (Fig. <xref ref-type="fig" rid="F2">2A, B</xref>). Gonarcus rounded, with mediuncus sharp, spine-like in dorsal view, short in lateral view (Fig. <xref ref-type="fig" rid="F2">2C, D</xref>); arcus with anterior projection subtriangular; lateral lobes convex in dorsal view (Fig. <xref ref-type="fig" rid="F2">2C</xref>), amply subquadrate in lateral view (Fig. <xref ref-type="fig" rid="F2">2D</xref>), proximal corners sharp (Fig. <xref ref-type="fig" rid="F2">2C</xref>); entoprocessus short, far from mediuncus (Fig. <xref ref-type="fig" rid="F2">2C, D</xref>). Parameres bar-like, diverging distally with a narrow V-shape, tips sclerotized with small teeth, base slender, strongly sclerotized, styliform sclerites directed basally (Fig. <xref ref-type="fig" rid="F2">2E, F</xref>).</p>
+          <p><italic>Female genitalia</italic>. Gonapophyses laterales separate from ectoproct, ovoid, less sclerotized at proximal side; ectoproct short, subrectangular, bearing 12–14 trichobothria (Fig. <xref ref-type="fig" rid="F2">2G</xref>); subgenital plate with central plate incised apically, conspicuously incised at base, internal margins of basal incision serrate; lateral lobes narrowly lanceolate, longer than central plate (Fig. <xref ref-type="fig" rid="F2">2H</xref>); spermatheca with sclerotized duct moderately coiled (Fig. <xref ref-type="fig" rid="F2">2G</xref>).</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="variation" id="SECID0ERDAE">
+          <title>Variation.</title>
+          <p>Females were slightly larger than males, also females had a stronger colour pattern than males.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="etymology" id="SECID0EWDAE">
+          <title>Etymology.</title>
+          <p>Named after Nanacamilpa, the municipality of Tlaxcala State where the specimens were collected, meaning ‘field of mushrooms’ in Nahuatl.</p>
+        </tp:treatment-sec>
+        <tp:treatment-sec sec-type="ecology" id="SECID0E2DAE">
+          <title>Ecology.</title>
+          <p>Specimens were attracted to white light (domestic light bulb) and mercury vapour light in an <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Abies">Abies</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="religiosa">religiosa</tp:taxon-name-part></tp:taxon-name></italic> (Sacred Fir) forest, during the rainy season (early June). Specimens of <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> are generally captured in conifer forests, maintaining their activity at low temperatures with small population sizes (<xref ref-type="bibr" rid="B7">Klimaszewski and Kevan 1987b</xref>; <xref ref-type="bibr" rid="B10">Monserrat 1998</xref>, <xref ref-type="bibr" rid="B11">2015</xref>).</p>
+        </tp:treatment-sec>
+      </tp:taxon-treatment>
+    </sec>
+    <sec sec-type="Discussion" id="SECID0E6EAE">
+      <title>Discussion</title>
+      <p>The new species is similar to <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> (Kimmins) in wing colour pattern, including a pinkish pterostigma and a dark spot at the MP-CuA inner gradates, however <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> lacks the conspicuous dark band at the base of forewing (<xref ref-type="bibr" rid="B5">Kimmins 1928</xref>, <xref ref-type="bibr" rid="B10">Monserrat 1998</xref>); both have the head vertex with dark brown punctuations, less dense in <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> (<xref ref-type="bibr" rid="B10">Monserrat 1998</xref>). <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>)</tp:taxon-name>. <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius"/><tp:taxon-name-part taxon-name-part-type="species" reg="longipennis">longipennis</tp:taxon-name-part></tp:taxon-name></italic> (Banks) appears to have a similar colour pattern, but the face has numerous red specks (<xref ref-type="bibr" rid="B3">Carpenter 1940</xref>). Regarding external genitalia, the new species is similar to <!--PageBreak --><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="longipennis">longipennis</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="involutus">involutus</tp:taxon-name-part></tp:taxon-name> (Carpenter), <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="brunneus">brunneus</tp:taxon-name-part></tp:taxon-name> (Banks), <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="yuconensis">yuconensis</tp:taxon-name-part></tp:taxon-name> Klimaszewski and Kevan, and <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="pretiosus">pretiosus</tp:taxon-name-part></tp:taxon-name> (Banks) in the shape of the ectoproct, however considering the morphology of the parameres and gonarcus, the new species is distinct from the other known species. At present, it would be difficult to propose a possible sister species. In general, the anterior projection of the gonarcus is similar in dorsal view between <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> from Guatemala and the new species, yet in detail there are marked differences. The gonarcus is broader in the new species (Fig. <xref ref-type="fig" rid="F2">2C, D</xref>), entoprocessus is shorter (Fig. C, D), and the parameres are bar-like, with uniform width in the new species (Fig. <xref ref-type="fig" rid="F2">2E, F</xref>), while slightly curvy and widened at the base in <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> (Fig. <xref ref-type="fig" rid="F2">2K, L</xref>). Females of the new species might be characteristic based on the shape of the subgenital plate, with a marked basal incision with an internal irregular margin (Fig. <xref ref-type="fig" rid="F2">2H</xref>), however not clearly comparable with <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> at present (Fig. <xref ref-type="fig" rid="F2">2M</xref>); the sclerotized spermathecal duct is less coiled and shorter in the new species (Fig. <xref ref-type="fig" rid="F2">2G</xref>), as compared with <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">K.</tp:taxon-name-part>) <tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name> (<xref ref-type="bibr" rid="B10">Monserrat 1998</xref>, fig. 17). A study focused on the brown lacewings of cold mountainous habitats in Mexico, may increase the number of recorded <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> species in the country.</p>
+      <sec sec-type="Key to New World species of Wesmaelius (Kimminsia) Killington (males)" id="SECID0EENAE">
+        <title>Key to New World species of <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">Wesmaelius</tp:taxon-name-part> (<tp:taxon-name-part taxon-name-part-type="subgenus" reg="Kimminsia">Kimminsia</tp:taxon-name-part>)</tp:taxon-name> Killington (males)</title>
+        <table-wrap content-type="key" position="anchor" orientation="portrait">
+          <table id="TID0ENKAC" rules="all">
+            <tbody>
+              <tr>
+                <td rowspan="1" colspan="1">1</td>
+                <td rowspan="1" colspan="1">First fork of anterior cubitus (CuA) at or extremely close to mediocubital inner gradate cross-vein (m+cuig) (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 157A, 158A, 165A)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>2</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">First fork of anterior cubitus (CuA) distal to mediocubital inner gradate cross-vein (m+cuig) (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 159A, 160A-163A, 164A, 166A, 167A)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>6</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">2</td>
+                <td rowspan="1" colspan="1">Forewing apparently immaculate or little maculate, veins unicolorous without variegation (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 165A)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="brunneus">brunneus</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Forewing with distinct maculation pattern, veins variegated pale and dark (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 157A, 158A)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>3</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">3</td>
+                <td rowspan="1" colspan="1">Forewing with apex and ventral (posterior) margin broadly rounded, costal area gradually narrowed at base (Fig. <xref ref-type="fig" rid="F1">1C</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>4</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Forewing with apex and ventral (posterior) margin slightly rounded, costal area abruptly narrowed at base (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 157A, 158A)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>5</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">4</td>
+                <td rowspan="1" colspan="1">Vertex with scarce punctuation (<xref ref-type="bibr" rid="B10">Monserrat 1998</xref>: fig. 11); parameres deeply divided, with apex amply denticulate, styliform sclerites directed apically (Fig. <xref ref-type="fig" rid="F2">2K, L</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="magnus">magnus</tp:taxon-name-part></tp:taxon-name></italic> (Kimmins)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Vertex with dense punctuation (Fig. <xref ref-type="fig" rid="F1">1B</xref>); parameres divided distally, with apex narrowly denticulate, styliform sclerites directed basally (Fig. <xref ref-type="fig" rid="F2">2E, F</xref>)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="nanacamilpa">nanacamilpa</tp:taxon-name-part></tp:taxon-name></italic> Marquez &amp; Contreras, sp. n.</bold>
+                </td>
+              </tr>
+              <!--PageBreak -->
+              <tr>
+                <td rowspan="1" colspan="1">5</td>
+                <td rowspan="1" colspan="1">Ectoproct with large ventral lobes, gonarcus with arcus and mediuncus close in lateral and dorsal views, parameres with styliform sclerites large-convex (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 64–68)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="coloradensis">coloradensis</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Ectoproct with short ventral lobes, gonarcus with arcus and mediuncus distal in lateral and dorsal views, parameres with styliform sclerites small, triangular (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 24, 25, 27–30)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="involutus">involutus</tp:taxon-name-part></tp:taxon-name></italic> (Carpenter)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">6</td>
+                <td rowspan="1" colspan="1">Ectoproct with long ventral lobe (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 45, 46, 74, 75)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>7</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Ectoproct with short ventral lobe (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 8, 9, 56, 57)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>10</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">7</td>
+                <td rowspan="1" colspan="1">Ectoproct with ventral lobe twisted, directed first inwards and then caudad, exceptionally long (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 45, 74)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>8</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Ectoproct with ventral lobe curved, long, directed only once inwards (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 8, 56)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>9</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">8</td>
+                <td rowspan="1" colspan="1">Ectoproct strongly narrowing apically, with twisted ventral lobe (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 74, 75)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="furcatus">furcatus</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Ectoproct elongate, subquadrate, with ventral lobe strongly curved inwards (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 45, 46)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="subnebulosus">subnebulosus</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">9</td>
+                <td rowspan="1" colspan="1">Ectoproct with ventral lobe elongate, subquadrate, gonarcus with mediuncus and entoprocessus close, compact and broad (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 56, 57, 60)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="posticatus">posticatus</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Ectoproct with ventral lobe elongate-narrow, gonarcus with mediuncus and entoprocessus distal and extended, separate and slim (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 8, 14)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="nervosus">nervosus</tp:taxon-name-part></tp:taxon-name></italic> (Fabricius)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">10</td>
+                <td rowspan="1" colspan="1">Body and wings marked with red specks; gonarcus with elongate arcus (<xref ref-type="bibr" rid="B3">Carpenter 1940</xref>: fig. 20C)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="longippenis">longippenis</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Body and wings differently marked, without red specks; gonarcus with short arcus (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 11)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>11</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">11</td>
+                <td rowspan="1" colspan="1">Gonarcus with two lateral emarginations in lateral view (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 111)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="constrictus">constrictus</tp:taxon-name-part></tp:taxon-name></italic> (Parfin)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Gonarcus without lateral emarginations (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 104)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>12</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">12</td>
+                <td rowspan="1" colspan="1">Parameres continuous (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 101)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="yuconensis">yuconensis</tp:taxon-name-part></tp:taxon-name></italic> (Klimaszewski &amp; Kevan)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Parameres apparently subdivided (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 118)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>13</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">13</td>
+                <td rowspan="1" colspan="1">Arcus curved in lateral view, triangular in dorsal view (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 103, 104)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="fumatus">fumatus</tp:taxon-name-part></tp:taxon-name></italic> (Carpenter)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Arcus straight in lateral view, subtriangular in dorsal view (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: figs 107, 116)</td>
+                <td rowspan="1" colspan="1">
+                  <bold>14</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">14</td>
+                <td rowspan="1" colspan="1">Frons dark brown to almost black. Arcus with small tooth at base in lateral view (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 107)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="schwarzi">schwarzi</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <tr>
+                <td rowspan="1" colspan="1">–</td>
+                <td rowspan="1" colspan="1">Frons yellow to yellowish-brown. Arcus with protuberance at base in lateral view (<xref ref-type="bibr" rid="B6">Klimaszewski and Kevan 1987a</xref>: fig. 116)</td>
+                <td rowspan="1" colspan="1">
+                  <bold><italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus" reg="Wesmaelius">W.</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="species" reg="pretiosus">pretiosus</tp:taxon-name-part></tp:taxon-name></italic> (Banks)</bold>
+                </td>
+              </tr>
+              <!--PageBreak -->
+            </tbody>
+          </table>
+        </table-wrap>
+      </sec>
+    </sec>
+  </body>
+  <back>
+    <ack>
+      <title>Acknowledgments</title>
+      <p>We are grateful to the managers of Bosque Mágico de Piedra Canteada for allowing us access to conduct our research. We thank Andrés Ramírez-Ponce and Magali Luna for their support during field work; thanks to Sara Lariza Rivera-Gasperín for her kind support with drawing genitalia structures. We also thank Susana Guzmán Gómez for help with stereomicroscope photographs. Sincere thanks to David Bowles, Jan Klimaszewski, Vladimir Makarkin, Christopher Glasby, associate editor Shaun Winterton, and an anonymous reviewer for relevant observations that improved the original manuscript. This research was supported by Programa de Apoyo a Proyectos de Investigación e Innovación Tecnológica (PAPIIT-UNAM) through the project IN207517 “Aportaciones a la taxonomía y filogenia del orden <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="class">Insecta</tp:taxon-name-part></tp:taxon-name>) en México”. YML thanks M.Sc. Mari Carmen Herrera Fuentes for general support as co-advisor at UAM-Iztapalapa, also Consejo Nacional de Ciencia y Tecnología for support through Master’s fellowship 425413.</p>
+    </ack>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Aspöck</surname><given-names>H</given-names></name><name name-style="western"><surname>Aspöck</surname><given-names>U</given-names></name><name name-style="western"><surname>Hölzel</surname><given-names>H</given-names></name></person-group> (<year>1980</year>) Die Neuropteren Europas. Eine zusammenfassende Darstellung, der Systematic, Ökologie und Chorologie des <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuropteroidea</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Megaloptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Raphidioptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Planipennia</tp:taxon-name-part></tp:taxon-name>) Europas. Goeke &amp; Evers, Krefeld, 2 vols., 495 + 355 pp.</mixed-citation>
+      </ref>
+      <ref id="B2">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Banks</surname><given-names>N</given-names></name></person-group> (<year>1920</year>) <article-title>New neuropteroid insects.</article-title><source>Bulletin of the Museum of Comparative Zoology</source><volume>64</volume>: <fpage>297</fpage>–<lpage>362</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B3">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Carpenter</surname><given-names>FM</given-names></name></person-group> (<year>1940</year>) <article-title>A revision of the Nearctic <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Berothidae</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Sisyridae</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Polystoechotidae</tp:taxon-name-part></tp:taxon-name> and <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Dilaridae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>).</article-title><source>American Academy of Arts &amp; Sciences</source><volume>74</volume>: <fpage>193</fpage>–<lpage>280</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.1093/aesa/34.2.457">https://doi.org/10.1093/aesa/34.2.457</ext-link></mixed-citation>
+      </ref>
+      <ref id="B4">
+        <mixed-citation xlink:type="simple"><institution xlink:type="simple">INEGI</institution> (Instituto Nacional de Estadística y Geografía) (<year>2014</year>) <source>Anuario estadístico y geográfico de Tlaxcala 2014.</source><publisher-name>INEGI</publisher-name>, <publisher-loc>Mexico City</publisher-loc>, <size units="page">537 pp</size>.</mixed-citation>
+      </ref>
+      <ref id="B5">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Kimmins</surname><given-names>DE</given-names></name></person-group> (<year>1928</year>) <article-title>New and little known <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name> of Central America.</article-title><source>EOS: Revista Española de Entomología</source><volume>4</volume>: <fpage>363</fpage>–<lpage>370</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B6">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Klimaszewski</surname><given-names>J</given-names></name><name name-style="western"><surname>Kevan</surname><given-names>DKMcE</given-names></name></person-group> (<year>1987a</year>) <article-title>The brown lacewing flies of Canada and Alaska (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>; <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>). Part II. The genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger.</article-title><source><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name> International</source><volume>4</volume>: <fpage>153</fpage>–<lpage>204</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B7">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Klimaszewski</surname><given-names>J</given-names></name><name name-style="western"><surname>Kevan</surname><given-names>DKMcE</given-names></name></person-group> (<year>1987b</year>) <article-title>The brown lacewing flies of Canada and Alaska (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>; <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>). Part IIb. The genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger.</article-title><source><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name> International</source><volume>4</volume>: <fpage>245</fpage>–<lpage>274</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B8">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Makarkin</surname><given-names>VN</given-names></name></person-group> (<year>1995</year>) <article-title>Notes on Palearctic <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>). I. Introduction and genus <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Wesmaelius</tp:taxon-name-part></tp:taxon-name> Krüger, 1922. Part 1. Subgenus <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus"/><tp:taxon-name-part taxon-name-part-type="subgenus">Wesmaelius</tp:taxon-name-part></tp:taxon-name>.</article-title><source>Far Eastern Entomologist</source><volume>24</volume>: <fpage>1</fpage>–<lpage>13</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B9">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Makarkin</surname><given-names>VN</given-names></name></person-group> (<year>1996</year>) <article-title>Notes on Palearctic <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>). I. Introduction and genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger, 1922. Part 2(1). <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="infraspecific-rank">Subgenus</tp:taxon-name-part><tp:taxon-name-part taxon-name-part-type="subgenus">Kimminsia</tp:taxon-name-part></tp:taxon-name> Killington 1937.</article-title><source>Far Eastern Entomologist</source><volume>31</volume>: <fpage>1</fpage>–<lpage>16</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B10">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Monserrat</surname><given-names>VJ</given-names></name></person-group> (<year>1998</year>) <article-title>Nuevos datos sobre los hemeróbidos de América (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Journal of Neuropterology</source><volume>1</volume>: <fpage>109</fpage>–<lpage>153</lpage>.</mixed-citation>
+      </ref>
+      <!--PageBreak -->
+      <ref id="B11">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Monserrat</surname><given-names>VJ</given-names></name></person-group> (<year>2015</year>) <article-title>Los hemeróbidos de la Península Ibérica y Baleares (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="class">Insecta</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="superorder">Neuropterida</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Graellsia</source><volume>71</volume>: <fpage>1</fpage>–<lpage>71</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.3989/graellsia.2015.v71.129">https://doi.org/10.3989/graellsia.2015.v71.129</ext-link></mixed-citation>
+      </ref>
+      <ref id="B12">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Morrone</surname><given-names>JJ</given-names></name></person-group> (<year>2014</year>) <article-title>Biogeographical regionalization of the Neotropical region.</article-title><source>Zootaxa</source><volume>3782</volume>: <fpage>1</fpage>–<lpage>110</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.11646/zootaxa.3782.1.1">https://doi.org/10.11646/zootaxa.3782.1.1</ext-link></mixed-citation>
+      </ref>
+      <ref id="B13">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Oswald</surname><given-names>JD</given-names></name></person-group> (<year>1993</year>) <article-title>Revision and cladistic analysis of the world genera of the family <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="class">Insecta</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Journal of the New York Entomological Society</source><volume>101</volume>: <fpage>143</fpage>–<lpage>299</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B14">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Oswald</surname><given-names>JD</given-names></name></person-group> (<year>2018</year>) Lacewing digital library. <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="superorder">Neuropterida</tp:taxon-name-part></tp:taxon-name> species of the World. <ext-link xlink:type="simple" ext-link-type="uri" xlink:href="http://lacewing.tamu.edu/Species-Catalogue/index.html">http://lacewing.tamu.edu/Species-Catalogue/index.html</ext-link> [Accessed April 2018]</mixed-citation>
+      </ref>
+      <ref id="B15">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Oswald</surname><given-names>JD</given-names></name><name name-style="western"><surname>Contreras-Ramos</surname><given-names>A</given-names></name><name name-style="western"><surname>Penny</surname><given-names>ND</given-names></name></person-group> (<year>2002</year>) <article-title><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="superorder">Neuropterida</tp:taxon-name-part></tp:taxon-name>),</article-title> In: <person-group><name name-style="western"><surname>Llorente-Bousquets</surname><given-names>J</given-names></name><name name-style="western"><surname>Morrone</surname><given-names>JJ</given-names></name></person-group> (<role>Eds</role>) <issue-title>Biodiversidad, taxonomía y biogeografía de artrópodos de México: hacia una síntesis de su conocimiento, Vol.</issue-title><source>III. Universidad Nacional Autónoma de México, Ciudad de México</source>, <fpage>559</fpage>–<lpage>581</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B16">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Yang</surname><given-names>CK</given-names></name></person-group> (<year>1980</year>) <article-title>Some new species of the genera <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> and <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Kimminsia</tp:taxon-name-part></tp:taxon-name></italic> (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>: <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>).</article-title><source>Acta Entomologica Sinica</source><volume>23</volume>: <fpage>54</fpage>–<lpage>65</lpage>.</mixed-citation>
+      </ref>
+      <ref id="B17">
+        <mixed-citation xlink:type="simple"><person-group><name name-style="western"><surname>Zhao</surname><given-names>Y</given-names></name><name name-style="western"><surname>Tian</surname><given-names>Y</given-names></name><name name-style="western"><surname>Liu</surname><given-names>Z</given-names></name></person-group> (<year>2017</year>) <article-title>New data on brown lacewings genus <italic><tp:taxon-name><tp:taxon-name-part taxon-name-part-type="genus">Wesmaelius</tp:taxon-name-part></tp:taxon-name></italic> Krüger, 1922 from China (<tp:taxon-name><tp:taxon-name-part taxon-name-part-type="order">Neuroptera</tp:taxon-name-part></tp:taxon-name>, <tp:taxon-name><tp:taxon-name-part taxon-name-part-type="family">Hemerobiidae</tp:taxon-name-part></tp:taxon-name>), with a key to Chinese species.</article-title><source>Zootaxa</source><volume>4273</volume>: <fpage>19</fpage>–<lpage>30</lpage>. <ext-link xlink:type="simple" ext-link-type="doi" xlink:href="10.11646/zootaxa.4273.1.2">https://doi.org/10.11646/zootaxa.4273.1.2</ext-link></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+</article>
