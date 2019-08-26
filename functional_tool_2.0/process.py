@@ -60,9 +60,9 @@ def write_excel(a_list, r_list,filename):
 
 @app.route('/get/<filename>')
 def uploaded_file(filename):
-    #print(filename)
-    return send_from_directory(app.config['CSV_FOLDER'], filename.rsplit('.', 1)[0] + ".csv", as_attachment=True)
+    print(filename)
 
+    return send_from_directory(app.config['CSV_FOLDER'], filename[:-3] + ".zip", as_attachment=True)
 
 # @app.route('/')
 # def index():
@@ -94,6 +94,7 @@ def upload_file():
         
             else:
                 pdf_file = request.files["xml"]
+                print("pdf!")
                 pdf_tmp = pdf_file.filename
                 file_tmp = pdf_tmp
                 pdf_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], pdf_file.filename))

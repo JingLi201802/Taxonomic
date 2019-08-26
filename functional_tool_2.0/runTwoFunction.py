@@ -31,7 +31,7 @@ def runall(path):
 #result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
 
     # Create a zip file
-    with ZipFile(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/' + path.split('.')[0] + '_XMLOutput.zip', 'w') as zipObj:
+    with ZipFile(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/' + path.split('.')[0] + '.zip', 'w') as zipObj:
         # Add multiple files to the zip
         zipObj.write(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/agents.csv_XmlOutput.csv', "agents.csv")
         zipObj.write(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/references.csv_XmlOutput.csv', "reference.csv")
