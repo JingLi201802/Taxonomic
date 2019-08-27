@@ -1,4 +1,7 @@
-This part temporarily does not involve the server, but only realizes the front-end and back-end data interaction through flask. Instructions are as follows:
+The server part is still in progress. The link is https://taxonomic.herokuapp.com 
+Currently supports uploading XML files and downloading output.
+
+Instructions running locally are as follows:
 1.    Git pull
 2.    Open terminal, cd to this folder
 3.    Enter “python3 process.py” to run
@@ -8,4 +11,3 @@ This part temporarily does not involve the server, but only realizes the front-e
 7.    If you upload an XML file, the page will display output
 8.    Click "download" to download the output file to local
 9.    Press CTRL+C to quit
-
