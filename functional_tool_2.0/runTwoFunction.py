@@ -9,10 +9,14 @@ def runall(path):
     abs_file_path = os.path.abspath(__file__)
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
+    print(parent_dir)
 
     """ path that stores xml files"""
-    xml_path = parent_dir.replace("\\", "/") + "/functional_tool_2.0/uploaded_folder/"+path
-    # print(xml_path)
+    # xml_path = parent_dir.replace("\\", "//") + "functional_tool_2.0//uploaded_folder//"+path
+    xml_path=path
+    # xml_path = xml_path.replace("//",'\\')
+    # xml_path = xml_path.replace("/",'\\')
+    print(xml_path)
 
     """ call RIE module"""
     lists, ref_list = reference_info_extraction.get_contri_info(xml_path)

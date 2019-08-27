@@ -170,8 +170,9 @@ def write_reference_to_excel(a_list, r_list):
     parent_dir = os.path.dirname(parent_dir)
     # agent_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("agents.csv"))
     # references_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("references.csv"))
-    agent_path = os.path.join(parent_dir, "functional_tool_2.0/csv_folder/{}_XmlOutput.csv".format("agents.csv"))
-    references_path = os.path.join(parent_dir, "functional_tool_2.0/csv_folder/{}_XmlOutput.csv".format("references.csv"))
+    print(parent_dir)
+    agent_path = os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("agents.csv"))
+    references_path = os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("references.csv"))
 
     """excel to csv """
     agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
