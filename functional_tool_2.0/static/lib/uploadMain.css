@@ -65,7 +65,7 @@ body{
 }
 
 #accuracy_rate{
-    font-size:10px;
+    font-size:12px;
     color: #db3631;
     margin-top:-15px;
 }
@@ -78,7 +78,7 @@ body{
 }
 
 #rev a, button, table, p{
-    font-size: 15px;
+    font-size: 18px;
 }
 
 #review{
