@@ -5,27 +5,7 @@ import os
 """This is used to extract taxonomic information from xml file. The information include species, genuse,
 sub genus, scientific name, gender, location...But not include article reference information, such as 
 agency."""
-# src_path = os.path.dirname(os.path.realpath(__file__))
-#
-# path_dir = os.listdir(src_path)
-# # print(path_dir)
-# xml_file = []
-# for i in path_dir:
-#     if ".xml" in i:
-#         xml_file.append(i)
-# articleName=xml_file[0]
-# #articleName='aTerrestrialFrog.xml'
-# #articleName='example.xml'
-# #articleName='NewGeneraOfAustralianStilettoFlies.xml'
-# #articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
-# #articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
-# #articleName='AnewNigerianHunterSnailSpecies.xml'
-#
-# tree=ET.parse(articleName)
-# root=tree.getroot()
-#
-# doi=''
-# zooBankNumber=''
+
 
 def get_root_dir():
     abs_file_path = os.path.abspath(__file__)
@@ -40,15 +20,20 @@ def get_root_dir():
 
 def get_example_path(xml_name):
     """The xml example is in Examples/xmls/ , get this path"""
-
-    result = os.path.join(get_root_dir(), "Examples/xmls/{}".format(xml_name))
+    #result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
+    # result = os.path.join(get_root_dir(), "Examples/xmls/{}".format(xml_name))
+    result = os.path.join(get_root_dir(), "functional_tool_2.0/uploaded_folder/{}".format(xml_name))
     return result.replace("\\", "/")
+
 
 
 def get_output_path(name):
     """Output is stored in Output/xmlOutput/"""
-    result = os.path.join(get_root_dir(), "Output/xmlOutput/{}_XmlOutput.csv".format(name))
+    # result = os.path.join(get_root_dir(), "Output/xmlOutput/{}_XmlOutput.csv".format(name))
+    result = os.path.join(get_root_dir(), "functional_tool_2.0/csv_folder/{}_XmlOutput.csv".format(name))
     return result.replace("\\", "/")
+
+
 
 def get_doi(root):
     doi = ''
@@ -264,6 +249,81 @@ def get_info_from_body(root):
     print(df)
     return df
 
+# -----------------------------------------------mapping output to TNC_TaxonomicName standard----------------------------------------------
+
+def tnc_tn_id(df):
+    id_list = []
+    for i in range(len(df)):
+        id_list.append("TN-" + str(i))
+    return id_list
+
+
+def tnc_tn_tns(df):
+    """Mapping to taxonomicNameString in TNC_TaxonomicName"""
+    taxonomicNameString_list = df['scientificName']
+    return taxonomicNameString_list
+
+#Todo: when Authorship is empty, the author of article has the authorship. Get it from reference_info_extraction.py
+def tnc__tn_fnwa(df):
+    """Mapping to fullNameWithAuthorship in TNC_TaxonomicName"""
+    fullNameWithAuthorship_list=[]
+    for i in range(len(df['scientificName'])):
+        fullNameWithAuthorship_list.append(df['scientificName'][i]+' '+df['authorship'][i])
+    return fullNameWithAuthorship_list
+
+def tnc__tn_rank(df):
+    """Mapping to rank in TNC_TaxonomicName"""
+    rank_list=[]
+    for status in df['taxon_status']:
+        if 'gen' in status:
+            rank_list.append('genus')
+        if 'sp' in status:
+            rank_list.append('species')
+        else:
+            rank_list.append('')
+    return rank_list
+
+def tnc_tn_uninomial(df):
+    """Mapping to uninomial in TNC_TaxonomicName"""
+    uninomial_list=[]
+    taxon_name_strings=tnc_tn_tns(df)
+    for name in taxon_name_strings:
+        u=name.split(' ')[-1]
+        uninomial_list.append(u)
+    return uninomial_list
+
+def tnc_tn_genus(df):
+    """Mapping to genus in TNC_TaxonomicName"""
+    genus_list=[]
+    original_genus=df['genus']
+    rank=tnc__tn_rank(df)
+    for i in range(len(rank)):
+        if rank[i]=='species':
+            genus_list.append(original_genus[i])
+        else:
+            genus_list.append('')
+    return genus_list
+
+
+
+def tnc_nc_infragenericEpithet(df):
+    """Mapping to infragenericEpithet in TNC_TaxonomicName"""
+    infrageneric_epithet=[]
+
+    return infrageneric_epithet
+
+
+
+
+def change_To_TNC_Taxonomic_name(df):
+
+
+    df2=pd.DataFrame(columns=['id','taxonomicNameString','fullNameWithAuthorship','rank','uninomial','genus',
+                              'infragenericEpithet','specificEpithet','infraspecificEpithet', 'cultivarNameGroup',
+                              'taxonomicNameAuthorship','combinationAuthorship','basionymAuthorship', 'combinationExAuthorship',
+                              'basionymExAuthorship'])
+
+
 
 
 def write_csv(articleName):
@@ -275,4 +335,8 @@ def write_csv(articleName):
 
 
 if __name__ == '__main__':
-    write_csv("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
+    path = get_example_path("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
+    tree = ET.parse(path)
+    root = tree.getroot()
+    df = get_info_from_body(root)
+
