@@ -64,6 +64,11 @@ body{
     margin-right: 10px;
 }
 
+#upd input{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
 #accuracy_rate{
     font-size:12px;
     color: #db3631;
@@ -78,7 +83,7 @@ body{
 }
 
 #rev a, button, table, p{
-    font-size: 18px;
+    font-size: 15px;
 }
 
 #review{
