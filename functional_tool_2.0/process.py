@@ -19,10 +19,11 @@ from xlutils.copy import copy
 import reference_info_extraction
 import TaxonomyExtractPDF
 import reader
+import runTwoFunction
 
 app = Flask(__name__)
 app.config['DOWNLOAD_FOLDER'] = 'uploaded_folder'
-app.config['XLS_FOLDER'] = 'xls_folder'
+app.config['CSV_FOLDER'] = 'csv_folder'
 
 
 def write_excel(a_list, r_list,filename):
@@ -52,16 +53,16 @@ def write_excel(a_list, r_list,filename):
 			if col in r_list[num].keys():
 				value = r_list[num][col]
 				row.write(index, value)
-	if not os.path.exists(app.config['XLS_FOLDER']):
-		os.mkdir(app.config['XLS_FOLDER'])
-	book.save(app.config['XLS_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
+	if not os.path.exists(app.config['CSV_FOLDER']):
+		os.mkdir(app.config['CSV_FOLDER'])
+	#book.save(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
 
 
 @app.route('/get/<filename>')
 def uploaded_file(filename):
     print(filename)
-    return send_from_directory(app.config['XLS_FOLDER'], filename.rsplit('.', 1)[0] + ".xls", as_attachment=True)
 
+    return send_from_directory(app.config['CSV_FOLDER'], filename[:-3] + ".zip", as_attachment=True)
 
 # @app.route('/')
 # def index():
@@ -76,8 +77,8 @@ def upload_file():
         if request.files:
             if not os.path.exists(app.config['DOWNLOAD_FOLDER']):
                 os.mkdir(app.config['DOWNLOAD_FOLDER'])
-            if not os.path.exists(app.config['XLS_FOLDER']):
-                os.mkdir(app.config['XLS_FOLDER'])
+            if not os.path.exists(app.config['CSV_FOLDER']):
+                os.mkdir(app.config['CSV_FOLDER'])
             xml_file = request.files["xml"]
             if xml_file.filename.split('.')[-1] == 'xml':
                 print("xml!")
@@ -85,12 +86,15 @@ def upload_file():
                 file_tmp = xml_file.filename
                 xml_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], xml_file.filename))
                 print("file saved")
+                #runTwoFunction.runall(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
+                runTwoFunction.runall(xml_file.filename)
                 agents_list, reference_list = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 write_excel(agents_list, reference_list, xml_file.filename)
 
         
             else:
                 pdf_file = request.files["xml"]
+                print("pdf!")
                 pdf_tmp = pdf_file.filename
                 file_tmp = pdf_tmp
                 pdf_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], pdf_file.filename))
