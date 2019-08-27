@@ -164,7 +164,8 @@ Audit 1:
 Audit 2:
 - Deploy the server.
 - Reach agreement on plan of testing accuracy plan, and begin to build test.
-- XML extraction program integration and pack outputs file into zip file
+- PDF could parse reference.
+- XML extraction program integrated and pack outputs file into zip file
 - Get populated standard schemas. Mapping XML outputs to standard schemas (in progress)
 - Accpetance criteria 
 
