@@ -64,12 +64,21 @@ body{
     margin-right: 10px;
 }
 
+#accuracy_rate{
+    font-size:10px;
+    color: #db3631;
+    margin-top:-15px;
+}
+
 #rev{
     /*position: absolute;*/
     display: inline-block;
     text-align: left;
-    font-size: 15px;
     margin-left: 10px;
+}
+
+#rev a, button, table, p{
+    font-size: 15px;
 }
 
 #review{
@@ -85,9 +94,7 @@ body{
     border-color: gray;
 }
 
-#accuracy_rate{
-    color: #db3631;
-}
+
 
 form{
     margin-top: 20px;
