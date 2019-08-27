@@ -96,7 +96,8 @@ Weeks 5-6:
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
 - Working on different cases of Zookeys. Making imporvements on accuracy. Make the output in the standard schema (XML)
-- Continue deploying server, link UI with server.
+- Continue deploying server, link UI with server (Server)
+- Design testing for accuracy. Start build testing accuracy (Testing)
 - Prepare for audit
 
 Mid-break:
@@ -108,6 +109,7 @@ Mid-break:
 - Finishing mapping original output to standard schemas(XML)
 - Working on different publishers' cases of TaxPub. Making imporvements on accuracy. Make the output in the standard schema (XML)
 - Continue deploying server, link backend with server. Provide the website to clients which they could use (Server)
+- Testing accuracy.
 
 Week 7-8:
 - Improve UI (input display)
