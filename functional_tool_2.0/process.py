@@ -11,7 +11,7 @@ import json
 import PyPDF2
 import requests
 import pandas as pd
-from nltk.corpus import words
+#from nltk.corpus import words
 
 from xlrd import open_workbook
 from xlutils.copy import copy
@@ -20,6 +20,9 @@ import reference_info_extraction
 import TaxonomyExtractPDF
 import reader
 import runTwoFunction
+
+
+from zipfile import ZipFile
 
 app = Flask(__name__)
 app.config['DOWNLOAD_FOLDER'] = 'uploaded_folder'
@@ -55,13 +58,37 @@ def write_excel(a_list, r_list,filename):
 				row.write(index, value)
 	if not os.path.exists(app.config['CSV_FOLDER']):
 		os.mkdir(app.config['CSV_FOLDER'])
-	#book.save(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
+	book.save(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
+
+	agent_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("agents")
+    # os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("agents.csv"))
+	references_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("references")
+	# os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("references.csv"))
+	TNC_TaxonomicName_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName")
+
+	"""excel to csv """
+	agents = pd.read_excel(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls", 'agents', index_col=0)
+	agents.to_csv(agent_path, encoding='utf-8')
+	references = pd.read_excel(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls", 'references', index_col=0)
+	references.to_csv(references_path, encoding='utf-8')
+
+	with ZipFile(app.config['CSV_FOLDER']+'/' + filename[:-4] +'.zip', 'w') as zipObj:
+		zipObj.write(agent_path,"agent.csv")
+		zipObj.write(references_path, "reference.csv")
+		zipObj.write(TNC_TaxonomicName_path, "TNC_TaxonomicName.csv")
+
+	os.remove(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
+	os.remove(agent_path)
+	os.remove(references_path)
+	os.remove(TNC_TaxonomicName_path)
+
 
 
 @app.route('/get/<filename>')
 def uploaded_file(filename):
     print(filename)
 
+    #return send_from_directory(app.config['CSV_FOLDER'], filename[:-3] + ".zip", as_attachment=True)
     return send_from_directory(app.config['CSV_FOLDER'], filename[:-3] + ".zip", as_attachment=True)
 
 # @app.route('/')
@@ -87,9 +114,18 @@ def upload_file():
                 xml_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], xml_file.filename))
                 print("file saved")
                 #runTwoFunction.runall(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
-                runTwoFunction.runall(xml_file.filename)
+                #runTwoFunction.runall(xml_file.filename)
+
+
+                path = app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename
+                tree = ET.parse(path)
+                root = tree.getroot()
+                df = reader.get_info_from_body(root)
+                df.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
+
                 agents_list, reference_list = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 write_excel(agents_list, reference_list, xml_file.filename)
+
 
         
             else:

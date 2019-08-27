@@ -2,7 +2,7 @@ import PyPDF2
 import os
 import requests
 import pandas as pd
-from nltk.corpus import words
+#from nltk.corpus import words
 from zipfile import ZipFile
 
 
@@ -123,13 +123,9 @@ def get_output_path(name):
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
     name = name.split('/')[-1]
+    print(name)
+    print(parent_dir)
     result = os.path.join(parent_dir, "functional_tool_2.0/csv_folder/{}_PdfOutput.xls".format(name))
-    # os.path.join(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/{}_PdfOutput.xls'.format("name.xls"))
-
-    # with ZipFile(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/' + name.split('.')[0] + '_PDFOutput.zip', 'w') as zipObj:
-    #     # Add multiple files to the zip
-    #     zipObj.write(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/name.xls_PdfOutput.xls', "name.xls")
-
     return result.replace("\\", "/")
 
 
@@ -233,6 +229,7 @@ def correct_unintentional_joining():
 
 #Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
 def get_excel_output(path):
+    print(path)
     df = parse_json_list(find_new_names(read_all_pages(
         create_pdf_reader(get_example_path(path)))))
     df.to_excel(get_output_path(path[:-4]))
