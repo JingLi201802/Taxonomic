@@ -205,7 +205,7 @@ As the project is being implemented as part of a secure system, it is important 
 3. DreamWeaver(HTML, CSS, JavaScript)
 
 ## Decision Make Procedures
-# ![Diagram]()
+# ![Diagram](Resources/decision.png)
 #### [Decision Making Log](https://drive.google.com/open?id=12Nd3MGef2hHxz5cSDUhAn0VC442yAlTaBsPWg8uuM68)
 
 ## Testing
