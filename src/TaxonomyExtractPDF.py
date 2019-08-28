@@ -4,20 +4,22 @@ import requests
 import pandas as pd
 import re
 
-
 common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
 common_preceding_words = ["as", "australia", "holo", "iso", "perth", "canb", "species", "and"]
 pre_buffer = 15
 post_buffer = 20
+created_files = []
 
 # -----------------------------------------------Converting PDF to String----------------------------------------------
 
 
+# Replaced by PDFBox, function is kept so that the program can be executed if java is unavailable
 def create_pdf_reader(path):
     pdf_file_obj = open(path, 'rb')
     return PyPDF2.PdfFileReader(pdf_file_obj)
 
 
+# Replaced by PDFBox, function is kept so that the program can be executed if java is unavailable
 def read_all_pages(pdf_reader):
     page_index = 0
     result = ""
@@ -28,16 +30,31 @@ def read_all_pages(pdf_reader):
     return result
 
 
+# Replaced by PDFBox, function is kept so that the program can be executed if java is unavailable
 def read_page(page_num, pdf_reader):
     page = (pdf_reader.getPage(page_num).extractText())
     page = normalise_spacing(page)
     return page
 
 
-def normalise_spacing(page):
-    page = page.replace("\n", " ")
-    page = page.replace("  ", " ")
-    return page
+# Uses PDFBox to convert the PDF to a TXT file for analysis.
+def pdf_to_text(file_path):
+    os.system("java -jar pdfbox-app-2.0.16.jar ExtractText " + file_path)
+    created_files.append(file_path)
+
+
+# Removes temporary text files
+def cleanup():
+    for txt in created_files:
+        path = txt.replace(".pdf", ".txt")
+        print ("Removing {}".format(path))
+        os.remove(path)
+
+
+def normalise_spacing(string):
+    string = string.replace("\n", " ")
+    string = string.replace("  ", " ")
+    return string
 
 
 def remove_punctuation(str):
@@ -51,6 +68,7 @@ def remove_punctuation(str):
     return result_str
 
 # ---------------------------------- Extracting Information from Natural Language ----------------------------------
+
 
 def process_string(doc_string):
     find_new_names(doc_string)
@@ -130,6 +148,8 @@ def find_references(doc_string):
 
     if not (iter == None):
         print("References begin at index {}".format(item.end()))
+        with open("Output.txt", "w") as text_file:
+            text_file.write(doc_string[item.end():])
         return item.end()
     else:
         print("No reference section was detected")
@@ -244,11 +264,6 @@ def get_json_fields(json, targets):
     return output_dict
 
 
-# Todo: Attempt to fix situations where tabs/newlines are not registered by PyPDF which often interferes with parsing.
-def correct_unintentional_joining():
-    return None
-
-
 # / means go one level deeper in JSON, [] means that the value should be treated as a list
 direct_mappings = {
     "verbatim": "verbatim",
@@ -306,7 +321,8 @@ def deduce_tnu_values(df, name_results):
         df.at[index, "verbatimTaxonRank"] = df.at[index, "taxonRank"]
 
         # TaxonomicNameStringWithAuthor ----------
-        df.at[index, "taxonomicNameStringWithAuthor"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
+        if not isinstance(df.at[index, "scientificNameAuthorship"], float):
+            df.at[index, "taxonomicNameStringWithAuthor"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
         index += 1
 
     return df
@@ -348,12 +364,17 @@ def get_csv_output(path):
 # --------------------------------------------- Testing Code -----------------------------------------------------------
 
 get_configurations()
+pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
+#print(find_references(convert(get_example_path("JABG31P037_Lang.pdf"))))
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
 
-get_csv_output("JABG31P037_Lang.pdf")
+#get_csv_output("JABG31P037_Lang.pdf")
 #get_csv_output("TestNames.pdf")
-#print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
+#print (find_references(read_all_pages(create_pdf_reader((get_example_path("JABG31P037_Lang.pdf"))))))
+#raw = parser.from_file(get_example_path("JABG31P037_Lang.pdf"))
+#print(find_references(raw['content']))
 
+cleanup()
 
 
