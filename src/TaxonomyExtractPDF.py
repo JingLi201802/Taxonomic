@@ -152,7 +152,7 @@ def find_references(txt_path):
     os.system(command)
 
     # Add to list of files to cleanup later
-    # created_files.append(get_example_path(txt_path.split("/")[-1].replace(".txt", ".xml")))
+    created_files.append(get_example_path(txt_path.split("/")[-1].replace(".txt", ".xml")))
 
 
 # Todo: extract coordinate information
