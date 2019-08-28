@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* CSS Document
+   the main style sheet for the upload page
+   */
+body{
+    width: 100%;
+    height: 100%;
+
+}
+.content{
+    font-family:"Myriad Pro Ultralight";
+    padding-bottom: 150px;
+
+}
+
+.content div{
+    font-size: 35px;
+    color: gray;
+}
+
+#ui{
+    margin-top: 5%;
+    height: 65%;
+    width: 100%;
+    text-align: center;
+}
+
+#convert{
+    margin: 10px 25px -10px 80%;
+    border-radius: 5px;
+    border-style: none;
+    height: 25px;
+    width: 75px;
+    background: #0171C4;
+    color: #FFFFFF;
+    padding-left: 12px;
+}
+
+#convert:active{
+    background: #0165C0;
+
+}
+
+#ui p{
+    text-align: left;
+    font-size: 20px;
+}
+
+#ui button{
+    text-align: left;
+}
+
+#upload {
+    display: inline-block;
+    text-align: right;
+    font-size: 15px;
+    margin-right: 5px;
+}
+
+#upd {
+    display: inline-block;
+    text-align: right;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+#upd input{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#accuracy_rate{
+    font-size:12px;
+    color: #db3631;
+    margin-top:-15px;
+}
+
+#rev{
+    /*position: absolute;*/
+    display: inline-block;
+    text-align: left;
+    margin-left: 10px;
+}
+
+#rev a, button, table, p{
+    font-size: 15px;
+}
+
+#review{
+    /*position: absolute;*/
+    display: inline-block;
+    text-align: left;
+    font-size: 15px;
+    margin-left: 5px;
+    width: 500px;
+    height: 450px;
+    margin-right: 25px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+
+
+form{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 25%;
+    padding: 7px;
+}
+
+textarea {
+    width: 500px;
+    height: 450px;
+    margin-right: 25px;
+    border-radius: 5px;
+    border-color: gray;
+}
+
+table{
+    border-collapse:separate;
+    border-spacing:0px 10px;
+}
+
+table td{
+    padding-right: 10px;
+}
+
+.error {
+    color: #FF0000
+}
+#end{bottom: 0px; position: fixed;}

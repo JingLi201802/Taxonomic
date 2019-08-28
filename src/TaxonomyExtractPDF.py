@@ -76,9 +76,9 @@ def process_string(doc_string):
     find_document_data(doc_string, reference_index)
 
 
-#currently does not return anything, just prints out relevant information #
+# currently does not return anything, just prints out relevant information #
 # If a document mentions a name with sp. n. twice first is usually in abstract while second is description
-#Later be amended to return the location of the string within the document.
+# Later be amended to return the location of the string within the document.
 def find_new_names(doc_string):
     working_index = 0
     word_list = normalise_spacing(doc_string).split(" ")
@@ -369,12 +369,7 @@ pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
 
-#get_csv_output("JABG31P037_Lang.pdf")
+get_csv_output("JABG31P037_Lang.pdf")
 #get_csv_output("TestNames.pdf")
-#print (find_references(read_all_pages(create_pdf_reader((get_example_path("JABG31P037_Lang.pdf"))))))
-#raw = parser.from_file(get_example_path("JABG31P037_Lang.pdf"))
-#print(find_references(raw['content']))
-
+#print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
 cleanup()
-
-
