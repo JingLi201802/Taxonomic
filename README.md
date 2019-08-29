@@ -91,8 +91,8 @@ Weeks 4-5:
 - Studying on the knowledge of server deployment. Making a breakdown plan of server deployment. Kick-off.
 
 Weeks 5-6:
-- Improve UI (editable output)
 - Improve UI (output display)
+- Improve UI (input display)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
 - Working on different cases of Zookeys. Making imporvements on accuracy. Make the output in the standard schema (XML)
@@ -103,6 +103,7 @@ Weeks 5-6:
 Mid-break:
 - Improve UI (editable output)
 - Improve UI (output display)
+- Improve UI (input display)
 - Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
 - Try to highlighting the extracted information in the original pdf (PDF)
 - Working on the cases of species combination, or changing species' category (XML)
@@ -112,7 +113,7 @@ Mid-break:
 - Testing accuracy.
 
 Week 7-8:
-- Improve UI (input display)
+- Improve UI (editable output)
 - PDF output in standard schema (PDF)
 - Server updates to make sure the result is stardard schema (Server)
 - Finishing testing accuracy (Testing)
