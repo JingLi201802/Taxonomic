@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * URLs: "https://biodiversity.org.au/nsl/services/APC"; "https://biodiversity.org.au/nsl/services/APNI";
@@ -17,15 +18,25 @@ public class spider {
 
     public static String searchBox = "";
 
-    public static int sbIndex = 0;
+    public static int sbIndex = 0; //search box index in allInfo
 
-    public static String outputNo = ""; //depends on key word "panel panel-info" (include head and body)
+    public static String outputNo = ""; //find number of return results, depends on key word "panel panel-info" (include head and body)
 
     public static int outputNoIndex = 0; // the number of return results
 
-    public static String output = ""; // return detail
+    //public static String output = ""; // return detail
 
-    public static int outputIndex = 0;
+    //public static int outputIndex = 0;
+
+    public static String outputHeading = ""; //output heading include: "No result yet" or search result
+
+    public static int outputHeadingIndex = 0; //the index of "panel-info" in allInfo
+
+    public static String outputBody = ""; //output body include research result in "result" class in the page
+
+    public static int outputBodyIndex = 0; //the index of "panel-body" in allInfo
+
+    public static HashMap<Integer, Integer> range = new HashMap<>(); // store search box and output result start and end index
 
     /**
      * connect the the target search engine (https://biodiversity.org.au/nsl/services/APNI)
@@ -57,7 +68,7 @@ public class spider {
             while ((line = reader.readLine()) != null){
                 stringBuffer.append(line);
                 allInfo.add(line);
-                System.out.println(line);
+                //System.out.println(line);
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -84,19 +95,19 @@ public class spider {
 
         for (String x: allInfo) {
 
-            if (x.contains("Enter a name")){
+            if (x.contains("placeholder=\"Enter a name\"")){
                 searchBox = x;
                 sbIndex = allInfo.indexOf(x);
             }
 
             if (x.contains("class=\"panel-heading\"")){
-                outputNo = x;//now get the output start position, find the end symbol (</div>) to get the full output
-                outputNoIndex = allInfo.indexOf(x);
+                outputHeading = x;//now get the output start position, find the end symbol (</div>) to get the full output
+                outputHeadingIndex = allInfo.indexOf(x);
             }
 
             if (x.contains("class=\"panel-body\"")){
-                output = x;
-                outputNoIndex = allInfo.indexOf(x);
+                outputBody = x;
+                outputBodyIndex = allInfo.indexOf(x);
             }
         }
     }
@@ -107,18 +118,36 @@ public class spider {
     public static void infoRange(){
 
         int sbEnd = 0;
+        int resEnd = 0;
 
         for (int i = sbIndex; i < allInfo.size(); i++) {
 
             if (allInfo.get(i).contains("/>")){
                 sbEnd = i;
+                range.put(sbIndex,sbEnd);
                 break;
             }
         }
 
-        for (int i = outputIndex; i < allInfo.size(); i++) {
+        for (int i = outputHeadingIndex; i < allInfo.size(); i++) {
 
+            if (allInfo.get(i).contains("class=\"panel-heading\"")){ //need end symbol
+                resEnd = i;
+                range.put(outputHeadingIndex, resEnd);
+                break;
+            }
         }
+
+        for (int i = outputBodyIndex; i < allInfo.size(); i++) {
+
+            if (allInfo.get(i).contains("class=\"panel-body\"")){
+                sbEnd = resEnd;
+                resEnd = i;
+                range.put(sbEnd, resEnd);
+                break;
+            }
+        }
+
     }
 
     /**
@@ -133,10 +162,17 @@ public class spider {
         URL url = new URL(link);
         getConnect(link);
         find();
+        infoRange();
         //for (String x: allInfo) System.out.println(x);
-        System.out.println(searchBox);
-        System.out.println(output);
-        System.out.println(allInfo.size());
-        System.out.println(sbIndex);
+        System.out.println("sbIndex: " + sbIndex);
+        System.out.println("SearchBox output: " + searchBox);
+        //System.out.println(outputNoIndex);
+        System.out.println("outputHeading return: " + outputHeading);
+        System.out.println("outputHeadingIndex: " + outputHeadingIndex);
+        System.out.println("outputBody: " + outputBody);
+        System.out.println("outputBodyIndex: " + outputBody);
+        System.out.println("allInfo size: " + allInfo.size());
+        System.out.println("range size: " + range.size());
+        System.out.println("range return: " + range);
     }
 }
