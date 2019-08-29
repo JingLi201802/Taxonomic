@@ -2,10 +2,8 @@ import PyPDF2
 import os
 import requests
 import pandas as pd
-import re
 
-common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
-common_preceding_words = ["as", "australia", "holo", "iso", "perth", "canb", "species", "and"]
+border_words = ["in", "sp", "type", "and", "are", "figs"]
 pre_buffer = 15
 post_buffer = 20
 created_files = []
@@ -43,15 +41,20 @@ def pdf_to_text(file_path):
     created_files.append(file_path)
 
 
-# Removes temporary text files
+# Removes temporary files
 def cleanup():
     for txt in created_files:
         path = txt.replace(".pdf", ".txt")
         print ("Removing {}".format(path))
-        os.remove(path)
+        try:
+            os.remove(path)
+        except:
+            print("Failed to remove path")
 
-
-def normalise_spacing(string):
+# Takes the path to a text file and returns a single-line string
+def normalise_spacing(txt_path):
+    file = open(txt_path, 'r', encoding="utf8")
+    string = file.read()
     string = string.replace("\n", " ")
     string = string.replace("  ", " ")
     return string
@@ -85,23 +88,26 @@ def find_new_names(doc_string):
     combined_request_str = ""
     debugstr=""
     post_buffer = 20
+    skip_next = False # Used to avoid detection of the same name twice
     for word in word_list:
+
+        if skip_next:
+            skip_next = False
+            continue
+
         if word == "nov." or word == "sp.":
+            skip_next = True
             confidence = 0
             name = word_list[working_index-pre_buffer: working_index+post_buffer]
-            # Abstract this to include variations of sp. nov. later and ensure they are close together as well
-            if name.__contains__("nov.") or name.__contains__("Nov."):
-                name = name[:pre_buffer]
-                confidence += 1
 
             request_str = ""
             index = 0
             for name_component in name:
-                if index > pre_buffer and remove_punctuation(name_component.lower()) in common_ending_words and not remove_punctuation(name_component.lower()) == "":
+                if index > pre_buffer and remove_punctuation(name_component.lower()) in border_words and not remove_punctuation(name_component.lower()) == "":
                     confidence += 1
                     break
 
-                elif index < pre_buffer and remove_punctuation(name_component.lower()) in common_preceding_words and not remove_punctuation(name_component) == "":
+                elif index < pre_buffer and remove_punctuation(name_component.lower()) in border_words and not remove_punctuation(name_component) == "":
                     request_str = ""
                     debugstr = ""
                     confidence = 1
@@ -138,22 +144,15 @@ def find_document_data(doc_string, reference_index):
             print("Self referencing information: " + url)
 
 
-# currently uses naiive approach: finding the last usage of the word references,
-# should work 99% of the time but can still be improved
-def find_references(doc_string):
-    iter = re.finditer("References", doc_string)
-    item = None
-    for item in iter:
-        pass
+# Use anystyle.io to analyse references within a txt file.
+# Currently has issues with false positives (Interpreting random sentences as references)
+# TODO: Change command to work on multiple operating systems.
+def find_references(txt_path):
+    command = "anystyle --overwrite -f xml find {} {}".format(txt_path, get_example_path(""))
+    os.system(command)
 
-    if not (iter == None):
-        print("References begin at index {}".format(item.end()))
-        with open("Output.txt", "w") as text_file:
-            text_file.write(doc_string[item.end():])
-        return item.end()
-    else:
-        print("No reference section was detected")
-        return 0
+    # Add to list of files to cleanup later
+    created_files.append(get_example_path(txt_path.split("/")[-1].replace(".txt", ".xml")))
 
 
 # Todo: extract coordinate information
@@ -198,23 +197,15 @@ def get_configurations():
 
 
 def get_key_words(config_path):
-    index = 0
-    key_word_files = ["CommonPrecedingWords.txt", "CommonEndingWords.txt"]
-    common_ending_words.clear()
-    common_preceding_words.clear()
-    while index < 2:
-        file = open(os.path.join(config_path, key_word_files[index]))
-        lines = file.read().split("\n")
-        for line in lines:
-            if line.startswith("#"):
-                continue
+    key_word_file = "BorderWords.txt"
+    border_words.clear()
+    file = open(os.path.join(config_path, key_word_file))
+    lines = file.read().split("\n")
+    for line in lines:
+        if line.startswith("#"):
+            continue
 
-            if key_word_files[index].__contains__("Preceding"):
-                common_preceding_words.append(line)
-
-            else:
-                common_ending_words.append(line)
-        index += 1
+        border_words.append(line)
 
 # ------------------------------------ Handling JSON from GNParser ----------------------------------------------------
 
@@ -365,11 +356,13 @@ def get_csv_output(path):
 
 get_configurations()
 pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
-#print(find_references(convert(get_example_path("JABG31P037_Lang.pdf"))))
+process_string(get_example_path("JABG31P037_Lang.txt"))
+# print(find_references(convert(get_example_path("JABG31P037_Lang.pdf"))))
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
 
-get_csv_output("JABG31P037_Lang.pdf")
-#get_csv_output("TestNames.pdf")
-#print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
+# get_csv_output("JABG31P037_Lang.pdf")
+# get_csv_output("TestNames.pdf")
+# print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
 cleanup()
+
