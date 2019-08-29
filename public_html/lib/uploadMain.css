@@ -64,12 +64,25 @@ body{
     margin-right: 10px;
 }
 
+#upd input{
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
+#accuracy_rate{
+    font-size:12px;
+    color: #db3631;
+}
+
 #rev{
     /*position: absolute;*/
     display: inline-block;
     text-align: left;
-    font-size: 15px;
     margin-left: 10px;
+}
+
+#rev a, button, table, p{
+    font-size: 15px;
 }
 
 #review{
@@ -84,6 +97,8 @@ body{
     border-radius: 5px;
     border-color: gray;
 }
+
+
 
 form{
     margin-top: 20px;
@@ -111,5 +126,10 @@ table td{
 
 .error {
     color: #FF0000
+}
+
+.pdfobject-container {
+    width: 500px;
+    height: 300px;
 }
 #end{bottom: 0px; position: fixed;}

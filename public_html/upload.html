@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+
+<html>
 <head>
     <meta charset="UTF-8">
-    <!--Meta data from original index page-->
     <meta name="DC.Title" lang="en" content="Australian Faunal Directory" xml:lang="en" />
     <meta name="DC.Description" lang="en" content="Australian Faunal Directory" xml:lang="en" />
     <meta name="Description" content="Australian Faunal Directory" />
@@ -22,102 +21,132 @@
     <meta name="AGLS.Audience" scheme="AGLS" content="" />
     <meta name="AGLS.Availability" scheme="AglsAvail" content="" />
     <META NAME="ROBOTS" CONTENT="ALL">
+
+    <title>AJAX Example</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
     <!---->
     <title>Australian Faunal Directory</title>
-    <link href="lib/header.css" rel="stylesheet" type="text/css">
-<!--    <link href="lib/animation.css" rel="stylesheet" type="text/css">-->
-    <link href="lib/font.css" rel="stylesheet" type="text/css">
-    <link href="lib/uploadMain.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="lib/font.css">
+    <link rel="stylesheet" type="text/css" href="lib/uploadMain.css">
+    <link rel="stylesheet" type="text/css" href="lib/header.css">
 </head>
 <body>
-    <div id="head" >
-        <p><a href="index.html"><img id="logo" src="resource/logo-environment.gif" width="365" height="63" alt="Logo"></a></p>
-        <div id="page_title">
-            <p id="ABRS">Australian Biological Resources Study</p>
-            <p id="AFD">Australian Faunal Directory Update System</p>
-        </div>
+<div id="head" >
+    <p><a href="index.html"><img id="logo" src="resource/logo-environment.gif" width="365" height="63" alt="Logo"></a></p>
+    <div id="page_title">
+        <p id="ABRS">Australian Biological Resources Study</p>
+        <p id="AFD">Australian Faunal Directory Update System</p>
     </div>
-    <img id="oops" src="resource/oops.png" alt="oops">
+</div>
+<img id="oops" src="resource/oops.png" alt="oops">
 <!--Page body start here-->
-    <div class="content">
-        <div id="ui">
-            <button id="convert" onclick="">PDF/XML</button>
-            <!--Add the script in onclick-->
+<div class="content">
+    <div id="ui">
+        <!-- <button id="convert" onclick="">PDF/XML</button> -->
+        <!--Add the script in onclick-->
 
-            <div id="upload">
-                <p>File upload</p>
-                <form id="updForm" method="post"  enctype="multipart/form-data">
-                    <!--Make sure add above line on the Django server.-->
-                    <input accept="application/xml" multiple=true name="xml" id='xml' type="file">
-                    <!--Use the name to get files-->
-                    <button id="Submit" onclick="">Analysis</button>
-                    <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
-                </form>
-            </div>
-            <div id="rev">
-                <p>Data review</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>Family</td>
-                            <td>Genus</td>
-                            <td>Subgenus</td>
-                            <td>Species</td>
-                            <td>Taxon_authority</td>
-                            <td>Holotype</td>
-                            <td>Coordinates</td>
-                            <td>Taxon_status</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for result in data %}<!--modify the var inside on server-->
-                        <tr>
-                            <td>{{ result.Family }}</td>
-                            <td>{{ result.Genus }}</td>
-                            <td>{{ result.Subgenus }}</td>
-                            <td>{{ result.Species }}</td>
-                            <td>{{ result.Taxon_authority }}</td>
-                            <td>{{ result.Holotype }}</td>
-                            <td>{{ result.Coordinates }}</td>
-                            <td>{{ result.Taxon_status }}</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-                <br/>
-                <button id="sub" onclick="">Submit</button>
-                <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->
-            </div>
+        <div id="upd">
+            <p>File upload</p>
+            <form action="/" id="updForm" method="post"  enctype="multipart/form-data">
+                <!--Make sure add above line on the Django server.-->
+                <input type="file" class="custom-file-input" name="xml" id="xml">
+                <!--Use the name to get files-->
+                <!-- class="btn btn-primary" -->
+                <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
+            </form>
+            <a href="#" class="btn">Analysis</a>
+            <div id="PDFContainer"></div>
+        </div>
+        <div id="rev">
+            <p>Data review</p>
+            <div id="accuracy_rate">Current accuracy rate: N/a</div>
+            <table>
+                <thead>
+                <tr>
+                    <td>Agent id</td>
+                    <td>Agent Type</td>
+                    <td>Agent Name</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <br/>
+            <button id="sub" onclick="">Submit</button>
+            <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->
         </div>
     </div>
+</div>
 
-    <div id="end">
-        <div id="links">
-            <ul>
-                <li><a href="https://www.environment.gov.au/about-us/accessibility">Accessibility</a></li>
-                <li><a href="https://www.environment.gov.au/about-us/disclaimer">Disclaimer</a></li>
-                <li><a href="https://www.environment.gov.au/privacy-policy">Privacy</a></li>
-                <li><a href="https://www.environment.gov.au/about-us/freedom-information">Freedom of information</a></li>
-                <li><a href="https://www.environment.gov.au/copyright-statement">&#169; Commonwealth of Australia</a></li>
-            </ul>
+<div id="end">
+    <div id="links">
+        <ul>
+            <li><a href="https://www.environment.gov.au/about-us/accessibility">Accessibility</a></li>
+            <li><a href="https://www.environment.gov.au/about-us/disclaimer">Disclaimer</a></li>
+            <li><a href="https://www.environment.gov.au/privacy-policy">Privacy</a></li>
+            <li><a href="https://www.environment.gov.au/about-us/freedom-information">Freedom of information</a></li>
+            <li><a href="https://www.environment.gov.au/copyright-statement">&#169; Commonwealth of Australia</a></li>
+        </ul>
+    </div>
+    <div id="others">
+        <div id="address">
+            <a href="http://www.environment.gov.au/">Department of the Environment and Energy</a>
+            <p>GPO Box 787</p>
+            <p>Canberra ACT 2601 Australia</p>
+            <p>+61 (0)2 6274 1111
+                <a href="http://www.environment.gov.au/business/gst.html#abn">
+                    <acronym title="Australian Business Number" xml:lang="en" lang="en">ABN</acronym>
+                </a>
+            </p>
         </div>
-        <div id="others">
-            <div id="address">
-                <a href="http://www.environment.gov.au/">Department of the Environment and Energy</a>
-                <p>GPO Box 787</p>
-                <p>Canberra ACT 2601 Australia</p>
-                <p>+61 (0)2 6274 1111
-                    <a href="http://www.environment.gov.au/business/gst.html#abn">
-                        <acronym title="Australian Business Number" xml:lang="en" lang="en">ABN</acronym>
-                    </a>
-                </p>
-            </div>
-            <div id="gov">
-                <p>Our land. Our plan. Our future</p>
-                <a href="http://www.australia.gov.au/">Australian Government</a>
-                <br/><br/><br/>
-            </div>
+        <div id="gov">
+            <p>Our land. Our plan. Our future</p>
+            <a href="http://www.australia.gov.au/">Australian Government</a>
+            <br/><br/><br/>
         </div>
     </div>
+</div>
+
+<script src="lib/pdfobject.js"></script>
+
+<script>
+
+    document.querySelector(".btn").addEventListener("click", function (e){
+
+        e.preventDefault();
+
+        this.setAttribute("class", "hidden");
+
+        var options = {
+            pdfOpenParams: {
+                pagemode: "thumbs",
+                navpanes: 0,
+                toolbar: 0,
+                statusbar: 0,
+                view: "FitH"
+            }
+        };
+
+        var myPDF = PDFObject.embed("../pdf/853.pdf", "#PDFContainer", options);
+
+        var el = document.querySelector("#results");
+        el.setAttribute("class", (myPDF) ? "success" : "fail");
+        el.innerHTML = (myPDF) ? "PDFObject successfully added an &lt;embed> element to the page!" : "Uh-oh, the embed didn't work.";
+
+    });
+</script>
+
 </body>
 </html>
+
+
+<!--TODO: Embed PDF review-->
+<!--TODO: Editable review???-->

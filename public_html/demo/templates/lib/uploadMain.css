@@ -112,4 +112,10 @@ table td{
 .error {
     color: #FF0000
 }
+
+.pdfobject-container {
+    width: 500px;
+    height: 300px;
+}
+
 #end{bottom: 0px; position: fixed;}
