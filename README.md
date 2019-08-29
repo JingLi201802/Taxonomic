@@ -56,7 +56,8 @@ PDF:
 XML:
 - Changing output format to csv.
 - Adding and changing output fields according to clients’ requirement.
-- Testing more cases from Zookey, and other publishers’ articles who also use TaxPub xml structure. Make improvements on the  extraction accuracy.
+- Mapping with the standard schema.
+- Testing more cases from Zookeys, and other publishers’ articles who also use TaxPub xml structure. Make improvements on the  extraction accuracy.
 - Analysing and report on the failure situation.
 
 Server:
@@ -94,20 +95,30 @@ Weeks 5-6:
 - Improve UI (output display)
 - Attempt to increase "border word" list / Integrate other name detection (PDF)
 - Add some holotype/coordinate detection (PDF)
-- Working on different publishers' cases of TaxPub. Making imporvements on accuracy. Make the output in the standard schema (XML)
-- Continue deploying server, link UI with server.
+- Working on different cases of Zookeys. Making imporvements on accuracy. Make the output in the standard schema (XML)
+- Continue deploying server, link UI with server (Server)
+- Design testing for accuracy. Start build testing accuracy (Testing)
 - Prepare for audit
 
-Week 7-8:
+Mid-break:
 - Improve UI (editable output)
 - Improve UI (output display)
 - Try to link different attributes within text (eg genders with holotypes, holotypes with species) (PDF)
 - Try to highlighting the extracted information in the original pdf (PDF)
 - Working on the cases of species combination, or changing species' category (XML)
-- Continue deploying server, link backend with server.
+- Finishing mapping original output to standard schemas(XML)
+- Working on different publishers' cases of TaxPub. Making imporvements on accuracy. Make the output in the standard schema (XML)
+- Continue deploying server, link backend with server. Provide the website to clients which they could use (Server)
+- Testing accuracy.
+
+Week 7-8:
+- Improve UI (input display)
+- PDF output in standard schema (PDF)
+- Server updates to make sure the result is stardard schema (Server)
+- Finishing testing accuracy (Testing)
 
 Week 9-10:
-- Improve UI (output display)
+
 - Testing with client
 - Acting on client feedback
 - Prepare for audit
@@ -152,7 +163,13 @@ Audit 1:
 - Create plan for the semester
 - Update necessary documentation eg.SOW, risk register, github.
 
-
+Audit 2:
+- Deploy the server.
+- Reach agreement on plan of testing accuracy plan, and begin to build test.
+- PDF could parse reference.
+- XML extraction program integrated and pack outputs file into zip file
+- Get populated standard schemas. Mapping XML outputs to standard schemas (in progress)
+- Accpetance criteria 
 
 # Risk Management
 As the project is being implemented as part of a secure system, it is important that it does not present any new vulnerabilities to that system. This can be achieved by being considerate of the environment in which our project will be deployed and using appropriate programming techniques.
@@ -188,7 +205,7 @@ As the project is being implemented as part of a secure system, it is important 
 3. DreamWeaver(HTML, CSS, JavaScript)
 
 ## Decision Make Procedures
-# ![Diagram](Resources/decision.jpg)
+# ![Diagram](Resources/decision.png)
 #### [Decision Making Log](https://drive.google.com/open?id=12Nd3MGef2hHxz5cSDUhAn0VC442yAlTaBsPWg8uuM68)
 
 ## Testing
@@ -205,7 +222,7 @@ As the project is being implemented as part of a secure system, it is important 
 
 ## Audit Presentation
 #### [Audit1 (Semester2)](https://docs.google.com/presentation/d/1KFPRAI61264166AXwdHr-oGo2_7Cn2nEl4v1HEd7xIs/edit#slide=id.p)
-
+#### [Audit2 (Semester2)](https://docs.google.com/presentation/d/1usIU74gtzQGvdbQ5EOzeBu5HJk4yCPWvm3PeT8cLBBs/edit#slide=id.p)
 ## Other Resources
 #### [Google Drive S2](https://drive.google.com/drive/folders/1z85XNqG6v9YqrcAm98RzeaTmDYXoyPEj)
 #### [Old Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
