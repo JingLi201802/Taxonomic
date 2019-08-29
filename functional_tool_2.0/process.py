@@ -121,7 +121,8 @@ def upload_file():
                 tree = ET.parse(path)
                 root = tree.getroot()
                 df = reader.get_info_from_body(root)
-                df.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
+                df2 = reader.change_To_TNC_Taxonomic_name(df)
+                df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
 
                 agents_list, reference_list = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 write_excel(agents_list, reference_list, xml_file.filename)
