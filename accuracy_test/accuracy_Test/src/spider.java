@@ -151,6 +151,34 @@ public class spider {
     }
 
     /**
+     * Find pair tags in HTML.
+     * HTML structure is like
+     * <div>
+     *   <div></div>
+     *   <div>
+     *       <div></div>
+     *   </div>
+     * </div>
+     * This function is for find all required information between start <div>  and end </div>
+     */
+    public static int findEndTags(int startPoint){
+        if (startPoint <=0 || startPoint > allInfo.size()) return 0;
+        int count = 1;
+        int index = startPoint;
+        int rtn = 0;
+        while (count != 0){
+            index++;
+            if (allInfo.get(index).contains("<div")){
+                count+=1;
+            }
+            if (allInfo.get(index).contains("</div>")){
+                count -=1;
+            }
+        }
+        return index;
+    }
+
+    /**
      * analysis the output and delete HTML tags
      */
     public static void parser(){
@@ -162,7 +190,7 @@ public class spider {
         URL url = new URL(link);
         getConnect(link);
         find();
-        infoRange();
+
         //for (String x: allInfo) System.out.println(x);
         System.out.println("sbIndex: " + sbIndex);
         System.out.println("SearchBox output: " + searchBox);
@@ -170,9 +198,16 @@ public class spider {
         System.out.println("outputHeading return: " + outputHeading);
         System.out.println("outputHeadingIndex: " + outputHeadingIndex);
         System.out.println("outputBody: " + outputBody);
-        System.out.println("outputBodyIndex: " + outputBody);
+        System.out.println("outputBodyIndex: " + outputBodyIndex);
         System.out.println("allInfo size: " + allInfo.size());
         System.out.println("range size: " + range.size());
         System.out.println("range return: " + range);
+
+        System.out.println("-------------------------------------------------------------------------------");
+        int end = findEndTags(outputBodyIndex);
+        for (int i = 667; i < 685; i++) {
+            System.out.println(allInfo.get(i));
+        }
+        System.out.println("try to get full information, start at: " + outputBodyIndex + ", end at: " + end);
     }
 }
