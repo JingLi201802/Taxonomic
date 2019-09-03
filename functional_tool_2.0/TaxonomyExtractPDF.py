@@ -2,7 +2,8 @@ import PyPDF2
 import os
 import requests
 import pandas as pd
-from nltk.corpus import words
+#from nltk.corpus import words
+from zipfile import ZipFile
 
 
 common_ending_words = ["in", "sp", "type", "and", "are", "figs"]
@@ -122,7 +123,9 @@ def get_output_path(name):
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
     name = name.split('/')[-1]
-    result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
+    print(name)
+    print(parent_dir)
+    result = os.path.join(parent_dir, "functional_tool_2.0/csv_folder/{}_PdfOutput.xls".format(name))
     return result.replace("\\", "/")
 
 
@@ -226,9 +229,22 @@ def correct_unintentional_joining():
 
 #Todo: Create temporary function which stores output in an XML file to be interpreted by frontend
 def get_excel_output(path):
+    print(path)
     df = parse_json_list(find_new_names(read_all_pages(
         create_pdf_reader(get_example_path(path)))))
     df.to_excel(get_output_path(path[:-4]))
+
+    abs_file_path = os.path.abspath(__file__)
+    parent_dir = os.path.dirname(abs_file_path)
+    parent_dir = os.path.dirname(parent_dir)
+
+    print(path[16:][:-4])
+
+    with ZipFile(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/' + path[16:].split('.')[0] + '.zip', 'w') as zipObj:
+        # Add multiple files to the zip
+        zipObj.write(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/' + path[16:].split('.')[0] + '_PdfOutput.xls', path[16:].split('.')[0])
+
+    os.remove(parent_dir.replace("\\", "/")+'/functional_tool_2.0/csv_folder/' + path[16:].split('.')[0] + '_PdfOutput.xls')
 
 
 #get_configurations()

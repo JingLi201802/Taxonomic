@@ -1,36 +1,41 @@
 import xml.etree.ElementTree as ET
 import pandas as pd
-from xlrd import open_workbook
 import os
-from xlutils.copy import copy
-import reference_info_extraction
 
-# src_path = os.path.dirname(os.path.realpath(__file__))
-#
-# path_dir = os.listdir(src_path)
-# # print(path_dir)
-# xml_file = []
-# for i in path_dir:
-#     if ".xml" in i:
-#         xml_file.append(i)
-# articleName=xml_file[0]
-# #articleName='aTerrestrialFrog.xml'
-# #articleName='26newSpecies.xml'
-# #articleName='NewGeneraOfAustralianStilettoFlies.xml'
-# #articleName='aNewSpeciesOfWesmaeliusKrügerFromMexico.xml'
-# #articleName='ThreeNewSpeciesOfRhaphiumfromChina.xml'
-# #articleName='AnewNigerianHunterSnailSpecies.xml'
-#
-# tree=ET.parse(articleName)
-# root=tree.getroot()
-#
-# doi=''
-# zooBankNumber=''
+"""This is used to extract taxonomic information from xml file. The information include species, genuse,
+sub genus, scientific name, gender, location...But not include article reference information, such as 
+agency."""
+
+
+def get_root_dir():
+    abs_file_path = os.path.abspath(__file__)
+    #print(abs_file_path)
+    parent_dir = os.path.dirname(abs_file_path)
+    #print(parent_dir)
+    parent_dir = os.path.dirname(parent_dir)
+    #print(parent_dir)
+    return parent_dir
+
+
+
+def get_example_path(xml_name):
+    """The xml example is in Examples/xmls/ , get this path"""
+    #result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
+    # result = os.path.join(get_root_dir(), "Examples/xmls/{}".format(xml_name))
+    result = os.path.join(get_root_dir(), "functional_tool_2.0/uploaded_folder/{}".format(xml_name))
+    return result.replace("\\", "/")
+
+
+
+def get_output_path(name):
+    """Output is stored in Output/xmlOutput/"""
+    # result = os.path.join(get_root_dir(), "Output/xmlOutput/{}_XmlOutput.csv".format(name))
+    result = os.path.join(get_root_dir(), "functional_tool_2.0/csv_folder/{}_XmlOutput.csv".format(name))
+    return result.replace("\\", "/")
 
 
 
 def get_doi(root):
-    """get doi and zooBank number of the article"""
     doi = ''
     zooBankNumber = ''
 
@@ -72,10 +77,6 @@ def get_abstract_info(root):
 
 
 def get_coordinates(itemP):
-    """read the article body and get the coordinates: latitude and longitude of the corresponding species.
-    according to the article sturcture, the coordinates are usually under the attribute: Systematic account/Systematic/
-     Taxonomy -> tp:taxon-treatment -> tp:treatment-sec sec-type='material'... and its tag in xml is usually
-      named-content, the attributes: content-type="dwc:institutional_code"""
     for it in itemP:
         if it.tag=="named-content":
             if ("content-type" in it.attrib) and it.attrib['content-type']=="dwc:verbatimCoordinates":
@@ -99,8 +100,7 @@ def get_family(it):
 
 
 def snp_single_info(item2):
-    """get biological information of family, genus, subgenus, species, holotype and location, coordinate,
-    authority and taxon status under the tag of tp:taxon-treatment """
+    """Read from the the tag {http://www.plazi.org/taxpub}taxon-treatment and below"""
     family=''
     genus=''
     subgenus=''
@@ -167,36 +167,37 @@ def snp_single_info(item2):
                                             holotype_and_loc=item6.tail
                                             coordinate=get_coordinates(item41)
                                             break
-
-    if (genus!='' or species!=''):
-        # the following is for debugging.
-        # print('1: ')
-        # print(family)
-        # print(genus)
-        # print(subgenus)
-        # print(species)
-        # if taxon_authority!=None:
-        #     print('2:'+taxon_authority)
-        # if holotype_and_loc!=None:
-        #     print('3:' +holotype_and_loc)
-        # if(coordinate!=None):
-        #     print("4:" +coordinate)
-        # if taxon_status!=None:
-        #     print('5:'+taxon_status)
-        #
-        # print("-------------------------------------")
-
-        return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
-    else:
-
-        return ([])
+    ## For debugging:
+    # if (genus!='' or species!=''):
+    #     # print('1: ')
+    #     # print(family)
+    #     # print(genus)
+    #     # print(subgenus)
+    #     # print(species)
+    #     # if taxon_authority!=None:
+    #     #     print('2:'+taxon_authority)
+    #     # if holotype_and_loc!=None:
+    #     #     print('3:' +holotype_and_loc)
+    #     # if(coordinate!=None):
+    #     #     print("4:" +coordinate)
+    #     # if taxon_status!=None:
+    #     #     print('5:'+taxon_status)
+    #     #
+    #     # print("-------------------------------------")
+    #
+    #     return [family,genus,subgenus,species,taxon_authority,holotype_and_loc,coordinate,taxon_status]
+    # else:
+    #
+    #     return ([])
+    if (family+genus+subgenus+species)!="" and (taxon_status!=""):
+        return [family, genus, subgenus, species, genus+" "+species,taxon_authority, holotype_and_loc, coordinate, taxon_status]
 
 
 
 
 def get_info_recursive(item):
-    """recursive find all attributes 'sec-type' in different structure layer of the article, and then use the
-    function snp_single_info(item2) to find taxonomic information"""
+    """In the systematic' or 'taxonomy section of the article, use np_single_info() to recursive get
+    taxonomic information"""
 
     for ite1 in item:
         if ('sec-type' in ite1.attrib):
@@ -219,9 +220,9 @@ def get_info_recursive(item):
 
 
 def get_info_from_body(root):
-    """find all taxonomic information, match differenc taxonomy correctly and insert into a pandas framework"""
-
-    df=pd.DataFrame(columns=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
+    """read the article, use np_single_info() to recursive get
+        taxonomic information"""
+    df=pd.DataFrame(columns=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
 
     for item in root.iterfind('./body/sec'):
         if(item.tag=='sec'):
@@ -235,7 +236,7 @@ def get_info_from_body(root):
                     if(row!=None and row!=[]):
 
 
-                        dfseries=pd.Series(row,index=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
+                        dfseries=pd.Series(row,index=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
                         df=df.append(dfseries,ignore_index=True)
 
             else:
@@ -243,71 +244,252 @@ def get_info_from_body(root):
                 if(row2!=[]) and row2!=None:
 
 
-                    dfseries=pd.Series(row2,index=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status'])
+                    dfseries=pd.Series(row2,index=['family','genus','subgenus','species','scientificName','authorship','holotype','coordinates','taxon_status'])
                     df=df.append(dfseries,ignore_index=True)
+    print(df)
     return df
 
-def write_species_to_excel(root):
-    """write the taxonomic information into an excel"""
-    #doi_zoobankn=get_doi(root)
+# -----------------------------------------------mapping output to TNC_TaxonomicName standard (tnc_tn)----------------------------------------------
 
-    #doi_data='DOI is: '+doi_zoobankn[0]
-    #zoobank_data='ZooBank number is: \n'+doi_zoobankn[1]
-    #articledata=[doi_data,zoobank_data]
-    body_data = get_info_from_body(root)
-
-    rb=open_workbook('taxonomy.xls')
-    workbook=copy(rb)
-
-    worksheet=workbook.add_sheet('taxonomic_name')
-    #worksheet.write_merge(0,0,0,6,doi_data)
-    #worksheet.write_merge(1,1,0,6,zoobank_data)
-    column_name_in_article=['named-content','tp:taxion-name-part','tp:taxion-name-part',
-                            'tp:taxion-name-part','tp:taxon-authority','tp:treatment-sec',
-                            'named-content','tp:taxon-status']
-    for j in range(len(column_name_in_article)):
-        worksheet.write(2,j,column_name_in_article[j])
-    tnu_name=['scientificName','scienfiticNameAuthorship','taxonRank']
-    worksheet.write_merge(3,3,1,3,tnu_name[0])
-    worksheet.write(3,4,tnu_name[1])
-    worksheet.write(3,7,tnu_name[2])
+def tnc_tn_id(df):
+    id_list = []
+    for i in range(len(df)):
+        id_list.append("TN-" + str(i))
+    return id_list
 
 
-    column_name=['family','genus','subgenus','species','taxon_authority','holotype','coordinates','taxon_status']
-    for i in range(len(column_name)):
-        worksheet.write(4,i,column_name[i])
+def tnc_tn_tns(df):
+    """TaxonomicNameString, the complete uninomial, binomial or trinomial name without any authority or
+    year components. Mapping to taxonomicNameString in TNC_TaxonomicName"""
+    taxonomicNameString_list = df['scientificName']
+    return taxonomicNameString_list
+
+#Todo: when Authorship is empty, the author of article has the authorship. Get it from reference_info_extraction.py
+def tnc__tn_fnwa(df):
+    """Mapping to fullNameWithAuthorship in TNC_TaxonomicName"""
+    fullNameWithAuthorship_list=[]
+    for i in range(len(df['scientificName'])):
+        fullNameWithAuthorship_list.append(df['scientificName'][i]+' '+df['authorship'][i])
+    return fullNameWithAuthorship_list
+
+def tnc__tn_rank(df):
+    """The taxonomic rank of the name. Use standard abbreviations. Mapping to rank in TNC_TaxonomicName"""
+    rank_list=[]
+    for status in df['taxon_status']:
+        if 'gen' in status:
+            rank_list.append('genus')
+        elif 'sp' in status:
+            rank_list.append('species')
+        else:
+            rank_list.append('')
+    return rank_list
 
 
-    pre_row_number=5
-    print(pre_row_number)
-    pdrow=body_data.shape[0]
-    pdcoloum=body_data.shape[1]
+def tnc_tn_uninomial(df):
+    """Single-word name string for a name of generic or higher rank. Mapping to uninomial in TNC_TaxonomicName"""
+    uninomial_list=[]
+    rank=tnc__tn_rank(df)
+    taxon_name_strings=tnc_tn_tns(df)
 
-    for i in range(pdrow):
-        for j in range(pdcoloum):
-            worksheet.write(i+pre_row_number,j,body_data.iloc[i,j])
+    for i in range(len(taxon_name_strings)):
+        if rank[i]=='species':
+            uninomial_list.append('')
+        else:
+            # name=taxon_name_strings[i]
+            # u=name.split(' ')[-1]
+            uninomial_list.append(taxon_name_strings[i])
+    return uninomial_list
 
 
-    workbook.save('taxonomy.xls')
+def tnc_tn_genus(df):
+    """The genus part of combination. This property should not be used for names at and above the rank of genus.
+    For those names the uninomial property should be used. Mapping to genus in TNC_TaxonomicName"""
+    genus_list=[]
+    original_genus=df['genus']
+    rank=tnc__tn_rank(df)
+    for i in range(len(rank)):
+        if rank[i]=='species':
+            genus_list.append(original_genus[i])
+        else:
+            genus_list.append('')
+    return genus_list
 
-def write_excel(articleName):
-    """combine taxonomic information and reference, agents information into a same Excel table,separate sheets"""
-    # src_path = os.path.dirname(os.path.realpath(__file__))
-    #
-    # path_dir = os.listdir(src_path)
-    # print(path_dir)
-    # xml_file = []
-    # for i in path_dir:
-    #     if ".xml" in i:
-    #         xml_file.append(i)
-    # articleName = xml_file[0]
-    # articleName = "26newSpecies.xml"
-    # print(articleName)
-    tree = ET.parse(articleName)
+
+
+def tnc_tn_infragenericEpithet(df):
+    """The infrageneric part of a binomial name at ranks above species but below genus.
+    Mapping to infragenericEpithet in TNC_TaxonomicName"""
+    infrageneric_epithet=df['subgenus']
+    return infrageneric_epithet
+
+
+#TODO: find for subspecies and add it with species .
+def tnc_tn_specificEpithet(df):
+    """The specific epithet part of a binomial or trinomial name at or below the rank of species.
+    Mapping to specificEpithet in TNC_TaxonomicName"""
+    specific_Epithet=df['species']
+    return specific_Epithet
+
+
+#TODO: find for subspecies.
+def tnc_tn_infraspecificEpithet(df):
+    """The infraspecific epithet part of a trinomial name below the rank of species."""
+    infraspecific_Epithet=[]
+    for i in range(len(df)):
+        infraspecific_Epithet.append('')
+
+    return infraspecific_Epithet
+
+#Not implement. We didn't see any plant xml article.
+def tnc_tn_cultivarNameGroup(df):
+    """The epithet for the cultivar, cultivar group, grex, convar or graft chimera under the International Code for
+    the Nomenclature of Cultivated Plants (ICNCP)."""
+    cultivar_NameGroup=[]
+    for i in range(len(df)):
+        cultivar_NameGroup.append('')
+    return cultivar_NameGroup
+
+
+#TODO: 1.Full name. 2. If empty, the author of article has authorship
+def tnc_tn_taxonomicNameAuthorship(df):
+    """The full code-appropriate authorship string for the Taxonomic Name."""
+    taxonomicNameAuthorship=df['authorship']
+    return taxonomicNameAuthorship
+
+#TODO: 1. definition. 2. extract the value.
+def tnc_tn_combinationAuthorship(df):
+    """Authorship of the combination"""
+    combination_Authorship = []
+    for i in range(len(df)):
+        combination_Authorship .append('')
+    return combination_Authorship
+
+#TODO: 1. definition. 2. extract the value.
+def tnc_tn_basionymAuthorship(df):
+    """Authorship of the basionym"""
+    basionym_Authorship = []
+    for i in range(len(df)):
+        basionym_Authorship.append('')
+    return basionym_Authorship
+
+def tnc_tn_combinationExAuthorship(df):
+    """People the combination has been attributed to, but clients didn’t provide the validating description."""
+    combinationExAuthorship=[]
+    for i in range(len(df)):
+        combinationExAuthorship.append('')
+
+    return combinationExAuthorship
+
+
+def tnc_tn_basionymExAuthorship(df):
+    """People the basionym has been attributed to, but who didn’t provide the validating description."""
+    basionymExAuthorship=[]
+    for i in range(len(df)):
+        basionymExAuthorship.append('')
+    return basionymExAuthorship
+
+
+
+
+#TODO: extract the value.
+def tnc_tn_publicationYear(df):
+    """Year of publication of the Taxonomic Name."""
+    publication_year = []
+    for i in range(len(df)):
+        publication_year.append('')
+    return publication_year
+
+
+def tnc_tn_nomenclaturalCode(df):
+    """Nomenclatural code that applies to the group of organisms the taxonomic name is for Botanical, Zoological"""
+    nomenclatural_Code =[]
+    for i in range(len(df)):
+        nomenclatural_Code.append('Zoological')
+    return nomenclatural_Code
+
+
+#TODO: understand the definiton, the difference between this and rank
+def tnc_tn_nomenclaturalStatus(df):
+    """Status related to the original publication of the name and its conformance to the relevant rules of
+    nomenclature."""
+    nomenclaturalStatus=[]
+    for i in range(len(df)):
+        nomenclaturalStatus.append('')
+    return nomenclaturalStatus
+
+
+#TODO: the field is not defined.
+def tnc_tn_basedOn(df):
+    bs = []
+    for i in range(len(df)):
+        bs.append('')
+    return bs
+
+def tnc_tn_kindOfName(df):
+    namekind = []
+    for i in range(len(df)):
+        namekind.append('scientific')
+    return namekind
+
+
+#TODO: need to know where to find it
+def tnc_tn_nameRegistrationString(df):
+    nrs = []
+    for i in range(len(df)):
+        nrs.append('')
+    return nrs
+
+
+
+def change_To_TNC_Taxonomic_name(df):
+
+    df2=pd.DataFrame(columns=['id','taxonomicNameString','fullNameWithAuthorship','rank','uninomial','genus',
+                              'infragenericEpithet','specificEpithet','infraspecificEpithet', 'cultivarNameGroup',
+                              'taxonomicNameAuthorship','combinationAuthorship','basionymAuthorship',
+                              'combinationExAuthorship', 'basionymExAuthorship','publicationYear','nomenclaturalCode',
+                              'nomenclaturalStatus','basedOn','kindOfName','nameRegistrationString'])
+    df2['id']=tnc_tn_id(df)
+    df2['taxonomicNameString']=tnc_tn_tns(df)
+    df2['fullNameWithAuthorship']=tnc__tn_fnwa(df)
+
+    df2['rank']=tnc__tn_rank(df)
+    df2['uninomial']=tnc_tn_uninomial(df)
+    df2['genus']=tnc_tn_genus(df)
+
+    df2['infragenericEpithet']=tnc_tn_infragenericEpithet(df)
+    df2['specificEpithet']=tnc_tn_specificEpithet(df)
+
+    df2['infraspecificEpithet']=tnc_tn_infraspecificEpithet(df)
+    df2['cultivarNameGroup']=tnc_tn_cultivarNameGroup(df)
+    df2['taxonomicNameAuthorship']=tnc_tn_taxonomicNameAuthorship(df)
+    df2['combinationAuthorship']=tnc_tn_combinationAuthorship(df)
+    df2['basionymAuthorship']=tnc_tn_basionymAuthorship(df)
+    df2['combinationExAuthorship']=tnc_tn_combinationExAuthorship(df)
+    df2['basionymExAuthorship']=tnc_tn_basionymExAuthorship(df)
+    df2['publicationYear']=tnc_tn_publicationYear(df)
+    df2['nomenclaturalCode']=tnc_tn_nomenclaturalCode(df)
+    df2['nomenclaturalStatus']=tnc_tn_nomenclaturalStatus(df)
+    df2['basedOn']=tnc_tn_basedOn(df)
+    df2['kindOfName']=tnc_tn_kindOfName(df)
+    df2['nameRegistrationString']=tnc_tn_nameRegistrationString(df)
+
+
+    return df2
+
+
+
+
+def write_csv(articleName):
+    path=get_example_path(articleName)
+    tree = ET.parse(path)
     root = tree.getroot()
+    df=get_info_from_body(root)
+    df2=change_To_TNC_Taxonomic_name(df)
+    df2.to_csv(get_output_path(articleName.split(".")[0]))
 
 
-    reference_info_extraction.write_reference_to_excel(reference_info_extraction.lists, reference_info_extraction.ref_list)
-    write_species_to_excel(root)
+if __name__ == '__main__':
+    write_csv("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
+
 
 

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX Example</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- <script src="{{ url_for('static', filename='js/form.js') }}"></script> -->
+</head>
+<body>
+<div class="container">
+	<br><br><br><br>
+	<div id='test'></div>
+	<form action="/" method="POST" enctype="multipart/form-data">
+
+		<div class="form-group">
+			<label>Select file</label>
+			<div class="custom-file">
+				<input type="file" class="custom-file-input" name="xml" id="xml">
+				<label class="custom-file-label" for="xml">Select file...</label>
+			</div>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Upload</button>
+
+	</form>
+
+	<br>
+
+	{% for agent in agents %}
+	<div>{{ agent }}</div>
+	{% endfor %}
+
+	<br>
+
+	{% for ref in reference %}
+	<div>{{ ref }}</div>
+	{% endfor %}
+
+	<br>
+	<a id='download'}>Download</a>
+</div>
+
+<script>
+	 var xml_name = JSON.stringify('{{ xml_name|safe}}').substring(1,JSON.stringify('{{ xml_name|safe}}').length-1)  
+	 console.log(xml_name)
+	 document.getElementById('download').href = 'get/'+xml_name.split('.').slice(0, -1).join('.')+'.xls'
+</script>
+</body>
+</html>

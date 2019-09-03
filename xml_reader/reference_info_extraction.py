@@ -170,6 +170,7 @@ def quick_reference(r_list):
     for e in r_list:
         quickRef_list.append(e["quickRef"])
     print(quickRef_list)
+##lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/example.xml")
 
 
 def write_reference_to_excel(a_list, r_list):

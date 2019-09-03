@@ -6,14 +6,18 @@ import collections
 import xlwt
 import xlrd
 
+"""get the infomation about contribution
+   @param target: absolute url for the input file
+"""
 
 
 def get_contri_info(target):
+    # initialize
     agents_list = []
     reference_list = []
     agents_id = 0
     reference_id = 0
-
+    """for multiple articles"""
     # src_path = os.path.dirname(os.path.realpath(__file__))
     # print(src_path)
     # find all the xml files
@@ -27,6 +31,9 @@ def get_contri_info(target):
     # xml_file_no = len(xml_file)
 
     # for file_name in xml_file:
+
+    """for single input"""
+
     reference_list_item = {}
     agents = {}
     reference_id += 1
@@ -117,6 +124,12 @@ def get_contri_info(target):
     return agents_list, reference_list
 
 
+"""write the captured data into excel
+   @param a_list : agent infomation list
+   @param r_list : reference information list
+"""
+
+
 def write_excel(a_list, r_list):
     book = xlwt.Workbook()
     sheet = book.add_sheet("agents", cell_overwrite_ok=True)
@@ -141,23 +154,32 @@ def write_excel(a_list, r_list):
     for num in range(len(r_list)):
         row = reference_sheet.row(num + 1)
         for index, col in enumerate(cols_ref):
-            if col in ref_list[num].keys():
-                value = ref_list[num][col]
+            if col in r_list[num].keys():
+                value = r_list[num][col]
                 row.write(index, value)
     book.save("taxonomy.xls")
 
-#
+
+##lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/example.xml")
 
 
 def write_reference_to_excel(a_list, r_list):
     write_excel(a_list, r_list)
-    df = pd.read_excel('taxonomy.xls', sheet_name=None)
-    df['agents'].to_csv('agents.csv')
-    df['references'].to_csv('references.csv')
+    abs_file_path = os.path.abspath(__file__)
+    parent_dir = os.path.dirname(abs_file_path)
+    parent_dir = os.path.dirname(parent_dir)
+    # agent_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("agents.csv"))
+    # references_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("references.csv"))
+    print(parent_dir)
+    agent_path = os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("agents.csv"))
+    references_path = os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("references.csv"))
+
+    """excel to csv """
+    agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
+    agents.to_csv(agent_path, encoding='utf-8')
+    references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
+    references.to_csv(references_path, encoding='utf-8')
 
 
 
-
-lists, ref_list = get_contri_info("E:/last/TL/Taxonomic-master/Taxonomic-master/Examples/xmls/a.xml")
-write_reference_to_excel(lists, ref_list)
-
+##write_reference_to_excel(lists, ref_list)
