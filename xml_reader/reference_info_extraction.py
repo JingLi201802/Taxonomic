@@ -160,7 +160,16 @@ def write_excel(a_list, r_list):
     book.save("taxonomy.xls")
 
 
-##lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/26newSpecies.xml")
+
+""" quick reference column extract"""
+
+def quick_reference(r_list):
+    print("---------------------------------------")
+    print(r_list)
+    quickRef_list = []
+    for e in r_list:
+        quickRef_list.append(e["quickRef"])
+    print(quickRef_list)
 
 
 def write_reference_to_excel(a_list, r_list):
@@ -176,6 +185,8 @@ def write_reference_to_excel(a_list, r_list):
     references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
     references.to_csv(references_path, encoding='utf-8')
 
+lists, ref_list = get_contri_info("C:/Users/51651/Documents/GitHub/Taxonomic/Examples/xmls/A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
 
+quick_reference(ref_list)
 
 ##write_reference_to_excel(lists, ref_list)
