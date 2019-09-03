@@ -164,7 +164,7 @@ def write_excel(a_list, r_list):
 """ quick reference column extract"""
 
 def quick_reference(r_list):
-    print("---------------------------------------")
+    #print("---------------------------------------")
     print(r_list)
     quickRef_list = []
     for e in r_list:
