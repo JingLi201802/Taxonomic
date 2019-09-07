@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
@@ -12,7 +9,7 @@ import java.util.HashMap;
  */
 
 public class spider {
-    public static String link = "https://biodiversity.org.au/nsl/services/APNI";
+    public static String link = "";
 
     public static ArrayList<String> allInfo = new ArrayList<>();// store all information in the website (not analysis)
 
@@ -112,43 +109,6 @@ public class spider {
         }
     }
 
-    /**
-     * find the search box and output range (get all required information)
-     */
-    public static void infoRange(){
-
-        int sbEnd = 0;
-        int resEnd = 0;
-
-        for (int i = sbIndex; i < allInfo.size(); i++) {
-
-            if (allInfo.get(i).contains("/>")){
-                sbEnd = i;
-                range.put(sbIndex,sbEnd);
-                break;
-            }
-        }
-
-        for (int i = outputHeadingIndex; i < allInfo.size(); i++) {
-
-            if (allInfo.get(i).contains("class=\"panel-heading\"")){ //need end symbol
-                resEnd = i;
-                range.put(outputHeadingIndex, resEnd);
-                break;
-            }
-        }
-
-        for (int i = outputBodyIndex; i < allInfo.size(); i++) {
-
-            if (allInfo.get(i).contains("class=\"panel-body\"")){
-                sbEnd = resEnd;
-                resEnd = i;
-                range.put(sbEnd, resEnd);
-                break;
-            }
-        }
-
-    }
 
     /**
      * Find pair tags in HTML.
@@ -165,7 +125,6 @@ public class spider {
         if (startPoint <=0 || startPoint > allInfo.size()) return 0;
         int count = 1;
         int index = startPoint;
-        int rtn = 0;
         while (count != 0){
             index++;
             if (allInfo.get(index).contains("<div")){
@@ -178,6 +137,36 @@ public class spider {
         return index;
     }
 
+
+    /**
+     * read the file, and find all data.
+     * @param buffer
+     * @param filePath
+     * @throws Exception
+     */
+    public static void readFile(StringBuffer buffer, String filePath) throws Exception{
+        try {
+            File f = new File(filePath);
+            if (f.isFile() && f.exists()) {
+                InputStreamReader isr = new InputStreamReader(new FileInputStream(f));
+                String line;
+                BufferedReader reader = new BufferedReader(isr);
+                line = reader.readLine();
+                while (line != null) {
+                    buffer.append(line);
+                    buffer.append("\n");
+                    line = reader.readLine();
+                }
+                reader.close();
+            }else {
+                System.out.println("Cannot find the file");
+            }
+        }catch (Exception e){
+            System.out.println("Error detected");
+            e.printStackTrace();
+        }
+    }
+
     /**
      * analysis the output and delete HTML tags
      */
@@ -185,8 +174,12 @@ public class spider {
 
     }
 
-    public static void main(String[] args) throws IOException {
 
+    public static void main(String[] args) throws IOException {
+        String search1 = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=";
+        String search2 = "&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
+        String target = "";
+        link = search1 + target + search2;
         URL url = new URL(link);
         getConnect(link);
         find();
