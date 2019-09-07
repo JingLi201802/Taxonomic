@@ -79,32 +79,36 @@ def get_abstract_info(root):
 #                         return it1.text
 
 
-def get_holotype_and_loc_and_coordinates(item_p, holotype_loc_coor_list):
+def find_paragrapy_content(item_p, holotype_loc_coor_list):
+    """use this to find the content of a paragrapy. Used in find holotype&location*coordinates,
+    paratype&location*coordinates, etymology """
     for child in item_p:
         # print('child.tag: ', child.tag)
         if child.tag != '{http://www.plazi.org/taxpub}taxon-name':
 
             if child.text != '' and child.text != None:
                 ctext = child.text.replace('/n', '')
-                ctext = child.text.strip()
+                ctext = ctext.strip()
                 holotype_loc_coor_list.append(ctext)
 
-            get_holotype_and_loc_and_coordinates(child, holotype_loc_coor_list)
+            find_paragrapy_content(child, holotype_loc_coor_list)
             # print('child.tail: ', child.tail)
             if child.tail != '' and child.tail != None:
                 ctail = child.tail.replace('/n', '')
-                ctail = child.tail.strip()
+                ctail = ctail.strip()
                 # print("child.tail: ", ctail)
                 holotype_loc_coor_list.append(ctail)
 
 
-def join_all_hltype_loc_cordn(item_p):
+def join_paragraph_content(item_p):
+    """use this to connect the content of a paragrapy. Used in find holotype&location*coordinates,
+        paratype&location*coordinates, etymology """
     hlc_list = []
     if item_p.text != None:
         item_p_text = (item_p.text.replace('/n', '')).strip()
         # print(item_p_text)
         hlc_list.append(item_p_text)
-    get_holotype_and_loc_and_coordinates(item_p, hlc_list)
+    find_paragrapy_content(item_p, hlc_list)
 
     if item_p.tail != None:
         root_tail = (item_p.tail.replace('/n', '')).strip()
@@ -138,8 +142,11 @@ def snp_single_info(item2):
     species = ''
     holotype_and_loc_and_coor = ''
     paratype_and_loc_and_coor = ''
+    zoo_bank=''
+    etymology=''
     taxon_authority = ''
     taxon_status = ''
+
 
     if item2.tag == '{http://www.plazi.org/taxpub}taxon-treatment':
         for item3 in item2:
@@ -163,6 +170,12 @@ def snp_single_info(item2):
                                     if item5.attrib['taxon-name-part-type'] == 'species':
                                         species = item5.text
                                         # print(species)
+                                if item5.tag=='object-id':
+                                    if 'content-type' in item5.attrib:
+                                        if item5.attrib['content-type']=='zoobank':
+                                            zoo_bank=item5.text
+
+
                         if item4.tag == '{http://www.plazi.org/taxpub}taxon-authority':
                             taxon_authority = item4.text
                         if item4.tag == '{http://www.plazi.org/taxpub}taxon-status':
@@ -175,7 +188,7 @@ def snp_single_info(item2):
 
                     for item41 in item3:
                         if item41.tag == 'p' and holotype_and_loc_and_coor == '':
-                            holotype_and_loc_and_coor = join_all_hltype_loc_cordn(item41)
+                            holotype_and_loc_and_coor = join_paragraph_content(item41)
                             if 'holotype' in holotype_and_loc_and_coor:
                                 break
 
@@ -184,10 +197,14 @@ def snp_single_info(item2):
 
                     for item41 in item3:
                         if item41.tag == 'p' and paratype_and_loc_and_coor == '':
-                            paratype_and_loc_and_coor = join_all_hltype_loc_cordn(item41)
+                            paratype_and_loc_and_coor = join_paragraph_content(item41)
 
                             if 'paratypes' in paratype_and_loc_and_coor:
                                 break
+                elif 'etymology' in item3.attrib['sec-type'].lower():
+                    for item42 in item3:
+                        if item42.tag=='p':
+                            etymology=join_paragraph_content(item42)
 
 
     ## For debugging:
@@ -217,9 +234,10 @@ def snp_single_info(item2):
     #     return ([])
 
     if (family + genus + subgenus + species) != "" and (taxon_status != ""):
+        print('zoobank: ',zoo_bank)
 
         return [family, genus, subgenus, species, genus + " " + species, taxon_authority, holotype_and_loc_and_coor,
-                paratype_and_loc_and_coor, taxon_status]
+                paratype_and_loc_and_coor, zoo_bank, etymology,taxon_status]
 
 
 def get_info_recursive(item):
@@ -260,7 +278,7 @@ def get_info_from_body(root):
         taxonomic information"""
     df = pd.DataFrame(
         columns=['family', 'genus', 'subgenus', 'species', 'scientificName', 'authorship', 'holotype_and_loc_and_coor',
-                 'paratype_and_loc_and_coor', 'taxon_status'])
+                 'paratype_and_loc_and_coor', 'zoo_bank','etymology','taxon_status'])
 
     for item in root.iterfind('./body/sec'):
         if (item.tag == 'sec'):
@@ -274,7 +292,7 @@ def get_info_from_body(root):
                     if (row != None and row != []):
                         dfseries = pd.Series(row, index=['family', 'genus', 'subgenus', 'species', 'scientificName',
                                                          'authorship', 'holotype_and_loc_and_coor',
-                                                         'paratype_and_loc_and_coor',
+                                                         'paratype_and_loc_and_coor','zoo_bank','etymology',
                                                          'taxon_status'])
                         df = df.append(dfseries, ignore_index=True)
 
@@ -283,7 +301,7 @@ def get_info_from_body(root):
                 if (row2 != []) and row2 != None:
                     dfseries = pd.Series(row2, index=['family', 'genus', 'subgenus', 'species', 'scientificName',
                                                       'authorship', 'holotype_and_loc_and_coor',
-                                                      'paratype_and_loc_and_coor',
+                                                      'paratype_and_loc_and_coor','zoo_bank','etymology',
                                                       'taxon_status'])
                     df = df.append(dfseries, ignore_index=True)
     print(df)
@@ -306,27 +324,32 @@ def tnc_tn_tns(df):
     return taxonomicNameString_list
 
 
-def tnc__tn_fnwa(df, path):
-    """Mapping to fullNameWithAuthorship in TNC_TaxonomicName"""
+def tnc__tn_fnwa_publicationYear(df, path):
+    """return two values. 1.Mapping to fullNameWithAuthorship in TNC_TaxonomicName.
+    2. Year of publication of the Taxonomic Name."""
+
+
     quick_reference_str = get_quick_ref(path)
-    qrlist = quick_reference_str.split(' ')[:-1]
-    # get rid of year,
+
+    qrlist = quick_reference_str.split(' ')[:-1]# quick reference without year
+    year = quick_reference_str.split(' ')[-1]
     qr = ' '.join(qrlist)
+
 
     fullNameWithAuthorship_list = []
     for i in range(len(df['scientificName'])):
-        fullname = df['scientificName'][i]
+        sn = df['scientificName'][i]
         if df['scientificName'][i][-1] == ' ':
-            fullname = df['scientificName'][i][:-1]
+            sn = df['scientificName'][i][:-1]
 
         if df['authorship'][i] != '':
 
-            fullNameWithAuthorship_list.append(fullname + ' ' + df['authorship'][i])
+            fullNameWithAuthorship_list.append(sn + ' ' + df['authorship'][i])
         else:
 
-            fullNameWithAuthorship_list.append(fullname + ' ' + qr)
+            fullNameWithAuthorship_list.append(sn + ' ' + qr)
 
-    return fullNameWithAuthorship_list
+    return fullNameWithAuthorship_list, year
 
 
 def tnc__tn_rank(df):
@@ -456,15 +479,6 @@ def tnc_tn_basionymExAuthorship(df):
     return basionymExAuthorship
 
 
-# TODO: extract the value.
-def tnc_tn_publicationYear(df):
-    """Year of publication of the Taxonomic Name."""
-    publication_year = []
-    for i in range(len(df)):
-        publication_year.append('')
-    return publication_year
-
-
 def tnc_tn_nomenclaturalCode(df):
     """Nomenclatural code that applies to the group of organisms the taxonomic name is for Botanical, Zoological"""
     nomenclatural_Code = []
@@ -498,11 +512,10 @@ def tnc_tn_kindOfName(df):
     return namekind
 
 
-# TODO: need to know where to find it
 def tnc_tn_nameRegistrationString(df):
-    nrs = []
-    for i in range(len(df)):
-        nrs.append('')
+
+    nrs = df['zoo_bank']
+
     return nrs
 
 
@@ -515,7 +528,7 @@ def change_To_TNC_Taxonomic_name(df, path):
                                 'nomenclaturalStatus', 'basedOn', 'kindOfName', 'nameRegistrationString'])
     df2['id'] = tnc_tn_id(df)
     df2['taxonomicNameString'] = tnc_tn_tns(df)
-    df2['fullNameWithAuthorship'] = tnc__tn_fnwa(df, path)
+    df2['fullNameWithAuthorship'],df2['publicationYear'] = tnc__tn_fnwa_publicationYear(df, path)
 
     df2['rank'] = tnc__tn_rank(df)
     df2['uninomial'] = tnc_tn_uninomial(df)
@@ -531,7 +544,7 @@ def change_To_TNC_Taxonomic_name(df, path):
     df2['basionymAuthorship'] = tnc_tn_basionymAuthorship(df)
     df2['combinationExAuthorship'] = tnc_tn_combinationExAuthorship(df)
     df2['basionymExAuthorship'] = tnc_tn_basionymExAuthorship(df)
-    df2['publicationYear'] = tnc_tn_publicationYear(df)
+
     df2['nomenclaturalCode'] = tnc_tn_nomenclaturalCode(df)
     df2['nomenclaturalStatus'] = tnc_tn_nomenclaturalStatus(df)
     df2['basedOn'] = tnc_tn_basedOn(df)
@@ -571,6 +584,8 @@ def usage_taxonomicNameUsageLabel(df2, path):
     taxonomic_name_usage_label = []
     qf = get_quick_ref(path)
     for name in df2['taxonomicNameString']:
+        if name[-1] == ' ':
+            name = name[:-1]
         new = name + " sec " + qf
         taxonomic_name_usage_label.append(new)
     return taxonomic_name_usage_label
@@ -638,15 +653,15 @@ def usage_microReference(df2):
     return page_of_target
 
 
-# TODO: find it in tp:treatment-sec sec-type="etymology"
-def usage_etymology(df2):
-    etymology = []
-    for i in range(len(df2)):
-        etymology.append('')
+
+def usage_etymology(df):
+    """it's in tp:treatment-sec sec-type="etymology"""
+    etymology = df['etymology']
+
     return etymology
 
 
-def mapping_to_TNC_Taxonomic_name_usage(df2, path):
+def mapping_to_TNC_Taxonomic_name_usage(df,df2, path):
     df3 = pd.DataFrame(columns=['Id', 'taxonomicName', 'according to', 'taxonomicNameUsageLabel', 'verbatimNameString',
                                 'dwc:verbatimRank', 'taxonomicStatus', 'acceptedNameUsage', 'hasParent',
                                 'kindOfNameUsage',
@@ -663,7 +678,7 @@ def mapping_to_TNC_Taxonomic_name_usage(df2, path):
     df3['hasParent'] = usage_hasParent(df2)
     df3['kindOfNameUsage'] = usage_kindOfNameUsage(df2)
     df3['microReference'] = usage_microReference(df2)
-    df3['etymology'] = usage_etymology(df2)
+    df3['etymology'] = usage_etymology(df)
     return df3
 
 
@@ -720,7 +735,7 @@ def write_csv(articleName):
     # generate data
     df = get_info_from_body(root)
     df2 = change_To_TNC_Taxonomic_name(df, path)
-    df3 = mapping_to_TNC_Taxonomic_name_usage(df2, path)
+    df3 = mapping_to_TNC_Taxonomic_name_usage(df,df2, path)
     df4=mapping_to_typification(df,df2)
     # write csv
     df2.to_csv(get_output_path(articleName.split(".")[0]))
