@@ -21,15 +21,15 @@ def get_root_dir():
 def get_example_path(xml_name):
     """The xml example is in Examples/xmls/ , get this path"""
     # result = os.path.join(parent_dir, "functional_tool_2.0/xls_folder/{}.xls".format(name))
-    # result = os.path.join(get_root_dir(), "Examples/xmls/{}".format(xml_name))
-    result = os.path.join(get_root_dir(), "functional_tool_2.0/uploaded_folder/{}".format(xml_name))
+    result = os.path.join(get_root_dir(), "Examples/xmls/{}".format(xml_name))
+    # result = os.path.join(get_root_dir(), "functional_tool_2.0/uploaded_folder/{}".format(xml_name))
     return result.replace("\\", "/")
 
 
 def get_output_path(name):
     """Output is stored in Output/xmlOutput/"""
-    # result = os.path.join(get_root_dir(), "Output/xmlOutput/{}_XmlOutput.csv".format(name))
-    result = os.path.join(get_root_dir(), "functional_tool_2.0/csv_folder/{}_XmlOutput.csv".format(name))
+    result = os.path.join(get_root_dir(), "Output/xmlOutput/{}_XmlOutput.csv".format(name))
+    # result = os.path.join(get_root_dir(), "functional_tool_2.0/csv_folder/{}_XmlOutput.csv".format(name))
     return result.replace("\\", "/")
 
 

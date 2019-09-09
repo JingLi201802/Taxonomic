@@ -1,6 +1,6 @@
 from zipfile import ZipFile
 
-import reference_info_extraction
+import reference_new_stdds
 import reader
 import os
 
@@ -15,17 +15,18 @@ def runall(path):
     # print(xml_path)
 
     """ call RIE module"""
-    lists, ref_list = reference_info_extraction.get_contri_info(xml_path)
-    reference_info_extraction.write_reference_to_excel(lists, ref_list)
+    ref_list = reference_new_stdds.get_contri_info(xml_path)
+    reference_info_extraction.write_reference_to_excel(ref_list)
     """ call reader module"""
     reader.write_csv(path)
 
     # Create a zip file
     with ZipFile(parent_dir.replace("\\", "/")+'/Output/xmlOutput/XMLOutput.zip', 'w') as zipObj:
+        pass
         # Add multiple files to the zip
-        zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/agents.csv_XmlOutput.csv', "agents.csv")
-        zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/references.csv_XmlOutput.csv', "reference.csv")
-        zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/example_XmlOutput.csv', "readerOutput.csv")
+        # zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/agents.csv_XmlOutput.csv', "agents.csv")
+        # zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/references.csv_XmlOutput.csv', "reference.csv")
+        # zipObj.write(parent_dir.replace("\\", "/")+'/Output/xmlOutput/example_XmlOutput.csv', "readerOutput.csv")
 
 
 
