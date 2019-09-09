@@ -95,6 +95,11 @@ def write_excel(dict):
 
 
     book.save("BibliographicResource_1.xls")
+    path = "C:/Users/51651/Documents/GitHub/Taxonomic/Output/xmlOutput"
+    agents = pd.read_excel('BibliographicResource_1.xls', 'BibliographicResource', index_col=0)
+    agents.to_csv(path+"/BibliographicResource.csv", encoding='utf-8')
+
+
 
 my_dict = get_contri_info("C:/Users/51651/Documents/GitHub/Taxonomic/Examples/xmls/A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
 
