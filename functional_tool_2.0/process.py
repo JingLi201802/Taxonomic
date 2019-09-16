@@ -65,7 +65,10 @@ def write_excel(a_list, r_list,filename):
 	references_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("references")
 	# os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("references.csv"))
 	TNC_TaxonomicName_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName")
-
+	TNC_Taxonomic_name_usage = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage_XmlOutput.csv")
+	TNC_Typification = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification_XmlOutput.csv")
+	Unknown = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format(filename.replace(".xml", ""))
+	BibliographicResource = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("BibliographicResource.csv")
 	"""excel to csv """
 	agents = pd.read_excel(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls", 'agents', index_col=0)
 	agents.to_csv(agent_path, encoding='utf-8')
@@ -76,11 +79,16 @@ def write_excel(a_list, r_list,filename):
 		zipObj.write(agent_path,"agent.csv")
 		zipObj.write(references_path, "reference.csv")
 		zipObj.write(TNC_TaxonomicName_path, "TNC_TaxonomicName.csv")
+		zipObj.write(TNC_Taxonomic_name_usage, "TNC_Taxonomic_name_usage_XmlOutput.csv")
+		zipObj.write(TNC_Typification, "TNC_Typification_XmlOutput.csv")
+		zipObj.write(Unknown,"{}_XmlOutput.csv".format(filename.replace(".xml", "")))
+		zipObj.write(BibliographicResource,"BibliographicResource.csv")
 
 	os.remove(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
 	os.remove(agent_path)
 	os.remove(references_path)
 	os.remove(TNC_TaxonomicName_path)
+
 
 
 
