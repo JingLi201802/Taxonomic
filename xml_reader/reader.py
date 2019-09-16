@@ -736,7 +736,7 @@ def write_csv(articleName):
     df = get_info_from_body(root)
     df2 = change_To_TNC_Taxonomic_name(df, path)
     df3 = mapping_to_TNC_Taxonomic_name_usage(df,df2, path)
-    df4=mapping_to_typification(df,df2)
+    df4 = mapping_to_typification(df,df2)
     # write csv
     df2.to_csv(get_output_path(articleName.split(".")[0]))
     df3.to_csv(get_output_path("TNC_Taxonomic_name_usage"))
