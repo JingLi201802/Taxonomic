@@ -117,7 +117,7 @@ Week 7-8:
 - PDF output in standard schema (PDF)
 - Server updates to make sure the result is stardard schema (Server)
 - Finishing testing accuracy (Testing)
-- Update testing accuracy web clawer to get information from dynamic web page
+- Update testing accuracy web clawer to get information from dynamic web page (Testing)
 
 Week 9-10:
 
