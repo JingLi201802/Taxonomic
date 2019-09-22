@@ -3,6 +3,7 @@ import os
 import requests
 import pandas as pd
 import re
+import txtCrawl
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 pre_buffer = 15
@@ -185,7 +186,9 @@ def get_example_path(pdf_name):
 
 
 def get_output_path(name):
-    result = os.path.join(get_root_dir(), "Output/{}_OUTPUT.csv".format(name))
+    result = os.path.join(get_root_dir(), "Output/{}/".format(name))
+    if not os.path.exists(result):
+        os.makedirs(result)
     return result.replace("\\", "/")
 
 
@@ -202,14 +205,14 @@ def get_configurations():
 
 def get_key_words(config_path):
     key_word_file = "BorderWords.txt"
-    border_words.clear()
+    txtCrawl.border_words.clear()
     file = open(os.path.join(config_path, key_word_file))
     lines = file.read().split("\n")
     for line in lines:
         if line.startswith("#"):
             continue
 
-        border_words.append(line)
+        txtCrawl.border_words.append(line)
 
 # ------------------------------------ Handling JSON from GNParser ----------------------------------------------------
 
@@ -270,8 +273,8 @@ direct_mappings = {
     "details[]/genus/value": "genus",
     "details[]/specificEpithet/value": "specificEpithet",
     "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
-    "canonicalName/value": "scientificName", # The API and web version give different names for this field
-    "canonicalName/simple": "scientificName", # Check if it's okay that canonical omits subgenus for subspecies
+    "canonicalName/value": "taxonomicNameString", # The API and web version give different names for this field
+    "canonicalName/simple": "taxonomicNameString", # Check if it's okay that canonical omits subgenus for subspecies
     "details[]/infraspecificEpithets[]/value": "infraspecificEpithet",
     "details[]/infragenericEpithet/value": "infragenericEpithet",
     "normalized": "taxonomicName",   # ask about this one
@@ -330,6 +333,7 @@ def deduce_tnu_values(df, name_results):
 
 # ------------------------------------------ Create final output layer -------------------------------------------------
 
+
 # Takes a list of GNParser results (a list of dictionaries) and deduces possible TNU fields for output
 def add_dict_data_to_df(name_results):
     index = 1
@@ -356,6 +360,7 @@ def add_dict_data_to_df(name_results):
 
 
 def get_csv_output(path):
+
     pdf_to_text(path)
     string_file = open(path.replace(".pdf", ".txt"), 'r', encoding="utf8")
     string = string_file.read()
@@ -368,8 +373,12 @@ def get_csv_output(path):
 
 get_configurations()
 pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
-process_string(get_example_path("JABG31P037_Lang.txt"))
-get_csv_output(get_example_path("JABG31P037_Lang.pdf"))
+txtCrawl.get_csv_output_test(get_example_path("JABG31P037_Lang.txt"), direct_mappings, get_output_path("JABG31P037"))
+
+
+# pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
+# process_string(get_example_path("JABG31P037_Lang.txt"))
+# get_csv_output(get_example_path("JABG31P037_Lang.pdf"))
 # print(find_references(convert(get_example_path("JABG31P037_Lang.pdf"))))
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))
