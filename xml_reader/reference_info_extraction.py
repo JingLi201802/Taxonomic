@@ -160,6 +160,16 @@ def write_excel(a_list, r_list):
     book.save("taxonomy.xls")
 
 
+
+""" quick reference column extract"""
+
+def quick_reference(r_list):
+    #print("---------------------------------------")
+    print(r_list)
+    quickRef_list = []
+    for e in r_list:
+        quickRef_list.append(e["quickRef"])
+    print(quickRef_list)
 ##lists, ref_list = get_contri_info("/Users/lijing/Documents/comp8715project/Taxonomic/xml_reader/example.xml")
 
 
@@ -168,14 +178,16 @@ def write_reference_to_excel(a_list, r_list):
     abs_file_path = os.path.abspath(__file__)
     parent_dir = os.path.dirname(abs_file_path)
     parent_dir = os.path.dirname(parent_dir)
-    agent_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("agents.csv"))
-    references_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("references.csv"))
+    # agent_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("agents.csv"))
+    # references_path = os.path.join(parent_dir, "Output/xmlOutput/{}_XmlOutput.csv".format("references.csv"))
     """excel to csv """
-    agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
-    agents.to_csv(agent_path, encoding='utf-8')
-    references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
-    references.to_csv(references_path, encoding='utf-8')
+    # agents = pd.read_excel('taxonomy.xls', 'agents', index_col=0)
+    # agents.to_csv(agent_path, encoding='utf-8')
+    # references = pd.read_excel('taxonomy.xls', 'references', index_col=0)
+    # references.to_csv(references_path, encoding='utf-8')
 
+lists, ref_list = get_contri_info("C:/Users/51651/Documents/GitHub/Taxonomic/Examples/xmls/A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
 
+quick_reference(ref_list)
 
-##write_reference_to_excel(lists, ref_list)
+write_reference_to_excel(lists, ref_list)

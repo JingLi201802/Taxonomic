@@ -1,0 +1,12 @@
+Search keyword "viola" (have output)
+Redirect destination: "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=viola&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true"
+
+Search keyword "cecs" (no output)
+Redirect destination" "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=cecs&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true"
+
+The redirect link syntax:
+
+just modify name=(), the name we wanna search
+
+"https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=
+&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true"

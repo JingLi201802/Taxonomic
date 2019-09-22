@@ -65,7 +65,10 @@ def write_excel(a_list, r_list,filename):
 	references_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("references")
 	# os.path.join(parent_dir, "csv_folder/{}_XmlOutput.csv".format("references.csv"))
 	TNC_TaxonomicName_path = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName")
-
+	TNC_Taxonomic_name_usage = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage_XmlOutput.csv")
+	TNC_Typification = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification_XmlOutput.csv")
+	Unknown = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format(filename.replace(".xml", ""))
+	BibliographicResource = app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("BibliographicResource.csv")
 	"""excel to csv """
 	agents = pd.read_excel(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls", 'agents', index_col=0)
 	agents.to_csv(agent_path, encoding='utf-8')
@@ -76,11 +79,16 @@ def write_excel(a_list, r_list,filename):
 		zipObj.write(agent_path,"agent.csv")
 		zipObj.write(references_path, "reference.csv")
 		zipObj.write(TNC_TaxonomicName_path, "TNC_TaxonomicName.csv")
+		zipObj.write(TNC_Taxonomic_name_usage, "TNC_Taxonomic_name_usage_XmlOutput.csv")
+		zipObj.write(TNC_Typification, "TNC_Typification_XmlOutput.csv")
+		zipObj.write(Unknown,"{}_XmlOutput.csv".format(filename.replace(".xml", "")))
+		zipObj.write(BibliographicResource,"BibliographicResource.csv")
 
 	os.remove(app.config['CSV_FOLDER']+'/'+filename.rsplit('.',1)[0]+".xls")
 	os.remove(agent_path)
 	os.remove(references_path)
 	os.remove(TNC_TaxonomicName_path)
+
 
 
 
@@ -97,8 +105,7 @@ def uploaded_file(filename):
 
 @app.route("/", methods=["GET", "POST"])
 def upload_file():
-    agents_list = []
-    reference_list = []
+    my_dict = {}
     file_tmp = ''
     if request.method == "POST":
         if request.files:
@@ -121,13 +128,19 @@ def upload_file():
                 tree = ET.parse(path)
                 root = tree.getroot()
                 df = reader.get_info_from_body(root)
-                df.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
+                df2 = reader.change_To_TNC_Taxonomic_name(df)
+                # df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
+                df3 = reader.mapping_to_TNC_Taxonomic_name_usage(df,df2,path)
+                df4 = reader.mapping_to_typification(df, df2)
 
-                agents_list, reference_list = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
-                write_excel(agents_list, reference_list, xml_file.filename)
+                df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format(xml_file.filename.split(".")[0]))
+                df3.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage"))
+                df4.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification"))
+                my_dict = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
+                write_excel(my_dict)
 
 
-        
+
             else:
                 pdf_file = request.files["xml"]
                 print("pdf!")
