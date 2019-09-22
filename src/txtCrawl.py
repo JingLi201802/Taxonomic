@@ -193,6 +193,7 @@ def find_new_names(doc_string):
         working_index = working_index + 1
 
     r = requests.get('http://parser.globalnames.org/api?q=' + (combined_request_str[1:-1]))
+    print (r)
     return r.json()
 
 
@@ -213,10 +214,18 @@ def get_json_fields(json, targets):
 
         for node in target_path:
             if node.__contains__("[]"):
-                if node.replace("[]", "") in pointer:
+                if node.replace("[]", "") in pointer and not node == "authors[]":
                     pointer = pointer[node.replace("[]", "")][0]
                     if node == target_path[-1]:
                         output_dict[target] = pointer
+                # Check if this works. Should append all authors, but may crop
+                elif node.replace("[]", "") in pointer:
+                    result = ""
+                    pointer = pointer[node.replace("[]", "")]
+                    for author in pointer:
+                        result = result + ", " + author
+
+                    output_dict[target] = result[2:]
                 else:
                     break
 

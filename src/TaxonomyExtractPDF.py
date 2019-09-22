@@ -282,10 +282,10 @@ direct_mappings = {
 
 
     # Some of these duplciates may not be necessary
+    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
     "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
     "details[]/specificEpithet/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
     "details[]/specificEpithet/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
-    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
     "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
     "details[]/infraspecificEpithets[]/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
 
