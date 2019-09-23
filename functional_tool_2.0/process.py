@@ -18,6 +18,7 @@ from xlutils.copy import copy
 
 import reference_info_extraction
 import TaxonomyExtractPDF
+import TaxonomyExtractPDF_2
 import reader
 import runTwoFunction
 
@@ -137,6 +138,12 @@ def upload_file():
                 pdf_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], pdf_file.filename))
                 print("file saved")
                 TaxonomyExtractPDF.get_excel_output(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
+
+                # path = app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename
+                # reader = TaxonomyExtractPDF_2.create_pdf_reader(path)
+                # json = TaxonomyExtractPDF_2.parse_json_list(TaxonomyExtractPDF_2.find_new_names(TaxonomyExtractPDF_2.read_all_pages(reader)))
+                # df = TaxonomyExtractPDF_2.add_dict_data_to_df(json)
+                # df.fillna(0.0).to_csv(app.config['CSV_FOLDER']+'/'+ pdf_file.filename + ".csv")
 
                 #return render_template('form.html')
 
