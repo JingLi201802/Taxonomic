@@ -104,7 +104,7 @@ input{
 
 
 
-form{
+updForm {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 25%;
@@ -125,6 +125,7 @@ table{
 }
 
 table td{
+    width: auto;
     padding-right: 10px;
 }
 
