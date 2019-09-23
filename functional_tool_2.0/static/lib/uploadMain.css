@@ -7,6 +7,10 @@ body{
     height: 100%;
 
 }
+
+input{
+    border: none;
+}
 .content{
     font-family:"Myriad Pro Ultralight";
     padding-bottom: 150px;
