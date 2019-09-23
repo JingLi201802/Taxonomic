@@ -68,24 +68,28 @@
         <div id="rev">
             <p>Data review</p>
             <div id="accuracy_rate">Current accuracy rate: N/a</div>
-            <table>
-                <thead>
-                <tr>
-                    <td>Agent id</td>
-                    <td>Agent Type</td>
-                    <td>Agent Name</td>
-                </tr>
-                </thead>
-                <tbody>
+            <form action="/" id="EditRev" method="post" enctype="multipart/form-data">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Agent id</td>
+                        <td>Agent Type</td>
+                        <td>Agent Name</td>
+                    </tr>
+                    </thead>
+                    <tbody>
                     {% for agent in agents %}
                     <tr>
                         <td>{{ agent.id }}</td>
-                        <td>{{ agent.type }}</td>
-                        <td>{{ agent.name }}</td>
+                        <!-- <td>{{ agent.type }}</td>
+                        <td>{{ agent.name }}</td> -->
+                        <td><input type="text" name="iname" value= "{{ agent.type }}"></td>
+                        <td><input type="text" name="iname" value= "{{ agent.name }}"></td>
                     </tr>
                     {% endfor %}
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </form>
             <br/>
             <button id="sub" onclick="">Submit</button>
             <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->

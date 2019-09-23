@@ -7,6 +7,10 @@ body{
     height: 100%;
 
 }
+
+input{
+    border: none;
+}
 .content{
     font-family:"Myriad Pro Ultralight";
     padding-bottom: 150px;
@@ -65,14 +69,13 @@ body{
 }
 
 #upd input{
-    margin-top: 50px;
+    margin-top: 45px;
     margin-bottom: 20px;
 }
 
 #accuracy_rate{
     font-size:12px;
     color: #db3631;
-    margin-top:-15px;
 }
 
 #rev{
@@ -101,7 +104,7 @@ body{
 
 
 
-form{
+updForm {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 25%;
@@ -122,6 +125,7 @@ table{
 }
 
 table td{
+    width: auto;
     padding-right: 10px;
 }
 
