@@ -2,6 +2,8 @@ import PyPDF2
 import os
 import requests
 import pandas as pd
+import re
+import txtCrawl
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 pre_buffer = 15
@@ -49,12 +51,10 @@ def cleanup():
         try:
             os.remove(path)
         except:
-            print("Failed to remove path")
+            print("Failed to remove {}".format(path))
 
 # Takes the path to a text file and returns a single-line string
-def normalise_spacing(txt_path):
-    file = open(txt_path, 'r', encoding="utf8")
-    string = file.read()
+def normalise_spacing(string):
     string = string.replace("\n", " ")
     string = string.replace("  ", " ")
     return string
@@ -75,6 +75,7 @@ def remove_punctuation(str):
 
 def process_string(doc_string):
     find_new_names(doc_string)
+    find_coordinates(doc_string)
     reference_index = find_references(doc_string)
     find_document_data(doc_string, reference_index)
 
@@ -155,9 +156,13 @@ def find_references(txt_path):
     created_files.append(get_example_path(txt_path.split("/")[-1].replace(".txt", ".xml")))
 
 
-# Todo: extract coordinate information
-def find_coordinates():
-    return None
+# Returns an iterator containing the details and locations of all coordinates of the form xxºxx'xx"[NSEW]
+def find_coordinates(doc_string):
+    file = open(doc_string, 'r', encoding="utf8")
+    string = file.read()
+    # Regex taken from Regexlib.com ("DMS Coordinate by Jordan Pollard")
+    res = re.findall(r"""[0-9]{1,2}[:|°|º][0-9]{1,2}[:|'](?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b)"?[N|S|E|W]""", string, re.UNICODE)
+    return res
 
 
 # Todo: Given a string index, find the nearby name which that information is most likely to belong to.
@@ -181,7 +186,9 @@ def get_example_path(pdf_name):
 
 
 def get_output_path(name):
-    result = os.path.join(get_root_dir(), "Output/{}_OUTPUT.csv".format(name))
+    result = os.path.join(get_root_dir(), "Output/{}/".format(name))
+    if not os.path.exists(result):
+        os.makedirs(result)
     return result.replace("\\", "/")
 
 
@@ -198,14 +205,14 @@ def get_configurations():
 
 def get_key_words(config_path):
     key_word_file = "BorderWords.txt"
-    border_words.clear()
+    txtCrawl.border_words.clear()
     file = open(os.path.join(config_path, key_word_file))
     lines = file.read().split("\n")
     for line in lines:
         if line.startswith("#"):
             continue
 
-        border_words.append(line)
+        txtCrawl.border_words.append(line)
 
 # ------------------------------------ Handling JSON from GNParser ----------------------------------------------------
 
@@ -217,17 +224,22 @@ def parse_json_list(json):
     json_targets = direct_mappings.keys()
 
     for item in json:
+        print("item:" + str(item) + "\nResult")
+        print(get_json_fields(item, json_targets))
         name_results.append(get_json_fields(item, json_targets))
 
     return name_results
 
 # Add support for lists
 def get_json_fields(json, targets):
+    output_dict = dict()
+
     if not json['parsed']:
         print("This name was not able to be parsed")
-        return
+        output_dict['verbatim'] = "unparsable"
+        return output_dict
 
-    output_dict = dict()
+
     for target in targets:
         index = 0
         target_path = target.split("/")
@@ -261,8 +273,8 @@ direct_mappings = {
     "details[]/genus/value": "genus",
     "details[]/specificEpithet/value": "specificEpithet",
     "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
-    "canonicalName/value": "scientificName", # The API and web version give different names for this field
-    "canonicalName/simple": "scientificName", # Check if it's okay that canonical omits subgenus for subspecies
+    "canonicalName/value": "taxonomicNameString", # The API and web version give different names for this field
+    "canonicalName/simple": "taxonomicNameString", # Check if it's okay that canonical omits subgenus for subspecies
     "details[]/infraspecificEpithets[]/value": "infraspecificEpithet",
     "details[]/infragenericEpithet/value": "infragenericEpithet",
     "normalized": "taxonomicName",   # ask about this one
@@ -270,14 +282,14 @@ direct_mappings = {
 
 
     # Some of these duplciates may not be necessary
+    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
     "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
     "details[]/specificEpithet/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
     "details[]/specificEpithet/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
-    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
     "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
     "details[]/infraspecificEpithets[]/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
 
-    # Choose the year from the most relevant author I assume, these entries overwrite previous so order is important
+    # Choose the year from the most relevant author, these entries overwrite previous so order is important
     "details[]/specificEpithet/authorship/basionymAuthorship/year/value": "namePublishedInYear",
     "details[]/specificEpithet/authorship/combinationAuthorship/year/value": "namePublishedInYear",
     "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/year/value": "namePublishedInYear",
@@ -291,6 +303,7 @@ def deduce_tnu_values(df, name_results):
     while index < df.size and not isinstance(df.at[index, 'scientificName'], float):
 
         # Uninomial -----------
+        # Todo: change functionality so it detects uninomial- only 1 rank
         df.at[index, "uninomial"] = (df.at[index, 'scientificName'].split(" ")) == 1
 
         # TaxonRank ----------
@@ -320,6 +333,7 @@ def deduce_tnu_values(df, name_results):
 
 # ------------------------------------------ Create final output layer -------------------------------------------------
 
+
 # Takes a list of GNParser results (a list of dictionaries) and deduces possible TNU fields for output
 def add_dict_data_to_df(name_results):
     index = 1
@@ -335,7 +349,7 @@ def add_dict_data_to_df(name_results):
         print(result)
         for key in result:
             if key in direct_mappings:
-                df.set_value(index=index, col=direct_mappings.get(key), value=result.get(key))
+                df.iloc[index][direct_mappings.get(key)] = result.get(key)
 
         index += 1
 
@@ -346,17 +360,25 @@ def add_dict_data_to_df(name_results):
 
 
 def get_csv_output(path):
-    reader = create_pdf_reader(get_example_path(path))
-    json = parse_json_list(find_new_names(read_all_pages(reader)))
+
+    pdf_to_text(path)
+    string_file = open(path.replace(".pdf", ".txt"), 'r', encoding="utf8")
+    string = string_file.read()
+    json = parse_json_list(find_new_names(string))
     df = add_dict_data_to_df(json)
-    df.fillna(0.0).to_csv(get_output_path(path[:-4]))
+    df.fillna(0.0).to_csv(get_output_path((path.split("/")[-1])[:-4]))
 
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
 
 get_configurations()
 pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
-process_string(get_example_path("JABG31P037_Lang.txt"))
+txtCrawl.get_csv_output_test(get_example_path("JABG31P037_Lang.txt"), direct_mappings, get_output_path("JABG31P037"))
+
+
+# pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
+# process_string(get_example_path("JABG31P037_Lang.txt"))
+# get_csv_output(get_example_path("JABG31P037_Lang.pdf"))
 # print(find_references(convert(get_example_path("JABG31P037_Lang.pdf"))))
 # (process_string(read_all_pages(
 #    create_pdf_reader(get_example_path("853.pdf")))))

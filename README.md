@@ -117,6 +117,7 @@ Week 7-8:
 - PDF output in standard schema (PDF)
 - Server updates to make sure the result is stardard schema (Server)
 - Finishing testing accuracy (Testing)
+- Accuracy algorithm design and implement (Testing)
 
 Week 9-10:
 
