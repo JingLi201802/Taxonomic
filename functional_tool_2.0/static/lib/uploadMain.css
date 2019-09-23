@@ -65,14 +65,13 @@ body{
 }
 
 #upd input{
-    margin-top: 50px;
+    margin-top: 45px;
     margin-bottom: 20px;
 }
 
 #accuracy_rate{
     font-size:12px;
     color: #db3631;
-    margin-top:-15px;
 }
 
 #rev{
