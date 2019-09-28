@@ -19,7 +19,7 @@ from xlutils.copy import copy
 import reference_info_extraction
 import reference_new_stdds
 import TaxonomyExtractPDF
-import TaxonomyExtractPDF_2
+#import TaxonomyExtractPDF_2
 import reader
 import runTwoFunction
 
