@@ -48,14 +48,23 @@ def get_contri_info(target):
 
 
     print(zooBankNo)
+    flag = 1
     for i in zooBankNo:
-        if "zoobank" in i: zooBankNo = i
+        if "zoobank" in i:
+            zooBankNo = i
+            flag = 0
     print(doi)
     print(zooBankNo)
     reference_list_item["doi"] = doi
-    zooBankNo_list = zooBankNo.split(":")
-    print(zooBankNo_list)
-    reference_list_item["publicationRegistration"] = "http://" + zooBankNo_list[2] + "/" + zooBankNo_list[-1]
+    print("zoobank list")
+    # print(zooBankNo_list)
+    if not flag:
+        zooBankNo_list = zooBankNo.split(":")
+        reference_list_item["publicationRegistration"] = "http://" + zooBankNo_list[2] + "/" + zooBankNo_list[-1]
+    else:
+        reference_list_item["publicationRegistration"] =""
+    # print(zooBankNo_list)
+
 
 
     fname_list = tree.xpath("//article-meta//contrib-group//name//surname//text()")
@@ -89,8 +98,8 @@ def write_excel(dict, patha):
         title.write(c, value)
     row = sheet.row(1)
     for index, col in enumerate(cols):
-        if col in dict[0][0].keys():
-            value = dict[0][0][col]
+        if col in dict.keys():
+            value = dict[col]
             row.write(index, value)
 
 
@@ -100,7 +109,13 @@ def write_excel(dict, patha):
     agents.to_csv(patha)
 
 
-
-# my_dict = get_contri_info("C:/Users/51651/Documents/GitHub/Taxonomic/Examples/xmls/A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
+a = os.listdir("articles")
+print(a)
+for i in a:
+    print(i+".....................")
+    my_dict = get_contri_info(
+        "C:/Users/51651/Documents/GitHub/Taxonomic/functional_tool_2.0/articles/"+i)
+    write_excel(my_dict,i+"BibliographicResource.csv")
 #
-# write_excel(my_dict)
+
+
