@@ -109,13 +109,14 @@ def write_excel(dict, patha):
     agents.to_csv(patha)
 
 
-a = os.listdir("articles")
-print(a)
-for i in a:
-    print(i+".....................")
-    my_dict = get_contri_info(
-        "C:/Users/51651/Documents/GitHub/Taxonomic/functional_tool_2.0/articles/"+i)
-    write_excel(my_dict,i+"BibliographicResource.csv")
+# a = os.listdir("articles")
+# print(a)
+# for i in a:
+#     print(i+".....................")
+#     my_dict = get_contri_info(
+#         "C:/Users/51651/Documents/GitHub/Taxonomic/functional_tool_2.0/articles/"+i)
+#     write_excel(my_dict,i+"BibliographicResource.csv")
+
 #
 
 
