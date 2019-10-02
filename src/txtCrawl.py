@@ -8,6 +8,7 @@ pre_buffer = 15
 post_buffer = 20
 word_locations = dict()
 
+
 def get_csv_output_test(txt_filepath, direct_mappings, output_dir):
     publication_txt = open(txt_filepath, "r", encoding="utf-8")
     publication_string = publication_txt.read()
@@ -15,9 +16,7 @@ def get_csv_output_test(txt_filepath, direct_mappings, output_dir):
 
     tndf = create_taxonomic_names(names, direct_mappings, output_dir)
     create_name_index_list(tndf, publication_string)
-    create_publication_details(output_dir)
     create_bibliographic_reference(output_dir)
-    create_publication_details(output_dir)
     create_typification(output_dir)
     create_taxonomic_name_usages(output_dir)
 
@@ -40,7 +39,9 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
         index += 1
 
     # Deduce the missing fields from what we have
+    print ("MADE IT TO THIS PART 11111111")
     taxonomic_names_df = deduce_taxonomic_name_values(taxonomic_names_df)
+    print("MADE IT TO THIS PART 22222222")
     taxonomic_names_df = taxonomic_names_df.fillna(0.0)
     taxonomic_names_df.to_csv("{}taxonomicName.csv".format(output_dir))
     return taxonomic_names_df
@@ -49,14 +50,9 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
 def create_bibliographic_reference(output_dir):
     bibliographic_reference_df = pd.DataFrame(index=range(1, 10), columns=
     ["id", "title", "author", "year", "isbn", "issn", "citation", "shortRef", "doi", "volume",
-     "edition", "pages"])
+     "edition", "pages", "displayTitle", "published", "publicationDate", "publishedLocation", "publisher",
+     "refAuthorRole", "refType", "tl2", "uri", "publicationRegistration"])
     bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
-
-def create_publication_details(output_dir):
-    publication_details_df = pd.DataFrame(index=range(1, 10), columns=
-    ["displayTitle", "published", "publicationDate", "publishedLocation", "publisher", "refAuthorRole", "refType",
-     "tl2", "uri", "publicationRegistration"])
-    publication_details_df.fillna(0.0).to_csv("{}publicationDetails.csv".format(output_dir))
 
 
 def create_typification(output_dir):
@@ -71,14 +67,17 @@ def create_taxonomic_name_usages(output_dir):
      "hasParent", "kindOfNameUsage", "microReference", "etymology"])
     taxonomic_usage_df.fillna(0.0).to_csv("{}taxonomicNameUsages.csv".format(output_dir))
 
+
 def deduce_taxonomic_name_values(df):
     index = 1
-
-    while index < df.size and not isinstance(df.at[index, 'taxonomicNameString'], float):
+    while index < len(df):
+        if isinstance(df.at[index, 'taxonomicNameString'], float):
+            index += 1
+            continue
 
         # Uninomial -----------
         # Todo: change functionality so it detects uninomial- only 1 rank
-        df.at[index, "uninomial"] = (df.at[index, 'scientificName'].split(" ")) == 1
+        df.at[index, "uninomial"] = (df.at[index, 'taxonomicNameString'].split(" ")) == 1
 
         # TaxonRank ----------
         # Later need to add support for discovering new families and also tidy up and abstract
@@ -94,13 +93,12 @@ def deduce_taxonomic_name_values(df):
         elif not isinstance(df.at[index, 'genus'], float):
             df.at[index, "rank"] = 'genus'
 
-        # VerbatimTaxonRank -----------
-        # Temporary liberty before I clarify this point
-        df.at[index, "verbatimTaxonRank"] = df.at[index, "taxonRank"]
+        else:
+            print("NO RANK DETECTED")
 
-        # TaxonomicNameStringWithAuthor ----------
-        if not isinstance(df.at[index, "scientificNameAuthorship"], float):
-            df.at[index, "taxonomicNameStringWithAuthor"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
+        # fullNameWithAuthorship ----------
+        if not isinstance(df.at[index, "taxonomicNameAuthorship"], float):
+            df.at[index, "fullNameWithAuthorship"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
         index += 1
 
     return df
@@ -114,9 +112,10 @@ def associate_info(info_index, doc_string):
 
     for key in word_locations.keys():
         difference = info_index - key
-        if difference > 0 and difference < best_diff:
+        if best_diff > difference > 0:
             best_diff = difference
             parent_name = word_locations[key]
+    return parent_name
 
 
 def normalise_spacing(string):
