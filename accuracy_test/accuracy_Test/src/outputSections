@@ -4,10 +4,43 @@ Output "searchBox":
 
 Output "panel-head":
 
+(original page)
+
+      <div class="panel-heading">
+        <strong>No results yet</strong>
+
+        <div class="text text-info">
+
+        </div>
+      </div>
+
+
+(search "Viola L.")
+      <div class="panel  panel-info ">
+      <div class="panel-heading">
+
+          <strong>Found 2 names
+
+
+
+          </strong>
+          <span class="text-muted">in 1148ms. Limited to 100 results. </span>
+
+        <div class="btn-group hideSearch hidden-print">
+          <button id="expandAll" class="btn btn-success"><i class="fa fa-caret-down"></i> view detail</button>
+          <button id="collapseAll" class="btn btn-primary"><i class="fa fa-caret-up"></i> hide detail</button>
+        </div>
+
+        <div class="btn-group hidden-print">
+          <button id="fontToggle" class="btn btn-default" title="change font"><i class="fa fa-font"></i></button>
+        </div>
+
+
 
 
 Output "panel-body":
 
+(original page)
       <div class="panel-body">
         <div class="results">
           <h2>Your results will be here.</h2>
@@ -26,3 +59,112 @@ Output "panel-body":
           </div>
         </div>
       </div>
+
+
+
+(search "Viola L.")
+      <div class="panel-body"> index is: 691
+        <div class="results"> index is: 692
+           index is: 693
+            <div> index is: 694
+              <div class='unfetched name' id="91625" data-format="apni-format" index is: 695
+                   data-nameId="91625" data-product="APNI"> index is: 696
+ index is: 697
+                <div class="name" id="91625"> index is: 698
+                  <family> index is: 699
+                     index is: 700
+                  </family> index is: 701
+ index is: 702
+                  <div data-nameId="91625"> index is: 703
+                     index is: 704
+                    <accepted-name><scientific><name data-id='91625'><element>Viola</element> <authors><author data-id='1426' title='Linnaeus, C.'>L.</author></authors></name></scientific> index is: 705
+                    </accepted-name><name-status index is: 706
+                      class="legitimate">, legitimate</name-status><name-type index is: 707
+                      class="scientific">, scientific</name-type> index is: 708
+                    <editor class="hidden-print"> index is: 709
+                      <a href='https://biodiversity.org.au/nsl/editor/search?query=id:91625&query_field=name-instances&query_on=instance'><i class="fa fa-edit" title="Edit"></i></a> index is: 710
+                    </editor> index is: 711
+ index is: 712
+                    <a class="loadFormat" index is: 713
+                       href="/nsl/services/apni-format/name/91625"> index is: 714
+                      <i class="fa fa-caret-down"></i> index is: 715
+                    </a> index is: 716
+                  </div> index is: 717
+                </div> index is: 718
+              </div> index is: 719
+            </div> index is: 720
+           index is: 721
+            <div> index is: 722
+              <div class='unfetched name' id="91713" data-format="apni-format" index is: 723
+                   data-nameId="91713" data-product="APNI"> index is: 724
+ index is: 725
+                <div class="name" id="91713"> index is: 726
+                  <family> index is: 727
+                     index is: 728
+                  </family> index is: 729
+ index is: 730
+                  <div data-nameId="91713"> index is: 731
+                     index is: 732
+                    <accepted-name><scientific><name data-id='91713'><scientific><name data-id='91625'><element>Viola</element> <authors><author data-id='1426' title='Linnaeus, C.'>L.</author></authors></name></scientific> <rank data-id='54404'>sect.</rank> <element>Viola</element></name></scientific> index is: 733
+                    </accepted-name><name-status index is: 734
+                      class="legitimate">, legitimate</name-status><name-type index is: 735
+                      class="autonym">, autonym</name-type> index is: 736
+                    <editor class="hidden-print"> index is: 737
+                      <a href='https://biodiversity.org.au/nsl/editor/search?query=id:91713&query_field=name-instances&query_on=instance'><i class="fa fa-edit" title="Edit"></i></a> index is: 738
+                    </editor> index is: 739
+ index is: 740
+                    <a class="loadFormat" index is: 741
+                       href="/nsl/services/apni-format/name/91713"> index is: 742
+                      <i class="fa fa-caret-down"></i> index is: 743
+                    </a> index is: 744
+                  </div> index is: 745
+                </div> index is: 746
+              </div> index is: 747
+            </div> index is: 748
+           index is: 749
+        </div> index is: 750
+      </div> index is: 751
+     index is: 752
+   index is: 753
+ index is: 754
+</div> index is: 755
+ index is: 756
+    </div> index is: 757
+  </div> index is: 758
+</div> index is: 759
+ index is: 760
+<div id="page-footer" class="footer"> index is: 761
+  <div id="page-footer-inner"> index is: 762
+    <span id="page-footer-inner-left" class="pull-left"> index is: 763
+      Supported by index is: 764
+      <a href="http://www.anbg.gov.au/chah/"> index is: 765
+        <img src="/nsl/services/assets/CHAH-logo-52f113ecf6a77dc2bcde623151b90b46.png" height="42"/> index is: 766
+      </a> index is: 767
+    </span> index is: 768
+    <span id="page-footer-inner-right" class="pull-right"> index is: 769
+      <a href="https://twitter.com/aubiodiversity" class="twitter-link"><i class="fa fa-twitter fa-2x" index is: 770
+                                                                           style="color: #55acee"></i> index is: 771
+      </a> index is: 772
+    </span> index is: 773
+ index is: 774
+    <div> index is: 775
+    </div> index is: 776
+    <!-- Version: 1.0225 --> index is: 777
+ index is: 778
+    <div id="spinner" class="spinner" style="display:none;">Loading&hellip;</div> index is: 779
+ index is: 780
+    <script> index is: 781
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ index is: 782
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), index is: 783
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) index is: 784
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); index is: 785
+ index is: 786
+  ga('create', 'UA-47960735-1', 'auto'); index is: 787
+  ga('send', 'pageview'); index is: 788
+ index is: 789
+</script> index is: 790
+<script type="text/javascript" src="https://www.anbg.gov.au/25jira/s/babfb0d409e2906e93e4a4009daf1384-T/en_US-eg0fpt/71013/b6b48b2829824b869586ac216d119363/2.0.14/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=30647d85"></script> index is: 791
+ index is: 792
+</body> index is: 793
+</html> index is: 794
+try to get full information, start at: 691, end at: 751

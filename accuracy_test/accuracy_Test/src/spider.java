@@ -54,7 +54,9 @@ public class spider {
             connection = (HttpURLConnection) url.openConnection();
             connection.setConnectTimeout(5000);
             connection.setReadTimeout(5000);
+            //connection.setDoOutput(true);
             connection.setDoInput(true);
+            //connection.setRequestMethod("POST");
             connection.connect();
 
             in = connection.getInputStream();
@@ -80,9 +82,6 @@ public class spider {
             }
         }
 
-        //String rtn = stringBuffer.toString();
-        //System.out.println(rtn);
-        //return rtn;
     }
 
     /**
@@ -171,7 +170,51 @@ public class spider {
      * analysis the output and delete HTML tags
      */
     public static void parser(){
+        StringBuilder headingSb = new StringBuilder();
+        String panelResult = "";
+        int headingStart = 0;
+        int headingEnd = 0;
+        // find panel-heading result
+        for (int i = outputHeadingIndex; i < outputBodyIndex; i++) {
+            if (allInfo.get(i).contains("<strong>")) headingStart = i;
+            else if (allInfo.get(i).contains("</strong>")) headingEnd = i;
+        }
+        for (int i = headingStart; i < headingEnd; i++) {
+            headingSb.append(allInfo.get(i));
+        }
+        String headingResult = headingSb.toString();
+        //find panel-body result
+        if (headingResult.contains("No results yet")){
+            panelResult = "No results yet";
+        }else{
+            for (int i = outputBodyIndex; i < allInfo.size(); i++) {
+            }
+        }
+        //panel-body result should include: 1. family + author 2.
+    }
 
+    public static String findStringTags(ArrayList<String> arr){
+        while (arr.size() == 0) return "No result";
+        int count = 1;
+        int index = 0;
+        int start = 0;
+        int end = 0;
+        String rtn = "";
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i).contains("<strong")){
+                //count += 1;
+                start = i;
+            }
+            if (arr.get(i).contains("</strong>")){
+                //count -= 1;
+                end = i;
+            }
+        }
+        for (int i = start; i < end ; i++) {
+            rtn += arr.get(i);
+        }
+        if (rtn.contains("<strong>")) rtn = rtn.replace("<strong>", "");
+        return rtn;
     }
 
 
@@ -179,28 +222,59 @@ public class spider {
         String search1 = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=";
         String search2 = "&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
         String target = "";
-        link = search1 + target + search2;
+        ArrayList<String> arr = new ArrayList<>();
+        //link = search1 + target + search2;
+        //link = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=Viola+L.&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
+        link = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=albipilosus&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
         URL url = new URL(link);
         getConnect(link);
         find();
 
-        //for (String x: allInfo) System.out.println(x);
-        System.out.println("sbIndex: " + sbIndex);
-        System.out.println("SearchBox output: " + searchBox);
-        //System.out.println(outputNoIndex);
-        System.out.println("outputHeading return: " + outputHeading);
-        System.out.println("outputHeadingIndex: " + outputHeadingIndex);
-        System.out.println("outputBody: " + outputBody);
-        System.out.println("outputBodyIndex: " + outputBodyIndex);
-        System.out.println("allInfo size: " + allInfo.size());
-        System.out.println("range size: " + range.size());
-        System.out.println("range return: " + range);
-
-        System.out.println("-------------------------------------------------------------------------------");
-        int end = findEndTags(outputBodyIndex);
-        for (int i = 667; i < 685; i++) {
-            System.out.println(allInfo.get(i));
+        System.out.println("------------------------------------------------------------------------------------------------------------------------");
+        String tags = findStringTags(arr);
+        if (tags == ""){
+            System.out.println("No result found, please check your in put");
+        }else {
+            System.out.println(tags);
         }
-        System.out.println("try to get full information, start at: " + outputBodyIndex + ", end at: " + end);
+
+        System.out.println("------------------------------------------------------------------------------------------------------------------------");
+
+
+        //These line are used for see the whole website page content, include: website size, search heading and panel.
+
+        //for (String x: allInfo) System.out.println(x);
+        //System.out.println("sbIndex: " + sbIndex);
+        //System.out.println("SearchBox output: " + searchBox);
+        //System.out.println(outputNoIndex);
+        //System.out.println("outputHeading return: " + outputHeading);
+        //System.out.println("outputHeadingIndex: " + outputHeadingIndex);
+        //System.out.println("outputBody: " + outputBody);
+        //System.out.println("outputBodyIndex: " + outputBodyIndex);
+        //System.out.println("allInfo size: " + allInfo.size());
+        //System.out.println("range size: " + range.size());
+        //System.out.println("range return: " + range);
+
+        //System.out.println("------------------------------------------------------------------------------------------------------------------------");
+        //int end = findEndTags(outputHeadingIndex); //test panel-heading output
+        //for (int i = outputHeadingIndex; i < outputBodyIndex; i++) {
+        //    System.out.println(allInfo.get(i) + " index is: " + i);
+        //    arr.add(allInfo.get(i));
+        //}
+        //System.out.println("try to get full information, start at: " + outputBodyIndex + ", end at: " + end);
+
+        //System.out.println("all useful contents: " + findStringTags(arr));
+
+
+        //System.out.println("------------------------------------------------------------------------------------------------------------------------");
+        //int endd = findEndTags(outputBodyIndex); //test panel-body output
+        //for (int i = outputBodyIndex; i < allInfo.size(); i++) {
+        //    System.out.println(allInfo.get(i) + " index is: " + i);
+        //}
+        //System.out.println("try to get full information, start at: " + outputBodyIndex + ", end at: " + endd);
+        //System.out.println("------------------------------------------------------------------------------------------------------------------------");
+        //for (int i = 0; i < allInfo.size(); i++) {
+        //    System.out.println(allInfo.get(i));
+        //}
     }
 }
