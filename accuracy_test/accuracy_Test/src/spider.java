@@ -204,35 +204,55 @@ public class spider {
             if (arr.get(i).contains("<strong")){
                 //count += 1;
                 start = i;
+                //System.out.println(start);
             }
             if (arr.get(i).contains("</strong>")){
                 //count -= 1;
                 end = i;
+                //System.out.println(end);
             }
         }
         for (int i = start; i < end ; i++) {
             rtn += arr.get(i);
         }
+        //System.out.println(arr);
         if (rtn.contains("<strong>")) rtn = rtn.replace("<strong>", "");
         return rtn;
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
+
+        StringBuffer sb = new StringBuffer();
+        String filePath = "/Users/feone/IdeaProjects/accuracy_Test/src/inputTestSample";
+        readFile(sb, filePath);
+        String testData = sb.toString();
+        String[] allData = testData.split("\n");
+        ArrayList<String> testSet = new ArrayList<>();
+        for (int i = 0; i < allData.length; i++) {
+            testSet.add(allData[i]);
+        }
+
+
+        for (int i = 0; i < testSet.size(); i++) {
         String search1 = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=";
         String search2 = "&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
-        String target = "";
+        String target = testSet.get(i);
         ArrayList<String> arr = new ArrayList<>();
-        //link = search1 + target + search2;
+        link = search1 + target + search2;
+        //System.out.println(link);
         //link = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=Viola+L.&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
-        link = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=albipilosus&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
+        //link = "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=caesia&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true";
         URL url = new URL(link);
         getConnect(link);
         find();
 
+        for (int j = outputHeadingIndex; j < outputBodyIndex; j++) arr.add(allInfo.get(j));
+
+        //System.out.println(arr);
         System.out.println("------------------------------------------------------------------------------------------------------------------------");
         String tags = findStringTags(arr);
-        if (tags == ""){
+        if (tags.equals("")){
             System.out.println("No result found, please check your in put");
         }else {
             System.out.println(tags);
@@ -240,8 +260,9 @@ public class spider {
 
         System.out.println("------------------------------------------------------------------------------------------------------------------------");
 
+    }
 
-        //These line are used for see the whole website page content, include: website size, search heading and panel.
+    //These line are used for see the whole website page content, include: website size, search heading and panel.
 
         //for (String x: allInfo) System.out.println(x);
         //System.out.println("sbIndex: " + sbIndex);
