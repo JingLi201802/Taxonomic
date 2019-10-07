@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, redirect, make_response
+from flask import Flask, render_template, request, jsonify, redirect, make_response, url_for
 from flask import send_file, send_from_directory, safe_join, abort
 import xml.etree.ElementTree as ET
 import os
@@ -129,8 +129,8 @@ def upload_file():
                 print("file saved")
                 #runTwoFunction.runall(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 #runTwoFunction.runall(xml_file.filename)
-                
-                
+
+
                 path = app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename
                 tree = ET.parse(path)
                 root = tree.getroot()
@@ -139,10 +139,10 @@ def upload_file():
                 # df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
                 df3 = reader.mapping_to_TNC_Taxonomic_name_usage(df,df2,path)
                 df4 = reader.mapping_to_typification(df, df2)
-                
+
                 #df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format(xml_file.filename.split(".")[0]))
                 df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
-                
+
                 df3.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage"))
                 df4.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification"))
                 my_dict = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
@@ -152,9 +152,7 @@ def upload_file():
                 agents_list, reference_list = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 write_excel(agents_list, reference_list, xml_file.filename)
                 #write_excel(my_dict)
-            
-            
-            
+
             else:
                 pdf_file = request.files["xml"]
                 print("pdf!")

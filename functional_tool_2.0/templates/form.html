@@ -55,6 +55,69 @@
 
         <div id="upd">
             <p>File upload</p>
+
+            <div id='dropbox'>将文件拖拽到此区域</div>
+            <ul id='ul1'></ul>
+            <script>
+                window.onload = function(){
+                    var form = document.getElementById('updForm');
+                    var uuz = document.getElementById('dropbox');
+                    var btn = document.getElementById('Submit');
+
+                    uuz.ondragenter = function(e){
+                        e.preventDefault();
+                    }
+
+                    uuz.ondragover = function(e){
+                        e.preventDefault();
+                        this.innerHTML = '请松开';
+                    }
+
+                    uuz.ondragleave = function(e){
+                        e.preventDefault();
+                        this.innerHTML = '请拖入要上传的文件';
+                    }
+
+                    uuz.ondrop = function(e){
+                        e.preventDefault();
+
+                        var upfile = e.dataTransfer.files[0]; //获取要上传的文件对象(可以上传多个)
+                        var formdata = new FormData(form);
+                        var xhr = new XMLHttpRequest();
+                        formdata.append('xml', upfile); //设置服务器端接收的name为upfile
+
+                        uuz.innerHTML = upfile.name;
+                        btn.addEventListener('click', upload);
+
+                        function upload(){
+                            xhr.open("POST","/");
+                            xhr.send(formdata);
+                            //
+                            // xhr.onreadystatechange = function(){
+                            //     if(this.readyState==4){
+                            //         if(this.status==200){ //上传成功
+                            //
+                            //             var resultText = this.responseText;
+                            //             console.info(resultText);
+                            //             //转json
+                            //             var jsonObj = JSON.parse(resultText);
+                            //             console.info(jsonObj);
+                            //             if(jsonObj.success){
+                            //                 //生成input表单
+                            //                 var fileId = createInput(jsonObj.uuid);
+                            //                 //生成显示名称
+                            //                 appendFile1(fileId,upfile.name);
+                            //             }
+                            //         }else{
+                            //             alert('上传失败,请使用另一种方式上传');
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            </script>
+
             <form action="/" id="updForm" method="post"  enctype="multipart/form-data">
                 <!--Make sure add above line on the Django server.-->
                 <input type="file" class="custom-file-input" name="xml" id="xml">
@@ -65,6 +128,7 @@
             </form>
             <div id="PDFContainer"></div>
         </div>
+        <div id="middle"></div>
         <div id="rev">
             <p>Data review</p>
             <div id="accuracy_rate">Current accuracy rate: N/a</div>
@@ -90,7 +154,6 @@
                     </tbody>
                 </table>
             </form>
-            <br/>
             <button id="sub" onclick="">Submit</button>
             <!--FOR SERVER SET UP, insert the script in the onclick to submit the information after the final check-->
             <a id="download"}>Download</a>
