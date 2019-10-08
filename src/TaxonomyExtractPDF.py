@@ -38,7 +38,8 @@ def read_page(page_num, pdf_reader):
 
 
 # Uses PDFBox to convert the PDF to a TXT file for analysis.
-def pdf_to_text(file_path):
+def pdf_to_text(file_name):
+    file_path = replace_whitespaces(file_name)
     os.system("java -jar pdfbox-app-2.0.16.jar ExtractText " + file_path)
     created_files.append(file_path)
 
@@ -203,6 +204,13 @@ def get_configurations():
     get_key_words(get_config_path())
 
 
+def replace_whitespaces(file_name):
+    path = get_example_path(file_name)
+    if(os._exists(path)):
+        os.rename(path, path.replace(" ", "_"))
+    return path.replace(" ", "_")
+
+
 def get_key_words(config_path):
     key_word_file = "BorderWords.txt"
     txtCrawl.border_words.clear()
@@ -272,7 +280,7 @@ direct_mappings = {
     "verbatim": "verbatim",
     "details[]/genus/value": "genus",
     "details[]/specificEpithet/value": "specificEpithet",
-    "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "details[]/specificEpithet/authorship/value": "taxonomicNameAuthorship",
     "canonicalName/value": "taxonomicNameString", # The API and web version give different names for this field
     "canonicalName/simple": "taxonomicNameString", # Check if it's okay that canonical omits subgenus for subspecies
     "details[]/infraspecificEpithets[]/value": "infraspecificEpithet",
@@ -282,8 +290,8 @@ direct_mappings = {
 
 
     # Some of these duplciates may not be necessary
-    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
-    "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "details[]/infraspecificEpithets[]/authorship/value": "taxonomicNameAuthorship",
+    "details[]/specificEpithet/authorship/value": "taxonomicNameAuthorship",
     "details[]/specificEpithet/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
     "details[]/specificEpithet/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
     "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
@@ -326,7 +334,7 @@ def deduce_tnu_values(df, name_results):
 
         # TaxonomicNameStringWithAuthor ----------
         if not isinstance(df.at[index, "scientificNameAuthorship"], float):
-            df.at[index, "taxonomicNameStringWithAuthor"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
+            df.at[index, "fullNameWithAuthorship"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
         index += 1
 
     return df
@@ -368,12 +376,18 @@ def get_csv_output(path):
     df = add_dict_data_to_df(json)
     df.fillna(0.0).to_csv(get_output_path((path.split("/")[-1])[:-4]))
 
+def analyse_pdf(pdf_name):
+    get_configurations()
+    pdf_to_text(pdf_name)
+    txtCrawl.get_csv_output_test(
+        replace_whitespaces(pdf_name.replace(".pdf", ".txt")), direct_mappings,
+        get_output_path(pdf_name.replace(".pdf", "")))
+    cleanup()
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
 
-get_configurations()
-pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
-txtCrawl.get_csv_output_test(get_example_path("JABG31P037_Lang.txt"), direct_mappings, get_output_path("JABG31P037"))
+analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
+analyse_pdf("JABG31P037_Lang.pdf")
 
 
 # pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
@@ -386,5 +400,5 @@ txtCrawl.get_csv_output_test(get_example_path("JABG31P037_Lang.txt"), direct_map
 # get_csv_output("JABG31P037_Lang.pdf")
 # get_csv_output("TestNames.pdf")
 # print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
-cleanup()
+
 
