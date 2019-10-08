@@ -2,3 +2,9 @@ Programming language: Python 3.0+, Ajax
 Programming tool: Pycharm， Visual Studio
 Special package used: Flask
 
+For developers who want to download the project and run on their own computer:
+Run local server: src -> functional_tool_2.0 -> process.py . On the local server, developer could upload a PDF or XML file,
+and download a zip file contains four standard answersheets of the extracted results. PDF could handle all biological taxonomic 
+articles, XML files could handle publish houses under Pensoft, eg. Zookeys, Biodiversity Data Journal, Zoologia.. 
+Example: https://zookeys.pensoft.net/article/3030/
+Pensoft: https://pensoft.net/browse_journals
