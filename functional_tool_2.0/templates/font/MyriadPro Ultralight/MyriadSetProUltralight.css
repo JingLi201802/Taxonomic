@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'MyriadSetProUltralight';
-    src: url('fonts/MyriadSetProUltralight.eot');
-    src: url('fonts/MyriadSetProUltralight.eot') format('embedded-opentype'),
-         url('fonts/MyriadSetProUltralight.woff2') format('woff2'),
-         url('fonts/MyriadSetProUltralight.woff') format('woff'),
-         url('fonts/MyriadSetProUltralight.ttf') format('truetype'),
-         url('fonts/MyriadSetProUltralight.svg#MyriadSetProUltralight') format('svg');
-}

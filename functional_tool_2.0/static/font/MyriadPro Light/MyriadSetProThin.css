@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'MyriadSetProThin';
-    src: url('fonts/MyriadSetProThin.eot');
-    src: url('fonts/MyriadSetProThin.eot') format('embedded-opentype'),
-         url('fonts/MyriadSetProThin.woff2') format('woff2'),
-         url('fonts/MyriadSetProThin.woff') format('woff'),
-         url('fonts/MyriadSetProThin.ttf') format('truetype'),
-         url('fonts/MyriadSetProThin.svg#MyriadSetProThin') format('svg');
-}
