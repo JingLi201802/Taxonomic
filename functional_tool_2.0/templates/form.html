@@ -93,26 +93,27 @@
                             xhr.open("POST","/");
                             xhr.send(formdata);
                             //
-                            // xhr.onreadystatechange = function(){
-                            //     if(this.readyState==4){
-                            //         if(this.status==200){ //上传成功
-                            //
-                            //             var resultText = this.responseText;
-                            //             console.info(resultText);
-                            //             //转json
-                            //             var jsonObj = JSON.parse(resultText);
-                            //             console.info(jsonObj);
-                            //             if(jsonObj.success){
-                            //                 //生成input表单
-                            //                 var fileId = createInput(jsonObj.uuid);
-                            //                 //生成显示名称
-                            //                 appendFile1(fileId,upfile.name);
-                            //             }
-                            //         }else{
-                            //             alert('上传失败,请使用另一种方式上传');
-                            //         }
-                            //     }
-                            // }
+                            xhr.onreadystatechange = function(){
+                                if(this.readyState==4){
+                                    if(this.status==200){ //上传成功
+
+                                        var resultText = this.responseText;
+                                        console.info(resultText);
+                                        //转json
+                                        var jsonObj = JSON.parse(resultText);
+                                        console.info(jsonObj);
+                                        if(jsonObj.success){
+                                            //生成input表单
+                                            var fileId = createInput(jsonObj.uuid);
+                                            //生成显示名称
+                                            appendFile1(fileId,upfile.name);
+                                        }
+                                    }
+                                    // else{
+                                    //     alert('上传失败,请使用另一种方式上传');
+                                    // }
+                                }
+                            }
                         }
                     }
                 }
@@ -120,7 +121,7 @@
 
             <form action="/" id="updForm" method="post"  enctype="multipart/form-data">
                 <!--Make sure add above line on the Django server.-->
-                <input type="file" class="custom-file-input" name="xml" id="xml">
+<!--                <input type="file" class="custom-file-input" name="xml" id="xml">-->
                 <!--Use the name to get files-->
                 <button type="submit" id="Submit">Analysis</button>
                 <!-- class="btn btn-primary" -->

@@ -161,6 +161,8 @@ def upload_file():
                 pdf_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], pdf_file.filename))
                 print("file saved")
                 TaxonomyExtractPDF.get_excel_output(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
+    print("!!!ana!!!")
+    print(agents_list)
 
     #return render_template('form.html')
     return render_template('form.html', agents=agents_list, reference=reference_list, xml_name=file_tmp)
