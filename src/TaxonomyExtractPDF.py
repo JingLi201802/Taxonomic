@@ -280,7 +280,7 @@ direct_mappings = {
     "verbatim": "verbatim",
     "details[]/genus/value": "genus",
     "details[]/specificEpithet/value": "specificEpithet",
-    "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "details[]/specificEpithet/authorship/value": "taxonomicNameAuthorship",
     "canonicalName/value": "taxonomicNameString", # The API and web version give different names for this field
     "canonicalName/simple": "taxonomicNameString", # Check if it's okay that canonical omits subgenus for subspecies
     "details[]/infraspecificEpithets[]/value": "infraspecificEpithet",
@@ -290,8 +290,8 @@ direct_mappings = {
 
 
     # Some of these duplciates may not be necessary
-    "details[]/infraspecificEpithets[]/authorship/value": "scientificNameAuthorship",
-    "details[]/specificEpithet/authorship/value": "scientificNameAuthorship",
+    "details[]/infraspecificEpithets[]/authorship/value": "taxonomicNameAuthorship",
+    "details[]/specificEpithet/authorship/value": "taxonomicNameAuthorship",
     "details[]/specificEpithet/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
     "details[]/specificEpithet/authorship/basionymAuthorship/authors[]": "basionymAuthorship",
     "details[]/infraspecificEpithets[]/authorship/combinationAuthorship/authors[]": "combinationAuthorship",
@@ -334,7 +334,7 @@ def deduce_tnu_values(df, name_results):
 
         # TaxonomicNameStringWithAuthor ----------
         if not isinstance(df.at[index, "scientificNameAuthorship"], float):
-            df.at[index, "taxonomicNameStringWithAuthor"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
+            df.at[index, "fullNameWithAuthorship"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
         index += 1
 
     return df
@@ -376,12 +376,18 @@ def get_csv_output(path):
     df = add_dict_data_to_df(json)
     df.fillna(0.0).to_csv(get_output_path((path.split("/")[-1])[:-4]))
 
+def analyse_pdf(pdf_name):
+    get_configurations()
+    pdf_to_text(pdf_name)
+    txtCrawl.get_csv_output_test(
+        replace_whitespaces(pdf_name.replace(".pdf", ".txt")), direct_mappings,
+        get_output_path(pdf_name.replace(".pdf", "")))
+    cleanup()
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
 
-get_configurations()
-pdf_to_text("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
-txtCrawl.get_csv_output_test(replace_whitespaces("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).txt"), direct_mappings, get_output_path("JABG31P037"))
+analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
+analyse_pdf("JABG31P037_Lang.pdf")
 
 
 # pdf_to_text(get_example_path("JABG31P037_Lang.pdf"))
@@ -394,5 +400,5 @@ txtCrawl.get_csv_output_test(replace_whitespaces("Kurina_2019_Zootaxa4555_3 Dipt
 # get_csv_output("JABG31P037_Lang.pdf")
 # get_csv_output("TestNames.pdf")
 # print (find_references(read_all_pages(create_pdf_reader((get_example_path("853.pdf"))))))
-cleanup()
+
 

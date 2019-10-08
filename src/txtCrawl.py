@@ -75,7 +75,8 @@ def deduce_taxonomic_name_values(df):
 
         # Uninomial -----------
         # Todo: change functionality so it detects uninomial- only 1 rank
-        df.at[index, "uninomial"] = (df.at[index, 'taxonomicNameString'].split(" ")) == 1
+        if (len(df.at[index, 'taxonomicNameString'].split(" "))) == 1:
+            df.at[index, 'uninomial'] = df.at[index, 'taxonomicNameString']
 
         # TaxonRank ----------
         # Later need to add support for discovering new families and also tidy up and abstract
@@ -96,7 +97,7 @@ def deduce_taxonomic_name_values(df):
 
         # fullNameWithAuthorship ----------
         if not isinstance(df.at[index, "taxonomicNameAuthorship"], float):
-            df.at[index, "fullNameWithAuthorship"] = df.at[index, "scientificName"] + " " + df.at[index, "scientificNameAuthorship"]
+            df.at[index, "fullNameWithAuthorship"] = df.at[index, "taxonomicNameAuthorship"] + " " + df.at[index, "taxonomicNameAuthorship"]
         index += 1
 
     return df
