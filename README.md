@@ -19,6 +19,7 @@ Table of Contents
   * [Meeting Agendas](#meeting-agendas)
   * [Audit Presentation](#audit-presentation)
   * [Other Resources](#other-resources)
+  * [Handover](#handover)
 ## Introduction
 Our project aims to automate taxonomic data capture from scientific reports, something which is currently performed manually. This information can then be uploaded to searchable databases where it can be accessed by the public. Automating this process will save our client time, effort and money which can be better spent elsewhere.
 # ![Diagram](Resources/concept_diagram.jpg)
@@ -229,3 +230,5 @@ As the project is being implemented as part of a secure system, it is important 
 ## Other Resources
 #### [Google Drive S2](https://drive.google.com/drive/folders/1z85XNqG6v9YqrcAm98RzeaTmDYXoyPEj)
 #### [Old Google Drive](https://drive.google.com/open?id=1827uZfi0IwiuHkuLUU6tcL8gX5F0Jx0d)
+## Handover
+#### [Handover](https://drive.google.com/open?id=11MjUxZYmm6uQEOb_QDxy7oGSV4rW5ZuG)
