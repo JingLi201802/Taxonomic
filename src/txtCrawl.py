@@ -23,7 +23,7 @@ def get_csv_output_test(txt_filepath, direct_mappings, output_dir):
 
 def create_taxonomic_names(names, direct_mappings, output_dir):
     index = 1
-    taxonomic_names_df = pd.DataFrame(index=range(1, 10), columns=
+    taxonomic_names_df = pd.DataFrame(index=range(1, 100), columns=
     ["taxonomicNameString", "fullNameWithAuthorship", "rank", "uninomial", "genus", "infragenericEpithet",
      "specificEpithet", "infraspecificEpithet", "cultivarNameGroup", "taxonomicNameAuthorship", "combinationAuthorship",
      "basionymAuthorship", "combinationExAuthorship", "basionymExAuthorship", "nomenclaturalStatus", "basedOn",
@@ -39,9 +39,7 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
         index += 1
 
     # Deduce the missing fields from what we have
-    print ("MADE IT TO THIS PART 11111111")
     taxonomic_names_df = deduce_taxonomic_name_values(taxonomic_names_df)
-    print("MADE IT TO THIS PART 22222222")
     taxonomic_names_df = taxonomic_names_df.fillna(0.0)
     taxonomic_names_df.to_csv("{}taxonomicName.csv".format(output_dir))
     return taxonomic_names_df
@@ -155,11 +153,12 @@ def find_new_names(doc_string):
     combined_request_str = ""
     debugstr=""
     post_buffer = 20
-    skip_next = False # Used to avoid detection of the same name twice
+    skip_next = False  # Used to avoid detection of the same name twice
     for word in word_list:
 
         if skip_next:
             skip_next = False
+            working_index = working_index + 1
             continue
 
         if word == "nov." or word == "sp.":
