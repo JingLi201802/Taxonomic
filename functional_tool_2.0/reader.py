@@ -115,6 +115,7 @@ def join_paragraph_content(item_p):
         # print(root_tail)
         hlc_list.append(root_tail)
     hlc = ''.join(hlc_list)
+    # print("**********************************hlc************************************************: ", hlc)
 
     return hlc
 
@@ -164,12 +165,12 @@ def snp_single_info(item2):
                                 if (item5.tag == '{http://www.plazi.org/taxpub}taxon-name-part'):
                                     if item5.attrib['taxon-name-part-type'] == 'genus':
                                         genus = item5.text
-                                        # print(genus)
+                                        # print("genus", genus)
                                     if item5.attrib['taxon-name-part-type'] == 'subgenus':
                                         subgenus = item5.text
                                     if item5.attrib['taxon-name-part-type'] == 'species':
                                         species = item5.text
-                                        # print(species)
+                                        # print("species",species)
                                 if item5.tag=='object-id':
                                     if 'content-type' in item5.attrib:
                                         if item5.attrib['content-type']=='zoobank':
@@ -180,6 +181,7 @@ def snp_single_info(item2):
                             taxon_authority = item4.text
                         if item4.tag == '{http://www.plazi.org/taxpub}taxon-status':
                             taxon_status = item4.text
+
 
             elif item3.tag == '{http://www.plazi.org/taxpub}treatment-sec':
                 if ('holotype' in item3.attrib['sec-type'].lower() or 'material' in item3.attrib['sec-type'].lower() \
@@ -193,12 +195,12 @@ def snp_single_info(item2):
                                 break
 
 
-                elif 'paratypes' in item3.attrib['sec-type'].lower() and paratype_and_loc_and_coor=='':
+                elif 'paratypes' in item3.attrib['sec-type'].lower():
 
                     for item41 in item3:
                         if item41.tag == 'p' and paratype_and_loc_and_coor == '':
                             paratype_and_loc_and_coor = join_paragraph_content(item41)
-
+                            #print("**********paratype_and_loc_and_coor*******: ", paratype_and_loc_and_coor)
                             if 'paratypes' in paratype_and_loc_and_coor:
                                 break
                 elif 'etymology' in item3.attrib['sec-type'].lower():
@@ -234,10 +236,22 @@ def snp_single_info(item2):
     #     return ([])
 
     if (family + genus + subgenus + species) != "" and (taxon_status != ""):
-        print('zoobank: ',zoo_bank)
+        # print('genus: ', genus)
+        # print('species: ', species)
+
 
         return [family, genus, subgenus, species, genus + " " + species, taxon_authority, holotype_and_loc_and_coor,
                 paratype_and_loc_and_coor, zoo_bank, etymology,taxon_status]
+
+
+def enter_paragraph(attribute):
+    att=attribute.lower()
+    paragraph_title=['systematic','taxonomy','taxon']
+    for t in paragraph_title:
+        if t in att:
+            return True
+
+
 
 
 def get_info_recursive(item):
@@ -247,13 +261,16 @@ def get_info_recursive(item):
     for ite1 in item:
         if ('sec-type' in ite1.attrib):
 
-            if ('systematic' or 'taxonomy') in ite1.attrib['sec-type'].lower():
+            if enter_paragraph(ite1.attrib['sec-type']):
+                #print('****************** enter in taxon ******************** ')
 
                 for ite2 in ite1:
 
                     row = snp_single_info(ite2)
 
+
                     if row != [] and row != None:
+
                         return row
             else:
                 get_info_recursive(ite1)
@@ -283,9 +300,10 @@ def get_info_from_body(root):
     for item in root.iterfind('./body/sec'):
         if (item.tag == 'sec'):
 
-            if ('systematic' in item.attrib['sec-type'].lower()) or ('taxonomy' in item.attrib['sec-type'].lower()):
+            if enter_paragraph(item.attrib['sec-type']):
 
                 for i1 in item:
+
 
                     row = snp_single_info(i1)
 
@@ -304,7 +322,7 @@ def get_info_from_body(root):
                                                       'paratype_and_loc_and_coor','zoo_bank','etymology',
                                                       'taxon_status'])
                     df = df.append(dfseries, ignore_index=True)
-    print(df)
+
     return df
 
 
@@ -355,11 +373,11 @@ def tnc__tn_fnwa_publicationYear(df, path):
 def tnc__tn_rank(df):
     """The taxonomic rank of the name. Use standard abbreviations. Mapping to rank in TNC_TaxonomicName"""
     rank_list = []
-    for status in df['taxon_status']:
-        if 'gen' in status:
-            rank_list.append('genus')
-        elif 'sp' in status:
+    for s,g in zip(df['species'],df['genus']):
+        if s!='':
             rank_list.append('species')
+        elif g!='':
+            rank_list.append('genus')
         else:
             rank_list.append('')
     return rank_list
@@ -629,19 +647,23 @@ def usage_hasParent(df2):
     return has_parent
 
 
-def usage_kindOfNameUsage(df2):
+def usage_kindOfNameUsage(df):
     """The kind of taxonomic name usage, e.g. primary, secondary. Needs full vocabulary. Indicates
     whether this name in this according to (source-reference) indicates the establishment (primary)
     versus application (secondary) of a name. Vocab needs to be established"""
     kind_name_usage = []
-    for ele in df2['rank']:
-        if ele == 'species':
-            kind_name_usage.append('sp.nov.')
-        elif ele == 'genus':
+    for status in df['taxon_status']:
+        if 'gen' in status:
             kind_name_usage.append('gen.nov.')
+        elif 'sp' in status:
+            kind_name_usage.append('sp.nov.')
+        elif 'comb' in status:
+            kind_name_usage.append('comb.nov.')
         else:
             kind_name_usage.append('')
     return kind_name_usage
+
+
 
 
 # TODO: extract the page number
@@ -676,7 +698,7 @@ def mapping_to_TNC_Taxonomic_name_usage(df,df2, path):
     df3['taxonomicStatus'] = usage_taxonomicStatus(df2)
     df3['acceptedNameUsage'] = usage_acceptedNameUsage(df2)
     df3['hasParent'] = usage_hasParent(df2)
-    df3['kindOfNameUsage'] = usage_kindOfNameUsage(df2)
+    df3['kindOfNameUsage'] = usage_kindOfNameUsage(df)
     df3['microReference'] = usage_microReference(df2)
     df3['etymology'] = usage_etymology(df)
     return df3
@@ -713,11 +735,21 @@ def mapping_to_typification(df, df2):
             taxonomic_name_usage.append('TNU-' + str(i))
             type_name.append(full_name_with_author[i - 1])
             if ele1 == '':
-                type_of_type.append('paratype')
+                # sometimes may mix reverse holotype and paratype, or mention it in text, not in tags, so here
+                # check again.
+                if ('holotype' in ele2.lower()) and ('paratype' not in ele2.lower()):
+                    type_of_type.append('holotype')
+                else:
+                    type_of_type.append('paratype')
                 typification_string.append(ele2)
             elif ele2 == '':
-                type_of_type.append('holotype')
-                typification_string.append(ele2)
+                # sometimes may mix reverse holotype and paratype, or mention it in text, not in tags, so here
+                # check again.
+                if ('paratype' in ele1.lower()) and ('holotype' not in ele1.lower()):
+                    type_of_type.append('paratype')
+                else:
+                    type_of_type.append('holotype')
+                typification_string.append(ele1)
         i += 1
     df4 = pd.DataFrame(columns=['TaxonomicNameUsage', 'typeOfType', 'typeName', 'typificationString'])
     df4['TaxonomicNameUsage']=taxonomic_name_usage
@@ -727,7 +759,7 @@ def mapping_to_typification(df, df2):
     return df4
 
 
-# -----------------------------------------------writing csv file-------------------------------------------------------
+# -----------------------------------------------writing one csv file-------------------------------------------------------
 def write_csv(articleName):
     path = get_example_path(articleName)
     tree = ET.parse(path)
@@ -741,8 +773,27 @@ def write_csv(articleName):
     df2.to_csv(get_output_path(articleName.split(".")[0]))
     df3.to_csv(get_output_path("TNC_Taxonomic_name_usage"))
     df4.to_csv(get_output_path("TNC_Typification"))
+# -----------------------------------------------writing lots of csv files-----------------------------------------------
 
+def batch():
+    path=os.path.join(get_root_dir(), "Examples/xmls")
+    files=os.listdir(path)
+    i=0
+    for file in files:
+        if not os.path.isdir(file):
+            # print('!!!!!!!!!!!!!!', i)
+            # print(file)
+            i+=1
+
+            if file.split('.')[-1]=='xml':
+
+                write_csv(file)
 
 if __name__ == '__main__':
-    write_csv("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
+    # try other publishers article: New Syrphidae (Diptera) of North-eastern North America.xml, from Biodiversity Data Journal
+    #write_csv("New Syrphidae (Diptera) of North-eastern North America.xml")
+
+
+    #zookey
+    write_csv("Bush Blitz aids description of three new species and a new genus of Australian beeflies (Diptera, Bombyliidae, Exoprosopini).xml")
     # path = get_example_path("A_new_genus_and_two_new_species_of_miniature_clingfishes.xml")
