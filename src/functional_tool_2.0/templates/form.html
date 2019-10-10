@@ -31,7 +31,7 @@
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='lib/pdfobject.js') }}"></script>
-
+<!--    <script src="{{ url_for('static', filename='lib/dropzone.js') }}"></script>-->
     <!---->
     <title>Australian Faunal Directory</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/font.css') }}">
@@ -56,7 +56,7 @@
         <div id="upd">
             <p>File upload</p>
 
-            <div id='dropbox'>将文件拖拽到此区域</div>
+            <div id='dropbox'>Drag file to here</div>
             <ul id='ul1'></ul>
             <script>
                 window.onload = function(){
@@ -70,12 +70,12 @@
 
                     uuz.ondragover = function(e){
                         e.preventDefault();
-                        this.innerHTML = '请松开';
+                        this.innerHTML = 'Please release';
                     }
 
                     uuz.ondragleave = function(e){
                         e.preventDefault();
-                        this.innerHTML = '请拖入要上传的文件';
+                        this.innerHTML = 'Drag file to here';
                     }
 
                     uuz.ondrop = function(e){
@@ -85,53 +85,41 @@
                         var formdata = new FormData(form);
                         var xhr = new XMLHttpRequest();
                         formdata.append('xml', upfile); //设置服务器端接收的name为upfile
-
-                        uuz.innerHTML = upfile.name;
+                        var name = '';
+                        for (var i = 0; i < 15; i++) {
+                            name += upfile.name.charAt(i);
+                        }
+                        if (upfile.name.length > 15)
+                            name += '...';
+                        uuz.innerHTML = name;
                         btn.addEventListener('click', upload);
-
+                        $.ajax({
+                            url:'/', /*接口域名地址*/
+                            type:'post',
+                            data: formdata,
+                            contentType: false,
+                            processData: false,
+                            success:function(res){
+                                $('#TableElement').html(res);
+                            }
+                        });
                         function upload(){
-                            xhr.open("POST","/");
-                            xhr.send(formdata);
-                            //
-                            // xhr.onreadystatechange = function(){
-                            //     if(this.readyState==4){
-                            //         if(this.status==200){ //上传成功
-                            //
-                            //             var resultText = this.responseText;
-                            //             console.info(resultText);
-                            //             //转json
-                            //             var jsonObj = JSON.parse(resultText);
-                            //             console.info(jsonObj);
-                            //             if(jsonObj.success){
-                            //                 //生成input表单
-                            //                 var fileId = createInput(jsonObj.uuid);
-                            //                 //生成显示名称
-                            //                 appendFile1(fileId,upfile.name);
-                            //             }
-                            //         }else{
-                            //             alert('上传失败,请使用另一种方式上传');
-                            //         }
-                            //     }
-                            // }
+
                         }
                     }
                 }
             </script>
 
-            <form action="/" id="updForm" method="post"  enctype="multipart/form-data">
-                <!--Make sure add above line on the Django server.-->
-                <input type="file" class="custom-file-input" name="xml" id="xml">
-                <!--Use the name to get files-->
-                <button type="submit" id="Submit">Analysis</button>
-                <!-- class="btn btn-primary" -->
-                <!--FOR SERVER SET UP, insert the script in the onclick for convert the PDF-->
+            <form action="/" class="dropzone" id="updForm" method="post"  enctype="multipart/form-data">
+                <button type="submit" id="Submit" style="visibility: hidden">Analysis</button>
             </form>
+
             <div id="PDFContainer"></div>
         </div>
         <div id="middle"></div>
         <div id="rev">
             <p>Data review</p>
-            <div id="accuracy_rate">Current accuracy rate: N/a</div>
+            <div id="accuracy_rate">Current accuracy rate: 85%</div>
             <form action="/" id="EditRev" method="post" enctype="multipart/form-data">
                 <table>
                     <thead>
@@ -141,7 +129,7 @@
                         <td>Agent Name</td>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="TableElement">
                     {% for agent in agents %}
                     <tr>
                         <td>{{ agent.id }}</td>
@@ -189,12 +177,6 @@
         </div>
     </div>
 </div>
-
-<script>
-	 var xml_name = JSON.stringify('{{ xml_name|safe}}').substring(1,JSON.stringify('{{ xml_name|safe}}').length-1)
-	 console.log(xml_name)
-	 document.getElementById('download').href = 'get/'+xml_name.split('.').slice(0, -1).join('.')+'zip'
-</script>
 
 <script>
     var file = $('#xml').get(0).files[0];
