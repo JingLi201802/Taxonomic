@@ -1,0 +1,3 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Chrysoctonoides ,Chrysoctonoides Huber & Triapitsyn,genus,,,,,,,Huber & Triapitsyn,,,,,2015,Zoological,,,scientific,http://zoobank.org/A5549C89-9EEF-4351-8EFC-AFF43520FC84
+1,TN-2,Chrysoctonoides longisetosa,Chrysoctonoides longisetosa Huber & Triapitsyn,species,,Chrysoctonoides,,longisetosa,,,Huber & Triapitsyn,,,,,2015,Zoological,,,scientific,http://zoobank.org/6FC4E0C7-F2EA-4014-823F-1187836E3454

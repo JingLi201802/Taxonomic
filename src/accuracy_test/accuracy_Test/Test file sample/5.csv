@@ -1,0 +1,6 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Palirika culgoafloodplainensis,Palirika culgoafloodplainensis Lambkin,species,,Palirika,,culgoafloodplainensis,,,Lambkin,,,,,,Zoological,,,scientific,
+1,TN-2,Palirika mackenziei,Palirika mackenziei Lambkin,species,,Palirika,,mackenziei,,,Lambkin,,,,,,Zoological,,,scientific,
+2,TN-3,Larrpana bushblitz,Larrpana bushblitz Lambkin,species,,Larrpana,,bushblitz,,,Lambkin,,,,,,Zoological,,,scientific,
+3,TN-4,Ngalki ,Ngalki Lambkin,genus,,,,,,,Lambkin,,,,,,Zoological,,,scientific,
+4,TN-5,Ngalki trigonium,Ngalki trigonium (Lambkin & Yeates),,trigonium,,,trigonium,,,(Lambkin & Yeates),,,,,,Zoological,,,scientific,

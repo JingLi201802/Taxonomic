@@ -1,0 +1,747 @@
+Search keyword "viola" (have output)
+Redirect destination: "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=viola&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true"
+
+Search keyword "cecs" (no output)
+Redirect destination" "https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=cecs&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true"
+
+The redirect link syntax:
+
+just modify name=(), the name we wanna search
+
+"https://biodiversity.org.au/nsl/services/search?product=APNI&tree.id=&name=
+&inc._scientific=&inc.scientific=on&inc._cultivar=&inc._other=&max=100&display=apni&search=true"
+
+
+
+/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/bin/java "-javaagent:/Applications/IntelliJ IDEA 2.app/Contents/lib/idea_rt.jar=52786:/Applications/IntelliJ IDEA 2.app/Contents/bin" -Dfile.encoding=UTF-8 -classpath /Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/deploy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/cldrdata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/dnsns.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/jaccess.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/jfxrt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/localedata.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/nashorn.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/sunec.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/ext/zipfs.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/javaws.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jfxswt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/management-agent.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/plugin.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/ant-javafx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/dt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/javafx-mx.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/jconsole.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/packager.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/sa-jdi.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/lib/tools.jar:/Users/feone/IdeaProjects/accuracy_Test/out/production/accuracy_Test spider
+outputHeading return:         <div class="panel-heading">
+outputHeadingIndex: 195
+allInfo size: 719
+------------------------------------------------------------------------------------------------------------------------
+        <div class="panel-heading"> index is: 195
+           index is: 196
+        </div> index is: 197
+ index is: 198
+try to get full information, start at: 199, end at: 197
+all useful contents:
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>
+    Vascular Plants
+
+      APNI
+
+    - albipilosus?
+
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/nsl/services/assets/gears-c432240fbb62f986fcc93f8c288611ad.png?v=2.1">
+
+  <meta name="description" content="Vascular Plants biodiversity taxonomy services"/>
+  <meta property="og:title" content="Vascular Plants"/>
+  <meta property="og:description" content="Biodiversity taxonomy services providing bibiliography and classification data in APNI"/>
+  <meta property="og:url" content="/nsl/services"/>
+  <meta property="og:image" content="/nsl/services/assets/apni-banner-fd405fbf69a54c51ac063aeea353461c.png"/>
+
+  <script type="application/javascript">
+    baseContextPath = "/nsl/services";
+  </script>
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/nsl/services/assets/application-fb428c798e2eaf08632bd8608dbf38ec.css"/>
+  <link rel="stylesheet" media="print" href="/nsl/services/assets/application-fb428c798e2eaf08632bd8608dbf38ec.css"/>
+
+  <script src="/nsl/services/assets/application-f09592fbe13e513d437c7c8545f80c24.js" type="text/javascript" ></script>
+  <!--[if lt IE 9 ]>
+  <style>
+  @media(min-width:992px) {
+    div.logo img {
+        width: 50px;
+    }
+  }
+  </style>
+  <script type="application/javascript">
+     internetExplorer = "<9";
+  </script>
+  <![endif]-->
+  <!--[if IE 9 ]>
+  <script type="application/javascript">
+     internetExplorer = "9";
+  </script>
+  <![endif]-->
+
+  <meta name="layout" content="main">
+
+
+</head>
+
+<body class=" ">
+
+
+
+<div class="imageAndText">
+  <img src="/nsl/services/assets/apni-banner-fd405fbf69a54c51ac063aeea353461c.png" class="align-right"/>
+  <div class="col">
+    <div class="col-sm-12">
+    <h1>Vascular Plants
+
+        <span class="small">Australian Plant Name Index (APNI)</span></h1>
+
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-inverse" role="navigation">
+  <div class="">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/nsl/services/">
+        NSL
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="">
+          <a class="dashboard" href="/nsl/services/dashboard/index"><i
+              class="fa fa-bar-chart-o"></i> Dashboard</a>
+        </li>
+
+        <li class="active">
+          <a class="search"
+             href="/nsl/services/APNI"><i
+              class="fa fa-search"></i> Names (APNI)</a>
+        </li>
+        <li class="">
+          <a class="search"
+             href="/nsl/services/APC"><i
+              class="fa fa-search"></i> Taxonomy (APC)</a>
+        </li>
+        <li class="">
+          <a href="/nsl/services/tree/index">Classifications</a>
+        </li>
+        <li class="">
+          <a href="/nsl/services/export/index">Exports</a>
+        </li>
+
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+        <li>
+          <a class="doco" href="https://biodiversity.org.au/nsl/docs/main.html"><i class="fa fa-book"></i> docs </a>
+        </li>
+
+
+
+          <li class="dropdown">
+            <a id="dLabel" data-target="#" href="/nsl/services/auth/login"
+               data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+              <i class="fa fa-power-off"></i> Login
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <li>
+                <div class="navbar-form">
+                <form action="/nsl/services/auth/sign-in" method="post" >
+                  <input type="hidden" name="targetUri" value="/search"/>
+                  <label>Username:
+                    <input class="form-control" type="text" name="username" value=""/>
+                  </label>
+                  <label>Password:
+                    <input class="form-control" type="password" name="password" value=""/>
+                  </label>
+                  <input class="btn btn-default" type="submit" value="Login"/>
+                </form>
+                </div>
+              </li>
+            </ul>
+          </li>
+
+      </ul>
+
+    </div><!--/.nav-collapse -->
+  </div>
+</div>
+
+
+
+
+<div id="main-content" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+
+<div class="APNI">
+
+
+
+
+  <div id="productDescription" data-product="APNI"
+       class="alert alert-info alert-dismissible text-default" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+    </button>
+    The Australian Plant Name Index (APNI) is a tool for the botanical community that deals with plant names and their usage in the scientific literature, whether as a current name or synonym. APNI does not recommend any particular taxonomy or nomenclature. For a listing of currently accepted scientific names for the Australian vascular flora, please use the Australian Plant Census (APC) link above.
+  </div>
+
+
+
+
+<div role="tabpanel">
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation"
+        class="active">
+      <a href="#name" aria-controls="name" role="tab" data-toggle="tab">
+        Name search
+      </a>
+    </li>
+    <li role="presentation" class="">
+      <a href="#advanced" aria-controls="advanced" role="tab" data-toggle="tab">
+        Advanced search
+      </a>
+    </li>
+    <li role="presentation" class="">
+      <a href="#nameCheck" aria-controls="nameCheck" role="tab" data-toggle="tab">
+        Name check
+      </a>
+    </li>
+
+  </ul>
+
+  <div class="tab-content">
+    <div role="tabpanel"
+         class="tab-pane active"
+         id="name">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+
+        </div>
+
+        <div class="panel-body">
+          <form action="/nsl/services/search" method="get" name="search" role="form" id="search" >
+  <div class="form-group">
+
+  <input type="hidden" name="product" value="APNI">
+  <input type="hidden" name="tree.id" value="">
+
+
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8">
+      <label>name
+        <help><i class="fa fa-info-circle"></i>
+
+          <div>
+            <ul>
+              <li>You will get suggestions as you type in your query, they tell you what your query will return, and you can select one for an exact match.</li>
+              <li>The query is <b>not</b> case sensitive.</li>
+              <li>This search uses an automatic wild card at the end of the query to match all endings (unless the query is in double quotes).</li>
+              <li>The query is an ordered set of search terms, so viola l. will match "Viola L." and "Viola L. sect Viola."</li>
+              <li>Putting double quotes around your entire query will cause it to be matched exactly (except case). e.g. "Viola L." will match just Viola L.</li>
+              <li>You can use a % as a wild card inside the search query e.g. hakea elon% be or "hakea % var. elon% benth." to find "Hakea ceratophylla var. elongata Benth."</li>
+            </ul>
+          </div>
+        </help> <span class="text-muted small">click the <i class="fa fa-info-circle"></i> for help.</span>
+
+        <input type="text" name="name" placeholder="Enter a name" value="albipilosus"
+               class="suggest form-control "
+               data-subject="apni-search" size="30"/>
+      </label>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-5 col-xs-8">
+      <h4>Include
+        <help>
+          <i class="fa fa-info-circle"></i>
+
+          <div>
+            Pick the types of name to include. If none are checked, then Scientific and cultivated plant names will be included.
+          </div>
+        </help>
+      </h4>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._scientific" /><input type="checkbox" name="inc.scientific" checked="checked" value="on" id="inc.scientific"  />Scientific names</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._cultivar" /><input type="checkbox" name="inc.cultivar" id="inc.cultivar"  />Names of cultivated plants
+          </label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._other" /><input type="checkbox" name="inc.other" id="inc.other"  />Other names, e.g. common</label>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
+      <label>No. of results <help><i class="fa fa-info-circle"></i>
+
+  <div>
+    Select the number of results to display.<br>
+    The total number of results available will also be displayed.
+  </div>
+</help>
+  <select name="max" class="form-control" title="Select the number of results to display." id="max" >
+<option value="1" >1</option>
+<option value="10" >10</option>
+<option value="100" selected="selected" >100</option>
+<option value="1000" >1000</option>
+<option value="2000" >2000</option>
+<option value="5000" >5000</option>
+</select>
+</label>
+
+  <input type="hidden" name="display" value="apni"/>
+
+<button type="submit" name="search" value="true" class="btn btn-primary">Search</button>
+
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+      &nbsp;
+    </div>
+  </div>
+</form>
+        </div>
+      </div>
+
+    </div>
+
+    <div role="tabpanel" class="tab-pane " id="advanced">
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+
+
+
+        </div>
+
+        <div class="panel-body">
+
+
+<form action="/nsl/services/search" method="get" name="search" role="form" class="closable checkbig" id="search" >
+  <div class="row">
+
+    <div class="col-md-6">
+      <label>Names
+        <help><i class="fa fa-info-circle"></i>
+
+          <div>
+            <ul>
+              <li>This works the same as the simple search on name, except you can search multiple names by putting one on each line.</li>
+              <li>For searches of more than 100 names you need to put in the exact full name, and can not use wild cards.</li>
+            </ul>
+          </div>
+        </help><span class="text-muted small">click the <i class="fa fa-info-circle"></i>'s for help.</span>
+        <textarea name="name" placeholder="Enter each name to check on a new line."
+                  class="form-control suggest" rows="2" data-subject="apni-search">albipilosus</textarea>
+      </label>
+    </div>
+
+    <div class="col-md-4">
+      <label>by Author
+        <input type="text" name="author" placeholder="Author (abbrev.)" value=""
+               data-subject="author"
+               class="form-control suggest"/>
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <label>of Rank
+      <select name="ofRank.id" class="form-control" id="ofRank.id" >
+<option value="">any</option>
+<option value="54391" >Regnum (reg.)</option>
+<option value="54392" >Division (div.)</option>
+<option value="54393" >Classis (cl.)</option>
+<option value="54394" >Subclassis (subcl.)</option>
+<option value="54395" >Superordo (superordo)</option>
+<option value="54396" >Ordo (ordo)</option>
+<option value="54397" >Subordo (subordo)</option>
+<option value="54398" >Familia (fam.)</option>
+<option value="54402" >Genus (gen.)</option>
+<option value="54403" >Subgenus (subg.)</option>
+<option value="54404" >Sectio (sect.)</option>
+<option value="54405" >Subsectio (subsect.)</option>
+<option value="54406" >Series (ser.)</option>
+<option value="54407" >Subseries (subser.)</option>
+<option value="54408" >Superspecies (supersp.)</option>
+<option value="54409" >Species (sp.)</option>
+<option value="54410" >Subspecies (subsp.)</option>
+<option value="54411" >Nothovarietas (nothovar.)</option>
+<option value="54412" >Varietas (var.)</option>
+<option value="54413" >Subvarietas (subvar.)</option>
+<option value="54414" >Forma (f.)</option>
+<option value="54415" >Subforma (subf.)</option>
+<option value="54416" >form taxon</option>
+<option value="54417" >morphological var. (morph.)</option>
+<option value="54418" >nothomorph. (nothomorph)</option>
+<option value="54423" >[n/a]</option>
+<option value="4091964" >Regio (regio)</option>
+<option value="54399" >Subfamilia (subfam.)</option>
+<option value="54401" >Subtribus (subtrib.)</option>
+<option value="54420" >[infrafamily]</option>
+<option value="54421" >[infragenus]</option>
+<option value="54424" >[unknown]</option>
+<option value="54419" >[unranked]</option>
+<option value="54422" >[infraspecies] ([infrasp.])</option>
+<option value="54400" >Tribus (trib.)</option>
+</select>
+      </label>
+    </div>
+
+    <div class="col-md-1">
+
+      <div class="radio">
+        <label>
+          <input type="radio" name="matchRank"
+                 value="match" checked/>
+          match
+        </label>
+        <label>
+          <input type="radio" name="matchRank"
+                 value="above"  disabled/>
+          above
+        </label>
+        <label>
+          <input type="radio" name="matchRank"
+                 value="below"  disabled/>
+          below
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Reference citation <help>
+      <i class="fa fa-info-circle"></i>
+
+      <div>
+        <ul>
+          <li>This is a search on the full reference citation, e.g. 'Adams, L.G., George, A.S., (1987) Phylidraceae. Flora of Australia. 45'</li>
+          <li>You will get suggestions as you type in your query, they tell you what your query will return, and you can select one for an exact match.</li>
+          <li>The query is <b>not</b> case sensitive.</li>
+          <li>This search uses an automatic wild card at the begining and end of the query to match all authors and
+          volumes, unless you use a quoted search.</li>
+          <li>The query is an ordered set of search terms, so 'flora australia' will match
+          'Flora of Australia', 'Flora of south-east Australia' and and others.</li>
+          <li>Putting double quotes around your entire query will cause it to be matched exactly (except case).
+          e.g. "%Flora of South Australia" will match everything that ends in 'Flora of South Australia' (note the % wild card at the begining).</li>
+          <li>You can use a % as a wild card inside the search query e.g.flor%  to match flore, flora, florae, florida etc.</li>
+          <li>You can use a + in place of a space to make the space match exactly. e.g. 'flora+of+australia.+28' will match
+          everything in Flora of Australia volume 28 (1996)</li>
+        </ul>
+      </div>
+    </help>
+      <input type="text" name="publication" placeholder="Citation" value=""
+             class="form-control suggest" data-subject="publication" data-quoted="yes"/>
+    </label>
+    <label>Year
+      <input type="number" name="year" placeholder="Year" value="" class="form-control"
+             maxlength="4"
+             pattern="[1-2][0-9][0-9][0-9]"/>
+    </label>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <h4>Include
+        <help>
+          <i class="fa fa-info-circle"></i>
+
+          <div>
+            <p>
+              Pick the name types to include. If none are checked, then Scientific and Cultigen types types will be included.
+            </p>
+
+            <p>
+              Categories other than Scientific and Cultigen are over lapping, so just selecting "Autonym" will give just
+              the Autonyms (which are also scientific names by definition).
+            </p>
+
+            <p>
+              "Other" names include mainly common names. Common names are <b>not</b> part of a classification such as APC,
+            so selecting other will expand your search beyond the classification.
+            </p>
+          </div>
+        </help>
+      </h4>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._scientific" /><input type="checkbox" name="inc.scientific" checked="checked" value="on" id="inc.scientific"  />Scientific names</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._cultivar" /><input type="checkbox" name="inc.cultivar" id="inc.cultivar"  />Names of cultivated plants</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._hybrid" /><input type="checkbox" name="inc.hybrid" id="inc.hybrid"  />Hybrids</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._formula" /><input type="checkbox" name="inc.formula" id="inc.formula"  />Formula names</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="inc._autonym" /><input type="checkbox" name="inc.autonym" id="inc.autonym"  />Autonyms</label>
+        </div>
+
+
+          <div class="checkbox">
+            <label><input type="hidden" name="inc._other" /><input type="checkbox" name="inc.other" id="inc.other"  />Other names, e.g. common</label>
+          </div>
+
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <h4>Exclude
+        <help>
+          <i class="fa fa-info-circle"></i>
+
+          <div>Pick the name types to exclude. If none are checked, then no name types will be excluded.</div>
+        </help>
+      </h4>
+
+      <div class="form-group">
+        <div class="checkbox">
+          <label><input type="hidden" name="ex._scientific" /><input type="checkbox" name="ex.scientific" id="ex.scientific"  />Scientific names</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="ex._cultivar" /><input type="checkbox" name="ex.cultivar" id="ex.cultivar"  />Names of cultivated plants</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="ex._hybrid" /><input type="checkbox" name="ex.hybrid" id="ex.hybrid"  />Hybrids</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="ex._formula" /><input type="checkbox" name="ex.formula" id="ex.formula"  />Formula names</label>
+        </div>
+
+        <div class="checkbox">
+          <label><input type="hidden" name="ex._autonym" /><input type="checkbox" name="ex.autonym" id="ex.autonym"  />Autonyms</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <h4>Filter by tag
+      <help>
+        <i class="fa fa-info-circle"></i>
+
+        <div>Filter the results to include only a specific name tags, e.g. ACRA, PBR or Trade.</div>
+      </help>
+    </h4>
+    <label>Name tag
+    <select name="nameTag" class="form-control" id="nameTag" >
+<option value="">any</option>
+<option value="ACRA" >ACRA</option>
+<option value="PBR" >PBR</option>
+<option value="Trade" >Trade</option>
+</select>
+    </label>
+  </div>
+
+  <label>No. of results <help><i class="fa fa-info-circle"></i>
+
+  <div>
+    Select the number of results to display.<br>
+    The total number of results available will also be displayed.
+  </div>
+</help>
+  <select name="max" class="form-control" title="Select the number of results to display." id="max" >
+<option value="1" >1</option>
+<option value="10" >10</option>
+<option value="100" selected="selected" >100</option>
+<option value="1000" >1000</option>
+<option value="2000" >2000</option>
+<option value="5000" >5000</option>
+</select>
+</label>
+
+  <input type="hidden" name="display" value="apni"/>
+
+<button type="submit" name="advanced" value="true" class="btn btn-primary">Search</button>
+
+
+</form>
+
+        </div>
+      </div>
+    </div>
+
+    <div role="tabpanel" class="tab-pane " id="nameCheck">
+
+      <div class="panel panel-info">
+        <div class="panel-heading">
+
+
+
+        </div>
+
+        <div class="panel-body">
+          <form action="/nsl/services/search/name-check" method="post" name="search" role="form" class="closable" id="search" >
+
+  <div class="form-group">
+    <div class="col-md-6">
+      <label>Names <span class="text-muted small">Enter each name to check on a new line.</span>
+        <help><i class="fa fa-info-circle"></i>
+
+          <div>
+            <ul>
+              <li>This search uses the simple name without author.</li>
+              <li>The names must be an exact match, including an 'x' in hybrid names</li>
+              <li>You can use a wild card but only the first match will be returned.</li>
+            </ul>
+          </div>
+        </help>
+
+        <textarea name="name" placeholder="Enter each name to check on a new line."
+                  class="form-control" rows="20">albipilosus</textarea>
+      </label>
+    </div>
+  <div class="col-md-6">
+    <div>
+      <h2>Hints</h2>
+      <ul>
+        <li>The Name Check facility checks a list of names for correct spelling and currency i.e. whether the taxon is
+        accepted by the Australian Plant Census.</li>
+        <li>It checks only for valid and legitimate scientific, phrase and cultivar names with the correct orthography.
+        You can use names with or without author.</li>
+        <li>The names must be an exact match, including an 'x' in hybrid names.</li>
+        <li>You can use a wild card but it may not find the match you are looking for. Wildcards might help for abbreviations like "subsp." e.g. s% </li>
+        <li>Duplicated names and blanks will be removed from your input.</li>
+        <li>You can copy and paste from word and excel, including across multiple excel columns.</li>
+      </ul>
+      <h3>Example search</h3>
+      <pre>
+        Eucalyptus citriodora
+        Grevillea 'Canberra Gem'
+        Eucalyptus coolibah
+        Eucalyptus coolabah
+        Banksia spinulosa ‘Sixteen Candles’
+        Banksia spinulosa ‘Coastal Cushion’
+        Banksia spinulosa var. collina
+        Callistemon pachyphyllus ‘Smoked Salmon’
+        Callistemon subulatus
+        Correa ‘Just a Touch’
+        Correa alba
+        Doodia aspera
+        Epacris impressa
+        Abelia × grandiflora
+        Acacia adoxa var. adoxa x Acacia spondylophylla
+      </pre>
+    </div>
+  </div>
+  </div>
+
+
+  <label>No. of results <help><i class="fa fa-info-circle"></i>
+
+  <div>
+    Select the number of results to display.<br>
+    The total number of results available will also be displayed.
+  </div>
+</help>
+  <select name="max" class="form-control" title="Select the number of results to display." id="max" >
+<option value="1" >1</option>
+<option value="10" >10</option>
+<option value="100" selected="selected" >100</option>
+<option value="1000" >1000</option>
+<option value="2000" >2000</option>
+<option value="5000" >5000</option>
+</select>
+</label>
+
+  <input type="hidden" name="display" value="apni"/>
+
+<button type="submit" name="nameCheck" value="true" class="btn btn-primary">Search</button>
+
+
+</form>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+      <div class="panel  panel-info ">
+        <div class="panel-heading">
+          <strong>No results found</strong>
+
+          <div class="text text-info">
+
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="results">
+            <h2>No results found for &quot;albipilosus&quot;.</h2>
+
+            <p>Try searching for a different name, e.g. "Argophyllum lejourdanii var. cryptophlebum"</p>
+          </div>
+        </div>
+      </div>
+
+
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div id="page-footer" class="footer">
+  <div id="page-footer-inner">
+    <span id="page-footer-inner-left" class="pull-left">
+      Supported by
+      <a href="http://www.anbg.gov.au/chah/">
+        <img src="/nsl/services/assets/CHAH-logo-52f113ecf6a77dc2bcde623151b90b46.png" height="42"/>
+      </a>
+    </span>
+    <span id="page-footer-inner-right" class="pull-right">
+      <a href="https://twitter.com/aubiodiversity" class="twitter-link"><i class="fa fa-twitter fa-2x"
+                                                                           style="color: #55acee"></i>
+      </a>
+    </span>
+
+    <div>
+    </div>
+    <!-- Version: 1.0225 -->
+
+    <div id="spinner" class="spinner" style="display:none;">Loading&hellip;</div>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47960735-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script type="text/javascript" src="https://www.anbg.gov.au/25jira/s/babfb0d409e2906e93e4a4009daf1384-T/en_US-eg0fpt/71013/b6b48b2829824b869586ac216d119363/2.0.14/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=30647d85"></script>
+
+</body>
+</html>
+
+Process finished with exit code 0

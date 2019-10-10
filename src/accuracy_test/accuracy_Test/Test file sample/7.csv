@@ -1,0 +1,11 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Joeropsis adusta,Joeropsis adusta Bruce,species,,Joeropsis,,adusta,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/8960F365-4D4E-4B3F-A2EB-D2D56ED92CF4
+1,TN-2,Joeropsis goobita,Joeropsis goobita Bruce,species,,Joeropsis,,goobita,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/3B2755A8-6C20-4A50-918F-191B65240AD3
+2,TN-3,Joeropsis jiigurru,Joeropsis jiigurru Bruce,species,,Joeropsis,,jiigurru,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/38472B0C-31F5-4A8A-A615-7B84A9FEB407
+3,TN-4,Joeropsis makrogenys,Joeropsis makrogenys Bruce,species,,Joeropsis,,makrogenys,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/F1B1094E-2FFA-47BB-B925-401D8197AC7A
+4,TN-5,Joeropsis mije,Joeropsis mije Bruce,species,,Joeropsis,,mije,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/61FE99A9-D559-4F88-A7B0-69C197A97CE4
+5,TN-6,Joeropsis panstikta,Joeropsis panstikta Bruce,species,,Joeropsis,,panstikta,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/A1F931ED-3628-4786-AF77-BAE879DE4C5C
+6,TN-7,Joeropsis specca,Joeropsis specca Bruce,species,,Joeropsis,,specca,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/AE88E898-9E84-4D14-8005-1DAAB7E6E4C4
+7,TN-8,Joeropsis tropida,Joeropsis tropida Bruce,species,,Joeropsis,,tropida,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/F3D029AC-3C68-4A72-AEA9-B8E7FD3679DC
+8,TN-9,Joeropsis varanus,Joeropsis varanus Bruce,species,,Joeropsis,,varanus,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/00007DE5-065F-48C6-A702-545F2FA2DA8C
+9,TN-10,Joeropsis wattora,Joeropsis wattora Bruce,species,,Joeropsis,,wattora,,,Bruce,,,,,2015,Zoological,,,scientific,http://zoobank.org/096B65CB-3A76-48BA-98F3-4EF77FD55511

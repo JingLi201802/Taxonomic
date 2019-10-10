@@ -1,0 +1,11 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Pectinivalva mystaconota,Pectinivalva mystaconota Hoare,species,,Pectinivalva,Pectinivalva,mystaconota,,,Hoare,,,,,,Zoological,,,scientific,
+1,TN-2,Casanovula ,Casanovula Hoare,genus,,,,,,,Hoare,,,,,,Zoological,,,scientific,
+2,TN-3,Pectinivalva brevipalpa,Pectinivalva brevipalpa Hoare,species,,Pectinivalva,Casanovula,brevipalpa,,,Hoare,,,,,,Zoological,,,scientific,
+3,TN-4,Pectinivalva minotaurus,Pectinivalva minotaurus Hoare,species,,Pectinivalva,Casanovula,minotaurus,,,Hoare,,,,,,Zoological,,,scientific,
+4,TN-5,Menurella ,Menurella Hoare,genus,,,,,,,Hoare,,,,,,Zoological,,,scientific,
+5,TN-6,Pectinivalva scotodes,Pectinivalva scotodes Hoare,species,,Pectinivalva,Menurella,scotodes,,,Hoare,,,,,,Zoological,,,scientific,
+6,TN-7,Pectinivalva acmenae,Pectinivalva acmenae Hoare,species,,Pectinivalva,Menurella,acmenae,,,Hoare,,,,,,Zoological,,,scientific,
+7,TN-8,Pectinivalva xenadelpha,Pectinivalva xenadelpha Van Nieukerken & Hoare,species,,Pectinivalva,Menurella,xenadelpha,,,Van Nieukerken & Hoare,,,,,,Zoological,,,scientific,
+8,TN-9,Pectinivalva quintiniae,Pectinivalva quintiniae Hoare & Van Nieukerken,species,,Pectinivalva,Menurella,quintiniae,,,Hoare & Van Nieukerken,,,,,,Zoological,,,scientific,
+9,TN-10,Pectinivalva tribulatrix,Pectinivalva tribulatrix Van Nieukerken & Hoare,species,,Pectinivalva,Menurella,tribulatrix,,,Van Nieukerken & Hoare,,,,,,Zoological,,,scientific,
