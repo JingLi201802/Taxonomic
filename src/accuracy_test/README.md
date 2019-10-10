@@ -6,6 +6,8 @@ The Australian Plant Name Index (APNI) is a tool for the botanical community tha
 
 Past progress:
 
+Stage 1:
+
   Design web clawer
   
   Find search engine output data
@@ -13,9 +15,13 @@ Past progress:
   Algorithm design
   
   Parse output
-
-Current progress:
+  
+Stage 2:
 
   Using test sets for the accuracy rate (80% finished)
   
   Writing result analysis
+
+
+Current progress:
+   Improve program accuracy
