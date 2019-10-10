@@ -11,6 +11,7 @@ import json
 import PyPDF2
 import requests
 import pandas as pd
+import re
 #from nltk.corpus import words
 
 from xlrd import open_workbook
@@ -19,16 +20,29 @@ from xlutils.copy import copy
 import reference_info_extraction
 import reference_new_stdds
 import TaxonomyExtractPDF
-#import TaxonomyExtractPDF_2
+import txtCrawl
 import reader
 import runTwoFunction
 
-
+import zipfile 
 from zipfile import ZipFile
+import shutil
 
 app = Flask(__name__)
 app.config['DOWNLOAD_FOLDER'] = 'uploaded_folder'
 app.config['CSV_FOLDER'] = 'csv_folder'
+
+def zipzip(start_dir):
+    start_dir = start_dir  
+    file_news = start_dir + '.zip'  
+    z = zipfile.ZipFile(file_news, 'w', zipfile.ZIP_DEFLATED)
+    for dir_path, dir_names, file_names in os.walk(start_dir):
+        f_path = dir_path.replace(start_dir, '')  
+        f_path = f_path and f_path + os.sep or ''  
+        for filename in file_names:
+            z.write(os.path.join(dir_path, filename), f_path + filename)
+    z.close()
+    return file_news
 
 
 def write_excel(a_list, r_list,filename):
@@ -129,8 +143,8 @@ def upload_file():
                 print("file saved")
                 #runTwoFunction.runall(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 #runTwoFunction.runall(xml_file.filename)
-
-
+                
+                
                 path = app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename
                 tree = ET.parse(path)
                 root = tree.getroot()
@@ -139,10 +153,10 @@ def upload_file():
                 # df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
                 df3 = reader.mapping_to_TNC_Taxonomic_name_usage(df,df2,path)
                 df4 = reader.mapping_to_typification(df, df2)
-
+                
                 #df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format(xml_file.filename.split(".")[0]))
                 df2.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_TaxonomicName"))
-
+                
                 df3.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage"))
                 df4.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification"))
                 my_dict = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
@@ -152,7 +166,9 @@ def upload_file():
                 agents_list, reference_list = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 write_excel(agents_list, reference_list, xml_file.filename)
                 #write_excel(my_dict)
-
+            
+            
+            
             else:
                 pdf_file = request.files["xml"]
                 print("pdf!")
@@ -160,7 +176,14 @@ def upload_file():
                 file_tmp = pdf_tmp
                 pdf_file.save(os.path.join(app.config['DOWNLOAD_FOLDER'], pdf_file.filename))
                 print("file saved")
-                TaxonomyExtractPDF.get_excel_output(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
+                #TaxonomyExtractPDF.get_excel_output(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
+                TaxonomyExtractPDF.get_configurations()
+                TaxonomyExtractPDF.pdf_to_text(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
+                txtCrawl.get_csv_output_test((app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename[:-4] +'.txt'), TaxonomyExtractPDF.direct_mappings, TaxonomyExtractPDF.get_output_path(pdf_file.filename[:-4]))
+                zipzip(app.config['CSV_FOLDER'] + '/' + pdf_file.filename[:-4])
+
+                os.remove(app.config['DOWNLOAD_FOLDER']+'/'+pdf_file.filename[:-4] +'.txt')
+                shutil.rmtree(app.config['CSV_FOLDER']+'/'+pdf_file.filename[:-4])
 
     #return render_template('form.html')
     return render_template('form.html', agents=agents_list, reference=reference_list, xml_name=file_tmp)
