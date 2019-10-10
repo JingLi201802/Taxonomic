@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import re
+import time
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 name_list = []  # Make this non global in future
@@ -149,6 +150,7 @@ def parse_json_list(json, direct_mappings):
 
 
 def find_new_names(doc_string):
+    start = time.time()
     working_index = 0
     word_list = normalise_spacing(doc_string).split(" ")
     combined_request_str = ""
@@ -192,8 +194,20 @@ def find_new_names(doc_string):
         working_index = working_index + 1
 
     r = requests.get('http://parser.globalnames.org/api?q=' + (combined_request_str[1:-1]))
-    print (r)
+    end = time.time()
+    print(end - start)
     return r.json()
+
+
+def detect_type_descriptions(doc_string):
+    word_list = normalise_spacing(doc_string).split(" ")
+
+    # Search for variations of holo and paratype
+
+    # Search around these instances to try and see if they are used as headings. Can search for: Coordinates, gender etc.
+    # to work out if the heading precedes a description.
+    # Can also search for "figure or fig" to try and filter out image captions
+    return ""
 
 
 # Add support for lists
