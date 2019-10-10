@@ -189,8 +189,9 @@ def analyse_pdf(pdf_name):
     cleanup()
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
-
-#analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
+analyse_pdf("ZK_article_28924_en_1 (1).pdf")
+analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
 analyse_pdf("JABG31P037_Lang.pdf")
-#analyse_pdf("CaseStudy3-ASB16_Dicranoloma (2).pdf")
+analyse_pdf("TestNames.pdf")
+# analyse_pdf("CaseStudy3-ASB16_Dicranoloma (2).pdf")
 

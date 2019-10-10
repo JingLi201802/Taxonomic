@@ -51,8 +51,6 @@ PDF:
 - Acceptable level of name border recognition
 - Reference parsing
 - Field association (connecting relevant information)
-- Independent (no reliance on webservices)
-- Highlighting input
 
 XML:
 - Changing output format to csv.
