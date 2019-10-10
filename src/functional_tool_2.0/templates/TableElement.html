@@ -1,0 +1,13 @@
+{% for agent in agents %}
+<tr>
+    <td>{{ agent.id }}</td>
+    <td><input type="text" name="iname" value= "{{ agent.type }}"></td>
+    <td><input type="text" name="iname" value= "{{ agent.name }}"></td>
+</tr>
+{% endfor %}
+
+<script>
+    var xml_name = JSON.stringify('{{ xml_name|safe}}').substring(1,JSON.stringify('{{ xml_name|safe}}').length-1)
+    console.log(xml_name)
+    document.getElementById('download').href = 'get/'+xml_name.split('.').slice(0, -1).join('.')+'zip'
+</script>
