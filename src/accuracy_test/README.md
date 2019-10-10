@@ -1,4 +1,4 @@
-## Test for the ouput accuracy:
+# Test for the ouput accuracy:
 
 The database url: https://biodiversity.org.au/nsl/services/APNI   &  https://www.gbif.org
 
@@ -6,7 +6,7 @@ The Australian Plant Name Index (APNI) is a tool for the botanical community tha
 
 GBIF : Global Biodiversity Information Facility.
 
-# Past progress:
+## Past progress:
 
 Stage 1:
 
@@ -25,10 +25,9 @@ Stage 2:
   Writing result analysis
 
 
-# Current progress:
+## Current progress:
    
    Improve program accuracy
    current accuracy rate (97%)
 
 
-# ![Diagram](Resources/accuracy_analysis.png)
