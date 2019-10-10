@@ -1,0 +1,17 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Idiosoma arenaceum,Idiosoma arenaceum Rix & Harvey,species,,Idiosoma,,arenaceum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/2D4DE886-0589-4BFF-9BA4-D59BB03AFD74
+1,TN-2,Idiosoma clypeatum,Idiosoma clypeatum Rix & Harvey,species,,Idiosoma,,clypeatum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/86DFA140-6AB2-4FFE-B24E-D7F5B7AEE3D6
+2,TN-3,Idiosoma corrugatum,Idiosoma corrugatum Rix & Harvey,species,,Idiosoma,,corrugatum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/D697B9D6-152F-427E-870E-9ABD471C9B8D
+3,TN-4,Idiosoma dandaragan,Idiosoma dandaragan Rix & Harvey,species,,Idiosoma,,dandaragan,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/E6C8869C-9F37-47D3-B230-9EF5DD690187
+4,TN-5,Idiosoma formosum,Idiosoma formosum Rix & Harvey,species,,Idiosoma,,formosum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/E8212C7E-27BD-4242-8AD9-C32B89308895
+5,TN-6,Idiosoma gardneri,Idiosoma gardneri Rix & Harvey,species,,Idiosoma,,gardneri,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/6C3BFD95-4502-4DDF-A235-EA9FA4DA31F7
+6,TN-7,Idiosoma gutharuka,Idiosoma gutharuka Rix & Harvey,species,,Idiosoma,,gutharuka,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/E2EC1EB4-4422-494E-9A8E-58468891C86D
+7,TN-8,Idiosoma incomptum,Idiosoma incomptum Rix & Harvey,species,,Idiosoma,,incomptum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/2CFAAFD1-3C3A-4730-9487-64B17D485B95
+8,TN-9,Idiosoma intermedium,Idiosoma intermedium Rix & Harvey,species,,Idiosoma,,intermedium,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/6EB66C6F-97ED-45E9-9821-C533120D26A7
+9,TN-10,Idiosoma jarrah,Idiosoma jarrah Rix & Harvey,species,,Idiosoma,,jarrah,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/F0637000-C6D0-4AF3-85B2-BF8EEB76EC58
+10,TN-11,Idiosoma kopejtkaorum,Idiosoma kopejtkaorum Rix & Harvey,species,,Idiosoma,,kopejtkaorum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/323EA3E4-D841-46AF-B8E2-BCF4B104174F
+11,TN-12,Idiosoma kwongan,Idiosoma kwongan Rix & Harvey,species,,Idiosoma,,kwongan,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/D17D5265-1612-4B92-A3CB-F70EB4CEEAB3
+12,TN-13,Idiosoma mcclementsorum,Idiosoma mcclementsorum Rix & Harvey,species,,Idiosoma,,mcclementsorum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/35E27F10-28B7-4814-99EC-2DC8622F8D13
+13,TN-14,Idiosoma mcnamarai,Idiosoma mcnamarai Rix & Harvey,species,,Idiosoma,,mcnamarai,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/8D6E2EE6-E357-45A1-8CC2-287925E7A180
+14,TN-15,Idiosoma schoknechtorum,Idiosoma schoknechtorum Rix & Harvey,species,,Idiosoma,,schoknechtorum,,,Rix & Harvey,,,,,2018,Zoological,,,scientific,http://zoobank.org/0ABF532A-049D-41BB-B63F-455F657420DE
+15,TN-16,Idiosoma ,"Idiosoma Rix, Huey, Cooper, Austin, Harvey",,,,,,,,"Rix, Huey, Cooper, Austin, Harvey",,,,,2018,Zoological,,,scientific,

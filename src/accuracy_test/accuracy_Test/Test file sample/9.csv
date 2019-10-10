@@ -1,0 +1,11 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Sidarena ,"Sidarena Irwin, Winterton",genus,,,,,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/CCC28E9C-EB5D-4776-A269-770CFDE5FBF0
+1,TN-2,Sidarena aurantia,"Sidarena aurantia Irwin, Winterton",species,,Sidarena,,aurantia,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/89BA1398-15FC-4E48-AC36-0107EC85556B
+2,TN-3,Sidarena flavipalpa,"Sidarena flavipalpa Irwin, Winterton",species,,Sidarena,,flavipalpa,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/6BBF2B14-6CB7-4127-965F-96D074D17C1D
+3,TN-4,Sidarena geraldton,"Sidarena geraldton Irwin, Winterton",species,,Sidarena,,geraldton,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/B7AD7460-2384-4D24-B9C3-583D771E6219
+4,TN-5,Sidarena hortorum,"Sidarena hortorum Irwin, Winterton",species,,Sidarena,,hortorum,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/B49F0340-28A9-413E-8A31-B250AE827F94
+5,TN-6,Sidarena macfarlandi,"Sidarena macfarlandi Irwin, Winterton",species,,Sidarena,,macfarlandi,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/2E3A2F57-634D-4DD0-871D-564B73BC3935
+6,TN-7,Sidarena yallingup,"Sidarena yallingup Irwin, Winterton",species,,Sidarena,,yallingup,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/1FD0C2F9-7A52-4E00-A5B3-0A3A64378F34
+7,TN-8,Zelothrix ,"Zelothrix Irwin, Winterton",genus,,,,,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/AF6D8499-EF68-4415-A8B4-4F9DAE431A6A
+8,TN-9,Zelothrix warrumbungles,"Zelothrix warrumbungles Irwin, Winterton",species,,Zelothrix,,warrumbungles,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/778C5F21-B145-4EB6-B6A6-899D650F0CB3
+9,TN-10,Zelothrix yeatesi,"Zelothrix yeatesi Irwin, Winterton",species,,Zelothrix,,yeatesi,,,"Irwin, Winterton",,,,,2016,Zoological,,,scientific,http://zoobank.org/38B927CB-50F3-44F0-85FA-FEB0B0F25A1C

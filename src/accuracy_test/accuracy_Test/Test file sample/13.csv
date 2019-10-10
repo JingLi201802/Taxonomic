@@ -1,0 +1,5 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Nornalup ,Nornalup Park & Chandler,genus,,,,,,,Park & Chandler,,,,,2017,Zoological,,,scientific,http://zoobank.org/691083BF-7137-48CF-BB87-7F735392CFCD
+1,TN-2,Nornalup afoveatus,Nornalup afoveatus Park & Chandler,species,,Nornalup,,afoveatus,,,Park & Chandler,,,,,2017,Zoological,,,scientific,http://zoobank.org/A773DD78-B39E-4792-B93E-3A94211F4C8E
+2,TN-3,Nornalup quadratus,Nornalup quadratus Park & Chandler,species,,Nornalup,,quadratus,,,Park & Chandler,,,,,2017,Zoological,,,scientific,http://zoobank.org/7A39C58D-F5CE-4A23-885C-870F86CE4BC3
+3,TN-4,Nornalup minusculus,Nornalup minusculus Park & Chandler,species,,Nornalup,,minusculus,,,Park & Chandler,,,,,2017,Zoological,,,scientific,http://zoobank.org/E094EE5F-7D6B-4246-A02C-6170213E37D1

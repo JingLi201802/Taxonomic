@@ -1,0 +1,4 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Batrachomatus larsoni,"Batrachomatus larsoni Hendrich, Balke",species,,Batrachomatus,,larsoni,,,"Hendrich, Balke",,,,,,Zoological,,,scientific,
+1,TN-2,Batrachomatus nannup,"Batrachomatus nannup (Watts, 1978)",,nannup,,,nannup,,,"(Watts, 1978)",,,,,,Zoological,,,scientific,
+2,TN-3,Batrachomatus wilsoni,"Batrachomatus wilsoni (Mouchamps, 1964)",,wilsoni,,,wilsoni,,,"(Mouchamps, 1964)",,,,,,Zoological,,,scientific,
