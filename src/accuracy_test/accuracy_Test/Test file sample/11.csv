@@ -1,0 +1,3 @@
+,id,taxonomicNameString,fullNameWithAuthorship,rank,uninomial,genus,infragenericEpithet,specificEpithet,infraspecificEpithet,cultivarNameGroup,taxonomicNameAuthorship,combinationAuthorship,basionymAuthorship,combinationExAuthorship,basionymExAuthorship,publicationYear,nomenclaturalCode,nomenclaturalStatus,basedOn,kindOfName,nameRegistrationString
+0,TN-1,Vomerina comapenis,"Vomerina comapenis Winterton, Ferguson",species,,Vomerina,,comapenis,,,"Winterton, Ferguson",,,,,,Zoological,,,scientific,
+1,TN-2,Vomerina micora,"Vomerina micora Winterton, Ferguson",species,,Vomerina,,micora,,,"Winterton, Ferguson",,,,,,Zoological,,,scientific,
