@@ -1,0 +1,137 @@
+occurrenceId,verbatimScientificName,scientificName,key,matchType,confidence,status,rank,kingdom,phylum,class,order,family,genus,species
+,Maiestas irwini,"Maiestas irwini Duan, Dietrich & Zhang, 2017",9631102,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hemiptera,Cicadellidae,Maiestas,Maiestas irwini
+,Barryichthys,Barryichthys,10176957,EXACT,94,ACCEPTED,GENUS,Animalia,Chordata,Actinopterygii,Gobiesociformes,Gobiesocidae,Barryichthys,
+,Barryichthys hutchinsi,"Barryichthys hutchinsi Conway, Moore & Summers, 2019",10557904,EXACT,97,DOUBTFUL,SPECIES,Animalia,Chordata,Actinopterygii,Gobiesociformes,Gobiesocidae,Barryichthys,Barryichthys hutchinsi
+,Barryichthys algicola,"Barryichthys algicola Conway, Moore & Summers, 2019",10125961,EXACT,97,DOUBTFUL,SPECIES,Animalia,Chordata,Actinopterygii,Gobiesociformes,Gobiesocidae,Barryichthys,Barryichthys algicola
+,Ennea nigeriensis,"Ennea nigeriensis De Winter & De Gier, 2019",9880059,EXACT,98,SYNONYM,SPECIES,Animalia,Mollusca,Gastropoda,Stylommatophora,Streptaxidae,Ptychotrema,Ptychotrema nigeriensis
+,Wesmaelius nanacamilpa,"Wesmaelius nanacamilpa Marquez & Contreras, 2019",10304783,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Neuroptera,Hemerobiidae,Wesmaelius,Wesmaelius nanacamilpa
+,Palirika culgoafloodplainensis,"Palirika culgoafloodplainensis Lambkin, 2011",8777495,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Bombyliidae,Palirika,Palirika culgoafloodplainensis
+,Palirika mackenziei,"Palirika mackenziei Lambkin, 2011",9033178,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Bombyliidae,Palirika,Palirika mackenziei
+,Larrpana bushblitz,"Larrpana bushblitz Lambkin, 2011",8973954,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Bombyliidae,Larrpana,Larrpana bushblitz
+,Ngalki,"Ngalki Lambkin, 2011",8868780,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Diptera,Bombyliidae,Ngalki,
+,Ngalki trigonium,"Ngalki trigonium Lambkin, 2011",9636750,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Bombyliidae,Ngalki,Ngalki trigonium
+,Idiosoma arenaceum,"Idiosoma arenaceum Rix & Harvey, 2018",9371137,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma arenaceum
+,Idiosoma clypeatum,"Idiosoma clypeatum Rix & Harvey, 2018",9589866,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma clypeatum
+,Idiosoma corrugatum,"Idiosoma corrugatum Rix & Harvey, 2018",9561201,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma corrugatum
+,Idiosoma dandaragan,"Idiosoma dandaragan Rix & Harvey, 2018",9398765,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma dandaragan
+,Idiosoma formosum,"Idiosoma formosum Rix & Harvey, 2018",9517885,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma formosum
+,Idiosoma gardneri,"Idiosoma gardneri Rix & Harvey, 2018",9253265,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma gardneri
+,Idiosoma gutharuka,"Idiosoma gutharuka Rix & Harvey, 2018",9326671,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma gutharuka
+,Idiosoma incomptum,"Idiosoma incomptum Rix & Harvey, 2018",9441032,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma incomptum
+,Idiosoma intermedium,"Idiosoma intermedium Rix & Harvey, 2018",9323754,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma intermedium
+,Idiosoma jarrah,"Idiosoma jarrah Rix & Harvey, 2018",9636844,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma jarrah
+,Idiosoma kopejtkaorum,"Idiosoma kopejtkaorum Rix & Harvey, 2018",9782638,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma kopejtkaorum
+,Idiosoma kwongan,"Idiosoma kwongan Rix & Harvey, 2018",9443975,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma kwongan
+,Idiosoma mcclementsorum,"Idiosoma mcclementsorum Rix & Harvey, 2018",9395810,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma mcclementsorum
+,Idiosoma mcnamarai,"Idiosoma mcnamarai Rix & Harvey, 2018",9256050,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma mcnamarai
+,Idiosoma schoknechtorum,"Idiosoma schoknechtorum Rix & Harvey, 2018",9564213,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,Idiosoma schoknechtorum
+,Idiosoma,"Idiosoma Ausserer, 1871",2164613,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Arachnida,Araneae,Idiopidae,Idiosoma,
+,Joeropsis adusta,"Joeropsis adusta Bruce, 2015",7721112,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis adusta
+,Joeropsis goobita,"Joeropsis goobita Bruce, 2015",7353225,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis goobita
+,Joeropsis jiigurru,"Joeropsis jiigurru Bruce, 2015",7387005,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis jiigurru
+,Joeropsis makrogenys,"Joeropsis makrogenys Bruce, 2015",8247300,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis makrogenys
+,Joeropsis mije,"Joeropsis mije Bruce, 2015",8036885,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis mije
+,Joeropsis panstikta,"Joeropsis panstikta Bruce, 2015",7488635,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis panstikta
+,Joeropsis specca,"Joeropsis specca Bruce, 2015",8047633,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis specca
+,Joeropsis tropida,"Joeropsis tropida Bruce, 2015",7540816,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis tropida
+,Joeropsis varanus,"Joeropsis varanus Bruce, 2015",7731496,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis varanus
+,Joeropsis wattora,"Joeropsis wattora Bruce, 2015",7627962,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Isopoda,Joeropsididae,Joeropsis,Joeropsis wattora
+,Manestella caesia,"Manestella caesia Winterton & Lambkin, 2012",8841231,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella caesia
+,Manestella campestris,"Manestella campestris Winterton & Lambkin, 2012",9118177,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella campestris
+,Manestella canities,"Manestella canities Winterton & Lambkin, 2012",9215870,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella canities
+,Manestella cooloola,"Manestella cooloola Winterton & Lambkin, 2012",9083153,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella cooloola
+,Manestella fumosa,"Manestella fumosa Winterton & Lambkin, 2012",9024238,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella fumosa
+,Manestella incompleta,"Manestella incompleta Winterton & Lambkin, 2012",8988526,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella incompleta
+,Manestella nubis,"Manestella nubis Winterton & Lambkin, 2012",8732679,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella nubis
+,Manestella obscura,"Manestella obscura Winterton & Lambkin, 2012",8931616,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella obscura
+,Manestella ocellaris,"Manestella ocellaris Winterton & Lambkin, 2012",8818968,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella ocellaris
+,Manestella persona,"Manestella persona Winterton & Lambkin, 2012",8787057,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella persona
+,Manestella poecilothorax,"Manestella poecilothorax Winterton & Lambkin, 2012",9022650,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella poecilothorax
+,Manestella umbrapennis,"Manestella umbrapennis Winterton & Lambkin, 2012",9179850,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella umbrapennis
+,Manestella vasta,"Manestella vasta Winterton & Lambkin, 2012",8965096,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella vasta
+,Manestella vespera,"Manestella vespera Winterton & Lambkin, 2012",8873927,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Manestella,Manestella vespera
+,Medomega,"Medomega Winterton & Lambkin, 2012",9196005,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,
+,Medomega averyi,"Medomega averyi Winterton & Lambkin, 2012",9420986,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,Medomega averyi
+,Medomega bailmeup,"Medomega bailmeup Winterton & Lambkin, 2012",9098844,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,Medomega bailmeup
+,Medomega chlamydos,"Medomega chlamydos Winterton & Lambkin, 2012",8859192,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,Medomega chlamydos
+,Medomega danielsi,"Medomega danielsi Winterton & Lambkin, 2012",9102471,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,Medomega danielsi
+,Medomega gigasathe,"Medomega gigasathe Winterton & Lambkin, 2012",8718847,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,Medomega gigasathe
+,Medomega nebrias,"Medomega nebrias Winterton & Lambkin, 2012",8946566,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Medomega,Medomega nebrias
+,Sidarena,Sidarena,9406919,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,
+,Sidarena aurantia,"Sidarena aurantia Irwin & Winterton, 2016",8836943,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena aurantia
+,Sidarena flavipalpa,"Sidarena flavipalpa Irwin & Winterton, 2016",9122843,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena flavipalpa
+,Sidarena geraldton,"Sidarena geraldton Irwin & Winterton, 2016",8969550,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena geraldton
+,Sidarena hortorum,"Sidarena hortorum Irwin & Winterton, 2016",9078511,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena hortorum
+,Sidarena macfarlandi,"Sidarena macfarlandi Irwin & Winterton, 2016",9220717,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena macfarlandi
+,Sidarena yallingup,"Sidarena yallingup Irwin & Winterton, 2016",8736785,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena yallingup
+,Zelothrix,Zelothrix,9552764,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Zelothrix,
+,Zelothrix warrumbungles,"Zelothrix warrumbungles Irwin & Winterton, 2016",8961136,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Zelothrix,Zelothrix warrumbungles
+,Zelothrix yeatesi,"Zelothrix yeatesi Irwin & Winterton, 2016",8845024,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Zelothrix,Zelothrix yeatesi
+,Goniocolletes wanni,"Goniocolletes wanni Cockerell, 1907",9394774,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Goniocolletes,Goniocolletes wanni
+,Vomerina comapenis,"Vomerina comapenis Winterton & Ferguson, 2012",8912792,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Vomerina,Vomerina comapenis
+,Vomerina micora,"Vomerina micora Winterton & Ferguson, 2012",9138031,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Vomerina,Vomerina micora
+,Sidarena,Sidarena,9406919,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,
+,Sidarena aurantia,"Sidarena aurantia Irwin & Winterton, 2016",8836943,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena aurantia
+,Sidarena flavipalpa,"Sidarena flavipalpa Irwin & Winterton, 2016",9122843,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena flavipalpa
+,Sidarena geraldton,"Sidarena geraldton Irwin & Winterton, 2016",8969550,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena geraldton
+,Sidarena hortorum,"Sidarena hortorum Irwin & Winterton, 2016",9078511,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena hortorum
+,Sidarena macfarlandi,"Sidarena macfarlandi Irwin & Winterton, 2016",9220717,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena macfarlandi
+,Sidarena yallingup,"Sidarena yallingup Irwin & Winterton, 2016",8736785,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Sidarena,Sidarena yallingup
+,Zelothrix,Zelothrix,9552764,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Zelothrix,
+,Zelothrix warrumbungles,"Zelothrix warrumbungles Irwin & Winterton, 2016",8961136,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Zelothrix,Zelothrix warrumbungles
+,Zelothrix yeatesi,"Zelothrix yeatesi Irwin & Winterton, 2016",8845024,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Diptera,Therevidae,Zelothrix,Zelothrix yeatesi
+,Nornalup,"Nornalup Park & Chandler, 2017",9506759,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Coleoptera,Staphylinidae,Nornalup,
+,Nornalup afoveatus,"Nornalup afoveatus Park & Chandler, 2017",9263863,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Coleoptera,Staphylinidae,Nornalup,Nornalup afoveatus
+,Nornalup quadratus,"Nornalup quadratus Park & Chandler, 2017",9387838,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Coleoptera,Staphylinidae,Nornalup,Nornalup quadratus
+,Nornalup minusculus,"Nornalup minusculus Park & Chandler, 2017",9572432,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Coleoptera,Staphylinidae,Nornalup,Nornalup minusculus
+,Pectinivalva mystaconota,"Pectinivalva mystaconota Hoarean Nieukerken, 2013",9094337,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Pectinivalva,Pectinivalva mystaconota
+,Casanovula,Casanovula,9491415,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Casanovula,
+,Pectinivalva brevipalpa,"Pectinivalva brevipalpa Hoarean Nieukerken, 2013",8942254,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Casanovula,Casanovula brevipalpa
+,Pectinivalva minotaurus,"Pectinivalva minotaurus Hoarean Nieukerken, 2013",8863373,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Casanovula,Casanovula minotaurus
+,Menurella,Menurella,9599056,EXACT,94,ACCEPTED,GENUS,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Menurella,
+,Pectinivalva scotodes,"Pectinivalva scotodes Hoarean Nieukerken, 2013",9106936,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Menurella,Menurella scotodes
+,Pectinivalva acmenae,"Pectinivalva acmenae Hoarean Nieukerken, 2013",8851662,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Menurella,Menurella acmenae
+,Pectinivalva xenadelpha,"Pectinivalva xenadelpha van Nieukerken & Hoarean Nieukerken, 2013",9191322,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Menurella,Menurella xenadelpha
+,Pectinivalva quintiniae,"Pectinivalva quintiniae Hoare & van Nieukerken, 2013",8722798,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Menurella,Menurella quintiniae
+,Pectinivalva tribulatrix,"Pectinivalva tribulatrix van Nieukerken & Hoarean Nieukerken, 2013",8954308,EXACT,98,SYNONYM,SPECIES,Animalia,Arthropoda,Insecta,Lepidoptera,Nepticulidae,Menurella,Menurella tribulatrix
+,Chrysoctonoides,"Chrysoctonoides Huber & Triapitsyn, 2015",9123785,EXACT,92,DOUBTFUL,GENUS,incertae sedis,,,,,Chrysoctonoides,
+,Chrysoctonoides longisetosa,"Chrysoctonoides longisetosa Huber & Triapitsyn, 2015",8737645,EXACT,97,DOUBTFUL,SPECIES,incertae sedis,,,,,Chrysoctonoides,Chrysoctonoides longisetosa
+,Batrachomatus larsoni,"Batrachomatus larsoni Hendrich & Balke, 2013",8921818,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Batrachomatus,Batrachomatus larsoni
+,Batrachomatus nannup,"Batrachomatus nannup Watts, 1978",9343941,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Batrachomatus,Batrachomatus nannup
+,Batrachomatus wilsoni,"Batrachomatus wilsoni Mouchamps, 1964",9423395,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Coleoptera,Dytiscidae,Batrachomatus,Batrachomatus wilsoni
+,Xenocylapidius acutipennis,"Xenocylapidius acutipennis Wolski & Gorczyca, 2014",8989439,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hemiptera,Miridae,Xenocylapidius,Xenocylapidius acutipennis
+,Xenocylapidius ater,"Xenocylapidius ater Wolski & Gorczyca, 2014",9214882,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hemiptera,Miridae,Xenocylapidius,Xenocylapidius ater
+,Xenocylapidius bimaculatus,"Xenocylapidius bimaculatus Wolski & Gorczyca, 2014",8842110,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hemiptera,Miridae,Xenocylapidius,Xenocylapidius bimaculatus
+,Xenocylapidius gemellus,"Xenocylapidius gemellus Wolski & Gorczyca, 2014",8818125,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hemiptera,Miridae,Xenocylapidius,Xenocylapidius gemellus
+,Xenocylapidius rolandi,"Xenocylapidius rolandi Wolski & Gorczyca, 2014",8964191,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Insecta,Hemiptera,Miridae,Xenocylapidius,Xenocylapidius rolandi
+,Gramastacus lacus,"Gramastacus lacus McCormack, 2014",9117484,EXACT,98,ACCEPTED,SPECIES,Animalia,Arthropoda,Malacostraca,Decapoda,Parastacidae,Gramastacus,Gramastacus lacus
+,Amegilla indistincta,"Amegilla indistincta Leijs, Batley & Hogendoorn, 2017",9412553,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Amegilla,Amegilla indistincta
+,Amegilla karlba,"Amegilla karlba Leijs, Batley & Hogendoorn, 2017",9354529,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Amegilla,Amegilla karlba
+,Amegilla paeninsulae,"Amegilla paeninsulae Leijs, Batley & Hogendoorn, 2017",9296300,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Amegilla,Amegilla paeninsulae
+,Amegilla viridicingulata,"Amegilla viridicingulata Leijs, Batley & Hogendoorn, 2017",9607417,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Apidae,Amegilla,Amegilla viridicingulata
+,Leioproctus aberrans,"Leioproctus aberrans Leijs, 2018",10277507,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus aberrans
+,Leioproctus alatus,"Leioproctus alatus Leijs, 2018",10196807,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus alatus
+,Leioproctus albipilosus,"Leioproctus albipilosus Leijs, 2018",9847568,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus albipilosus
+,Leioproctus albiscopis,"Leioproctus albiscopis Leijs, 2018",10486717,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus albiscopis
+,Leioproctus aliceafontanus,"Leioproctus aliceafontanus Leijs, 2018",10126527,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus aliceafontanus
+,Leioproctus altispinosus,"Leioproctus altispinosus Leijs, 2018",10347850,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus altispinosus
+,Leioproctus aratus,"Leioproctus aratus Leijs, 2018",10393027,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus aratus
+,Leioproctus auricorneus,"Leioproctus auricorneus Leijs, 2018",10290195,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus auricorneus
+,Leioproctus bidentatus,"Leioproctus bidentatus Leijs, 2018",10090910,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus bidentatus
+,Leioproctus ciliatus,"Leioproctus ciliatus Leijs, 2018",9953189,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus ciliatus
+,Leioproctus claviger,"Leioproctus claviger Leijs, 2018",10405738,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus claviger
+,Leioproctus consobrinus,"Leioproctus consobrinus Leijs, 2018",10335089,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus consobrinus
+,Leioproctus constrictus,"Leioproctus constrictus Leijs, 2018",9882965,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus constrictus
+,Leioproctus laciniosus,"Leioproctus laciniosus Leijs, 2018",10651097,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus laciniosus
+,Leioproctus longivultu,"Leioproctus longivultu Leijs, 2018",9895618,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus longivultu
+,Leioproctus lucidus,"Leioproctus lucidus Leijs, 2018",10103622,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus lucidus
+,Leioproctus nitidifuscus,"Leioproctus nitidifuscus Leijs, 2018",10184111,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus nitidifuscus
+,Leioproctus pectinatus,"Leioproctus pectinatus Leijs, 2018",10522464,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus pectinatus
+,Leioproctus pilotapilus,"Leioproctus pilotapilus Leijs, 2018",10033475,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus pilotapilus
+,Leioproctus quadripinnatus,"Leioproctus quadripinnatus Leijs, 2018",9860168,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus quadripinnatus
+,Leioproctus rubicundus,"Leioproctus rubicundus Leijs, 2018",10499444,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus rubicundus
+,Leioproctus rubricinctus,"Leioproctus rubricinctus Leijs, 2018",10010666,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus rubricinctus
+,Leioproctus similis,"Leioproctus similis Leijs, 2018",10161205,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus similis
+,Leioproctus splendens,"Leioproctus splendens Leijs, 2018",10580332,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus splendens
+,Leioproctus submetallicus,"Leioproctus submetallicus Leijs, 2018",10254588,EXACT,97,DOUBTFUL,SPECIES,Animalia,Arthropoda,Insecta,Hymenoptera,Colletidae,Leioproctus,Leioproctus submetallicus
+,scientificName,,,NONE,100,,,,,,,,,
