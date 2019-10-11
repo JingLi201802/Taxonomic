@@ -159,7 +159,8 @@ def upload_file():
 
                 df3.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage"))
                 df4.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification"))
-                my_dict = reference_new_stdds.read_article(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
+                my_dict = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
+               # my_dict = reference_new_stdds.read_article(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 reference_new_stdds.write_excel(my_dict,app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("BibliographicResource"))
                 #my_dict[0][0].to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("BibliographicResource"))
                 # reference_new_stdds.write_excel(my_dict)
