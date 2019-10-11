@@ -43,20 +43,7 @@ def remove_punctuation(str):
     return result_str
 
 
-# Finds high level information about the pdf like author
-# data published, zoobank id etc. Does not look in the references section.
-# Todo: fix issue where two words on different lines are merged during conversion
-def find_document_data(doc_string, reference_index):
-    word_list = doc_string.split(" ")
-    url_list = []
-    for word in word_list[:reference_index]:
-        if word.__contains__("http"):
-            word = word[word.index("http"):]
-            url_list.append(word)
 
-    for url in url_list:
-        if url.__contains__("zootaxa") or url.__contains__("zoobank"):
-            print("Self referencing information: " + url)
 
 
 # Use anystyle.io to analyse references within a txt file.
@@ -139,7 +126,7 @@ def get_key_words(config_path):
 
 # / means go one level deeper in JSON, [] means that the value should be treated as a list
 direct_mappings = {
-    "verbatim": "verbatim",
+    "verbatim": "verbatimTaxonomicNameString",
     "details[]/genus/value": "genus",
     "details[]/specificEpithet/value": "specificEpithet",
     "details[]/specificEpithet/authorship/value": "taxonomicNameAuthorship",
@@ -190,8 +177,9 @@ def analyse_pdf(pdf_name):
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
 analyse_pdf("ZK_article_28924_en_1 (1).pdf")
+analyse_pdf("ZK_article_37403_en_3.pdf")
+analyse_pdf("ZK_article_38071_en_2.pdf")
 analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
 analyse_pdf("JABG31P037_Lang.pdf")
-analyse_pdf("TestNames.pdf")
-# analyse_pdf("CaseStudy3-ASB16_Dicranoloma (2).pdf")
+analyse_pdf("853.pdf")
 
