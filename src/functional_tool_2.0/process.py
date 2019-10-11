@@ -181,6 +181,7 @@ def upload_file():
                 TaxonomyExtractPDF.pdf_to_text(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
                 txtCrawl.get_csv_output_test((app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename[:-4] +'.txt'), TaxonomyExtractPDF.direct_mappings, TaxonomyExtractPDF.get_output_path(pdf_file.filename[:-4]))
                 zipzip(app.config['CSV_FOLDER'] + '/' + pdf_file.filename[:-4])
+#                TaxonomyExtractPDF.analyse_pdf(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
 
                 os.remove(app.config['DOWNLOAD_FOLDER']+'/'+pdf_file.filename[:-4] +'.txt')
                 shutil.rmtree(app.config['CSV_FOLDER']+'/'+pdf_file.filename[:-4])
