@@ -1,4 +1,4 @@
-The server part is still in progress. The link is https://taxonomic.herokuapp.com 
+The server part is still in progress. The link is https://taxonomic-tl.herokuapp.com 
 Currently supports uploading XML files and downloading output.
 
 Instructions running locally are as follows:
