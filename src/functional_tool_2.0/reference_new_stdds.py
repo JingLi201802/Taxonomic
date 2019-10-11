@@ -111,10 +111,15 @@ def write_excel(dict, patha):
         title.write(c, value)
     row = sheet.row(1)
     # print(dict.keys())
+#    for index, col in enumerate(cols):
+#        if col in dict[0][0].keys():
+#            # print(col)
+#            value = dict[0][0][col]
+#            row.write(index, value)
     for index, col in enumerate(cols):
-        if col in dict[0][0].keys():
+        if col in dict.keys():
             # print(col)
-            value = dict[0][0][col]
+            value = dict[col]
             row.write(index, value)
 
     book.save("BibliographicResource_1.xls")
@@ -132,7 +137,7 @@ def write_excel(dict, patha):
 # pwd = os.getcwd()
 # print(pwd)
 # # article path
-# article_path = pwd +"\\articles"+"\A_new_genus_and_two_new_species_of_miniature_clingfishes.xml"
+# article_path = pwd +"\\Examples\\xmls"+"\A_new_genus_and_two_new_species_of_miniature_clingfishes.xml"
 # print(article_path)
 # my_dict = read_article(article_path)
 #
