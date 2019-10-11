@@ -135,7 +135,7 @@ def write_excel(dict, patha):
 # article_path = pwd +"\\Examples\\xmls"+"\A_new_genus_and_two_new_species_of_miniature_clingfishes.xml"
 # print(article_path)
 # my_dict = read_article(article_path)
-# 
+#
 # write_excel(my_dict, "BibliographicResource.csv")
 
 #
