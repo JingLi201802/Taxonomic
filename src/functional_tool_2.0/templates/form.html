@@ -82,10 +82,10 @@
                     uuz.ondrop = function(e){
                         e.preventDefault();
 
-                        var upfile = e.dataTransfer.files[0]; //获取要上传的文件对象(可以上传多个)
+                        var upfile = e.dataTransfer.files[0];
                         var formdata = new FormData(form);
                         var xhr = new XMLHttpRequest();
-                        formdata.append('xml', upfile); //设置服务器端接收的name为upfile
+                        formdata.append('xml', upfile);
                         var name = '';
                         for (var i = 0; i < 15; i++) {
                             name += upfile.name.charAt(i);
@@ -95,7 +95,7 @@
                         uuz.innerHTML = name;
                         btn.addEventListener('click', upload);
                         $.ajax({
-                            url:'/', /*接口域名地址*/
+                            url:'/',
                             type:'post',
                             data: formdata,
                             contentType: false,
