@@ -111,10 +111,15 @@ def write_excel(dict, patha):
         title.write(c, value)
     row = sheet.row(1)
     # print(dict.keys())
+#    for index, col in enumerate(cols):
+#        if col in dict[0][0].keys():
+#            # print(col)
+#            value = dict[0][0][col]
+#            row.write(index, value)
     for index, col in enumerate(cols):
-        if col in dict[0][0].keys():
+        if col in dict.keys():
             # print(col)
-            value = dict[0][0][col]
+            value = dict[col]
             row.write(index, value)
 
     book.save("BibliographicResource_1.xls")
