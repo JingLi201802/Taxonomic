@@ -40,7 +40,7 @@
 </head>
 <body>
 <div id="head" >
-    <p><a href="index.html"><img id="logo" src="{{ url_for('static', filename='res/logo.gif') }}" width="365" height="63" alt="Logo"></a></p>
+    <p><a href="/"><img id="logo" src="{{ url_for('static', filename='res/logo.gif') }}" width="365" height="63" alt="Logo"></a></p>
     <div id="page_title">
         <p id="ABRS">Australian Biological Resources Study</p>
         <p id="AFD">Australian Faunal Directory Update System</p>
@@ -85,27 +85,28 @@
                         var upfile = e.dataTransfer.files[0];
                         var formdata = new FormData(form);
                         var xhr = new XMLHttpRequest();
-                        formdata.append('xml', upfile);
-                        var name = '';
-                        for (var i = 0; i < 15; i++) {
-                            name += upfile.name.charAt(i);
-                        }
-                        if (upfile.name.length > 15)
-                            name += '...';
-                        uuz.innerHTML = name;
-                        btn.addEventListener('click', upload);
-                        $.ajax({
-                            url:'/',
-                            type:'post',
-                            data: formdata,
-                            contentType: false,
-                            processData: false,
-                            success:function(res){
-                                $('#TableElement').html(res);
+                        var type = upfile.name.substr(upfile.name.length-3,3);
+                        if (type == 'pdf' || type == 'xml'){
+                            formdata.append('xml', upfile);
+                            var name = '';
+                            for (var i = 0; i < 15; i++) {
+                                name += upfile.name.charAt(i);
                             }
-                        });
-                        function upload(){
-
+                            if (upfile.name.length > 15)
+                                name += '...';
+                            uuz.innerHTML = name;
+                            $.ajax({
+                                url:'/',
+                                type:'post',
+                                data: formdata,
+                                contentType: false,
+                                processData: false,
+                                success:function(res){
+                                    $('#TableElement').html(res);
+                                }
+                            });
+                        }else{
+                            alert('This file type is not supported!');
                         }
                     }
                 }
