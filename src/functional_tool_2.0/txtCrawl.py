@@ -6,31 +6,27 @@ import time
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 
-name_list = []  # Make this non global in future
-pre_buffer = 15
-post_buffer = 1
+name_list = []
 word_locations = dict()
 name_string_to_verbatim = dict()
 word_to_char = dict()
 
 
-def get_csv_output_test(txt_filepath, direct_mappings, output_dir):
+# main function, creates and populates output files
+def get_csv_output(txt_filepath, direct_mappings, output_dir):
     publication_txt = open(txt_filepath, "r", encoding="utf-8")
     publication_string = publication_txt.read()
     names = parse_json_list(find_new_names(publication_string), direct_mappings)
     create_word_to_char(publication_string)
 
     tndf = create_taxonomic_names(names, direct_mappings, output_dir)
-    create_name_index_list(tndf, publication_string)
-    print("NAME INDEX LIST--------------")
-    print(word_locations)
-    print("name list")
-    print(name_list)
-    create_bibliographic_reference(output_dir)
+    create_name_index_list(tndf, publication_string) # Create an inverted index structure of string indexes and the
+    create_bibliographic_reference(output_dir)                                                   # names located there.
     create_typification(publication_string, output_dir)
     create_taxonomic_name_usages(output_dir)
 
 
+# Create the taxonomic names output file
 def create_taxonomic_names(names, direct_mappings, output_dir):
     index = 0
     taxonomic_names_df = pd.DataFrame(index=range(1, len(names)+2), columns=
@@ -59,14 +55,16 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
     return taxonomic_names_df
 
 
+# Create the bibliographic reference output file
 def create_bibliographic_reference(output_dir):
-    bibliographic_reference_df = pd.DataFrame(index=range(1, 10), columns=
+    bibliographic_reference_df = pd.DataFrame(index=range(1, 2), columns=
     ["id", "title", "author", "year", "isbn", "issn", "citation", "shortRef", "doi", "volume",
      "edition", "pages", "displayTitle", "published", "publicationDate", "publishedLocation", "publisher",
      "refAuthorRole", "refType", "tl2", "uri", "publicationRegistration"])
     bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
 
 
+# Create the typification output file
 def create_typification(doc_string, output_dir):
     type_data = detect_type_descriptions(doc_string)
     typification_df = pd.DataFrame(index=range(1, len(type_data)+2), columns=["nameUsage", "typeOfType", "typeName", "typificationString"])
@@ -81,14 +79,22 @@ def create_typification(doc_string, output_dir):
     typification_df.fillna(0.0).to_csv("{}typification.csv".format(output_dir))
 
 
-
+# Create the TNU output file
 def create_taxonomic_name_usages(output_dir):
-    taxonomic_usage_df = pd.DataFrame(index=range(1, 10), columns=
-    ["accordingTotaxonomicNameUsageLabel, verbatimNameString, verbatimRank, taxonomicStatus, acceptedNameUsage",
+    taxonomic_usage_df = pd.DataFrame(index=range(1, len(name_list)+2), columns=
+    ["accordingTo", "taxonomicNameUsageLabel", "verbatimNameString", "verbatimRank", "taxonomicStatus", "acceptedNameUsage",
      "hasParent", "kindOfNameUsage", "microReference", "etymology"])
+    index = 0
+    for name in name_list:
+        taxonomic_usage_df.iloc[index]["accordingTo"] = "BIB-1"
+        taxonomic_usage_df.iloc[index]["taxonomicNameUsageLabel"] = "TNU-{}".format(index+1)
+        taxonomic_usage_df.iloc[index]["verbatimNameString"] = name_string_to_verbatim[name]
+        taxonomic_usage_df.iloc[index]["kindOfNameUsage"] = "scientific"
+        index += 1
     taxonomic_usage_df.fillna(0.0).to_csv("{}taxonomicNameUsages.csv".format(output_dir))
 
 
+# From the output of GNParser, deduce what other values we can
 def deduce_taxonomic_name_values(df):
     index = 1
     while index < len(df):
@@ -139,6 +145,7 @@ def associate_info(info_index):
     return parent_name, best_diff
 
 
+# Flatten the string to a single, normally spaced line
 def normalise_spacing(string):
     string = string.replace("\n", " ")
     string = string.replace("  ", " ")
@@ -167,6 +174,51 @@ def parse_json_list(json, direct_mappings):
 
     return name_results
 
+
+# Interpret the mapping from direct_mappings to flatten the json and store it's data in output_dict
+def get_json_fields(json, targets):
+    output_dict = dict()
+
+    if not json['parsed']:
+        output_dict['verbatim'] = "unparsable"
+        return output_dict
+
+
+    for target in targets:
+        index = 0
+        target_path = target.split("/")
+        pointer = json
+
+        for node in target_path:
+            if node.__contains__("[]"):
+                if node.replace("[]", "") in pointer and not node == "authors[]":
+                    # Most list values are basically always a single element except in EXTREMELY rare theoretical cases
+                    pointer = pointer[node.replace("[]", "")][0]
+                    if node == target_path[-1]:
+                        output_dict[target] = pointer
+
+                elif node.replace("[]", "") in pointer:
+                    result = ""
+                    pointer = pointer[node.replace("[]", "")]
+                    for author in pointer:
+                        result = result + ", " + author
+
+                    output_dict[target] = result[2:]
+
+                else:
+                    break
+
+            else:
+                if node in pointer:
+                    pointer = pointer[node]
+                    if node == target_path[-1]:
+                        output_dict[target] = pointer
+
+                else:
+                    break
+
+            index += 1
+    return output_dict
 
 # Return true if the word is unlikely to be part of a name
 def is_nl(word):
@@ -205,6 +257,8 @@ def detect_letter_and_number(s):
 
 
 def find_new_names(doc_string):
+    pre_buffer = 15
+    post_buffer = 1
     working_index = 0
     word_list = normalise_spacing(doc_string).split(" ")
     combined_request = []
@@ -263,6 +317,7 @@ def find_new_names(doc_string):
     return r.json()
 
 
+# Search for type descriptions and then associate them with the closest preceding name. Return a dictionary of name:desc
 def detect_type_descriptions(doc_string):
     type_data = dict()
     word_list = normalise_spacing(doc_string).split(" ")
@@ -272,7 +327,6 @@ def detect_type_descriptions(doc_string):
     for word in word_list:
         trust = False
         if remove_punctuation(word.lower()) == "holotype" or word.lower().__contains__("holo:"):
-            end_point = word_index
 
             # If the word holotype seems to be used midway through a sentence it can usually be ignored
             if ["the", "a", "one", "their"].__contains__(word_list[word_index-1].lower()):
@@ -289,7 +343,7 @@ def detect_type_descriptions(doc_string):
             # If the holotype instance is thought to be a definition, search forward for the next instance of paratype:
             if trust:
                 index = 0  # The index relative to the instance of "holotype"
-                while index < 200:
+                while index < 130:
                     if word_list[word_index + index].lower().__contains__("paratype") \
                             or word_list[word_index + index].lower().__contains__("allotype") \
                             or word_list[word_index + index].lower().__contains__("para:"):
@@ -323,51 +377,6 @@ def create_word_to_char(doc_string):
         word_to_char[word_index] = character_index
         word_index += 1
         character_index += len(word) + 1
-
-
-
-def get_json_fields(json, targets):
-    output_dict = dict()
-
-    if not json['parsed']:
-        output_dict['verbatim'] = "unparsable"
-        return output_dict
-
-
-    for target in targets:
-        index = 0
-        target_path = target.split("/")
-        pointer = json
-
-        for node in target_path:
-            if node.__contains__("[]"):
-                if node.replace("[]", "") in pointer and not node == "authors[]":
-                    pointer = pointer[node.replace("[]", "")][0]
-                    if node == target_path[-1]:
-                        output_dict[target] = pointer
-                # Check if this works. Should append all authors, but may crop
-                elif node.replace("[]", "") in pointer:
-                    result = ""
-                    pointer = pointer[node.replace("[]", "")]
-                    for author in pointer:
-                        result = result + ", " + author
-
-                    output_dict[target] = result[2:]
-
-                else:
-                    break
-
-            else:
-                if node in pointer:
-                    pointer = pointer[node]
-                    if node == target_path[-1]:
-                        output_dict[target] = pointer
-
-                else:
-                    break
-
-            index += 1
-    return output_dict
 
 
 # Used so regex search terms aren't interpreted as more complicated queries

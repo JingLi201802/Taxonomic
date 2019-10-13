@@ -173,7 +173,7 @@ def analyse_pdf(pdf_name):
         cleanup()
         return
 
-    txtCrawl.get_csv_output_test(
+    txtCrawl.get_csv_output(
         replace_whitespaces(pdf_name.replace(".pdf", ".txt")), direct_mappings,
         get_output_path(pdf_name.replace(".pdf", "")))
     cleanup()
