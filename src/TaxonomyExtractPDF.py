@@ -168,16 +168,16 @@ def analyse_pdf(pdf_name):
         cleanup()
         return
 
-    txtCrawl.get_csv_output_test(
+    txtCrawl.get_csv_output(
         replace_whitespaces(pdf_name.replace(".pdf", ".txt")), direct_mappings,
         get_output_path(pdf_name.replace(".pdf", "")))
     cleanup()
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
 analyse_pdf("ZK_article_28924_en_1 (1).pdf")
-analyse_pdf("ZK_article_37403_en_3.pdf")
-analyse_pdf("ZK_article_38071_en_2.pdf")
-analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
-analyse_pdf("JABG31P037_Lang.pdf")
-analyse_pdf("853.pdf")
+# analyse_pdf("ZK_article_37403_en_3.pdf")
+# analyse_pdf("ZK_article_38071_en_2.pdf")
+# analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
+# analyse_pdf("JABG31P037_Lang.pdf")
+# analyse_pdf("853.pdf")
 

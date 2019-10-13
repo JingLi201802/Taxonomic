@@ -6,7 +6,7 @@ import time
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 
-name_list = []  # Make this non global in future
+name_list = []
 word_locations = dict()
 name_string_to_verbatim = dict()
 word_to_char = dict()
@@ -57,7 +57,7 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
 
 # Create the bibliographic reference output file
 def create_bibliographic_reference(output_dir):
-    bibliographic_reference_df = pd.DataFrame(index=range(1, 10), columns=
+    bibliographic_reference_df = pd.DataFrame(index=range(1, 2), columns=
     ["id", "title", "author", "year", "isbn", "issn", "citation", "shortRef", "doi", "volume",
      "edition", "pages", "displayTitle", "published", "publicationDate", "publishedLocation", "publisher",
      "refAuthorRole", "refType", "tl2", "uri", "publicationRegistration"])
@@ -81,9 +81,16 @@ def create_typification(doc_string, output_dir):
 
 # Create the TNU output file
 def create_taxonomic_name_usages(output_dir):
-    taxonomic_usage_df = pd.DataFrame(index=range(1, 10), columns=
-    ["accordingTotaxonomicNameUsageLabel, verbatimNameString, verbatimRank, taxonomicStatus, acceptedNameUsage",
+    taxonomic_usage_df = pd.DataFrame(index=range(1, len(name_list)+2), columns=
+    ["accordingTo", "taxonomicNameUsageLabel", "verbatimNameString", "verbatimRank", "taxonomicStatus", "acceptedNameUsage",
      "hasParent", "kindOfNameUsage", "microReference", "etymology"])
+    index = 0
+    for name in name_list:
+        taxonomic_usage_df.iloc[index]["accordingTo"] = "BIB-1"
+        taxonomic_usage_df.iloc[index]["taxonomicNameUsageLabel"] = "TNU-{}".format(index+1)
+        taxonomic_usage_df.iloc[index]["verbatimNameString"] = name_string_to_verbatim[name]
+        taxonomic_usage_df.iloc[index]["kindOfNameUsage"] = "scientific"
+        index += 1
     taxonomic_usage_df.fillna(0.0).to_csv("{}taxonomicNameUsages.csv".format(output_dir))
 
 

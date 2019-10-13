@@ -110,7 +110,11 @@ def write_excel(a_list, r_list,filename):
     os.remove(references_path)
     #os.remove(TNC_TaxonomicName_path)
 
-
+def get_output_path(name):
+    result = os.path.join(os.getcwd(), app.config['CSV_FOLDER']+'/'+"{}/".format(name))
+    if not os.path.exists(result):
+        os.makedirs(result)
+    return result.replace("\\", "/")
 
 @app.route('/get/<filename>')
 def uploaded_file(filename):
@@ -160,6 +164,7 @@ def upload_file():
                 df3.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Taxonomic_name_usage"))
                 df4.to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("TNC_Typification"))
                 my_dict = reference_info_extraction.get_contri_info(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
+               # my_dict = reference_new_stdds.read_article(app.config['DOWNLOAD_FOLDER'] + '/' + xml_file.filename)
                 reference_new_stdds.write_excel(my_dict,app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("BibliographicResource"))
                 #my_dict[0][0].to_csv(app.config['CSV_FOLDER']+'/'+"{}_XmlOutput.csv".format("BibliographicResource"))
                 # reference_new_stdds.write_excel(my_dict)
@@ -179,8 +184,9 @@ def upload_file():
                 #TaxonomyExtractPDF.get_excel_output(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
                 TaxonomyExtractPDF.get_configurations()
                 TaxonomyExtractPDF.pdf_to_text(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
-                txtCrawl.get_csv_output_test((app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename[:-4] +'.txt'), TaxonomyExtractPDF.direct_mappings, TaxonomyExtractPDF.get_output_path(pdf_file.filename[:-4]))
+                txtCrawl.get_csv_output((app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename[:-4] +'.txt'), TaxonomyExtractPDF.direct_mappings, get_output_path(pdf_file.filename[:-4]))
                 zipzip(app.config['CSV_FOLDER'] + '/' + pdf_file.filename[:-4])
+#                TaxonomyExtractPDF.analyse_pdf(app.config['DOWNLOAD_FOLDER'] + '/' + pdf_file.filename)
 
                 os.remove(app.config['DOWNLOAD_FOLDER']+'/'+pdf_file.filename[:-4] +'.txt')
                 shutil.rmtree(app.config['CSV_FOLDER']+'/'+pdf_file.filename[:-4])
