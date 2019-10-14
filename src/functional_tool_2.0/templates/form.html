@@ -41,8 +41,8 @@
 <body>
 <div id="head" >
     <div id="page_title">
-        <p id="ABRS">Australian Biological Resources Study</p>
-        <p id="AFD">Australian Faunal Directory Update System</p>
+        <p id="ABRS">Taxonomic</p>
+        <p id="AFD">Taxonomic Update System</p>
     </div>
 </div>
 <img id="oops" src="{{ url_for('static', filename='res/oops.png') }}" alt="oops">
@@ -93,7 +93,7 @@
                             }
                             if (upfile.name.length > 15)
                                 name += '...';
-                            uuz.innerHTML = name;
+                            uuz.innerHTML = 'processing...';
                             $.ajax({
                                 url:'/',
                                 type:'post',
@@ -101,6 +101,7 @@
                                 contentType: false,
                                 processData: false,
                                 success:function(res){
+                                    uuz.innerHTML = 'Drag file to here';
                                     $('#TableElement').html(res);
                                 }
                             });
@@ -150,32 +151,7 @@
 </div>
 
 <div id="end">
-    <div id="links">
-        <ul>
-            <li><a href="https://www.environment.gov.au/about-us/accessibility">Accessibility</a></li>
-            <li><a href="https://www.environment.gov.au/about-us/disclaimer">Disclaimer</a></li>
-            <li><a href="https://www.environment.gov.au/privacy-policy">Privacy</a></li>
-            <li><a href="https://www.environment.gov.au/about-us/freedom-information">Freedom of information</a></li>
-            <li><a href="https://www.environment.gov.au/copyright-statement">&#169; Commonwealth of Australia</a></li>
-        </ul>
-    </div>
-    <div id="others">
-        <div id="address">
-            <a href="http://www.environment.gov.au/">Department of the Environment and Energy</a>
-            <p>GPO Box 787</p>
-            <p>Canberra ACT 2601 Australia</p>
-            <p>+61 (0)2 6274 1111
-                <a href="http://www.environment.gov.au/business/gst.html#abn">
-                    <acronym title="Australian Business Number" xml:lang="en" lang="en">ABN</acronym>
-                </a>
-            </p>
-        </div>
-        <div id="gov">
-            <p>Our land. Our plan. Our future</p>
-            <a href="http://www.australia.gov.au/">Australian Government</a>
-            <br/><br/><br/>
-        </div>
-    </div>
+
 </div>
 
 <script>

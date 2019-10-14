@@ -1,2 +1,26 @@
 ,Id,taxonomicName,according to,taxonomicNameUsageLabel,verbatimNameString,dwc:verbatimRank,taxonomicStatus,acceptedNameUsage,hasParent,kindOfNameUsage,microReference,etymology
-0,TNU-1,TN-1,BIB-1,"Ennea nigeriensis sec de Winter, de Gier 2019",,,Accepted,TNU-1,,sp.nov.,,
+0,TNU-1,TN-1,BIB-1,"Leioproctus aberrans sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-1,,sp.nov.,,The specific epithet ‘’ refers to abnormal wing venation: this species has three submarginal cells instead of two (Fig.2).
+1,TNU-2,TN-2,BIB-1,"Leioproctus alatus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-2,,sp.nov.,,The specific epithet refers to wing shaped lateral lobes of the male S7.
+2,TNU-3,TN-3,BIB-1,"Leioproctus albipilosus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-3,,sp.nov.,,The specific epithet refers to short white pubescence on the scutum.
+3,TNU-4,TN-4,BIB-1,"Leioproctus albiscopis sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-4,,sp.nov.,,The specific epithet refers to the white scopa pubescence on the hind tibia of the female.
+4,TNU-5,TN-5,BIB-1,"Leioproctus aliceafontanus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-5,,sp.nov.,,The specific epithet refers to the distribution of this species around Alice Springs.
+5,TNU-6,TN-6,BIB-1,"Leioproctus altispinosus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-6,,sp.nov.,,The specific epithet refers to the robust setae on the tip of the ventral apical lobe of male sterna 7. It also is a translation of the name of our linguistic advisor Wiebe Hogendoorn.
+6,TNU-7,TN-7,BIB-1,"Leioproctus aratus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-7,,sp.nov.,,The specific epithet refers to very coarse pit-reticulate sculpture on the head.
+7,TNU-8,TN-8,BIB-1,"Leioproctus auricorneus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-8,,sp.nov.,,The specific epithet refers to the orange coloured antennae.
+8,TNU-9,TN-9,BIB-1,"Leioproctus bidentatus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-9,,sp.nov.,,The specific epithet refers to the two teeth on the ventral margin of the clypeus.
+9,TNU-10,TN-10,BIB-1,"Leioproctus ciliatus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-10,,sp.nov.,,The specific epithet refers to the ciliate inner hind tibial spur.
+10,TNU-11,TN-11,BIB-1,"Leioproctus claviger sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-11,,sp.nov.,,The specific epithet refers to the club-shaped apical lobe of the male seventh sterna.
+11,TNU-12,TN-12,BIB-1,"Leioproctus consobrinus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-12,,sp.nov.,,The specific epithet refers to the average
+12,TNU-13,TN-13,BIB-1,"Leioproctus constrictus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-13,,sp.nov.,,The specific epithet refers to strongly depressed post gradular areas ofT2–3 in both sexes.
+13,TNU-14,TN-14,BIB-1,"Leioproctus laciniosus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-14,,sp.nov.,,The specific epithet refers to fringe of white hairs on the posteriorT2–4.
+14,TNU-15,TN-15,BIB-1,"Leioproctus longivultu sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-15,,sp.nov.,,The specific epithet refers to the elongated face of this species.
+15,TNU-16,TN-16,BIB-1,"Leioproctus lucidus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-16,,sp.nov.,,"The specific epithet refers to the smooth and shiny integument on head, scutum and terga of this species."
+16,TNU-17,TN-17,BIB-1,"Leioproctus nitidifuscus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-17,,sp.nov.,,The specific epithet refers to very smooth and brown integument of large parts of the body of this species.
+17,TNU-18,TN-18,BIB-1,"Leioproctus pectinatus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-18,,sp.nov.,,The specific epithet refers to the strongly pectinate inner hind tibial spur.
+18,TNU-19,TN-19,BIB-1,"Leioproctus pilotapilus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-19,,sp.nov.,,The specific epithet refers to the dense and short pubescence on the scutum.
+19,TNU-20,TN-20,BIB-1,"Leioproctus quadripinnatus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-20,,sp.nov.,,The specific epithet refers to thin feathery like apical lobes of the male sterna 7.
+20,TNU-21,TN-21,BIB-1,"Leioproctus rubicundus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-21,,sp.nov.,,The specific epithet refers to the colour of the female metasoma.
+21,TNU-22,TN-22,BIB-1,"Leioproctus rubricinctus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-22,,sp.nov.,,The specific epithet refers to the red colouration of the anterior parts of theT2–4.
+22,TNU-23,TN-23,BIB-1,"Leioproctus similis sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-23,,sp.nov.,,The specific epithet refers to the common habitus of this species within this subgenus.
+23,TNU-24,TN-24,BIB-1,"Leioproctus splendens sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-24,,sp.nov.,,The specific epithet refers to the smooth and shiny integument on metapostnotum and terga of this species.
+24,TNU-25,TN-25,BIB-1,"Leioproctus submetallicus sec Leijs, Dorey, Hogendoorn 2018",,,Accepted,TNU-25,,sp.nov.,,The specific epithet refers to the faint metallic shine on the head and thorax.
