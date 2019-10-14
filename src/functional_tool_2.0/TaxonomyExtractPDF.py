@@ -82,8 +82,8 @@ def get_root_dir():
 
 # Abstract out the identical part of these two functions soonTM
 def get_example_path(pdf_name):
-#    result = os.path.join(get_root_dir(), "Examples/PDFs/{}".format(pdf_name))
-#    return result.replace("\\", "/")
+    result = os.path.join(os.path.dirname(get_root_dir()), "Examples/PDFs/{}".format(pdf_name))
+    return result.replace("\\", "/")
     return pdf_name
 
 
@@ -179,7 +179,7 @@ def analyse_pdf(pdf_name):
     cleanup()
 
 # --------------------------------------------- Testing Code -----------------------------------------------------------
-#analyse_pdf("ZK_article_28924_en_1 (1).pdf")
+analyse_pdf("ZK_article_28924_en_1 (1).pdf")
 #analyse_pdf("ZK_article_37403_en_3.pdf")
 #analyse_pdf("ZK_article_38071_en_2.pdf")
 #analyse_pdf("Kurina_2019_Zootaxa4555_3 Diptera Mycetophilidae Manota new sp (1).pdf")
