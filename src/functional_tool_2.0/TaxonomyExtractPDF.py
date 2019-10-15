@@ -57,15 +57,6 @@ def find_references(txt_path):
     created_files.append(get_example_path(txt_path.split("/")[-1].replace(".txt", ".xml")))
 
 
-# Returns an iterator containing the details and locations of all coordinates of the form xxºxx'xx"[NSEW]
-def find_coordinates(doc_string):
-    file = open(doc_string, 'r', encoding="utf8")
-    string = file.read()
-    # Regex taken from Regexlib.com ("DMS Coordinate by Jordan Pollard")
-    res = re.findall(r"""[0-9]{1,2}[:|°|º][0-9]{1,2}[:|'](?:\b[0-9]+(?:\.[0-9]*)?|\.[0-9]+\b)"?[N|S|E|W]""", string, re.UNICODE)
-    return res
-
-
 # Todo: Given a string index, find the nearby name which that information is most likely to belong to.
 def associate_info_with_name():
     return None

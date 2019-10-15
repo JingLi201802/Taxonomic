@@ -16,6 +16,7 @@ word_to_char = dict()
 def get_csv_output(txt_filepath, direct_mappings, output_dir):
     publication_txt = open(txt_filepath, "r", encoding="utf-8")
     publication_string = publication_txt.read()
+    publication_txt.close()
     names = parse_json_list(find_new_names(publication_string), direct_mappings)
     create_word_to_char(publication_string)
 
@@ -399,6 +400,20 @@ def find_document_data(doc_string, reference_index):
     for url in url_list:
         if url.__contains__("zootaxa") or url.__contains__("zoobank"):
             print("Self referencing information: " + url)
+
+
+# Returns an iterator containing the details and locations of all coordinates of the form xxºxx'xx"[NSEW]
+def find_coordinates(doc_string):
+
+    # Find a latitude or longitude coordinate in DMS format:
+    find_dms_comp = r"""[0-9]{1,2}[\,|\.|:|°|º][0-6][0-9][\,|\.|'][0-9]{1,2}\.[0-9]{0,8}[\.|\,\"|] {0,1}[N|S|E|W]"""
+    find_dms_pairs = find_dms_comp+r"[\,| ] {0,2}"+find_dms_comp
+
+    # Returns all coordinates using decimals
+    res2 = re.findall(find_dms_pairs + "|" +
+                      r"""[0-9]{1,2}\.[0-9]{1,10}[N|S][\,|\;] {0,2}1[0-8][0-9]\.[0-9]{1,10}[E|W]""",
+                      doc_string, re.UNICODE)
+    return res2
 
 
 # Check names for overlap, for example new genuses and their subspecies will cause issues
