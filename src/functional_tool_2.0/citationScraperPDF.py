@@ -3,13 +3,14 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 import selenium.common.exceptions
 import os
-results = dict()
-results["success"] = "false"
-results["formatchanged"] = "false"
 
 
 def get_bib_results(doi):
+    results = dict()
+    results["success"] = "false"
+    results["formatchanged"] = "false"
     results["doi"] = doi
+
     chrome_options = Options()
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1024x1400")
@@ -44,7 +45,6 @@ def get_bib_results(doi):
     try:
         year = driver.find_element_by_id("Year")
     except:
-        print(driver.page_source)
         return results
 
     # Later-
@@ -65,3 +65,8 @@ def get_bib_results(doi):
         results["formatchanged"] = "true"
         return results
     return results
+
+# Given a results dictionary, append all authors by iterating over the dictionary, searching for author[x]
+# keys then appending their values
+def concat_authors(results_dic):
+    return None

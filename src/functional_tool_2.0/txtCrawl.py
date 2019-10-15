@@ -20,10 +20,10 @@ def get_csv_output(txt_filepath, direct_mappings, output_dir):
     names = parse_json_list(find_new_names(publication_string), direct_mappings)
     create_word_to_char(publication_string)
 
+    create_bibliographic_reference(publication_string, output_dir)
     tndf = create_taxonomic_names(names, direct_mappings, output_dir)
     create_name_index_list(tndf, publication_string) # Create an inverted index structure of string indexes and the
-    create_bibliographic_reference(publication_string, output_dir)                               # names located there.
-    create_typification(publication_string, output_dir)
+    create_typification(publication_string, output_dir)                               # names located there.
     create_taxonomic_name_usages(output_dir)
 
 
@@ -65,9 +65,28 @@ def create_bibliographic_reference(doc_string, output_dir):
 
     doi = find_doi(doc_string)
     results_dic = citationScraperPDF.get_bib_results(doi)
-    print("bib results:")
-    print(results_dic)
-    bibliographic_reference_df.iloc[0] = ""
+
+    # Respond to various errors which may occur when trying to scrape citethisforme
+    if results_dic['formatchanged'] == 'true':
+        bibliographic_reference_df.iloc[0]['id'] = "IMPORTANT: The layout of citethisforme's page may have changed!" \
+                                                   "If this error persists the program will likely have to be updated" \
+                                                   "in order to regain it's autocitation functionality."
+        bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
+        return
+
+    if results_dic['success'] == 'false':
+        bibliographic_reference_df.iloc[0]['id'] = "FAILED"
+        bibliographic_reference_df.iloc[0]['title'] = "This happens occasionally due to citethisforme's somewhat " \
+                                                   "inconsistent responses. Waiting for a minute and then " \
+                                                   "retrying may fix the problem."
+        print("citethisforme scraping unsuccessful")
+        bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
+        return
+
+    bibliographic_reference_df.iloc[0]['id'] = "BIB-1"
+    bibliographic_reference_df.iloc[0]['title'] = results_dic['title']
+    bibliographic_reference_df.iloc[0]['year'] = results_dic['year']
+    # bibliographic_reference_df.iloc[0]['author'] = citationScraperPDF.concat_authors(results_dic)
     bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
 
 
@@ -318,7 +337,9 @@ def find_new_names(doc_string):
                 combined_request.append(request_str[1:])
         working_index = working_index + 1
 
+
     r = requests.post("http://parser.globalnames.org/api", json.dumps(combined_request))
+
     print(r)
     print(r.json())
     return r.json()
