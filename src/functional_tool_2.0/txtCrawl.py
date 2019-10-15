@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import re
 import json
-import time
+import citationScraperPDF
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 
@@ -22,7 +22,7 @@ def get_csv_output(txt_filepath, direct_mappings, output_dir):
 
     tndf = create_taxonomic_names(names, direct_mappings, output_dir)
     create_name_index_list(tndf, publication_string) # Create an inverted index structure of string indexes and the
-    create_bibliographic_reference(output_dir)                                                   # names located there.
+    create_bibliographic_reference(publication_string, output_dir)                               # names located there.
     create_typification(publication_string, output_dir)
     create_taxonomic_name_usages(output_dir)
 
@@ -57,11 +57,17 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
 
 
 # Create the bibliographic reference output file
-def create_bibliographic_reference(output_dir):
+def create_bibliographic_reference(doc_string, output_dir):
     bibliographic_reference_df = pd.DataFrame(index=range(1, 2), columns=
     ["id", "title", "author", "year", "isbn", "issn", "citation", "shortRef", "doi", "volume",
      "edition", "pages", "displayTitle", "published", "publicationDate", "publishedLocation", "publisher",
      "refAuthorRole", "refType", "tl2", "uri", "publicationRegistration"])
+
+    doi = find_doi(doc_string)
+    results_dic = citationScraperPDF.get_bib_results(doi)
+    print("bib results:")
+    print(results_dic)
+    bibliographic_reference_df.iloc[0] = ""
     bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
 
 
@@ -414,6 +420,12 @@ def find_coordinates(doc_string):
                       r"""[0-9]{1,2}\.[0-9]{1,10}[N|S][\,|\;] {0,2}1[0-8][0-9]\.[0-9]{1,10}[E|W]""",
                       doc_string, re.UNICODE)
     return res2
+
+def find_doi(doc_string):
+    doi = re.search(r"""\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)\b""", doc_string)
+    if doi:
+        return doi.group(0)
+    return "failed to detect doi"
 
 
 # Check names for overlap, for example new genuses and their subspecies will cause issues

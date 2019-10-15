@@ -1,8 +1,4 @@
-import PyPDF2
 import os
-import requests
-import pandas as pd
-import re
 import txtCrawl
 
 border_words = ["in", "sp", "type", "and", "are", "figs"]
