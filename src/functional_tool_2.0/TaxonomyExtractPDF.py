@@ -16,8 +16,6 @@ created_files = []
 # Uses PDFBox to convert the PDF to a TXT file for analysis.
 def pdf_to_text(file_name):
     file_path = replace_whitespaces(file_name)
-    # Todo: detect when a .txt file is not created and cleanly exit with an error message (unavoidable due to
-    #  permissions)
     os.system("java -jar pdfbox-app-2.0.16.jar ExtractText " + file_path)
     created_files.append(file_path)
 
