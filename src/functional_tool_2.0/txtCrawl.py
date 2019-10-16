@@ -4,7 +4,7 @@ import re
 import json
 import citationScraperPDF
 
-border_words = ["in", "sp", "type", "and", "are", "figs"]
+border_words = []
 
 name_list = []
 word_locations = dict() # Inverse index struct containing names and their indexes
@@ -27,11 +27,10 @@ def get_csv_output(txt_filepath, direct_mappings, output_dir):
     create_typification(publication_string, tudf, output_dir)
 
 
-
 # Create the taxonomic names output file
 def create_taxonomic_names(names, doc_string, direct_mappings, bibref_df, output_dir):
     index = 0
-    taxonomic_names_df = pd.DataFrame(index=range(1, len(names)+1), columns=
+    tndf = pd.DataFrame(index=range(1, len(names)+1), columns=
     ["id", "taxonomicNameString", "fullNameWithAuthorship", "rank", "uninomial", "genus", "infragenericEpithet",
      "specificEpithet", "infraspecificEpithet", "cultivarNameGroup", "taxonomicNameAuthorship", "combinationAuthorship",
      "basionymAuthorship", "combinationExAuthorship", "basionymExAuthorship", "nomenclaturalStatus", "basedOn",
@@ -41,35 +40,44 @@ def create_taxonomic_names(names, doc_string, direct_mappings, bibref_df, output
     for result in names:
         for key in result:
             if key in direct_mappings:
-                taxonomic_names_df.iloc[index][direct_mappings.get(key)] = result.get(key)
+                tndf.iloc[index][direct_mappings.get(key)] = result.get(key)
         index += 1
 
         # Remove empty rows
-        if isinstance(taxonomic_names_df.at[index, "taxonomicNameString"], float):
-            taxonomic_names_df.drop(index=index)
+        if isinstance(tndf.at[index, "taxonomicNameString"], float):
+            tndf.drop(index=index)
             index -= 1
 
-
     # Deduce the missing fields from what we have
-    taxonomic_names_df = deduce_taxonomic_name_values(taxonomic_names_df)
+    tndf = deduce_taxonomic_name_values(tndf)
 
     # This is called before duplicates are dropped because its important that the list contains each instance of names
-    create_name_index_list(taxonomic_names_df, doc_string)
+    create_name_index_list(tndf, doc_string)
 
     # Drop duplicates, preferring to keep names with authors
-    taxonomic_names_df = taxonomic_names_df.sort_values('fullNameWithAuthorship', ascending=False)
-    taxonomic_names_df = taxonomic_names_df.drop_duplicates(subset="taxonomicNameString")
+    tndf = tndf.sort_values('fullNameWithAuthorship', ascending=False)
+    tndf = tndf.drop_duplicates(subset="taxonomicNameString")
 
     index = 0
-    while index < len(taxonomic_names_df):
-        if not isinstance(taxonomic_names_df.iloc[index]["taxonomicNameString"], float):
-            taxonomic_names_df.iloc[index]['id'] = "TN-{}".format(index+1)
-            taxonomic_names_df.iloc[index]['kindOfName'] = "scientific"
+    while index < len(tndf):
+        if not isinstance(tndf.iloc[index]["taxonomicNameString"], float):
+            tndf.iloc[index]['id'] = "TN-{}".format(index+1)
+            tndf.iloc[index]['kindOfName'] = "scientific"
+
+            # If names still don't have authorship, assume the paper's authors are the author unless comb. nov.
+            if isinstance(tndf.iloc[index]["taxonomicNameAuthorship"], float) and\
+                    not tndf.iloc[index]["verbatimTaxonomicNameString"].lower().__contains__("comb")\
+                    and not isinstance(bibref_df, bool):
+                tndf.iloc[index]["taxonomicNameAuthorship"] = bibref_df.iloc[0]["author"]
+
+                tndf.at[index, "fullNameWithAuthorship"] = tndf.at[index, "taxonomicNameString"] + " " + tndf.at[
+                    index, "taxonomicNameAuthorship"]
+
         index += 1
 
-    taxonomic_names_df = taxonomic_names_df.fillna(0.0)
-    taxonomic_names_df.to_csv("{}taxonomicName.csv".format(output_dir))
-    return taxonomic_names_df
+    tndf = tndf.fillna(0.0)
+    tndf.to_csv("{}taxonomicName.csv".format(output_dir))
+    return tndf
 
 
 # Create the bibliographic reference output file
@@ -81,7 +89,7 @@ def create_bibliographic_reference(doc_string, output_dir):
 
     doi = find_doi(doc_string)
     results_dic = dict()
-    results_dic['success'] = 'false'  # citationScraperPDF.get_bib_results(doi)
+    results_dic = citationScraperPDF.get_bib_results(doi)
     results_dic['formatchanged'] = 'false'
 
     # Respond to various errors which may occur when trying to scrape citethisforme
@@ -90,7 +98,7 @@ def create_bibliographic_reference(doc_string, output_dir):
                                                    "If this error persists the program will likely have to be updated" \
                                                    "in order to regain it's autocitation functionality."
         bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
-        return
+        return False
 
     if results_dic['success'] == 'false':
         bibliographic_reference_df.iloc[0]['id'] = "FAILED"
@@ -99,7 +107,7 @@ def create_bibliographic_reference(doc_string, output_dir):
                                                    "retrying may fix the problem."
         print("citethisforme scraping unsuccessful")
         bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
-        return
+        return False
 
     bibliographic_reference_df.iloc[0]['id'] = "BIB-1"
 
@@ -122,11 +130,19 @@ def create_typification(doc_string, tudf, output_dir):
         type_string, type_type = type_data[name]
 
         # This name simplification process should be kept the same as in create_tnu as they are matched by it.
+        print(type_data)
         _, simple_name = remove_identifiers(name_string_to_verbatim[name])
         typdf.iloc[index]["typeName"] = simple_name
 
-        typdf.iloc[index]["nameUsage"] = \
-            tudf.loc[tudf["taxonomicNameUsageLabel"] == typdf.iloc[index]["typeName"]].iloc[0]["id"]
+        print(len(typdf))
+        print(len(tudf))
+        print(index)
+
+        try:
+            typdf.iloc[index]["nameUsage"] = \
+                tudf.loc[tudf["taxonomicNameUsageLabel"] == typdf.iloc[index]["typeName"]].iloc[0]["id"]
+        except:
+            print("could not match name usage for " + typdf.iloc[index]["typeName"])
 
         typdf.iloc[index]["typificationString"] = type_string
         typdf.iloc[index]["typeOfType"] = type_type
@@ -167,6 +183,7 @@ def create_taxonomic_name_usages(tndf, output_dir):
     tudf.fillna(0.0).to_csv("{}taxonomicNameUsages.csv".format(output_dir))
     return tudf
 
+
 # From the output of GNParser, deduce what other values we can
 def deduce_taxonomic_name_values(df):
     index = 1
@@ -174,7 +191,6 @@ def deduce_taxonomic_name_values(df):
         if isinstance(df.at[index, 'taxonomicNameString'], float):
             index += 1
             continue
-
 
         # Uninomial -----------
         if (len(df.at[index, 'taxonomicNameString'].split(" "))) == 1:
@@ -207,7 +223,9 @@ def deduce_taxonomic_name_values(df):
 
 # Find the name which most closely precedes a given index.
 # ignore_figures means try to ignore names that are probably captions of images
-def associate_info(info_index, ignore_figures):
+def associate_info(info_index, **kwargs):
+    ignore_figures = kwargs.get('ignore_figures')
+    ignore_combinations = kwargs.get('ignore_combinations')
     best_diff = float('inf')
     parent_name = "none"
 
@@ -219,8 +237,12 @@ def associate_info(info_index, ignore_figures):
     for key in inv_index_struct.keys():
         difference = info_index - key
         if best_diff > difference > 0:
-            best_diff = difference
-            parent_name = inv_index_struct[key]
+            if not (identifier_check(name_string_to_verbatim[inv_index_struct[key]]) == "comb" and ignore_combinations):
+                parent_name = inv_index_struct[key]
+                best_diff = difference
+            else:
+                print("skipping {}".format(parent_name))
+
     return parent_name, best_diff
 
 
@@ -262,7 +284,6 @@ def get_json_fields(json, targets):
         output_dict['verbatim'] = "unparsable"
         return output_dict
 
-
     for target in targets:
         index = 0
         target_path = target.split("/")
@@ -298,6 +319,7 @@ def get_json_fields(json, targets):
 
             index += 1
     return output_dict
+
 
 # Return true if the word is unlikely to be part of a name
 def is_nl(word):
@@ -337,11 +359,11 @@ def detect_letter_and_number(s):
 
 def find_new_names(doc_string):
     pre_buffer = 15
-    post_buffer = 1
+    post_buffer = 2
     working_index = 0
     word_list = normalise_spacing(doc_string).split(" ")
     combined_request = []
-    debugstr=""
+
     skip_next = False  # Used to avoid detection of the same name twice
     for word in word_list:
         if skip_next:
@@ -349,51 +371,54 @@ def find_new_names(doc_string):
             working_index = working_index + 1
             continue
 
-        if word.lower() == "sp." and \
-                (word_list[working_index+1].__contains__("n.") or word_list[working_index+1].__contains__("nov")):
+        if (not identifier_check(word) == "none" and \
+                (word_list[working_index+1].__contains__("n.") or word_list[working_index+1].__contains__("nov")))\
+                or ((word.__contains__("n.") or word.__contains__("nov"))
+                    and not identifier_check(word_list[working_index+1]) == "none"):
             skip_next = True
-            confidence = 0
             name = word_list[working_index-pre_buffer: working_index+post_buffer]
+            # print(name)
 
             request_str = ""
             index = 0
             for name_component in name:
-                if index > pre_buffer:
+                if index > pre_buffer + post_buffer:
+                    print("broke on {}".format(name_component))
                     break
 
                 elif index < pre_buffer and is_nl(name_component) \
                         and not remove_punctuation(name_component) == "":
+                    # print("called on {}".format(name_component))
                     request_str = ""
-                    debugstr = ""
-                    confidence = 1
                     index += 1
                     continue
 
                 name_component = name_component.replace("&", "%26")
                 if len(remove_punctuation(name_component)) > 0:
                     request_str = request_str + (" " + name_component)
-                    debugstr += (name_component + " ")
 
                 index += 1
 
-            print("Confidence: {} for name: {}".format(confidence, debugstr))
             # If name is impossibly short just skip it
             # In future, if name is impossibly short we should work backwards to extend it.
-            if len(request_str) < 5:
+            if len(request_str) < 3:
                 working_index = working_index + 1
                 continue
 
+            # Deal with cases where the name extends over a line break and is hyphenated
+            # While these are not usually the important declaration of that name, it is nice to reduce duplicates
+            request_str = request_str.replace("- ", "")
+
             # If this evaluates to true there's usually some weird formatting stuff like ...........scientific Name
             if len(request_str[1:]) - len(remove_punctuation(request_str[1:])) > 8:
-                combined_request.append(remove_punctuation(request_str[1:]))
-            else:
-                combined_request.append(request_str[1:])
+                request_str = remove_punctuation(request_str)
+
+            print("Pre pruned name: {}".format(request_str))
+            combined_request.append(request_str[1:])
         working_index = working_index + 1
-
-
+    #return
     r = requests.post("http://parser.globalnames.org/api", json.dumps(combined_request))
 
-    print(r)
     print(r.json())
     return r.json()
 
@@ -438,7 +463,7 @@ def detect_type_descriptions(doc_string):
                             or word_list[word_index + index].lower().__contains__("allotype") \
                             or word_list[word_index + index].lower().__contains__("para:"):
                         end_point = word_index + index - 1
-                        name, _ = associate_info(word_to_char[word_index], ignore_figures=True)
+                        name, _ = associate_info(word_to_char[word_index], ignore_figures=True, ignore_combinations=True)
                         type_desc = ""
                         if gender_before:
                             typification_range = word_list[word_index-1:end_point]
@@ -477,19 +502,6 @@ def escape_regex_chars(query):
     return result
 
 
-def find_document_data(doc_string, reference_index):
-    word_list = normalise_spacing(doc_string).split(" ")
-    url_list = []
-    for word in word_list[:reference_index]:
-        if word.__contains__("http"):
-            word = word[word.index("http"):]
-            url_list.append(word)
-
-    for url in url_list:
-        if url.__contains__("zootaxa") or url.__contains__("zoobank"):
-            print("Self referencing information: " + url)
-
-
 # Returns an iterator containing the details and locations of all coordinates of the form xxºxx'xx"[NSEW]
 def find_coordinates(doc_string):
 
@@ -504,6 +516,9 @@ def find_coordinates(doc_string):
     return res2
 
 
+# Finds the first instance of a doi in the publication. Could cause issues in rare cases where the DOI of other articles
+# are mentioned but not the DOI of the actual article being analysed. Could maybe put a limit on how late it can appear
+# in the document to be considered valid.
 def find_doi(doc_string):
     doi = re.search(r"""\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)\b""", doc_string)
     if doi:
@@ -535,11 +550,33 @@ def create_name_index_list(taxonomic_names_df, doc_string):
                 word_locations_excl_figs[match.span()[1]] = name
 
 
+# This method will be called many times more than remove identifiers, so I separated them for efficiency
+# Within the find_new_names function, it checks whether the word is followed by n/nov, so I don't have to do that here
+def identifier_check(word):
+    sp_identifiers = ["sp.", "species", "spec."]
+    gen_identifiers = ["gen.", "genus"]
+    comb_identifiers = ["comb.", "combination"]
+
+    if sp_identifiers.__contains__(word.lower()):
+        return "sp"
+
+    if gen_identifiers.__contains__(word.lower()):
+        return "gen"
+
+    if comb_identifiers.__contains__(word.lower()):
+        return "comb"
+
+    return "none"
+
+
 def remove_identifiers(name_str):
-    identifiers = ["sp.", "comb.", "gen.", "Gen.", "Sp.", "species", "genus", "combination", "spec."]
+    identifiers = ["sp.", "comb.", "gen.", "Gen.", "Sp.", "species", "genus", "combination", "spec.", "Species",
+                   "Genus", "Comb."]
     for identifier in identifiers:
         if len(name_str.split(identifier)) > 1:
             ans = name_str.split(identifier)[0][:-1]
+            # Necessary in cases where form n. sp. etc is used.
+            ans = ans.replace(" n.", "").replace(" nov.", "")
             if ans[-1] == ",":
                 return identifier, ans[:-1]
             return identifier, ans
