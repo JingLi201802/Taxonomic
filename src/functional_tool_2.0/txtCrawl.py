@@ -7,7 +7,8 @@ import citationScraperPDF
 border_words = ["in", "sp", "type", "and", "are", "figs"]
 
 name_list = []
-word_locations = dict()
+word_locations = dict() # Inverse index struct containing names and their indexes
+word_locations_excl_figs = dict() # Same as above but excl names thought to be in image captions
 name_string_to_verbatim = dict()
 word_to_char = dict()
 
@@ -20,18 +21,18 @@ def get_csv_output(txt_filepath, direct_mappings, output_dir):
     names = parse_json_list(find_new_names(publication_string), direct_mappings)
     create_word_to_char(publication_string)
 
-    create_bibliographic_reference(publication_string, output_dir)
-    tndf = create_taxonomic_names(names, direct_mappings, output_dir)
-    create_name_index_list(tndf, publication_string) # Create an inverted index structure of string indexes and the
-    create_typification(publication_string, output_dir)                               # names located there.
-    create_taxonomic_name_usages(output_dir)
+    bib_ref = create_bibliographic_reference(publication_string, output_dir)
+    tndf = create_taxonomic_names(names, publication_string, direct_mappings, bib_ref, output_dir)
+    tudf = create_taxonomic_name_usages(tndf, output_dir)
+    create_typification(publication_string, tudf, output_dir)
+
 
 
 # Create the taxonomic names output file
-def create_taxonomic_names(names, direct_mappings, output_dir):
+def create_taxonomic_names(names, doc_string, direct_mappings, bibref_df, output_dir):
     index = 0
-    taxonomic_names_df = pd.DataFrame(index=range(1, len(names)+2), columns=
-    ["taxonomicNameString", "fullNameWithAuthorship", "rank", "uninomial", "genus", "infragenericEpithet",
+    taxonomic_names_df = pd.DataFrame(index=range(1, len(names)+1), columns=
+    ["id", "taxonomicNameString", "fullNameWithAuthorship", "rank", "uninomial", "genus", "infragenericEpithet",
      "specificEpithet", "infraspecificEpithet", "cultivarNameGroup", "taxonomicNameAuthorship", "combinationAuthorship",
      "basionymAuthorship", "combinationExAuthorship", "basionymExAuthorship", "nomenclaturalStatus", "basedOn",
      "kindOfName", "nameRegistrationString", "verbatimTaxonomicNameString"])
@@ -51,6 +52,21 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
 
     # Deduce the missing fields from what we have
     taxonomic_names_df = deduce_taxonomic_name_values(taxonomic_names_df)
+
+    # This is called before duplicates are dropped because its important that the list contains each instance of names
+    create_name_index_list(taxonomic_names_df, doc_string)
+
+    # Drop duplicates, preferring to keep names with authors
+    taxonomic_names_df = taxonomic_names_df.sort_values('fullNameWithAuthorship', ascending=False)
+    taxonomic_names_df = taxonomic_names_df.drop_duplicates(subset="taxonomicNameString")
+
+    index = 0
+    while index < len(taxonomic_names_df):
+        if not isinstance(taxonomic_names_df.iloc[index]["taxonomicNameString"], float):
+            taxonomic_names_df.iloc[index]['id'] = "TN-{}".format(index+1)
+            taxonomic_names_df.iloc[index]['kindOfName'] = "scientific"
+        index += 1
+
     taxonomic_names_df = taxonomic_names_df.fillna(0.0)
     taxonomic_names_df.to_csv("{}taxonomicName.csv".format(output_dir))
     return taxonomic_names_df
@@ -64,7 +80,9 @@ def create_bibliographic_reference(doc_string, output_dir):
      "refAuthorRole", "refType", "tl2", "uri", "publicationRegistration"])
 
     doi = find_doi(doc_string)
-    results_dic = citationScraperPDF.get_bib_results(doi)
+    results_dic = dict()
+    results_dic['success'] = 'false'  # citationScraperPDF.get_bib_results(doi)
+    results_dic['formatchanged'] = 'false'
 
     # Respond to various errors which may occur when trying to scrape citethisforme
     if results_dic['formatchanged'] == 'true':
@@ -91,37 +109,63 @@ def create_bibliographic_reference(doc_string, output_dir):
 
     bibliographic_reference_df.iloc[0]['author'] = citationScraperPDF.concat_authors(results_dic)
     bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
+    return bibliographic_reference_df
 
 
 # Create the typification output file
-def create_typification(doc_string, output_dir):
+def create_typification(doc_string, tudf, output_dir):
     type_data = detect_type_descriptions(doc_string)
-    typification_df = pd.DataFrame(index=range(1, len(type_data)+2), columns=["nameUsage", "typeOfType", "typeName", "typificationString"])
+    typdf = pd.DataFrame(index=range(1, len(type_data)+2), columns=
+    ["nameUsage", "typeOfType", "typeName", "typificationString", "coordinates"])
     index = 0
     for name in type_data:
         type_string, type_type = type_data[name]
-        typification_df.iloc[index]["typeName"] = name
-        typification_df.iloc[index]["typificationString"] = type_string
-        typification_df.iloc[index]["typeOfType"] = type_type
+
+        # This name simplification process should be kept the same as in create_tnu as they are matched by it.
+        _, simple_name = remove_identifiers(name_string_to_verbatim[name])
+        typdf.iloc[index]["typeName"] = simple_name
+
+        typdf.iloc[index]["nameUsage"] = \
+            tudf.loc[tudf["taxonomicNameUsageLabel"] == typdf.iloc[index]["typeName"]].iloc[0]["id"]
+
+        typdf.iloc[index]["typificationString"] = type_string
+        typdf.iloc[index]["typeOfType"] = type_type
+
+        coords_match = find_coordinates(type_string)
+        if len(coords_match) > 0:
+            typdf.iloc[index]["coordinates"] = coords_match[0]
+
         index += 1
 
-    typification_df.fillna(0.0).to_csv("{}typification.csv".format(output_dir))
+    typdf.fillna(0.0).to_csv("{}typification.csv".format(output_dir))
 
 
 # Create the TNU output file
-def create_taxonomic_name_usages(output_dir):
-    taxonomic_usage_df = pd.DataFrame(index=range(1, len(name_list)+2), columns=
-    ["accordingTo", "taxonomicNameUsageLabel", "verbatimNameString", "verbatimRank", "taxonomicStatus", "acceptedNameUsage",
-     "hasParent", "kindOfNameUsage", "microReference", "etymology"])
-    index = 0
-    for name in name_list:
-        taxonomic_usage_df.iloc[index]["accordingTo"] = "BIB-1"
-        taxonomic_usage_df.iloc[index]["taxonomicNameUsageLabel"] = "TNU-{}".format(index+1)
-        taxonomic_usage_df.iloc[index]["verbatimNameString"] = name_string_to_verbatim[name]
-        taxonomic_usage_df.iloc[index]["kindOfNameUsage"] = "scientific"
-        index += 1
-    taxonomic_usage_df.fillna(0.0).to_csv("{}taxonomicNameUsages.csv".format(output_dir))
+def create_taxonomic_name_usages(tndf, output_dir):
+    tudf = pd.DataFrame(index=range(1, len(tndf)), columns=
+    ["id", "taxonomicName", "accordingTo", "taxonomicNameUsageLabel", "verbatimNameString", "verbatimRank",
+     "taxonomicStatus", "acceptedNameUsage", "hasParent", "kindOfNameUsage", "microReference", "etymology"])
 
+    # Dictionary containing corresponding fields between the two csvs
+    tn_tnu = {"taxonomicName": "id", "verbatimNameString": "verbatimTaxonomicNameString"}
+    index = 0
+    # Iterate over rows of the taxonomic NAME dataframe
+    while index < len(tndf)-1:
+        # Insert shared values
+        for key, value in tn_tnu.items():
+            tudf.iloc[index][key] = tndf.iloc[index][value]
+
+        tudf.iloc[index]["accordingTo"] = "BIB-1"
+
+        # This name simplification process should be kept the same as in create_typification as they are matched by it.
+        identifier, name_usage_label = remove_identifiers(tudf.iloc[index]["verbatimNameString"])
+        tudf.iloc[index]["taxonomicNameUsageLabel"] = name_usage_label
+        tudf.iloc[index]["id"] = tndf.iloc[index]["id"].replace("TN", "TNU")
+        tudf.iloc[index]["acceptedNameUsage"] = tudf.iloc[index]["id"]
+        tudf.iloc[index]["kindOfNameUsage"] = identifier + "nov."
+        index += 1
+    tudf.fillna(0.0).to_csv("{}taxonomicNameUsages.csv".format(output_dir))
+    return tudf
 
 # From the output of GNParser, deduce what other values we can
 def deduce_taxonomic_name_values(df):
@@ -131,8 +175,8 @@ def deduce_taxonomic_name_values(df):
             index += 1
             continue
 
+
         # Uninomial -----------
-        # Todo: change functionality so it detects uninomial- only 1 rank
         if (len(df.at[index, 'taxonomicNameString'].split(" "))) == 1:
             df.at[index, 'uninomial'] = df.at[index, 'taxonomicNameString']
 
@@ -161,16 +205,22 @@ def deduce_taxonomic_name_values(df):
     return df
 
 
-# Find the name which most closely precedes a given index
-def associate_info(info_index):
+# Find the name which most closely precedes a given index.
+# ignore_figures means try to ignore names that are probably captions of images
+def associate_info(info_index, ignore_figures):
     best_diff = float('inf')
     parent_name = "none"
 
-    for key in word_locations.keys():
+    if ignore_figures:
+        inv_index_struct = word_locations_excl_figs
+    else:
+        inv_index_struct = word_locations
+
+    for key in inv_index_struct.keys():
         difference = info_index - key
         if best_diff > difference > 0:
             best_diff = difference
-            parent_name = word_locations[key]
+            parent_name = inv_index_struct[key]
     return parent_name, best_diff
 
 
@@ -348,28 +398,37 @@ def find_new_names(doc_string):
     return r.json()
 
 
+# Change to stop at diagnosis and description as well as holotype.
 # Search for type descriptions and then associate them with the closest preceding name. Return a dictionary of name:desc
 def detect_type_descriptions(doc_string):
     type_data = dict()
     word_list = normalise_spacing(doc_string).split(" ")
-    # uses_dms_coordinates = count_coordinates() > 2
     print("------------SEARCHING FOR TYPE DESCRIPTION---------------")
     word_index = 0
     for word in word_list:
         trust = False
-        if remove_punctuation(word.lower()) == "holotype" or word.lower().__contains__("holo:"):
+        if remove_punctuation(word.lower()) == "holotype" or word.lower().__contains__("holo:") \
+                or word.lower().__contains__("holo-"):
+
+            gender_before = False  # Whether the word before holotype should be included or not
 
             # If the word holotype seems to be used midway through a sentence it can usually be ignored
-            if ["the", "a", "one", "their"].__contains__(word_list[word_index-1].lower()):
+            if ["the", "a", "one", "their"].__contains__(word_list[word_index-1].lower()
+                                                         or ["can", "was", "has", "is", "that", "from",
+                                                             "where"].__contains__(word_list[word_index+1].lower())):
                 word_index = word_index + 1
                 continue
 
             # If the holotype is right next to a gender then it is usually a definition
-            if set(map(str.lower, map(remove_punctuation, word_list[word_index-3:word_index+3]))) & set(["male", "female"]):
+            if set(map(str.lower, map(remove_punctuation, word_list[word_index-1:word_index+5]))) \
+                    & set(["male", "female"]):
                 trust = True
 
-            if word.lower().__contains__("holo:"):
-                trust = True
+                if ["male", "female"].__contains__(remove_punctuation(word_list[word_index-1]).lower()):
+                    gender_before = True
+
+            if not trust:
+                trust = find_coordinates(doc_string[word_to_char[word_index]:word_to_char[word_index]+500])
 
             # If the holotype instance is thought to be a definition, search forward for the next instance of paratype:
             if trust:
@@ -379,21 +438,20 @@ def detect_type_descriptions(doc_string):
                             or word_list[word_index + index].lower().__contains__("allotype") \
                             or word_list[word_index + index].lower().__contains__("para:"):
                         end_point = word_index + index - 1
-                        name, _ = associate_info(word_to_char[word_index])
+                        name, _ = associate_info(word_to_char[word_index], ignore_figures=True)
                         type_desc = ""
-                        for word in word_list[word_index:end_point]:
-                            type_desc += word + " "
+                        if gender_before:
+                            typification_range = word_list[word_index-1:end_point]
+                        else:
+                            typification_range = word_list[word_index:end_point]
+                        for word2 in typification_range:
+                            type_desc += word2 + " "
                         type_data[name] = type_desc, "holotype"
                         break
                     index = index + 1
 
         word_index = word_index + 1
-    # Search for variations of holo and paratype
 
-    # Search around these instances to try and see if they are used as headings. Can search for: Coordinates, gender etc.
-    # can also search to see if it is preceded by the/a
-    # to work out if the heading precedes a description.
-    # Can also search for "figure or fig" to try and filter out image captions
     print("----------------Finished searching for types---------------")
     return type_data
 
@@ -445,6 +503,7 @@ def find_coordinates(doc_string):
                       doc_string, re.UNICODE)
     return res2
 
+
 def find_doi(doc_string):
     doi = re.search(r"""\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?!["&\'<>])\S)+)\b""", doc_string)
     if doi:
@@ -465,6 +524,24 @@ def create_name_index_list(taxonomic_names_df, doc_string):
         name_string_to_verbatim[name] = str(row["verbatimTaxonomicNameString"])
 
     for name in name_list:
-        result = re.finditer(escape_regex_chars(name_string_to_verbatim[name]), normalise_spacing(doc_string), re.UNICODE)
+        result = re.finditer(escape_regex_chars(name_string_to_verbatim[name]), doc_string, re.UNICODE)
         for match in result:
             word_locations[match.span()[1]] = name
+
+            prev_h_chars = doc_string[match.span()[1]-80:match.span()[1]].lower()
+            if not (prev_h_chars.__contains__("fig.")
+                    or prev_h_chars.__contains__("figure")
+                    or prev_h_chars.__contains__(name_string_to_verbatim[name])):
+                word_locations_excl_figs[match.span()[1]] = name
+
+
+def remove_identifiers(name_str):
+    identifiers = ["sp.", "comb.", "gen.", "Gen.", "Sp.", "species", "genus", "combination", "spec."]
+    for identifier in identifiers:
+        if len(name_str.split(identifier)) > 1:
+            ans = name_str.split(identifier)[0][:-1]
+            if ans[-1] == ",":
+                return identifier, ans[:-1]
+            return identifier, ans
+
+    return "", name_str
