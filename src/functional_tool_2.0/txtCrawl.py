@@ -60,7 +60,7 @@ def create_taxonomic_names(names, direct_mappings, output_dir):
 def create_bibliographic_reference(doc_string, output_dir):
     bibliographic_reference_df = pd.DataFrame(index=range(1, 2), columns=
     ["id", "title", "author", "year", "isbn", "issn", "citation", "shortRef", "doi", "volume",
-     "edition", "pages", "displayTitle", "published", "publicationDate", "publishedLocation", "publisher",
+     "edition", "pages", "PARENT:", "displayTitle", "published", "publicationDate", "publishedLocation", "publisher",
      "refAuthorRole", "refType", "tl2", "uri", "publicationRegistration"])
 
     doi = find_doi(doc_string)
@@ -84,9 +84,12 @@ def create_bibliographic_reference(doc_string, output_dir):
         return
 
     bibliographic_reference_df.iloc[0]['id'] = "BIB-1"
-    bibliographic_reference_df.iloc[0]['title'] = results_dic['title']
-    bibliographic_reference_df.iloc[0]['year'] = results_dic['year']
-    # bibliographic_reference_df.iloc[0]['author'] = citationScraperPDF.concat_authors(results_dic)
+
+    simple_fields = ["publisher", "title", "year", "doi", "volume", "pages", "uri", "displayTitle"]
+    for field in simple_fields:
+        bibliographic_reference_df.iloc[0][field] = results_dic[field]
+
+    bibliographic_reference_df.iloc[0]['author'] = citationScraperPDF.concat_authors(results_dic)
     bibliographic_reference_df.fillna(0.0).to_csv("{}bibliographicReference.csv".format(output_dir))
 
 

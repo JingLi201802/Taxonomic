@@ -54,11 +54,11 @@ def get_bib_results(doi):
     try:
         results["year"] = year.find_element_by_css_selector("option[selected='selected']").get_attribute("value")
         results["title"] = driver.find_element_by_id("Title").get_attribute("value")
-        results["journal"] = driver.find_element_by_id("ContainerTitle").get_attribute("value")
+        results["displayTitle"] = driver.find_element_by_id("ContainerTitle").get_attribute("value")
         results["volume"] = driver.find_element_by_id("Volume").get_attribute("value")
         results["pages"] = driver.find_element_by_id("Pages").get_attribute("value")
-        results["database"] = driver.find_element_by_id("AvailableVia").get_attribute("value")
-        results["url"] = driver.find_element_by_id("Url").get_attribute("value")
+        results["publisher"] = driver.find_element_by_id("AvailableVia").get_attribute("value")
+        results["uri"] = driver.find_element_by_id("Url").get_attribute("value")
         results["success"] = "true"
     except selenium.common.exceptions.NoSuchElementException:
         # If one of the later fields are not present but an earlier field is, html structure has probably been changed
@@ -66,7 +66,12 @@ def get_bib_results(doi):
         return results
     return results
 
+
 # Given a results dictionary, append all authors by iterating over the dictionary, searching for author[x]
 # keys then appending their values
 def concat_authors(results_dic):
-    return None
+    result = ""
+    for key in results_dic.keys():
+        if key.__contains__("author"):
+            result += (results_dic[key] + ", ")
+    return result[:-2]
