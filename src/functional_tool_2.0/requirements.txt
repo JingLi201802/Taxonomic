@@ -3,7 +3,7 @@ gunicorn==19.3.0
 itsdangerous==0.24
 Jinja2==2.7.3
 MarkupSafe==0.23
-lxml==4.3.3
+lxml==4.6.2
 PyPDF2==1.26.0
 pandas==0.24.2
 xlwt==1.2.0
